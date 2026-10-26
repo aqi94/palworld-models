@@ -1,0 +1,137 @@
+"""manifest.json: the viewer's per-model interface (game agnostic)."""
+
+from __future__ import annotations
+
+import json
+import re
+
+from .gltf_writer import dropped_tracks
+from .model import Model
+
+MANIFEST_VERSION = 1
+
+# clips in which a Palworld Pal holds its weapon (Aim, Aim_Walk*, Aim_Attack, Minigun_Idle, Minigun_Aim_*, Fire_AssaultRifle...)
+HELD_CLIP_RE = re.compile(r"(^|_)(Aim|Minigun|Fire_|Shoot)")
+
+
+def build_manifest(model: Model, glb_summary: dict | None = None) -> dict:
+    groups: dict[str, dict] = {}
+    for vi, v in enumerate(model.variants):
+        grp = groups.setdefault(v.group, {"name": v.group, "label": v.group_label or v.group.replace("_", " ").title(), "options": []})
+        grp["options"].append({"variant": vi, "name": v.name, "label": v.label or v.name, "default": v.default})
+    for grp in groups.values():
+        if not any(o["default"] for o in grp["options"]) and grp["options"]:
+            grp["options"][0]["default"] = True
+
+    dropped = glb_summary["droppedTracks"] if glb_summary and "droppedTracks" in glb_summary else dropped_tracks(model)
+    clips = [
+        {
+            "name": c.name,
+            "index": c.index,
+            "duration": round(c.duration, 4),
+            "frameRate": c.frame_rate,
+            "frameCount": c.frame_count,
+            "loop": c.loop,
+            "category": c.category,
+            "group": c.group,
+            "default": c.name == model.default_clip,
+            **({"visibility": {k: [[f, int(v)] for f, v in keys] for k, keys in c.visibility.items()}} if c.visibility else {}),
+            **({"uvOffset": {m: {"times": [round(float(t), 4) for t in ts], "values": [[round(float(x), 5), round(float(y), 5)] for x, y in vs]} for m, (ts, vs) in c.uv_offset.items()}} if c.uv_offset else {}),
+            **({"uvOffsetMode": c.uv_offset_mode} if c.uv_offset and c.uv_offset_mode else {}),
+            **({"droppedTracks": dropped[c.name]} if dropped.get(c.name) else {}),
+        }
+        for c in model.clips
+    ]
+    parts = [
+        {
+            "node": m.name,
+            "label": _part_label(m.name, model.extras["stem"] if model.extras.get("form_layer") else model.id),  # form layers keep the source stem
+            "lod": m.lod,
+            "visible": m.visible,
+            **({k: m.extras[k] for k in ("group", "option") if k in m.extras}),
+            **({"accessory": True} if m.extras.get("accessory") else {}),
+        }
+        for m in model.meshes
+    ]
+    # Modular models (generic NPCs): meshes tagged extras {group, option}; the
+    # viewer shows exactly one option per group.
+    part_groups = []
+    for g in model.extras.get("part_groups", []):
+        part_groups.append(
+            {
+                **g,
+                "options": [_with_nodes(model, g["name"], o) for o in g["options"]],
+            }
+        )
+    # Held-item attachment points: joints named *_attach; a clip "shows" the
+    # item when it animates that joint's scale (the game hides props by
+    # scaling the attach bone to 0.01).
+    props = []
+    if model.skeleton:
+        for j in model.skeleton.joints:
+            if j.name.endswith("_attach"):
+                clips_with = [c.name for c in model.clips if any(t.joint == j.name and t.kind == "scale" for t in c.tracks)]
+                props.append({"bone": j.name, "side": "left" if j.name.startswith("left") else "right" if j.name.startswith("right") else "", "clips": clips_with})
+    held = model.extras.get("heldItem")
+    held_items = [h for h in model.extras.get("heldItems", [held] if held else []) if model.skeleton and any(j.name == h["bone"] for j in model.skeleton.joints)]
+    if held_items:
+        # a Pal that carries something (Palworld weapons): its weapon bones are the prop bones. The Pal only holds it in its
+        # aiming / minigun clips (no scale tracks in Palworld); a Pal with no such clip shows it always.
+        aim = [c.name for c in model.clips if HELD_CLIP_RE.search(c.name)]
+        for bone in dict.fromkeys(h["bone"] for h in held_items):
+            always = not aim or any(h.get("always") for h in held_items if h["bone"] == bone)
+            props.append({"bone": bone, "side": "right" if bone.endswith("_r") else "left", "clips": aim, **({"always": True} if always else {})})
+    return {
+        "manifestVersion": MANIFEST_VERSION,
+        "props": props,
+        **({"heldItem": held_items[0], "heldItems": held_items} if held_items else {}),
+        "game": model.game,
+        "id": model.id,
+        "kind": model.kind,
+        "displayName": model.display_name,
+        "files": {"model": "model.glb"},
+        "variantGroups": list(groups.values()),
+        "clips": clips,
+        "defaultClip": model.default_clip,
+        "parts": parts,
+        **({"partGroups": part_groups} if part_groups else {}),
+        **({"holocast": model.extras["holocast"]} if model.extras.get("holocast") else {}),
+        "stats": {
+            "joints": len(model.skeleton.joints) if model.skeleton else 0,
+            "meshes": len(model.meshes),
+            "triangles": int(sum(len(p.indices) // 3 for m in model.meshes if m.lod == 0 for p in m.primitives)),
+            "textures": len(model.textures),
+            "clips": len(model.clips),
+            "droppedTracks": sum(dropped.values()),  # clip tracks whose bone is not in the skeleton (left out of the GLB)
+            **({"glbBytes": glb_summary["bytes"]} if glb_summary else {}),
+        },
+        "source": model.source_paths,
+        "extras": {k: v for k, v in model.extras.items() if k != "part_groups"},
+    }
+
+
+def _part_label(node: str, model_id: str) -> str:
+    label = node
+    if "__" in label:  # modular parts: "<part id>__<mesh>"
+        label = label.split("__", 1)[1]
+    if label.startswith(model_id + "_"):
+        label = label[len(model_id) + 1 :]
+    label = label.replace("_mesh", "")
+    return label.replace("_", " ")
+
+
+def write_manifest(model: Model, path: str, glb_summary: dict | None = None) -> dict:
+    m = build_manifest(model, glb_summary)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(m, f, indent=1, ensure_ascii=False)
+    return m
+
+
+FACIAL_HAIR_MESH = ("beard", "face_hair")  # accessory meshes of a face part that are facial hair (not glasses/earrings)
+
+
+def _with_nodes(model, group: str, option: dict) -> dict:
+    """A part option with its mesh nodes; `facialHair` = the hidden-by-default beard meshes the viewer offers as a toggle."""
+    meshes = [m for m in model.meshes if m.extras.get("group") == group and m.extras.get("option") == option["id"]]
+    beards = [m.name for m in meshes if m.extras.get("accessory") and any(k in m.name.split("__", 1)[-1] for k in FACIAL_HAIR_MESH)]
+    return {**option, "nodes": [m.name for m in meshes], **({"facialHair": beards} if beards else {})}

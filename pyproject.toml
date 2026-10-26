@@ -1,0 +1,14 @@
+[project]
+name = "palworld-model-pipeline"
+version = "0.1.0"
+description = "Converts Palworld models and animations (extracted from your own install) into rigged glTF + a web viewer"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy",
+    "pillow",
+    "pygltflib",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+deploy = ["huggingface_hub"]

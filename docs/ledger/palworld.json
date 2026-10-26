@@ -1,0 +1,1812 @@
+{
+ "note": "Material parameters across all extracted Pals (resolved child-first along each instance chain). 'read' = used by pipeline/importers/palworld/importer.py; everything else is not reproduced in the GLB.",
+ "materialSlots": 843,
+ "baseMaterials": [
+  {
+   "name": "M_PalLit",
+   "slots": 765
+  },
+  {
+   "name": "M_Pal_Fire",
+   "slots": 33
+  },
+  {
+   "name": "M_PalLit_Jewel",
+   "slots": 18
+  },
+  {
+   "name": "M_Pal_Dream",
+   "slots": 7
+  },
+  {
+   "name": "M_Pal_Twinkle",
+   "slots": 4
+  },
+  {
+   "name": "M_Pal_Manticore_Fire",
+   "slots": 3
+  },
+  {
+   "name": "M_MoonQueen_Extra",
+   "slots": 3
+  },
+  {
+   "name": "M_PalLit_Ice",
+   "slots": 3
+  },
+  {
+   "name": "M_NightLady",
+   "slots": 2
+  },
+  {
+   "name": "M_PBR_Crystal_Base_Opaque",
+   "slots": 2
+  },
+  {
+   "name": "M_PalLit_Rainbow",
+   "slots": 2
+  },
+  {
+   "name": "?",
+   "slots": 1
+  }
+ ],
+ "textureParams": [
+  {
+   "name": "Base Texture",
+   "slots": 788,
+   "read": true,
+   "examples": [
+    "Alpaca",
+    "AmaterasuWolf",
+    "AmaterasuWolf_Dark",
+    "Anubis"
+   ]
+  },
+  {
+   "name": "Normal Map",
+   "slots": 404,
+   "read": true,
+   "examples": [
+    "Alpaca",
+    "AmaterasuWolf",
+    "AmaterasuWolf_Dark",
+    "Anubis"
+   ]
+  },
+  {
+   "name": "MetallicRoughnessOcclusionSpecularTexture",
+   "slots": 401,
+   "read": true,
+   "examples": [
+    "Alpaca",
+    "AmaterasuWolf",
+    "AmaterasuWolf_Dark",
+    "Anubis"
+   ]
+  },
+  {
+   "name": "Subsurface Texture",
+   "slots": 275,
+   "read": false,
+   "examples": [
+    "Alpaca",
+    "Anubis_Skin001",
+    "BadCatgirl",
+    "BlackCentaur"
+   ]
+  },
+  {
+   "name": "Emissive Texture",
+   "slots": 125,
+   "read": true,
+   "examples": [
+    "BlackCentaur",
+    "BlackGriffon",
+    "BlackGriffon_Skin001",
+    "BlackMetalDragon"
+   ]
+  },
+  {
+   "name": "MainTex",
+   "slots": 22,
+   "read": false,
+   "examples": [
+    "BlackPuppy",
+    "BlackPuppy_Ice",
+    "DarkScorpion",
+    "DarkScorpion_Ground"
+   ]
+  },
+  {
+   "name": "Jewel Mask",
+   "slots": 13,
+   "read": false,
+   "examples": [
+    "BlackCentaur",
+    "BlackMetalDragon",
+    "DarkScorpion",
+    "DarkScorpion_Ground"
+   ]
+  },
+  {
+   "name": "NoiseTex",
+   "slots": 12,
+   "read": false,
+   "examples": [
+    "BlackPuppy",
+    "BlackPuppy_Ice",
+    "DreamDemon",
+    "FlameBambi"
+   ]
+  },
+  {
+   "name": "BaseColor Mask",
+   "slots": 11,
+   "read": false,
+   "examples": [
+    "YakushimaMonster001",
+    "YakushimaMonster001_Blue",
+    "YakushimaMonster001_Pink",
+    "YakushimaMonster001_Purple"
+   ]
+  },
+  {
+   "name": "Base Parallax Map",
+   "slots": 5,
+   "read": false,
+   "examples": [
+    "ElecSnail_Ground",
+    "KingWhale",
+    "MoonQueen",
+    "RockBeast_Ice"
+   ]
+  },
+  {
+   "name": "Bubbles Map",
+   "slots": 5,
+   "read": false,
+   "examples": [
+    "ElecSnail_Ground",
+    "KingWhale",
+    "MoonQueen",
+    "RockBeast_Ice"
+   ]
+  },
+  {
+   "name": "Cracks Map",
+   "slots": 5,
+   "read": false,
+   "examples": [
+    "ElecSnail_Ground",
+    "KingWhale",
+    "MoonQueen",
+    "RockBeast_Ice"
+   ]
+  },
+  {
+   "name": "Mask Map",
+   "slots": 5,
+   "read": false,
+   "examples": [
+    "ElecSnail_Ground",
+    "KingWhale",
+    "MoonQueen",
+    "RockBeast_Ice"
+   ]
+  },
+  {
+   "name": "Crystal Cloud / Animation Mask",
+   "slots": 5,
+   "read": false,
+   "examples": [
+    "ElecSnail_Ground",
+    "KingWhale",
+    "MoonQueen",
+    "RockBeast_Ice"
+   ]
+  },
+  {
+   "name": "Base Color",
+   "slots": 5,
+   "read": true,
+   "examples": [
+    "ElecSnail_Ground",
+    "KingWhale",
+    "MoonQueen",
+    "RockBeast_Ice"
+   ]
+  },
+  {
+   "name": "CubeMap",
+   "slots": 5,
+   "read": false,
+   "examples": [
+    "ElecSnail_Ground",
+    "KingWhale",
+    "MoonQueen",
+    "RockBeast_Ice"
+   ]
+  },
+  {
+   "name": "Metallic(R) Roughness(G) Emissive(B) Thickness (A)",
+   "slots": 4,
+   "read": false,
+   "examples": [
+    "KingWhale",
+    "MoonQueen",
+    "RockBeast_Ice",
+    "ThunderBird_Ice"
+   ]
+  },
+  {
+   "name": "Normal",
+   "slots": 4,
+   "read": true,
+   "examples": [
+    "KingWhale",
+    "MoonQueen",
+    "RockBeast_Ice",
+    "ThunderBird_Ice"
+   ]
+  },
+  {
+   "name": "DetailNormal",
+   "slots": 4,
+   "read": false,
+   "examples": [
+    "KingWhale",
+    "MoonQueen",
+    "RockBeast_Ice",
+    "ThunderBird_Ice"
+   ]
+  },
+  {
+   "name": "Base Color Linear Grayscale",
+   "slots": 4,
+   "read": false,
+   "examples": [
+    "KingWhale",
+    "MoonQueen",
+    "RockBeast_Ice",
+    "ThunderBird_Ice"
+   ]
+  },
+  {
+   "name": "Texture01",
+   "slots": 3,
+   "read": false,
+   "examples": [
+    "BlueThunderHorse",
+    "Manticore"
+   ]
+  },
+  {
+   "name": "Texture02",
+   "slots": 3,
+   "read": false,
+   "examples": [
+    "BlueThunderHorse",
+    "Manticore"
+   ]
+  },
+  {
+   "name": "TextureDistortion",
+   "slots": 3,
+   "read": false,
+   "examples": [
+    "BlueThunderHorse",
+    "Manticore"
+   ]
+  },
+  {
+   "name": "Transparency Mask",
+   "slots": 3,
+   "read": false,
+   "examples": [
+    "HerculesBeetle",
+    "HerculesBeetle_Ground",
+    "YakushimaBoss002"
+   ]
+  },
+  {
+   "name": "SubTex",
+   "slots": 2,
+   "read": false,
+   "examples": [
+    "NightLady",
+    "NightLady_Pink"
+   ]
+  },
+  {
+   "name": "Tangent Texture",
+   "slots": 1,
+   "read": false,
+   "examples": [
+    "GhostBlackCat"
+   ]
+  },
+  {
+   "name": "TextureDissolve",
+   "slots": 1,
+   "read": false,
+   "examples": [
+    "Manticore"
+   ]
+  }
+ ],
+ "scalarParams": [
+  {
+   "name": "RefractionDepthBias",
+   "slots": 842,
+   "read": false
+  },
+  {
+   "name": "Specular",
+   "slots": 763,
+   "read": false
+  },
+  {
+   "name": "Character CameraFade Start Bias",
+   "slots": 760,
+   "read": false
+  },
+  {
+   "name": "Contrast",
+   "slots": 749,
+   "read": false
+  },
+  {
+   "name": "Value",
+   "slots": 747,
+   "read": false
+  },
+  {
+   "name": "Roughness Add",
+   "slots": 404,
+   "read": false
+  },
+  {
+   "name": "Character CameraFade Distance",
+   "slots": 399,
+   "read": false
+  },
+  {
+   "name": "Fresnel Exponent",
+   "slots": 399,
+   "read": false
+  },
+  {
+   "name": "Fresnel Fraction",
+   "slots": 396,
+   "read": false
+  },
+  {
+   "name": "POM Height",
+   "slots": 365,
+   "read": false
+  },
+  {
+   "name": "Emissive Texture Intensity",
+   "slots": 127,
+   "read": false
+  },
+  {
+   "name": "Desaturation",
+   "slots": 96,
+   "read": false
+  },
+  {
+   "name": "Normal Map Intensity",
+   "slots": 90,
+   "read": false
+  },
+  {
+   "name": "Metallic Add",
+   "slots": 81,
+   "read": false
+  },
+  {
+   "name": "Jewel Refract Color Power",
+   "slots": 41,
+   "read": false
+  },
+  {
+   "name": "Jewel Refract Color Rate",
+   "slots": 41,
+   "read": false
+  },
+  {
+   "name": "Jewel Refraction",
+   "slots": 41,
+   "read": false
+  },
+  {
+   "name": "Jewel Opacity",
+   "slots": 36,
+   "read": false
+  },
+  {
+   "name": "midPoint",
+   "slots": 33,
+   "read": false
+  },
+  {
+   "name": "rootColor",
+   "slots": 33,
+   "read": false
+  },
+  {
+   "name": "MainUTilling",
+   "slots": 33,
+   "read": false
+  },
+  {
+   "name": "alpha",
+   "slots": 32,
+   "read": false
+  },
+  {
+   "name": "alphaEdge",
+   "slots": 32,
+   "read": false
+  },
+  {
+   "name": "OffsetScale",
+   "slots": 32,
+   "read": false
+  },
+  {
+   "name": "vertexRoot",
+   "slots": 32,
+   "read": false
+  },
+  {
+   "name": "rgbMax",
+   "slots": 30,
+   "read": false
+  },
+  {
+   "name": "rgbMin",
+   "slots": 30,
+   "read": false
+  },
+  {
+   "name": "Saturation",
+   "slots": 30,
+   "read": false
+  },
+  {
+   "name": "MainVSpeed",
+   "slots": 22,
+   "read": false
+  },
+  {
+   "name": "rootAlpha",
+   "slots": 18,
+   "read": false
+  },
+  {
+   "name": "MainVTilling",
+   "slots": 14,
+   "read": false
+  },
+  {
+   "name": "DistortionScale",
+   "slots": 13,
+   "read": false
+  },
+  {
+   "name": "Roughness",
+   "slots": 13,
+   "read": false
+  },
+  {
+   "name": "Light Affect Subsurface Min",
+   "slots": 12,
+   "read": false
+  },
+  {
+   "name": "rgbFresnelPower",
+   "slots": 12,
+   "read": false
+  },
+  {
+   "name": "MainUSpeed",
+   "slots": 11,
+   "read": false
+  },
+  {
+   "name": "NoiseUTilling",
+   "slots": 11,
+   "read": false
+  },
+  {
+   "name": "Cycle Speed",
+   "slots": 9,
+   "read": false
+  },
+  {
+   "name": "Emissive Intensity Max",
+   "slots": 9,
+   "read": false
+  },
+  {
+   "name": "Metallic",
+   "slots": 9,
+   "read": false
+  },
+  {
+   "name": "NoiseUSpeed",
+   "slots": 9,
+   "read": false
+  },
+  {
+   "name": "NoiseVSpeed",
+   "slots": 9,
+   "read": false
+  },
+  {
+   "name": "Metallic Mul",
+   "slots": 9,
+   "read": false
+  },
+  {
+   "name": "Light Affect Emissive Max",
+   "slots": 8,
+   "read": false
+  },
+  {
+   "name": "Emissive Intensity Min",
+   "slots": 8,
+   "read": false
+  },
+  {
+   "name": "Roughness Mul",
+   "slots": 8,
+   "read": false
+  },
+  {
+   "name": "Masked BaseColor Saturation",
+   "slots": 8,
+   "read": false
+  },
+  {
+   "name": "Masked BaseColor Brightness",
+   "slots": 8,
+   "read": false
+  },
+  {
+   "name": "Occlusion Add",
+   "slots": 7,
+   "read": false
+  },
+  {
+   "name": "vertexOffsetScale",
+   "slots": 7,
+   "read": false
+  },
+  {
+   "name": "fadeAlpha",
+   "slots": 7,
+   "read": false
+  },
+  {
+   "name": "Masked BaseColor Hue",
+   "slots": 7,
+   "read": false
+  },
+  {
+   "name": "Base Color Intensity",
+   "slots": 6,
+   "read": false
+  },
+  {
+   "name": "Light Affect Emissive Min",
+   "slots": 6,
+   "read": false
+  },
+  {
+   "name": "MaskScaleV",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "RGBMin",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "RGBMax",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Color Emissive Multiplier",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Parallax Emissive Multiplier",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Detail Normal Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Detail Normal Tiling",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Color Diffuse Multiplier",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Color HueShift",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Rim Color Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Rim Color Position",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Rim Color Falloff",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Rim Color Hue Shift",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Rim Color Shadow Mask Treshold",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Rim Color Normal Map Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Rim Color Detail Normal Map Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Bottom Base Color Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Bottom Emissive Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Bottom Color Hue Shift",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Top Base Color Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Top Emissive Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Top Color Hue Shift",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Map Position",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Map Falloff",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Reference Plane",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Height Ratio",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Min Steps",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Max Steps",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Dithering",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Map Tiling",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Bottom Minimum Base Color Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Bottom Minimum Emissive Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Top Minimum Base Color Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Top Minimum Emissive Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Animation Map Speed",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Animation Map Tiling",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Animation Map Position",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Animation Map Falloff",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Bubbles Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Bubbles Hue Shift",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Bubbles Map Position",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Bubbles Map Falloff",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Bubbles Reference Plane",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Bubbles Height Ratio",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Bubbles Min Steps",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Bubbles Max Steps",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Bubbles Dithering",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Bubbles Map Tiling",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Bubbles Minimum Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Bubbles Animation Map Speed",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Bubbles Animation Map Tiling",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Bubbles Animation Map Position",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Bubbles Animation Map Falloff",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cracks Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cracks Hue Shift",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cracks Map Position",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cracks Map Falloff",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cracks Reference Plane",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cracks Height Ratio",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cracks Min Steps",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cracks Max Steps",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cracks Dithering",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cracks Map Tiling",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cracks Minimum Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cracks Animation Map Speed",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cracks Animation Map Tiling",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cracks Animation Map Position",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cracks Animation Map Falloff",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Color Intensity Red Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Hue Shift Red Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Position Red Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Falloff Red Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Tiling Red Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Speed Red Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Speed Offset Red Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Reference Plane Red Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Height Ratio Red Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Color Intensity Green Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Hue Shift Green Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Position Green Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Falloff Green Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Tiling Green Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Speed Green Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Speed Offset Green Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Reference Plane Green Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Height Ratio Green Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Color Intensity Blue Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Hue Shift Blue Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Position Blue Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Falloff Blue Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Tiling Blue Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Speed Blue Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Speed Offset Blue Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Reference Plane Blue Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cloud Height Ratio Blue Channel",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cube Map Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cube Map Hue Shift",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cube Map Normal Map Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cube Map Detail Normal Map Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Emissive Map Color Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Emissive Map Hue Shift",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Emissive Map Position",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Emissive Map Falloff",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Emissive Map Minimum Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Emissive Animation Map Speed",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Emissive Animation Map Tiling",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Emissive Animation Map Position",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Emissive Animation Map Falloff",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "SSS Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "SSS Position",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "SSS Falloff",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "SSS Hue Shift",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Thickness Map Mask",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Thickness Map Position",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Thickness Map Falloff",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "SSS Normal Map Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "SSS Detail Normal Map Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Emissive Master Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Mask Fresnel Position",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Mask Fresnel Falloff",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Mask Fresnel Normal Map Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Mask Fresnel Detail Normal Map Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Mask Map Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Mask Map Position",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Mask Map Falloff",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Mask Map Tiling",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Mask Fresnel Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Rim Light Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Rim Light Position",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Rim Light Falloff",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Rim Light Hue Shift",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Rim Light Shadow Mask Treshold",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Rim Light Normal Map Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Rim Light Detail Normal Map Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Specular Intensity",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Specular Position",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Specular Falloff",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Specular Hue Shift",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Specular Normal Map Intenisty",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Specular Detail Normal Map Intenisty",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "noiseVSpeed",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Light Affect Emissive Intensity",
+   "slots": 4,
+   "read": false
+  },
+  {
+   "name": "vertexOffset",
+   "slots": 4,
+   "read": false
+  },
+  {
+   "name": "Transparency",
+   "slots": 4,
+   "read": false
+  },
+  {
+   "name": "Curve",
+   "slots": 4,
+   "read": false
+  },
+  {
+   "name": "vertexMaskRate",
+   "slots": 4,
+   "read": false
+  },
+  {
+   "name": "fresnelPower",
+   "slots": 4,
+   "read": false
+  },
+  {
+   "name": "MaskScaleU",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "FresnelScale",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "SoftEdge",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "AlphaMin",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "AlphaMax",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "RGBScale01",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "AlphaScale01",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "OffsetU_01",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "OffsetV_01",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "ScrollingU_01",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "ScrollingV_01",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "TilingU_01",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "TilingV_01",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "DistortionScaleU_01",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "DistortionScaleV_01",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "RGBScale02",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "AlphaScale02",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "OffsetU_02",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "OffsetV_02",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "ScrollingU_02",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "ScrollingV_02",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "TilingU_02",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "TilingV_02",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "DistortionScaleU_02",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "DistortionScaleV_02",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "DistortionScrollingU",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "DistortionScrollingV",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "DistortionTilingU",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "DistortionTilingV",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "MaterialLayerBlend Rate",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "Jewel Metallic",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "Jewel Roughness",
+   "slots": 3,
+   "read": false
+  },
+  {
+   "name": "CameraFadeStart",
+   "slots": 2,
+   "read": false
+  },
+  {
+   "name": "CameraFadeEnd",
+   "slots": 2,
+   "read": false
+  },
+  {
+   "name": "DissolveScale",
+   "slots": 2,
+   "read": false
+  },
+  {
+   "name": "DissolveTillingU",
+   "slots": 2,
+   "read": false
+  },
+  {
+   "name": "DissolveTillingV",
+   "slots": 2,
+   "read": false
+  },
+  {
+   "name": "ScrollingDissolve_U",
+   "slots": 2,
+   "read": false
+  },
+  {
+   "name": "HeightWave",
+   "slots": 2,
+   "read": false
+  },
+  {
+   "name": "WPO_Scale",
+   "slots": 2,
+   "read": false
+  },
+  {
+   "name": "WPO_Speed",
+   "slots": 2,
+   "read": false
+  },
+  {
+   "name": "RGBScale",
+   "slots": 2,
+   "read": false
+  },
+  {
+   "name": "CorealphaMin",
+   "slots": 2,
+   "read": false
+  },
+  {
+   "name": "CorealphaMax",
+   "slots": 2,
+   "read": false
+  },
+  {
+   "name": "noiseUTilling",
+   "slots": 2,
+   "read": false
+  },
+  {
+   "name": "noiseVTilling",
+   "slots": 2,
+   "read": false
+  },
+  {
+   "name": "SubTexUTilling",
+   "slots": 2,
+   "read": false
+  },
+  {
+   "name": "SubTexVSpeed",
+   "slots": 2,
+   "read": false
+  },
+  {
+   "name": "SubTexDistortion",
+   "slots": 2,
+   "read": false
+  },
+  {
+   "name": "Occlusion",
+   "slots": 2,
+   "read": false
+  },
+  {
+   "name": "mainVScroll",
+   "slots": 2,
+   "read": false
+  },
+  {
+   "name": "Rainbow Speed",
+   "slots": 2,
+   "read": false
+  },
+  {
+   "name": "Tex01_V_Clamp",
+   "slots": 1,
+   "read": false
+  },
+  {
+   "name": "Base Emissive Output Intensity",
+   "slots": 1,
+   "read": false
+  },
+  {
+   "name": "NoiseVTilling",
+   "slots": 1,
+   "read": false
+  },
+  {
+   "name": "Anisotropy",
+   "slots": 1,
+   "read": false
+  },
+  {
+   "name": "Tangent Texture Strength",
+   "slots": 1,
+   "read": false
+  },
+  {
+   "name": "TimeScale",
+   "slots": 1,
+   "read": false
+  },
+  {
+   "name": "Refract",
+   "slots": 1,
+   "read": false
+  },
+  {
+   "name": "Refraction Fresnel Power",
+   "slots": 1,
+   "read": false
+  },
+  {
+   "name": "DistortionOffsetV",
+   "slots": 1,
+   "read": false
+  },
+  {
+   "name": "ScrollingDissolve_V",
+   "slots": 1,
+   "read": false
+  },
+  {
+   "name": "Base Emissive Intensity",
+   "slots": 1,
+   "read": false
+  },
+  {
+   "name": "Occlusion Mul",
+   "slots": 1,
+   "read": false
+  },
+  {
+   "name": "Light Affect Subsurface Max",
+   "slots": 1,
+   "read": false
+  }
+ ],
+ "vectorParams": [
+  {
+   "name": "Fresnel Emissive Color",
+   "slots": 399,
+   "read": false
+  },
+  {
+   "name": "Subsurface Color",
+   "slots": 270,
+   "read": false
+  },
+  {
+   "name": "BaseColor",
+   "slots": 156,
+   "read": false
+  },
+  {
+   "name": "UVOffset0",
+   "slots": 59,
+   "read": false
+  },
+  {
+   "name": "Color1",
+   "slots": 33,
+   "read": false
+  },
+  {
+   "name": "Color3",
+   "slots": 33,
+   "read": false
+  },
+  {
+   "name": "Color2",
+   "slots": 32,
+   "read": false
+  },
+  {
+   "name": "UVOffset1",
+   "slots": 19,
+   "read": false
+  },
+  {
+   "name": "UV Scale",
+   "slots": 17,
+   "read": false
+  },
+  {
+   "name": "FresnelColor",
+   "slots": 14,
+   "read": false
+  },
+  {
+   "name": "fresnelColor",
+   "slots": 9,
+   "read": false
+  },
+  {
+   "name": "Color01",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Color02",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Rim Color on Base Color",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Bottom Emissive Color",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Base Top Emissive Color",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Cracks Emissive Color",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Crystal Cloud Green Channel Color",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "CubeMap Color",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Emissive Color",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "SSS Color",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Rim Light Color",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Specular Color",
+   "slots": 5,
+   "read": false
+  },
+  {
+   "name": "Color",
+   "slots": 4,
+   "read": false
+  },
+  {
+   "name": "SubsurfaceColor",
+   "slots": 4,
+   "read": false
+  },
+  {
+   "name": "BaseColor Backface",
+   "slots": 2,
+   "read": false
+  },
+  {
+   "name": "Hue",
+   "slots": 1,
+   "read": false
+  },
+  {
+   "name": "EmissionCorrectionByTime",
+   "slots": 1,
+   "read": false
+  }
+ ]
+}
