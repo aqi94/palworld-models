@@ -107,6 +107,31 @@ def cmd_convert(args) -> None:
     build_index(args.out)
 
 
+CATEGORY_LABELS = {"pals": "Pals", "weapons": "Weapons", "humans": "Humans", "furniture": "Furniture", "other": "Other"}
+SUB_LABELS = {"pals": "Pals", "skins": "Skins", "special": "Special", "held": "Held items"}
+
+
+def categorize_model(kind: str, mid: str, extras: dict) -> tuple[str, str | None]:
+    """(category, subcategory) of a model. Categories are the viewer's top-level tabs (new asset kinds add one here)."""
+    if kind == "pal":
+        return "pals", "skins" if extras.get("skin") else "pals" if extras.get("dex") else "special"
+    if kind == "object":
+        return ("weapons", "held") if mid.startswith("Weapon_") else ("other", None)
+    return {"human": "humans", "furniture": "furniture"}.get(kind, "other"), None
+
+
+def category_tree(models: list[dict]) -> list[dict]:
+    tree: dict[str, dict] = {}
+    for m in models:
+        c = tree.setdefault(m["category"], {"id": m["category"], "label": CATEGORY_LABELS.get(m["category"], m["category"]), "count": 0, "subs": {}})
+        c["count"] += 1
+        if m.get("subcategory"):
+            sc = c["subs"].setdefault(m["subcategory"], {"id": m["subcategory"], "label": SUB_LABELS.get(m["subcategory"], m["subcategory"]), "count": 0})
+            sc["count"] += 1
+    order = list(CATEGORY_LABELS)
+    return [{**c, "subs": list(c["subs"].values())} for c in sorted(tree.values(), key=lambda c: order.index(c["id"]) if c["id"] in order else 99)]
+
+
 def build_index(out_root: str) -> dict:
     models = []
     for game in sorted(os.listdir(out_root)):
@@ -119,9 +144,12 @@ def build_index(out_root: str) -> dict:
                 continue
             with open(mp, encoding="utf-8") as f:
                 m = json.load(f)
+            cat, sub = categorize_model(m["kind"], m["id"], m.get("extras", {}))
             models.append(
                 {
                     "game": m["game"],
+                    "category": cat,
+                    "subcategory": sub,
                     "id": m["id"],
                     "kind": m["kind"],
                     "displayName": m["displayName"],
@@ -144,7 +172,7 @@ def build_index(out_root: str) -> dict:
     models.sort(key=lambda m: (m["game"], m["dex"] is None, m["dex"] or 0, m.get("dexSuffix") or "", m.get("skin") or "", m["id"]))
     names = {"palworld": "Palworld"}
     games = {g: names.get(g, g) for g in names if any(m["game"] == g for m in models)}
-    index = {"indexVersion": 1, "games": games, "models": models}
+    index = {"indexVersion": 2, "games": games, "models": models}
     with open(os.path.join(out_root, "index.json"), "w", encoding="utf-8") as f:
         json.dump(index, f, ensure_ascii=False, indent=1)
     # Per-game indexes + a tiny games list: the viewer loads only the game (domain) being viewed.
@@ -152,7 +180,7 @@ def build_index(out_root: str) -> dict:
     for g, name in games.items():
         gm = [m for m in models if m["game"] == g]
         with open(os.path.join(out_root, g, "index.json"), "w", encoding="utf-8") as f:
-            json.dump({"indexVersion": 1, "game": g, "name": name, "models": gm}, f, ensure_ascii=False)
+            json.dump({"indexVersion": 2, "game": g, "name": name, "categories": category_tree(gm), "models": gm}, f, ensure_ascii=False)
         kinds = {}
         for m in gm:
             kinds[m["kind"]] = kinds.get(m["kind"], 0) + 1

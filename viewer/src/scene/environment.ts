@@ -83,6 +83,13 @@ export const LIGHTING_PRESETS: LightingPreset[] = [
   // Uncalibrated looks (not fitted to Palworld screenshots): a bright outdoor day and a warm evening.
   p('daylight', 'Daylight', { ambient: 2.2, key: 1.6, azimuth: -35, elevation: 50, keyTemp: 5800, skyTemp: 7500, shadow: 0.5 }),
   p('evening', 'Evening', { ambient: 1.4, key: 1.3, azimuth: 60, elevation: 12, keyTemp: 3200, skyTemp: 8000, back: 0.6, backTemp: 9000, shadow: 0.7 }),
+  // Raid boss arena: colours from BP_RaidBossLightingVolume (LightColor #694163, LightAlbedo #B150B3, SkyLightIntensity 0.2 vs the
+  // normal volume's 1.4); the Yakushima boss variant swaps LightColor to #4C7953. Intensities are eyeballed.
+  p('raid-boss', 'Raid boss (purple)', { ambient: 0.6, key: 1.4, azimuth: -30, elevation: 30, keyColor: '#B150B3', skyColor: '#694163', back: 0.8, backColor: '#B150B3', shadow: 0.8 }, 'Palworld'),
+  p('raid-boss-green', 'Raid boss (green)', { ambient: 0.6, key: 1.4, azimuth: -30, elevation: 30, keyColor: '#6FB87A', skyColor: '#4C7953', back: 0.8, backColor: '#6FB87A', shadow: 0.8 }, 'Palworld'),
+  // Uncalibrated: the time-of-day curve and the Forbidden Laboratory fight's red light live in level data / plugin code that is not extracted.
+  p('night', 'Night (moonlit)', { ambient: 0.45, key: 0.55, azimuth: -40, elevation: 45, keyTemp: 4100, skyTemp: 12000, back: 0.3, backTemp: 9000, shadow: 0.8 }),
+  p('red-arena', 'Red arena (approx.)', { ambient: 0.5, key: 1.2, azimuth: -30, elevation: 25, keyColor: '#FF3A1A', skyColor: '#5A1008', back: 1, backColor: '#FF2A10', shadow: 0.8 }),
 ];
 
 const same = (a: unknown, b: unknown) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);

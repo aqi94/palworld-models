@@ -2,6 +2,7 @@
 raw/
 out/
 samples/
+pal_samples/
 refs/_cache/
 *.usmap
 *.uasset
@@ -36,3 +37,4 @@ viewer/dist/
 extractor/**/bin/
 extractor/**/obj/
 *.tsbuildinfo
+*.log

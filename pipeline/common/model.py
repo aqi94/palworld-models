@@ -138,6 +138,7 @@ class Clip:
     category: str = "other"
     group: str = ""  # alternate animation set the clip belongs to ("" = main)
     source: str = ""
+    mount_ok: bool = True  # Palworld: playable on a Pal carrying a rider (see importer.mount_ok)
     # Per-mesh visibility keys: mesh name -> list of (frame, visible). Meshes
     # absent from the dict keep their rest visibility during this clip.
     visibility: dict[str, list[tuple[int, bool]]] = field(default_factory=dict)

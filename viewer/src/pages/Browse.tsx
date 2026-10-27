@@ -1,7 +1,8 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { loadGameIndex, modelAsset } from '../data';
 import type { GameIndex } from '../types';
-import { ELEMENT_COLORS, PAL_FILTERS, dexLabel, filterModel, type PalFilter } from '../data/pal';
+import { ELEMENT_COLORS, dexLabel } from '../data/pal';
+import { CategoryFilter, useModelFilter } from '../ui/CategoryFilter';
 import { Disclaimer } from '../ui/Disclaimer';
 const CHUNK = 120;
 
@@ -10,7 +11,6 @@ export function Browse({ game }: { game: string }) {
   const [index, setIndex] = useState<GameIndex | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const [q, setQ] = useState('');
-  const [kind, setKind] = useState<PalFilter>('all');
   const [shown, setShown] = useState(CHUNK);
   const sentinel = useRef<HTMLDivElement>(null);
 
@@ -18,12 +18,10 @@ export function Browse({ game }: { game: string }) {
     loadGameIndex(game).then((i) => { setIndex(i); document.title = `${i.name} Model Viewer`; }).catch((e) => setErr(String(e instanceof Error ? e.message : e)));
   }, [game]);
 
-  const models = useMemo(() => {
-    const f = q.trim().toLowerCase();
-    return (index?.models ?? []).filter((m) => filterModel(m, kind, f));
-  }, [index, q, kind]);
+  const filter = useModelFilter(index, q);
+  const models = filter.models;
 
-  useEffect(() => setShown(CHUNK), [q, kind, game]);
+  useEffect(() => setShown(CHUNK), [q, filter.category, filter.sub, game]);
   useEffect(() => {
     const el = sentinel.current;
     if (!el) return;
@@ -37,11 +35,7 @@ export function Browse({ game }: { game: string }) {
       <header>
         <h1>{index?.name ?? game} Model Viewer</h1>
         <input className="text" placeholder="Search name, code name, #dex or element..." value={q} onChange={(e) => setQ(e.target.value)} />
-        <div className="tabs">
-          {PAL_FILTERS.map(([k, label]) => (
-            <button key={k} className={'btn small' + (kind === k ? ' primary' : '')} onClick={() => setKind(k)}>{label}</button>
-          ))}
-        </div>
+        <div className="tabs"><CategoryFilter f={filter} /></div>
       </header>
       {err && <div className="overlay err">{err}</div>}
       <div className="grid">

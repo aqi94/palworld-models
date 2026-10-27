@@ -34,6 +34,10 @@ COMPONENT = {
 TYPES = {1: "SCALAR", 2: "VEC2", 3: "VEC3", 4: "VEC4", 16: "MAT4"}
 
 
+# Effect-shader parameter blocks whose {"texture": key} entries become glTF texture references (Palworld fire / dream).
+EFFECT_EXTRAS = ("fire", "dream", "vfx2")
+
+
 @dataclass
 class _Builder:
     json: dict
@@ -270,7 +274,7 @@ def write_glb(model: Model, path: str) -> dict:
             gm.setdefault("extensions", {})["KHR_materials_clearcoat"] = ext
             if "KHR_materials_clearcoat" not in g["extensionsUsed"]:
                 g["extensionsUsed"].append("KHR_materials_clearcoat")
-        for fk in [k for k in extras if k.startswith("field") and isinstance(extras[k], dict)]:
+        for fk in [k for k in extras if (k.startswith("field") or k in EFFECT_EXTRAS) and isinstance(extras[k], dict)]:
             # Extra layer recipes (LGPE field shaders: fieldBlend / fieldRamp / fieldWater): every {"texture": key, "uv": n}
             # becomes a glTF texture reference {"index", "texCoord", "name"} (the image is stored like any other texture).
             extras[fk] = field_refs(extras[fk])
@@ -349,7 +353,8 @@ def write_glb(model: Model, path: str) -> dict:
             targets = [{"POSITION": b.add_accessor(d, 34962, minmax=True, dtype=np.float32)} for d in p.morph_targets]
             prim = {
                 "attributes": attrs,
-                "indices": b.add_accessor(p.indices, 34963, dtype=idx_dtype),
+                # glTF indices are SCALAR: a (n, 3) array would become a VEC3 accessor that viewers read as n indices
+                "indices": b.add_accessor(np.ravel(p.indices), 34963, dtype=idx_dtype),
                 "mode": 4,
                 "material": material(model.materials[p.material], None),
             }

@@ -50,14 +50,14 @@ export function ensureOutlineNormals(geo: THREE.BufferGeometry): boolean {
   return true;
 }
 
-export function makeOutlineMaterial(src: THREE.MeshStandardMaterial, color: string, tinted: boolean): THREE.MeshBasicMaterial {
+export function makeOutlineMaterial(src: THREE.MeshStandardMaterial, color: string, tinted: boolean, uniform: { value: THREE.Vector3 } = outlineUniform): THREE.MeshBasicMaterial {
   const cut = src.alphaTest > 0 && !!src.map;
   const mat = new THREE.MeshBasicMaterial({
     color: tinted ? src.color.clone().multiplyScalar(TINT_DARKNESS) : color, side: THREE.BackSide, alphaTest: cut ? src.alphaTest : 0, map: cut || tinted ? src.map : null,
     polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1, toneMapped: false,
   });
   mat.onBeforeCompile = (shader) => {
-    shader.uniforms.uOutline = outlineUniform;
+    shader.uniforms.uOutline = uniform;
     shader.vertexShader = shader.vertexShader
       .replace('void main() {', 'attribute vec3 outlineNormal;\nuniform vec3 uOutline;\nvoid main() {')
       .replace('#include <project_vertex>', `#include <project_vertex>
@@ -70,7 +70,7 @@ export function makeOutlineMaterial(src: THREE.MeshStandardMaterial, color: stri
         vec2 oD = (projectionMatrix * vec4(normalize(normalMatrix * oN), 0.0)).xy * uOutline.yz;
         if (dot(oD, oD) > 1e-12) gl_Position.xy += normalize(oD) * (2.0 * uOutline.x) / uOutline.yz * gl_Position.w;`);
   };
-  mat.customProgramCacheKey = () => 'outline' + (cut ? '|cut' : '');
+  mat.customProgramCacheKey = () => 'outline' + (cut ? '|cut' : '') + (uniform === outlineUniform ? '' : '|own');
   return mat;
 }
 
@@ -97,4 +97,59 @@ export function makeOutlineMesh(m: THREE.Mesh, color: string, tinted: boolean): 
   p.renderOrder = m.renderOrder;
   p.raycast = () => {};
   return p;
+}
+
+/**
+ * Glow shell the game's BP adds at runtime (manifest `extras.auras`, Enchanted Sword's cyan outline): the hull above on its own width
+ * uniform, additive and unlit, pulsed by the Pal's emissive-time curve (`pulse` is driven by the scene clock).
+ */
+export interface AuraInfo { color: number[]; intensity: number; width: number; curve: number[][] }
+// FITTED: the game's shell is a 2 px outline under bloom; a few widening, fading hulls stand in for the bloom
+const AURA_LAYERS = [{ w: 1, o: 1 }, { w: 3, o: 0.45 }, { w: 6, o: 0.2 }, { w: 10, o: 0.1 }];
+export interface Aura { info: AuraInfo; uniforms: { value: THREE.Vector3 }[]; mats: { mat: THREE.MeshBasicMaterial; o: number }[]; meshes: THREE.Mesh[] }
+
+export function makeAura(root: THREE.Object3D, info: AuraInfo): Aura {
+  const aura: Aura = { info, uniforms: AURA_LAYERS.map(() => ({ value: new THREE.Vector3(info.width, 1, 1) })), mats: [], meshes: [] };
+  const targets: THREE.Mesh[] = [];
+  root.traverse((o) => { const m = o as THREE.Mesh; if (m.isMesh && !m.userData.outline) targets.push(m); });
+  for (const m of targets) {
+    const srcs = ([] as THREE.Material[]).concat(m.material);
+    if (!srcs.some((s) => (s as THREE.MeshStandardMaterial).isMeshStandardMaterial) || !ensureOutlineNormals(m.geometry)) continue;
+    AURA_LAYERS.forEach((layer, li) => {
+      const mats = srcs.map((s) => {
+        const sm = s as THREE.MeshStandardMaterial;
+        if (!sm.isMeshStandardMaterial || sm.transparent) { const hide = new THREE.MeshBasicMaterial(); hide.visible = false; return hide; }
+        const mat = makeOutlineMaterial(sm, '#ffffff', false, aura.uniforms[li]);
+        mat.color.setRGB(info.color[0] * info.intensity, info.color[1] * info.intensity, info.color[2] * info.intensity);
+        mat.transparent = true; mat.blending = THREE.AdditiveBlending; mat.depthWrite = false;
+        mat.alphaTest = 0; mat.map = null; // a silhouette shell: the cut-out albedo would eat the wider layers
+        aura.mats.push({ mat, o: layer.o });
+        return mat;
+      });
+      const p = makeOutlineMesh(m, '#ffffff', false);
+      if (!p) return;
+      p.material = Array.isArray(m.material) ? mats : mats[0];
+      p.userData.outline = true; p.userData.aura = true;
+      p.renderOrder = m.renderOrder + 1;
+      m.add(p);
+      aura.meshes.push(p);
+    });
+  }
+  return aura;
+}
+
+/** Brightness 0.3..1 along the curve (time wraps at its last key): the hold at the peak is the glow's steady state. */
+export function pulseAura(a: Aura, t: number, bufW: number, bufH: number) {
+  const c = a.info.curve;
+  let k = 1;
+  if (c.length > 1) {
+    const T = c[c.length - 1][0] || 1, tt = t % T;
+    let v = c[c.length - 1][1];
+    for (let i = 1; i < c.length; i++) if (tt <= c[i][0]) { const [t0, v0] = c[i - 1], [t1, v1] = c[i]; v = v0 + (v1 - v0) * (t1 > t0 ? (tt - t0) / (t1 - t0) : 1); break; }
+    const hi = Math.max(...c.map((x) => x[1])), lo = Math.min(...c.map((x) => x[1]));
+    k = hi > lo ? (v - lo) / (hi - lo) : 1;
+  }
+  const o = 0.3 + 0.7 * k;
+  for (const { mat, o: lo } of a.mats) mat.opacity = o * lo;
+  a.uniforms.forEach((u, i) => u.value.set(a.info.width * AURA_LAYERS[i].w * bufH / REF_HEIGHT, bufW, bufH));
 }

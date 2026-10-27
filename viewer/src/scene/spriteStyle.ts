@@ -229,13 +229,19 @@ export class SpritePass {
 export function frameBounds(f: SpriteFrame): { x0: number; y0: number; x1: number; y1: number } | null {
   let x0 = f.width, y0 = f.height, x1 = -1, y1 = -1;
   for (let y = 0; y < f.height; y++) for (let x = 0; x < f.width; x++) {
-    if (f.data[(y * f.width + x) * 4 + 3] < 128) continue;
+    if (f.data[(y * f.width + x) * 4 + 3] < GIF_MIN_ALPHA) continue;
     if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y;
   }
   return x1 < 0 ? null : { x0, y0, x1, y1 };
 }
 
-export interface GifOptions { colors: number; delayMs: number }
+export interface GifOptions { colors: number; delayMs: number; /** Stipple pixels with alpha 8..127 (translucent parts) instead of dropping them. */ dither?: boolean }
+
+/** GIF transparency is 1-bit: alpha >= 128 is opaque; fainter (translucent materials) is stippled by a 4x4 Bayer matrix. */
+const GIF_MIN_ALPHA = 8;
+const BAYER4 = [0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5];
+const gifOpaque = (a: number, x: number, y: number, dither: boolean) =>
+  a >= 128 || (dither && a >= GIF_MIN_ALPHA && a * 16 > 128 * (BAYER4[(y & 3) * 4 + (x & 3)] + 0.5));
 
 /**
  * Animated GIF from same-size frames: cropped to the union alpha box (+1 px), one global palette (index 0 =
@@ -257,12 +263,12 @@ export function encodeSpriteGif(frames: SpriteFrame[], o: GifOptions): Blob {
 
   // Opaque pixels of every frame (strided if huge) feed the quantiser.
   let opaque = 0;
-  for (const f of frames) for (let i = 3; i < f.data.length; i += 4) if (f.data[i] >= 128) opaque++;
+  for (const f of frames) for (let i = 3; i < f.data.length; i += 4) if (f.data[i] >= GIF_MIN_ALPHA) opaque++;
   const stride = Math.max(1, Math.ceil(opaque / 2_000_000));
   const sample = new Uint8Array(Math.max(1, Math.ceil(opaque / stride)) * 4);
   let n = 0, k = 0;
   for (const f of frames) for (let i = 0; i < f.data.length; i += 4) {
-    if (f.data[i + 3] < 128) continue;
+    if (f.data[i + 3] < GIF_MIN_ALPHA) continue;
     if (k++ % stride) continue;
     sample[n * 4] = f.data[i]; sample[n * 4 + 1] = f.data[i + 1]; sample[n * 4 + 2] = f.data[i + 2]; sample[n * 4 + 3] = 255; n++;
   }
@@ -291,7 +297,7 @@ export function encodeSpriteGif(frames: SpriteFrame[], o: GifOptions): Blob {
     const index = new Uint8Array(cw * ch);
     for (let y = 0; y < ch; y++) for (let x = 0; x < cw; x++) {
       const s = ((by0 + y) * W + bx0 + x) * 4;
-      index[y * cw + x] = f.data[s + 3] < 128 ? 0 : nearest(f.data[s], f.data[s + 1], f.data[s + 2]);
+      index[y * cw + x] = !gifOpaque(f.data[s + 3], bx0 + x, by0 + y, o.dither !== false) ? 0 : nearest(f.data[s], f.data[s + 1], f.data[s + 2]);
     }
     gif.writeFrame(index, cw, ch, { palette, delay: o.delayMs, transparent: true, transparentIndex: 0, dispose: 2, repeat: 0 });
   }

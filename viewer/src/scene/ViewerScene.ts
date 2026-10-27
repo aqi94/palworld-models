@@ -1,8 +1,10 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import type { GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import type { Manifest, PropInfo } from '../types';
+import { SpringBones } from './springBones';
+import type { ClipInfo, ClipPair, Manifest, PropInfo } from '../types';
 import { AnimationController, type PlaybackState } from './animation';
+import { bossAt, layoutPair, pairForPalClip, palAt, type PairSeg } from './clipPairs';
 import { VariantSwitcher } from './variants';
 import { loadGlb } from './loader';
 import { download, exportCanvasPng } from './exporter';
@@ -18,7 +20,9 @@ import { installGas, setGasTexture, updateGas } from './gas';
 import { installHologram, setHologram, updateHologram, type HoloParams, type HologramState } from './hologram';
 import { COAT_ENV_INTENSITY, installCoatReflection, installEyeHighlight, setEyeHighlightNormal, setEyeHighlightOn } from './eyeHighlight';
 import type { SurfaceAnchor } from './refImage';
-import { DEFAULT_OUTLINE, makeOutlineMesh, updateOutlineUniform, type OutlineState } from './outline';
+import { DEFAULT_OUTLINE, makeAura, makeOutlineMesh, pulseAura, updateOutlineUniform, type Aura, type OutlineState } from './outline';
+import { installFresnel } from './fresnel';
+import { hasEffect, installEffect, setEffectTextures, updateEffect } from './effects';
 import { SpritePass, encodeSpriteGif, type SpriteFrame } from './spriteStyle';
 
 export type ShadingMode = 'game' | 'pbr';
@@ -44,6 +48,8 @@ const TONE_MAPS: Record<ToneMap, THREE.ToneMapping> = {
 };
 
 interface AlbedoState { baked: THREE.Texture | null; color: THREE.Color; raw?: THREE.Texture | null }
+/** An item an attachment holds (its own glTF parser; `clips` null = always shown). */
+interface OwnHeld { obj: THREE.Object3D; parser: GLTF['parser']; clips: Set<string> | null }
 
 export class ViewerScene {
   static THREE = THREE; // for page.evaluate tooling (tools/*.mjs) that needs the viewer's own three instance
@@ -74,6 +80,22 @@ export class ViewerScene {
   private env: Environment = { ...DEFAULT_ENV };
   private texCache = new WeakMap<THREE.Material, Record<string, THREE.Texture | null | 'pending'>>();
   private heldGen = 0;
+  /** A second, animated model sitting on one of this model's bones (a tower boss on its Pal). */
+  private rider?: { obj: THREE.Object3D; anim: AnimationController; url: string; clips: ClipInfo[]; lastPalClip: string | null; springs?: SpringBones; bone: THREE.Object3D; modelRot?: THREE.Quaternion; parser?: GLTF['parser']; items?: OwnHeld[];
+    /** clip pairs (bossRide.pairs): while the Pal plays a paired clip the rider is posed on its boss clip at the matching time */
+    pairs?: ClipPair[]; pairKey?: string | null; segs?: PairSeg[] };
+  /** false once the user picks a rider clip by hand (Auto follows the Pal, through the clip pairs) */
+  riderAuto = true;
+  private riderGen = 0;
+  /** The Pal a boss rides (boss page): the boss stays put and the Pal is posed so its seat bone sits under the boss every frame. */
+  private mount?: { inClip: boolean; obj: THREE.Object3D; anim: AnimationController; url: string; clips: ClipInfo[]; bone: THREE.Object3D; seat: THREE.Matrix4; seatPos: THREE.Vector3; modelRot?: THREE.Quaternion; scale: number; lastBossClip: string | null; parser?: GLTF['parser']; items?: OwnHeld[]; lift?: number;
+    /** clip pairs (mount.pairs); `auto`: a paired boss clip drives the Pal's clips, else `freeClip` plays */
+    pairs?: ClipPair[]; auto: boolean; freeClip: string | null; pairKey?: string | null; segs?: PairSeg[] };
+  private mountGen = 0;
+  private springs?: SpringBones;
+  private modelScale = 1;
+  /** Rider clip to play for a given clip of the mount (null = leave the rider's clip alone); set by the page. */
+  riderClipFor?: (mountClip: string, riderClips: ClipInfo[]) => string | null;
   /** Further held items of the same Pal (a pair of weapons: the second hand's). Same visibility rule as `held`. */
   private extraHeld: { obj: THREE.Object3D; prop: PropInfo; parser?: GLTF['parser'] }[] = [];
   private albedoMode: AlbedoMode = 'baked';
@@ -83,6 +105,8 @@ export class ViewerScene {
   private shadingMode: ShadingMode = 'game';
   /** Gas-shell materials (Gastly smoke) whose cloud map pans with `gasTime` (seconds of unpaused playback). */
   private gasMats = new Set<THREE.MeshStandardMaterial>();
+  /** Effect-shader materials (Palworld fire / dream, effects.ts) on the same clock as the gas. */
+  private fxMats = new Set<THREE.MeshStandardMaterial>();
   gasTime = 0;
   /** Appearance > Hologram (null/off = normal look); materials carrying the patch, for the scroll clock. */
   private hologram: HologramState | null = null;
@@ -91,6 +115,8 @@ export class ViewerScene {
   private pbrLights: THREE.Object3D[] = [];
   private gameLights: THREE.Object3D[] = [];
   private lightFrame = { center: new THREE.Vector3(), radius: 1 };
+  /** Near plane the framing code asked for; each render may push camera.near further out (see fitNearPlane). */
+  private nearBase = 0.01;
 
   private clock = new THREE.Clock();
   private raf = 0;
@@ -166,10 +192,12 @@ export class ViewerScene {
 
     const bufSize = new THREE.Vector2();
     // Hull width follows the target being drawn (the canvas, or the GIF export's render target).
-    this.scene.onBeforeRender = (r) => {
+    this.scene.onBeforeRender = (r, _s, cam) => {
       const rt = r.getRenderTarget();
       if (rt) bufSize.set(rt.width, rt.height); else r.getDrawingBufferSize(bufSize);
       updateOutlineUniform(this.outline.width, bufSize.x, bufSize.y);
+      for (const a of this.auras) pulseAura(a, this.auraTime, bufSize.x, bufSize.y);
+      this.fitNearPlane(cam);
     };
     window.addEventListener('keydown', this.onFlyKey);
     window.addEventListener('keyup', this.onFlyKey);
@@ -230,6 +258,9 @@ export class ViewerScene {
 
     this.applyShading();
     this.anim = new AnimationController(gltf.scene, gltf.animations, manifest.clips);
+    const ph = manifest.extras?.physics;
+    this.springs = ph?.length ? new SpringBones(gltf.scene, ph) : undefined;
+    this.auras = (manifest.extras?.auras ?? []).map((a) => makeAura(gltf.scene, a));
     const start = manifest.defaultClip ?? manifest.clips.find((c) => c.default)?.name ?? manifest.clips[0]?.name;
     this.defaultClipName = start;
     if (start && this.anim.has(start)) this.anim.play(start);
@@ -362,10 +393,32 @@ export class ViewerScene {
   /** Clip planes + zoom limits that follow the camera distance `d` (a narrow FOV puts the camera far away). */
   // FITTED: zoom-out 10x / 20r, far +20r, near 1%, idle planes 0.05d..10d chosen by eye (no data), 2026-10-19 (engine-rules debt)
   private applyLimits(radius: number, d: number) {
-    this.camera.near = Math.min(radius / 100, d * 0.01);
+    this.setNear(Math.min(radius / 100, d * 0.01));
     this.camera.far = Math.max(radius * 100, d + radius * 20);
     this.controls.minDistance = Math.min(radius * 0.3, d * 0.5);
     this.controls.maxDistance = Math.max(radius * 20, d * 10);
+    this.camera.updateProjectionMatrix();
+  }
+
+  private setNear(n: number) {
+    this.nearBase = n;
+    this.camera.near = n;
+  }
+
+  /**
+   * Called before every render of the main scene: move the near plane out to just in front of the model's bounding
+   * sphere (padded for animation), never closer than the framing's own near. A 24-bit depth buffer with near = 1% of
+   * the distance cannot separate layers ~1 mm apart on big models (Astralym's star decals over its body at ~100 m
+   * z-fought like static); the engine has reverse-Z float depth. Only a shadow-only ground lies outside the sphere.
+   */
+  // FITTED: 2x radius padding / half the gap chosen by reasoning (wings and tails swing past the rest-pose sphere), 2026-10-26
+  private fitNearPlane(cam: THREE.Camera) {
+    if (cam !== this.camera) return;
+    const { center, radius } = this.lightFrame;
+    const gap = cam.position.distanceTo(center) - radius * 2;
+    const near = Math.max(this.nearBase, gap * 0.5);
+    if (near === this.camera.near) return;
+    this.camera.near = near;
     this.camera.updateProjectionMatrix();
   }
 
@@ -428,9 +481,338 @@ export class ViewerScene {
     return found;
   }
 
+  /** Attachments (held items and the rider) have their own glTF parser, so shading / albedo / variants must skip them. */
   private isInHeld(o: THREE.Object3D) {
-    for (let p: THREE.Object3D | null = o; p; p = p.parent) if (p === this.held?.obj || this.extraHeld.some((e) => e.obj === p)) return true;
+    for (let p: THREE.Object3D | null = o; p; p = p.parent) if (p === this.held?.obj || p === this.rider?.obj || p === this.mount?.obj || this.extraHeld.some((e) => e.obj === p)) return true;
     return false;
+  }
+
+  /** Put an animated model on a bone of this one (offset in the bone's space, glTF metres / xyzw). `man` supplies the rider's clips.
+   *  The rider keeps its own size when the mount is scaled (see setModelScale). url=null removes it. */
+  async setRider(url: string | null, man: Manifest | null, at: { bone: string; position: number[]; rotation: number[]; rotationSpace?: 'model'; pairs?: ClipPair[] } | null) {
+    const gen = ++this.riderGen;
+    if (!url || !man || !at) { this.clearRider(); return; }
+    let obj = this.rider?.url === url ? this.rider.obj : undefined;
+    let anim = this.rider?.url === url ? this.rider.anim : undefined;
+    let parser = this.rider?.url === url ? this.rider.parser : undefined;
+    if (!obj || !anim) {
+      const g = await loadGlb(url);
+      if (gen !== this.riderGen || this.disposed) { disposeTree(g.scene); return; }
+      this.clearRider();
+      obj = g.scene;
+      parser = g.parser;
+      obj.traverse((o) => {
+        const m = o as THREE.Mesh;
+        if (!m.isMesh) return;
+        m.frustumCulled = false; m.castShadow = true;
+        for (const mat of ([] as THREE.Material[]).concat(m.material)) {
+          if ('envMapIntensity' in mat) (mat as THREE.MeshStandardMaterial).envMapIntensity = 0.2;
+          applyGameBlend(mat);
+        }
+      });
+      for (const p of man.parts) {
+        const n = THREE.PropertyBinding.sanitizeNodeName(p.node);
+        obj.traverse((o) => { if ((o.name === n || o.name === n + '_1') && !(o as THREE.Bone).isBone && p.lod > 0) o.visible = false; });
+      }
+      anim = new AnimationController(obj, g.animations, man.clips);
+    }
+    // a boss whose ride clips carry the seat (extras.seatInClip) sits at the mount's model origin; the others hang from the marker's bone
+    const inClip = !!man.extras?.seatInClip;
+    const bone = inClip ? this.gltf?.scene : this.findBone(at.bone);
+    if (!bone) { console.warn('rider bone not found', at.bone); this.clearRider(); return; }
+    obj.removeFromParent();
+    if (inClip) { obj.position.set(0, 0, 0); obj.quaternion.identity(); } else { obj.position.fromArray(at.position); obj.quaternion.fromArray(at.rotation); }
+    obj.scale.setScalar(1 / this.modelScale);
+    bone.add(obj);
+    const first = this.rider?.url === url ? this.rider.lastPalClip : null;
+    const sbr = man.extras?.physics;
+    const modelRot = !inClip && at.rotationSpace === 'model' ? new THREE.Quaternion().fromArray(at.rotation) : undefined;
+    const reuse = this.rider?.url === url ? this.rider : undefined;
+    const items = reuse ? reuse.items : await this.attachOwnHeld(obj, man);
+    if (gen !== this.riderGen || this.disposed) { if (!reuse) { obj.removeFromParent(); disposeTree(obj); } return; }
+    this.rider = { obj, anim, url, clips: man.clips, lastPalClip: first, bone, modelRot, parser, items, pairs: at.pairs, pairKey: null,
+      springs: reuse ? reuse.springs : sbr?.length ? new SpringBones(obj, sbr) : undefined };
+    this.applyShading();
+    const start = man.defaultClip ?? man.clips[0]?.name;
+    if (!this.rider.anim.current && start && anim.has(start)) anim.play(start);
+    this.syncRiderClip(true);
+    this.root.updateMatrixWorld(true);
+    this.holdRiderRotation();
+    // a buried seat (seatLift): raise the rider along its own up; obj.position is in the bone's space, whose scale is the Pal's
+    this.anim?.update(0); anim.update(0); this.holdRiderRotation();
+    const lift = this.gltf && !inClip ? this.seatLift(this.gltf.scene, obj) : 0; // a seat inside the ride clip was placed by the animators
+    if (lift > 0) obj.position.addScaledVector(new THREE.Vector3(0, 1, 0).applyQuaternion(obj.quaternion), lift / bone.getWorldScale(new THREE.Vector3()).x);
+    this.recenter();
+  }
+
+  /** Model id -> GLB url for held items (set by the page from the game index). */
+  heldUrl?: (itemId: string) => string | null;
+
+  /** An attachment (rider / mount) holds its own items too (manifest heldItems, e.g. Lily's spear): each item goes on the attachment's bone,
+   *  shown in the clips its prop lists (always for `always` props). Items are children of `obj`, so they are disposed with it. */
+  private async attachOwnHeld(obj: THREE.Object3D, man: Manifest): Promise<OwnHeld[]> {
+    const out: OwnHeld[] = [];
+    for (const h of man.heldItems ?? (man.heldItem ? [man.heldItem] : [])) {
+      const url = this.heldUrl?.(h.item);
+      const name = THREE.PropertyBinding.sanitizeNodeName(h.bone);
+      let bone: THREE.Object3D | undefined;
+      obj.traverse((o) => { if (!bone && (o as THREE.Bone).isBone && (o.name === name || o.name === name + '_1')) bone = o; });
+      if (!url || !bone) continue;
+      const g = await loadGlb(url);
+      g.scene.traverse((o) => { const m = o as THREE.Mesh; if (m.isMesh) { m.frustumCulled = false; m.castShadow = true; } });
+      g.scene.position.fromArray(h.position); g.scene.quaternion.fromArray(h.rotation);
+      if (h.scale) g.scene.scale.fromArray(h.scale);
+      bone.add(g.scene);
+      const prop = man.props?.find((p) => p.bone === h.bone);
+      out.push({ obj: g.scene, parser: g.parser, clips: !prop || prop.always || h.always ? null : new Set(prop.clips) });
+    }
+    return out;
+  }
+
+  /** A seat that buries its rider in the mount's body (Snow: BlackGriffon's BossRideMarker track copies spine_03, so Victor's feet land
+   *  in the torso; the intro cutscene ends with him standing on the back): how far to lift the rider, in world metres along its own up,
+   *  so its feet clear the surface. Triggers only when the pelvis is inside the mount (ray parity, majority of 5 rays) and more than
+   *  SEAT_BURIED below its surface: a seated rider's pelvis rests on the surface (Desert: 1 cm). Measured once, in the current pose.
+   *  Only for marker-bone seats: a seat carried by the ride clip (seatInClip: Viking, Sorajima, World Tree) was placed by the animators. */
+  private seatLift(mount: THREE.Object3D, rider: THREE.Object3D): number {
+    const SEAT_BURIED = 0.1;
+    mount.updateMatrixWorld(true); rider.updateMatrixWorld(true);
+    const meshes: THREE.Mesh[] = [];
+    // the mount's own body only: on the Pal page the rider and held items hang inside the Pal's scene
+    mount.traverse((o) => {
+      const m = o as THREE.SkinnedMesh;
+      if (m.isSkinnedMesh && m.visible && !this.inOwnHeld(m, mount) && !(mount === this.gltf?.scene && this.isInHeld(m))) { m.computeBoundingSphere(); meshes.push(m); }
+    });
+    if (!meshes.length) return 0;
+    const sides: [THREE.Material, THREE.Side][] = [];
+    for (const m of meshes) for (const mat of ([] as THREE.Material[]).concat(m.material)) { sides.push([mat, mat.side]); mat.side = THREE.DoubleSide; }
+    const rc = new THREE.Raycaster(); rc.far = 20;
+    const hits = (p: THREE.Vector3, d: THREE.Vector3) => {
+      rc.set(p, d);
+      const ds = rc.intersectObjects(meshes, false).map((h) => h.distance).sort((a, b) => a - b);
+      return ds.filter((x, i) => i === 0 || x - ds[i - 1] > 0.002);
+    };
+    const up = new THREE.Vector3(0, 1, 0).applyQuaternion(rider.getWorldQuaternion(new THREE.Quaternion()));
+    const dirs = [up, ...[[1, 0], [-1, 0], [0, 1], [0, -1]].map(([x, z]) => new THREE.Vector3(x, 0, z).addScaledVector(up, 1.5).normalize())];
+    const inside = (p: THREE.Vector3) => dirs.filter((d) => hits(p, d).length % 2 === 1).length >= 3;
+    const bone = (n: string) => { let b: THREE.Object3D | undefined; rider.traverse((o) => { if (!b && (o as THREE.Bone).isBone && o.name === n) b = o; }); return b?.getWorldPosition(new THREE.Vector3()); };
+    let lift = 0;
+    const pelvis = bone('pelvis');
+    if (pelvis && inside(pelvis) && (hits(pelvis, up)[0] ?? 0) > SEAT_BURIED)
+      for (const f of ['foot_l', 'foot_r']) {
+        const p = bone(f), h = p ? hits(p, up) : [];
+        if (p && h.length % 2 === 1) lift = Math.max(lift, h[h.length - 1]); // odd: inside, the last crossing is where it leaves the body
+      }
+    for (const [mat, s] of sides) mat.side = s;
+    return lift;
+  }
+
+  /** Is this mesh inside an attachment's held item other than `root` itself? */
+  private inOwnHeld(o: THREE.Object3D, root: THREE.Object3D) {
+    const roots = new Set([...(this.rider?.items ?? []), ...(this.mount?.items ?? [])].map((i) => i.obj));
+    if (roots.size === 0) return false;
+    for (let p: THREE.Object3D | null = o; p && p !== root; p = p.parent) if (roots.has(p)) return true;
+    return false;
+  }
+
+  private static showOwnHeld(items: OwnHeld[] | undefined, clip: string | null) {
+    for (const it of items ?? []) it.obj.visible = !it.clips || (!!clip && it.clips.has(clip));
+  }
+
+  /** A seat with an absolute rotation keeps its orientation in the Pal's model frame while the bone it hangs from turns with the animation. */
+  private holdRiderRotation() {
+    const r = this.rider;
+    if (!r?.modelRot || !this.gltf) return;
+    this.gltf.scene.updateMatrixWorld(true);
+    const qb = r.bone.getWorldQuaternion(new THREE.Quaternion()), qs = this.gltf.scene.getWorldQuaternion(new THREE.Quaternion());
+    r.obj.quaternion.copy(qb.invert()).multiply(qs).multiply(r.modelRot);
+  }
+
+  private clearRider() {
+    if (this.rider) { this.rider.anim.mixer?.stopAllAction?.(); this.rider.obj.removeFromParent(); disposeTree(this.rider.obj); this.rider = undefined; }
+  }
+
+  riderClips(): ClipInfo[] { return this.rider?.clips ?? []; }
+  riderClip(): string | null { return this.rider?.anim.current ?? null; }
+  setRiderClip(name: string) { if (this.rider?.anim.has(name)) { this.rider.anim.play(name); this.rider.anim.setPaused(!!this.anim?.paused); } }
+
+  /** Follow the mount: its pause / speed every frame, and (via riderClipFor) its clip when that changes. */
+  private syncRiderClip(force = false) {
+    const r = this.rider, a = this.anim;
+    if (!r || !a) return;
+    r.anim.timeScale = a.timeScale;
+    // Auto: the Pal plays a clip of a pair (Shaolong's VortexRage_Start) -> pose the boss clip of that pair (Auri's VortexRage) at the matching time
+    const pair = this.riderAuto ? pairForPalClip(r.pairs, a.current) : undefined;
+    if (pair && a.current && r.anim.has(pair.boss)) {
+      const key = `${pair.boss}|${a.current}`;
+      if (r.pairKey !== key) { r.pairKey = key; r.segs = layoutPair(pair, r.anim.duration(pair.boss), (n) => a.duration(n), (n) => !!this.manifest?.clips.find((c) => c.name === n)?.loop); }
+      const t = bossAt(r.segs ?? [], a.current, a.state().time);
+      if (t != null) { r.anim.poseAt(pair.boss, t); r.lastPalClip = a.current; return; }
+    }
+    if (r.pairKey) { // left a pair: the rider plays freely again
+      r.pairKey = null; force = true;
+      if (r.anim.current) r.anim.play(r.anim.current);
+      r.anim.setPaused(a.paused);
+    }
+    if (r.anim.paused !== a.paused) r.anim.setPaused(a.paused);
+    if (!force && a.current === r.lastPalClip) return;
+    r.lastPalClip = a.current;
+    const want = a.current && this.riderClipFor ? this.riderClipFor(a.current, r.clips) : null;
+    if (want && want !== r.anim.current && r.anim.has(want)) { r.anim.play(want); r.anim.setPaused(a.paused); }
+  }
+
+  /** Boss page: add the Pal this model rides. `at` is the seat in the Pal's bone space (the same data the Pal page uses for its rider), `scale`
+   *  the Pal's size (1 or its tower size). The boss is never moved or scaled; the Pal gets the inverse seat transform (see poseMount). url=null removes. */
+  async setMount(url: string | null, man: Manifest | null, at: { bone: string; position: number[]; rotation: number[]; rotationSpace?: 'model'; pairs?: ClipPair[] } | null, scale = 1, clip?: string) {
+    const gen = ++this.mountGen;
+    if (!url || !man || !at || !this.gltf) { this.clearMount(); return; }
+    let obj = this.mount?.url === url ? this.mount.obj : undefined;
+    let anim = this.mount?.url === url ? this.mount.anim : undefined;
+    let parser = this.mount?.url === url ? this.mount.parser : undefined;
+    if (!obj || !anim) {
+      const g = await loadGlb(url);
+      if (gen !== this.mountGen || this.disposed) { disposeTree(g.scene); return; }
+      this.clearMount();
+      obj = g.scene;
+      parser = g.parser;
+      obj.traverse((o) => {
+        const m = o as THREE.Mesh;
+        if (!m.isMesh) return;
+        m.frustumCulled = false; m.castShadow = true;
+        for (const mat of ([] as THREE.Material[]).concat(m.material)) {
+          if ('envMapIntensity' in mat) (mat as THREE.MeshStandardMaterial).envMapIntensity = 0.2;
+          applyGameBlend(mat);
+        }
+      });
+      for (const p of man.parts) {
+        const n = THREE.PropertyBinding.sanitizeNodeName(p.node);
+        obj.traverse((o) => { if ((o.name === n || o.name === n + '_1') && !(o as THREE.Bone).isBone && p.lod > 0) o.visible = false; });
+      }
+      anim = new AnimationController(obj, g.animations, man.clips);
+    }
+    // this boss's ride clips carry the seat (extras.seatInClip): the Pal stays at the boss's origin at its tower size, no bone involved
+    const inClip = !!this.manifest?.extras?.seatInClip;
+    let bone: THREE.Object3D | undefined = inClip ? obj : undefined;
+    if (!bone) obj.traverse((o) => { if (!bone && (o as THREE.Bone).isBone && o.name === THREE.PropertyBinding.sanitizeNodeName(at.bone)) bone = o; });
+    if (!bone) { console.warn('mount bone not found', at.bone); this.clearMount(); return; }
+    // the boss sits at bone * seat with scale 1/palScale in the Pal's frame (see setRider), so its own size stays 1
+    const seat = new THREE.Matrix4().compose(new THREE.Vector3().fromArray(at.position), new THREE.Quaternion().fromArray(at.rotation), new THREE.Vector3().setScalar(1 / scale));
+    obj.removeFromParent();
+    obj.scale.setScalar(scale);
+    this.gltf.scene.add(obj);
+    const modelRot = !inClip && at.rotationSpace === 'model' ? new THREE.Quaternion().fromArray(at.rotation) : undefined;
+    const reuse = this.mount?.url === url ? this.mount : undefined;
+    const items = reuse ? reuse.items : await this.attachOwnHeld(obj, man);
+    if (gen !== this.mountGen || this.disposed) { if (!reuse) { obj.removeFromParent(); disposeTree(obj); } return; }
+    // clip '' = Auto: a boss clip with a pair drives the Pal's clips (clipPairs.ts); other boss clips play the free clip (Idle)
+    const free = clip && anim.has(clip) ? clip : man.clips.find((c) => c.name.toLowerCase() === 'idle')?.name ?? man.defaultClip ?? man.clips[0]?.name ?? null;
+    this.mount = { inClip, obj, anim, url, clips: man.clips, bone, seat, seatPos: new THREE.Vector3().fromArray(at.position), modelRot, scale,
+      lastBossClip: null, parser, items, pairs: at.pairs, auto: !clip, freeClip: free, pairKey: null };
+    this.applyShading();
+    // measure a buried seat in the pose being shown (the mixers have not run since the clip started)
+    this.mount.lift = 0;
+    this.anim?.update(0);
+    this.syncMount();
+    anim.update(0);
+    this.poseMount();
+    this.mount.lift = inClip ? 0 : this.seatLift(obj, this.gltf.scene); // a seat inside the ride clip was placed by the animators
+    this.poseMount();
+    this.recenter();
+  }
+
+  private clearMount() {
+    if (this.mount) { this.mount.anim.mixer.stopAllAction(); this.mount.obj.removeFromParent(); disposeTree(this.mount.obj); this.mount = undefined; }
+  }
+
+  mountClip(): string | null { return this.mount?.anim.current ?? null; }
+  /** '' = Auto (follow the boss through the clip pairs), else this clip whatever the boss plays. */
+  setMountClip(name: string) {
+    const m = this.mount;
+    if (!m) return;
+    m.auto = !name;
+    if (name && m.anim.has(name)) m.freeClip = name;
+    m.pairKey = null; m.lastBossClip = null; // re-evaluated next frame
+    if (!m.auto && m.freeClip) { m.anim.play(m.freeClip); m.anim.setPaused(!!this.anim?.paused); }
+  }
+
+  /** Auto mode: while the boss plays a paired clip, pose the Pal's clip sequence at the boss's time. False when there is no pair. */
+  private driveMountPair(): boolean {
+    const m = this.mount, a = this.anim;
+    if (!m || !a) return false;
+    const pair = m.auto && a.current ? m.pairs?.find((p) => p.boss === a.current) : undefined;
+    if (!pair) { if (m.pairKey) { m.pairKey = null; m.lastBossClip = null; } return false; } // leaving a pair: the free clip restarts
+    if (m.pairKey !== pair.boss) { m.pairKey = pair.boss; m.segs = layoutPair(pair, a.clipTiming()?.duration ?? 0, (n) => m.anim.duration(n), (n) => !!m.clips.find((c) => c.name === n)?.loop); }
+    const at = palAt(m.segs ?? [], a.state().time);
+    if (!at) return false;
+    m.anim.poseAt(at.clip, at.time);
+    return true;
+  }
+
+  /** Pal root = inverse(bone * seat), relative to the boss, so the boss stays still while the Pal's seat bone moves under it. */
+  private poseMount() {
+    const m = this.mount;
+    if (!m || !this.gltf) return;
+    m.obj.position.set(0, 0, 0); m.obj.quaternion.identity(); m.obj.scale.setScalar(m.scale);
+    if (m.inClip) { m.obj.position.y -= m.lift ?? 0; m.obj.updateMatrixWorld(true); return; }
+    m.obj.updateMatrixWorld(true);
+    // bone matrix in the Pal's own frame, scale included (Pal root = identity, scaled by m.scale)
+    const parentInv = new THREE.Matrix4().copy(m.obj.parent!.matrixWorld).invert();
+    const boneInPal = parentInv.multiply(m.bone.matrixWorld);
+    if (m.modelRot) {
+      // absolute-rotation seat: the boss is rotated by modelRot in the Pal's frame whatever the bone does, so the Pal takes the inverse of that and
+      // is shifted so the seat point (bone-space position) lands on the boss
+      const p = m.seatPos.clone().applyMatrix4(boneInPal);
+      m.obj.quaternion.copy(m.modelRot).invert();
+      m.obj.position.copy(p.applyQuaternion(m.obj.quaternion).negate());
+    } else {
+      // boss = PalRoot * bone * seat, with bone in the Pal's unscaled frame (boneInPal carries the Pal's scale s; seat carries 1/s), so
+      // PalRoot = inverse(bone * seat), whose scale comes out as s
+      const bone = new THREE.Matrix4().makeScale(1 / m.scale, 1 / m.scale, 1 / m.scale).multiply(boneInPal);
+      bone.multiply(m.seat).invert().decompose(m.obj.position, m.obj.quaternion, m.obj.scale);
+    }
+    m.obj.position.y -= m.lift ?? 0; // buried seat (seatLift): the boss rises along its up = the Pal goes down under it
+    m.obj.updateMatrixWorld(true);
+  }
+
+  /** Follow the boss: speed / pause every frame; restart the Pal's clip with the boss's so loops start together; hold the boss's phase while paused. */
+  private syncMount() {
+    const m = this.mount, a = this.anim;
+    if (!m || !a) return;
+    m.anim.timeScale = a.timeScale;
+    if (this.driveMountPair()) { m.lastBossClip = a.current; return; }
+    if (a.current !== m.lastBossClip) {
+      m.lastBossClip = a.current;
+      const c = m.freeClip ?? m.anim.current;
+      if (c) { m.anim.play(c); m.anim.setPaused(a.paused); }
+    } else if (m.anim.paused !== a.paused) m.anim.setPaused(a.paused);
+    else if (a.paused) {
+      const t = a.state().time, d = m.anim.clipTiming()?.duration;
+      if (d) m.anim.seekTime(t % d);
+    }
+  }
+
+  /** Scale the whole model (a tower Pal is 1.4-2.2x its normal size). A rider on it keeps its own size. */
+  setModelScale(s: number) {
+    this.modelScale = s;
+    this.gltf?.scene.scale.setScalar(s);
+    this.rider?.obj.scale.setScalar(1 / s);
+    this.recenter();
+  }
+
+  /** Morph target (blend shape) names over every mesh of the model: a human's facial expressions. */
+  morphNames(): string[] {
+    const names = new Set<string>();
+    this.gltf?.scene.traverse((o) => { const d = (o as THREE.Mesh).morphTargetDictionary; if (d) for (const k of Object.keys(d)) names.add(k); });
+    return [...names];
+  }
+
+  /** Set one morph target's weight (0..1) on every mesh that has it (head and brows share the names). */
+  setMorph(name: string, w: number) {
+    this.gltf?.scene.traverse((o) => {
+      const m = o as THREE.Mesh;
+      const i = m.morphTargetDictionary?.[name];
+      if (i !== undefined && m.morphTargetInfluences) m.morphTargetInfluences[i] = w;
+    });
   }
 
   /** Attach a static GLB to a prop bone; url=null removes. Reuses the loaded model when only the hand changes. */
@@ -679,18 +1061,21 @@ export class ViewerScene {
       // The held item is parented inside the trainer's skeleton; its texture
       // indices belong to its own glTF, so never resolve them with the
       // trainer's parser (that painted trainer eye/hair textures onto balls).
-      if (root !== this.held?.obj && !this.extraHeld.some((e) => e.obj === root) && this.isInHeld(m)) return;
+      if (root === this.gltf?.scene && this.isInHeld(m)) return; // attachments are shaded from their own root, with their own parser
+      if (this.inOwnHeld(m, root)) return; // so are the items they hold
       for (const mat of ([] as THREE.Material[]).concat(m.material)) {
-        if (seen.has(mat) || !(mat as THREE.MeshStandardMaterial).isMeshStandardMaterial) continue;
-        seen.add(mat);
-        applyGameBlend(mat); // variant materials are swapped in after load
+        if (!(mat as THREE.MeshStandardMaterial).isMeshStandardMaterial) continue;
         const sm = mat as THREE.MeshStandardMaterial;
+        // Draw order is per mesh, so it is set before the per-material dedupe (several meshes can share one material).
         // Overlay order in the transparent pass: a layer-5 overlay is part of the body surface, so it goes before the
         // blended eyes (Cutiefly's face patch covered an eye); a sliding lid goes after its eye.
         if (sm.userData?.layer_overlay) m.renderOrder = Math.min(m.renderOrder, -1);
         else if (sm.userData?.lid_overlay) m.renderOrder = Math.max(m.renderOrder, 1);
+        if (seen.has(mat)) continue;
+        seen.add(mat);
+        applyGameBlend(mat); // variant materials are swapped in after load
         const hk = this.hableKey;
-        const gasKey = sm.userData?.gas ? '|gas' : '';
+        const gasKey = (sm.userData?.gas ? '|gas' : '') + (sm.userData?.fresnel ? '|fresnel' : '') + (sm.userData?.fire ? '|fx-fire' : sm.userData?.vfx2 ? '|fx-vfx2' : sm.userData?.dream ? '|fx-dream' : sm.userData?.rainbow ? '|fx-rainbow' : '');
         const ehKey = (sm.userData?.eyeHighlight ? '|eyehl' : '') + ((sm as THREE.MeshPhysicalMaterial).clearcoat > 0 ? '|coat' : '');
         sm.customProgramCacheKey = () => hk + gasKey + ehKey + '|holo';
         if (sm.userData?.gas || sm.userData?.behindBody) {
@@ -709,6 +1094,7 @@ export class ViewerScene {
           }
         }
         this.ensureGas(sm, parser); // before the game patch captures onBeforeCompile, so the two chain
+        this.ensureEffect(sm, parser); // likewise
         installHologram(sm); // likewise (inactive until Appearance > Hologram is on)
         if (installEyeHighlight(sm)) { // SV catchlights (eyeHighlight.ts); the hologram draws its own look
           setEyeHighlightNormal(sm, this.getTex(sm, parser, 'highlightNormalTexture', false));
@@ -740,9 +1126,16 @@ export class ViewerScene {
     if (this.gltf) each(this.gltf.scene, this.gltf.parser);
     if (this.held) each(this.held.obj, this.held.parser);
     for (const e of this.extraHeld) each(e.obj, e.parser);
+    for (const a of [this.rider, this.mount]) {
+      if (!a) continue;
+      each(a.obj, a.parser);
+      for (const it of a.items ?? []) each(it.obj, it.parser);
+    }
     if (this.outline.on) this.applyOutline();
   }
 
+  private auras: Aura[] = [];
+  private auraTime = 0;
   private outline: OutlineState = { ...DEFAULT_OUTLINE };
   private outlineMeshes: THREE.Mesh[] = [];
   setOutline(st: OutlineState) {
@@ -789,7 +1182,7 @@ export class ViewerScene {
     for (const m of meshes) {
       const src = ([] as THREE.Material[]).concat(m.material)[0] as THREE.MeshStandardMaterial;
       const saved = src.userData.__holoSaved as { transparent: boolean } | undefined;
-      if (!src || saved?.transparent || src.userData?.gas) continue; // lenses / effects stay blended
+      if (!src || saved?.transparent || src.userData?.gas || hasEffect(src)) continue; // lenses / effects stay blended
       // Pushed back a little so the hologram's own (identical) depth always passes LessEqual.
       const mat = new THREE.MeshBasicMaterial({ colorWrite: false, side: src.side, alphaTest: src.alphaTest, map: src.alphaTest > 0 ? src.map : null, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
       const sk = m as THREE.SkinnedMesh;
@@ -835,6 +1228,24 @@ export class ViewerScene {
         const tex = (await parser.getDependency('texture', idx)) as THREE.Texture;
         if (!this.disposed) setGasTexture(mat, tex);
       } catch (e) { console.warn('gas density load failed', e); }
+    })();
+  }
+
+  /** Effect materials (extras.fire / extras.dream): install the shader patch once and fetch its noise maps. */
+  private ensureEffect(mat: THREE.MeshStandardMaterial, parser: GLTF['parser'] | undefined) {
+    if (this.fxMats.has(mat)) return;
+    const idx = installEffect(mat);
+    if (!idx) return;
+    this.fxMats.add(mat);
+    updateEffect(mat, this.gasTime);
+    if (!parser) return;
+    const load = (i: number | undefined) => (typeof i === 'number' ? (parser.getDependency('texture', i) as Promise<THREE.Texture>) : Promise.resolve(null));
+    void (async () => {
+      try {
+        // clones: the GLB's own texture objects may also be the baked map, which keeps its sRGB colour space
+        const maps = await Promise.all(idx.map(load));
+        if (!this.disposed) setEffectTextures(mat, maps.map((t) => t?.clone() ?? null));
+      } catch (e) { console.warn('effect texture load failed', e); }
     })();
   }
 
@@ -898,7 +1309,7 @@ export class ViewerScene {
       // limits follow the pose's own distance, so a restored far / narrow-FOV pose is not clamped by OrbitControls
       const d = this.camera.position.distanceTo(this.controls.target);
       this.applyLimits(fi.radius, d);
-      this.camera.near = Math.max(0.001, this.camera.near);
+      this.setNear(Math.max(0.001, this.nearBase));
       this.camera.far = Math.max(100, this.camera.far);
     }
     this.camera.updateProjectionMatrix();
@@ -1157,7 +1568,7 @@ export class ViewerScene {
     this.controls.target.set(f.center.x, cy, 0);
     this.controls.minDistance = 0; this.controls.maxDistance = d * 10;
     // generous planes: the old far = d + 2r + 5 hid the model after a ~20% dolly out
-    this.camera.near = Math.max(0.01, d * 0.05); this.camera.far = d * 10;
+    this.setNear(Math.max(0.01, d * 0.05)); this.camera.far = d * 10;
     this.camera.updateProjectionMatrix();
     this.camera.lookAt(f.center.x, cy, 0);
     this.controls.update();
@@ -1299,7 +1710,7 @@ export class ViewerScene {
 
     const cam = this.camera, ctl = this.controls, a = this.anim;
     const saved = {
-      pos: cam.position.clone(), quat: cam.quaternion.clone(), fov: cam.fov, near: cam.near, far: cam.far, aspect: cam.aspect,
+      pos: cam.position.clone(), quat: cam.quaternion.clone(), fov: cam.fov, near: this.nearBase, far: cam.far, aspect: cam.aspect,
       target: ctl.target.clone(), minD: ctl.minDistance, maxD: ctl.maxDistance, ratio: this.renderer.getPixelRatio(),
       clip: a?.current ?? null, paused: a?.paused ?? false, frame: a ? a.state().frame : 0,
     };
@@ -1334,7 +1745,7 @@ export class ViewerScene {
       this.exporting = false;
       if (view?.enabled) cam.setViewOffset(view.fullWidth, view.fullHeight, view.offsetX, view.offsetY, view.width, view.height);
       cam.position.copy(saved.pos); cam.quaternion.copy(saved.quat);
-      cam.fov = saved.fov; cam.near = saved.near; cam.far = saved.far; cam.aspect = saved.aspect;
+      cam.fov = saved.fov; this.setNear(saved.near); cam.far = saved.far; cam.aspect = saved.aspect;
       ctl.target.copy(saved.target); ctl.minDistance = saved.minD; ctl.maxDistance = saved.maxD;
       cam.updateProjectionMatrix();
       this.renderer.setPixelRatio(saved.ratio);
@@ -1385,6 +1796,10 @@ export class ViewerScene {
     const dt = Math.min(this.clock.getDelta(), 0.1);
     if (this.gifBusy) return; // animatedGif() drives the clip and the renderer meanwhile
     this.anim?.update(dt);
+    this.springs?.update(dt);
+    this.auraTime += dt;
+    if (this.rider) { this.holdRiderRotation(); this.syncRiderClip(); this.rider.anim.update(dt); this.rider.springs?.update(dt); ViewerScene.showOwnHeld(this.rider.items, this.rider.anim.current); }
+    if (this.mount) { this.syncMount(); this.mount.anim.update(dt); this.gltf!.scene.updateMatrixWorld(true); this.poseMount(); ViewerScene.showOwnHeld(this.mount.items, this.mount.anim.current); }
     this.prepareFrame(dt);
     this.applyFly(dt);
     this.controls.update();
@@ -1425,10 +1840,11 @@ export class ViewerScene {
 
   /** Per-frame state the clip drives beyond bones: gas/hologram clocks, mesh visibility, UV tracks, held item. */
   private prepareFrame(dt: number) {
-    if (this.gasMats.size) {
+    if (this.gasMats.size || this.fxMats.size) {
       // The game's shader clock runs with the game; here it follows playback so pausing freezes the gas.
       if (!this.anim?.paused) this.gasTime += dt * (this.anim?.timeScale ?? 1);
       for (const m of this.gasMats) updateGas(m, this.gasTime);
+      for (const m of this.fxMats) updateEffect(m, this.gasTime);
     }
     if (this.hologram?.on) {
       // Like the gas: the scroll follows playback, so pausing freezes it (and PNG exports are repeatable).
@@ -1514,8 +1930,9 @@ export class ViewerScene {
       if (this.skeletonHelper && skVis !== undefined) this.skeletonHelper.visible = skVis;
     }
     // The shader already wrote sRGB values and the SRGB8 texture encoded them once more on store (the sprite pass
-    // undoes that by sampling the texture): decode one step here. Then box-filter SS x SS weighting colour by alpha
-    // (straight alpha out), flipping to top row first.
+    // undoes that by sampling the texture): decode one step here. Blended draws leave colour premultiplied by alpha in
+    // the cleared (0,0,0,0) target, so the box filter sums colour as is and divides by alpha (straight alpha out),
+    // flipping to top row first.
     const lut = (this.gifLut ??= Uint8Array.from({ length: 256 }, (_, v) => {
       const c = v / 255;
       return Math.round(255 * (c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4)));
@@ -1525,10 +1942,10 @@ export class ViewerScene {
       let r0 = 0, g0 = 0, b0 = 0, a0 = 0;
       for (let sy = 0; sy < SS; sy++) for (let sx = 0; sx < SS; sx++) {
         const i = ((RH - 1 - (y * SS + sy)) * RW + x * SS + sx) * 4, a = raw[i + 3];
-        r0 += lut[raw[i]] * a; g0 += lut[raw[i + 1]] * a; b0 += lut[raw[i + 2]] * a; a0 += a;
+        r0 += lut[raw[i]]; g0 += lut[raw[i + 1]]; b0 += lut[raw[i + 2]]; a0 += a;
       }
       const o = (y * w + x) * 4;
-      if (a0 > 0) { data[o] = r0 / a0; data[o + 1] = g0 / a0; data[o + 2] = b0 / a0; }
+      if (a0 > 0) { const k = 255 / a0; data[o] = Math.min(255, r0 * k); data[o + 1] = Math.min(255, g0 * k); data[o + 2] = Math.min(255, b0 * k); }
       data[o + 3] = a0 / (SS * SS);
     }
     return { width: w, height: h, data };
@@ -1592,6 +2009,8 @@ export class ViewerScene {
     window.removeEventListener('blur', this.onFlyBlur);
     this.disposed = true;
     this.clearHeld();
+    this.clearRider();
+    this.clearMount();
     cancelAnimationFrame(this.raf);
     this.spritePass?.dispose();
     this.gifRt?.dispose();
@@ -1656,6 +2075,16 @@ function rowBounds(f: SpriteFrame) {
 /** Map the game's blend type (glTF materials[i].extras.blend) onto three.js blending. glTF only has
  *  alphaMode BLEND (straight alpha), which has no additive mode ("Add": glows, energy effects). */
 export function applyGameBlend(mat: THREE.Material) {
+  installFresnel(mat);
+  if ((mat.userData?.atlas || /_(Eye|Mouth)(@|$)/.test(mat.name)) && !mat.userData.__decalDone) {
+    // Pal eyes / mouths are cards 0.02-0.1 cm above the face (Lyleen, Astralym): within depth precision at normal zoom, so
+    // they z-fight with the skin and flicker. Pull them towards the camera.
+    mat.userData.__decalDone = true;
+    mat.polygonOffset = true;
+    mat.polygonOffsetFactor = -1;
+    mat.polygonOffsetUnits = -4;
+    mat.needsUpdate = true;
+  }
   if ((mat.userData?.lid_overlay || mat.userData?.layer_overlay) && !mat.userData.__lidDone) {
     // Sliding eyelid layer (importer `_lid_overlay`) or material layer 5 (`_layer5_overlay`: Xerneas' horn glow): the
     // same triangles drawn again on top with the layer texture. Pull it towards the camera so it never z-fights the

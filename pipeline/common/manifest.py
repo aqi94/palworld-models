@@ -35,6 +35,7 @@ def build_manifest(model: Model, glb_summary: dict | None = None) -> dict:
             "category": c.category,
             "group": c.group,
             "default": c.name == model.default_clip,
+            **({} if c.mount_ok else {"mountOk": False}),
             **({"visibility": {k: [[f, int(v)] for f, v in keys] for k, keys in c.visibility.items()}} if c.visibility else {}),
             **({"uvOffset": {m: {"times": [round(float(t), 4) for t in ts], "values": [[round(float(x), 5), round(float(y), 5)] for x, y in vs]} for m, (ts, vs) in c.uv_offset.items()}} if c.uv_offset else {}),
             **({"uvOffsetMode": c.uv_offset_mode} if c.uv_offset and c.uv_offset_mode else {}),

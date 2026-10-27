@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type { ClipInfo } from '../types';
 import type { PlaybackState } from '../scene/animation';
 
-const ORDER = ['idle', 'move', 'battle', 'emote', 'other'];
+const ORDER = ['idle', 'move', 'battle', 'ride', 'emote', 'other'];
 
 interface Props {
   clips: ClipInfo[];

@@ -15,6 +15,7 @@ using CUE4Parse.UE4.Assets.Exports.SkeletalMesh;
 using CUE4Parse.UE4.Assets.Exports.StaticMesh;
 using CUE4Parse.UE4.Assets.Exports.Texture;
 using CUE4Parse.UE4.Objects.Core.Math;
+using CUE4Parse.UE4.Objects.Engine.Curves;
 using CUE4Parse.UE4.Objects.UObject;
 using CUE4Parse_Conversion.Animations;
 using CUE4Parse_Conversion.Dto;
@@ -208,17 +209,20 @@ public static class Pals
         return res;
     }
 
-    static double[] V3(Newtonsoft.Json.Linq.JToken? t, double d) => t == null ? new[] { d, d, d } : new[] { (double)(t["X"] ?? d), (double)(t["Y"] ?? d), (double)(t["Z"] ?? d) };
-    static double[] Rot(Newtonsoft.Json.Linq.JToken? t) => t == null ? new double[3] : new[] { (double)(t["Pitch"] ?? 0), (double)(t["Yaw"] ?? 0), (double)(t["Roll"] ?? 0) };
+    internal static double[] V3(Newtonsoft.Json.Linq.JToken? t, double d) => t == null ? new[] { d, d, d } : new[] { (double)(t["X"] ?? d), (double)(t["Y"] ?? d), (double)(t["Z"] ?? d) };
+    internal static double[] Rot(Newtonsoft.Json.Linq.JToken? t) => t == null ? new double[3] : new[] { (double)(t["Pitch"] ?? 0), (double)(t["Yaw"] ?? 0), (double)(t["Roll"] ?? 0) };
 
     // SK_Weapon_Shotgun_004 -> Shotgun_004, SM_Weapon_Handgun_002 -> Handgun_002, SK_QueenBee_spear -> QueenBee_spear
     static string MeshItemName(string meshPath) => System.Text.RegularExpressions.Regex.Replace(meshPath.Split('/').Last(), @"^(S[KM]_)(Weapon_)?", "");
 
     // socket name -> (bone, relative location, relative rotation [pitch,yaw,roll]) from the Pal's skeleton; a socket that is not
     // found is taken to be a bone name
-    static (string bone, double[] loc, double[] rot) FindSocket(DefaultFileProvider provider, string code, string socket)
+    internal static (string bone, double[] loc, double[] rot) FindSocket(DefaultFileProvider provider, string code, string socket)
+        => FindSocketIn(provider, Path.Combine(Program.RawDir, "palworld", code, "pal.json"), socket);
+
+    // same, for the skeleton named in an exported model's pal.json (a human's: raw/palworld_humans/<id>/pal.json)
+    internal static (string bone, double[] loc, double[] rot) FindSocketIn(DefaultFileProvider provider, string info, string socket)
     {
-        var info = Path.Combine(Program.RawDir, "palworld", code, "pal.json");
         if (File.Exists(info))
         {
             var skel = (string?)Newtonsoft.Json.Linq.JObject.Parse(File.ReadAllText(info))["skeleton"];
@@ -298,7 +302,7 @@ public static class Pals
         return CachedMeshMap(provider).GetValueOrDefault(code);
     }
 
-    static (int anims, int textures) ExportOne(DefaultFileProvider provider, string code, string outDir, string? meshOverride = null, bool withAnims = true)
+    internal static (int anims, int textures) ExportOne(DefaultFileProvider provider, string code, string outDir, string? meshOverride = null, bool withAnims = true, Func<string?, IEnumerable<string>>? animSource = null)
     {
         Directory.CreateDirectory(outDir);
         var meshPath = meshOverride ?? FindMesh(provider, code) ?? $"{ModelRoot}{code}/SK_{code}";
@@ -342,6 +346,31 @@ public static class Pals
             if (list.Count > 0) materialSkins[folder] = list;
         }
 
+        // Aura shells: an unused MI_ in the Pal's own folder whose instance sets `OutlineWidth` (Enchanted Sword's cyan glow; the BP adds it
+        // at runtime), plus the emissive-over-time curve next to it.
+        var auras = new List<object>();
+        var usedSlots = materials.Select(x => (string?)x.GetType().GetProperty("slot")?.GetValue(x)).ToHashSet();
+        object? auraCurve = null;
+        foreach (var k in provider.Files.Keys.Where(k => k.StartsWith($"{ModelRoot}{code}/", StringComparison.OrdinalIgnoreCase) && k.EndsWith(".uasset")).OrderBy(k => k))
+        {
+            var name = Path.GetFileNameWithoutExtension(k);
+            try
+            {
+                if (name.StartsWith("MI_", StringComparison.OrdinalIgnoreCase) && !usedSlots.Contains(name))
+                {
+                    var obj = provider.LoadPackage(k[..^".uasset".Length]).GetExports().OfType<UMaterialInstanceConstant>().FirstOrDefault();
+                    if (obj != null && obj.ScalarParameterValues.Any(p => p.ParameterInfo.Name.Text == "OutlineWidth"))
+                        auras.Add(new { name = obj.Name, path = PkgPath(obj), chain = ExportMaterialChain(obj, textures) });
+                }
+                else if (name.Contains("Emissive", StringComparison.OrdinalIgnoreCase) && name.EndsWith("Curve", StringComparison.OrdinalIgnoreCase))
+                {
+                    var curve = provider.LoadPackage(k[..^".uasset".Length]).GetExports().OfType<UCurveFloat>().FirstOrDefault();
+                    if (curve != null) auraCurve = curve.GetOrDefault<FRichCurve>("FloatCurve")!.Keys.Select(c => new { t = c.Time, v = c.Value }).ToList();
+                }
+            }
+            catch (Exception e) { Console.Error.WriteLine($"aura scan {name}: {e.Message}"); }
+        }
+
         // LOD0 only (the viewer shows LOD0; engines rebuild their own LODs).
         var lods = new List<object>();
         var lod = dto.LODs[0];
@@ -353,13 +382,14 @@ public static class Pals
         Directory.CreateDirectory(animDir);
         var anims = new List<object>();
         var skelPath = skeleton == null ? null : PkgPath(skeleton);
-        foreach (var asPath in withAnims ? AnimCandidates(provider, code) : Enumerable.Empty<string>())
+        var animPaths = !withAnims ? Enumerable.Empty<string>() : animSource != null ? animSource(skelPath) : AnimCandidates(provider, code);
+        foreach (var asPath in animPaths)
         {
             try
             {
                 var seq = provider.LoadPackageObject<UAnimSequence>(asPath);
                 var seqSkel = seq.Skeleton.ResolvedObject?.Load<USkeleton>();
-                if (seqSkel == null || skelPath == null || PkgPath(seqSkel) != skelPath) continue;
+                if (animSource == null && (seqSkel == null || skelPath == null || PkgPath(seqSkel) != skelPath)) continue; // a custom source (humans) already chose its sequences
                 anims.Add(WriteAnim(seq, animDir));
             }
             catch (Exception e)
@@ -392,6 +422,8 @@ public static class Pals
             skeleton = skelPath,
             bones,
             materialSkins,
+            auras,
+            auraCurve,
             // USkeleton reference pose + per-bone translation retargeting mode (animations are authored against this).
             skeletonBones = skeleton == null ? null : skeleton.ReferenceSkeleton.FinalRefBoneInfo.Select((bi, i) => new
             {
@@ -408,6 +440,7 @@ public static class Pals
             textures = textures.OrderBy(x => x).ToList(),
             folderTextures,
             morphTargets = dto.MorphTargets?.Length ?? 0,
+            morphs = WriteMorphs(mesh, Path.Combine(outDir, "morphs.bin")),
             sockets = (mesh.GetOrDefault<FPackageIndex[]>("Sockets") ?? Array.Empty<FPackageIndex>())
                 .Select(s => s.Load<USkeletalMeshSocket>()).Where(s => s != null)
                 .Select(s => new { name = s!.SocketName.Text, bone = s.BoneName.Text, t = V(s.RelativeLocation), r = R(s.RelativeRotation), s = V(s.RelativeScale) }).ToList(),
@@ -505,6 +538,47 @@ public static class Pals
                 if (seen.Add(name)) yield return k[..^".uasset".Length];
             }
         }
+        // tower-boss intro cutscenes animate the mount too: Demo/BossBattle<X>Start/Animation/AS_<X>StartDemo_<Code> (the skeleton check filters later)
+        foreach (var k in provider.Files.Keys)
+        {
+            if (!k.StartsWith(DemoRoot, StringComparison.OrdinalIgnoreCase) || !k.EndsWith(".uasset")) continue;
+            var name = Path.GetFileNameWithoutExtension(k);
+            if (name.StartsWith("AS_", StringComparison.OrdinalIgnoreCase) && folders.Any(f => name.EndsWith("_" + f, StringComparison.OrdinalIgnoreCase)) && seen.Add(name))
+                yield return k[..^".uasset".Length];
+        }
+    }
+    const string DemoRoot = "Pal/Content/Pal/Demo/";
+
+    // LOD0 morph targets (blend shapes: the humans' eye_close/eye_smile/mouth_open...) as sparse position deltas in Unreal space (cm).
+    // UE 5.1 cooks them as batches of quantized deltas: delta = (quantized + batch.PositionMin) * PositionPrecision; CUE4Parse already
+    // adds IndexMin to the vertex index. The vertex index addresses the same LOD0 vertex order as lod0.bin.
+    // morphs.bin = per morph: n x u32 index, then n x 3 f32; pal.json "morphs" = [{name, count, offset}].
+    static List<object> WriteMorphs(USkeletalMesh mesh, string path)
+    {
+        var list = new List<object>();
+        var buf = mesh.LODModels?.FirstOrDefault()?.MorphTargetVertexInfoBuffers;
+        if (buf == null || buf.BatchesPerMorph == null || buf.BatchesPerMorph.Length == 0 || mesh.MorphTargets == null) return list;
+        using var fs = File.Create(path);
+        using var w = new BinaryWriter(fs);
+        for (int mi = 0; mi < buf.BatchesPerMorph.Length && mi < mesh.MorphTargets.Length; mi++)
+        {
+            var idx = new List<uint>(); var d = new List<float>();
+            for (uint b = 0; b < buf.BatchesPerMorph[mi]; b++)
+            {
+                var info = buf.MorphData[buf.BatchStartOffsetPerMorph[mi] + b];
+                foreach (var q in info.QuantizedDelta)
+                {
+                    idx.Add(q.Index);
+                    d.Add((q.Position.X + info.PositionMin.X) * buf.PositionPrecision);
+                    d.Add((q.Position.Y + info.PositionMin.Y) * buf.PositionPrecision);
+                    d.Add((q.Position.Z + info.PositionMin.Z) * buf.PositionPrecision);
+                }
+            }
+            list.Add(new { name = mesh.MorphTargets[mi].Name, count = idx.Count, offset = fs.Position });
+            foreach (var i in idx) w.Write(i);
+            foreach (var f in d) w.Write(f);
+        }
+        return list;
     }
 
     static object WriteLod(MeshLodDto<SkinnedMeshVertex> lod, string path)
@@ -561,8 +635,30 @@ public static class Pals
         };
     }
 
+    // The sequence's own enum properties as the asset stores them: CUE4Parse's AdditiveAnimType field stays AAT_None for this build
+    // (the usmap has no enum names, so the tag reads "EAdditiveAnimationType::2"). Returns the trailing name / number.
+    static string RawEnum(UAnimSequence seq, string prop)
+    {
+        var v = seq.Properties.FirstOrDefault(p => p.Name.Text == prop)?.Tag?.GenericValue?.ToString() ?? "";
+        return v.Substring(v.LastIndexOf(':') + 1);
+    }
+
+    // An object property's target asset name (AnimSequence'AS_X' / package path / ...), "" when unset.
+    static string RawRef(UAnimSequence seq, string prop)
+    {
+        var v = seq.Properties.FirstOrDefault(p => p.Name.Text == prop)?.Tag?.GenericValue?.ToString() ?? "";
+        var m = System.Text.RegularExpressions.Regex.Match(v, @"(AS_[\w]+)");
+        return m.Success ? m.Groups[1].Value : v;
+    }
+
+    // EAdditiveAnimationType: 0 None, 1 LocalSpaceBase, 2 RotationOffsetMeshSpace
+    static readonly string[] AdditiveNames = { "AAT_None", "AAT_LocalSpaceBase", "AAT_RotationOffsetMeshSpace" };
+
     static object WriteAnim(UAnimSequence seq, string dir)
     {
+        var rawAdd = RawEnum(seq, "AdditiveAnimType");
+        var addType = int.TryParse(rawAdd, out var ai) && ai >= 0 && ai < AdditiveNames.Length ? AdditiveNames[ai]
+            : rawAdd.StartsWith("AAT_") ? rawAdd : seq.AdditiveAnimType.ToString();
         var set = AnimConverter.ConvertAnims(seq);
         var s = set.Sequences[0];
         var skel = set.Skeleton.ReferenceSkeleton;
@@ -598,8 +694,12 @@ public static class Pals
             frames,
             length = seq.SequenceLength,
             fps = s.FramesPerSecond,
-            additive = s.IsAdditive,
-            additiveType = seq.AdditiveAnimType.ToString(),
+            additive = addType != "AAT_None",
+            additiveType = addType,
+            // the base the deltas were authored against (an AnimFrame pose is the first frame of RefPoseSeq)
+            refPoseType = RawEnum(seq, "RefPoseType"),
+            refPoseSeq = RawRef(seq, "RefPoseSeq"),
+            refFrame = seq.GetOrDefault("RefFrameIndex", 0),
             rateScale = seq.GetOrDefault("RateScale", 1f),
             loop = seq.GetOrDefault("bLoop", false),
             tracks,
@@ -632,17 +732,53 @@ public static class Pals
             }
             else
             {
-                // Base UMaterial: keep only its declared properties + cached parameter defaults (expressions are huge).
-                if (Program.Force || !File.Exists(outPath))
+                // Base UMaterial: keep only its declared properties + parameter defaults (expressions are huge).
+                var defaults = MaterialDefaults(cur);
+                // engine / project stand-ins (DefaultBaseTexture, Engine Black...) mean "no map": not exported (importer.is_placeholder_texture)
+        foreach (var t in defaults.textures.Values)
+            if (!t.StartsWith("Engine/") && !System.Text.RegularExpressions.Regex.IsMatch(t[(t.LastIndexOf('/') + 1)..], "^(Default|T_Black|T_White|T_Default(Mask|Normal)|Black|White|Grey|Gray|FlatNormal)", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
+                textures.Add(t);
+                if (Program.Force || !File.Exists(outPath) || !File.ReadAllText(outPath).Contains("\"Defaults\""))
                 {
                     Directory.CreateDirectory(Path.GetDirectoryName(outPath)!);
                     var props = cur.Properties.ToDictionary(p => p.Name.Text, p => p.Tag?.GenericValue);
-                    File.WriteAllText(outPath, JsonConvert.SerializeObject(new { Type = cur.ExportType, Name = cur.Name, Properties = props }, Program.JsonSettings));
+                    File.WriteAllText(outPath, JsonConvert.SerializeObject(new { Type = cur.ExportType, Name = cur.Name, Properties = props, Defaults = new { defaults.scalars, defaults.vectors, defaults.textures } }, Program.JsonSettings));
                 }
                 cur = null;
             }
         }
         return chain;
+    }
+
+    // Parameter defaults of a base UMaterial, from its CachedExpressionData: RuntimeEntries[i].ParameterInfoSet names line up with
+    // ScalarValues (i=0), VectorValues (1) and TextureValues (3). Instances only store overrides, so e.g. M_Pal_Dream's MainTex
+    // (Daedream's gradient) exists only here. Texture soft paths "/Game/X.Y" become package paths "Pal/Content/X".
+    internal static (Dictionary<string, float> scalars, Dictionary<string, Newtonsoft.Json.Linq.JToken> vectors, Dictionary<string, string> textures) MaterialDefaults(UObject mat)
+    {
+        var scalars = new Dictionary<string, float>();
+        var vectors = new Dictionary<string, Newtonsoft.Json.Linq.JToken>();
+        var tex = new Dictionary<string, string>();
+        try
+        {
+            var j = Newtonsoft.Json.Linq.JToken.Parse(JsonConvert.SerializeObject(mat, Program.JsonSettings));
+            var ced = (j is Newtonsoft.Json.Linq.JArray a ? a[0] : j)["CachedExpressionData"];
+            if (ced == null) return (scalars, vectors, tex);
+            List<string> Names(int i) => ced[i == 0 ? "RuntimeEntries" : $"RuntimeEntries[{i}]"]?["ParameterInfoSet"]?
+                .Select(p => (string)p["Name"]!).ToList() ?? new List<string>();
+            var sn = Names(0); var sv = ced["ScalarValues"]?.ToList() ?? new();
+            for (int i = 0; i < Math.Min(sn.Count, sv.Count); i++) scalars.TryAdd(sn[i], (float)sv[i]);
+            var vn = Names(1); var vv = ced["VectorValues"]?.ToList() ?? new();
+            for (int i = 0; i < Math.Min(vn.Count, vv.Count); i++) vectors.TryAdd(vn[i], vv[i]);
+            var tn = Names(3); var tv = ced["TextureValues"]?.ToList() ?? new();
+            for (int i = 0; i < Math.Min(tn.Count, tv.Count); i++)
+            {
+                var p = ((string?)tv[i]["AssetPathName"] ?? "").Split('.')[0];
+                if (p.StartsWith("/Game/")) tex.TryAdd(tn[i], "Pal/Content/" + p["/Game/".Length..]);
+                else if (p.StartsWith("/Engine/")) tex.TryAdd(tn[i], "Engine/Content/" + p["/Engine/".Length..]);
+            }
+        }
+        catch (Exception e) { Console.Error.WriteLine($"material defaults {mat.Name}: {e.Message}"); }
+        return (scalars, vectors, tex);
     }
 
     static void ExportTexture(DefaultFileProvider provider, string path)
@@ -676,7 +812,7 @@ public static class Pals
         }
     }
 
-    static string PkgPath(UObject o) => o.GetPathName().Split('.')[0];
+    internal static string PkgPath(UObject o) => o.GetPathName().Split('.')[0];
     static float[] V(FVector v) => new[] { v.X, v.Y, v.Z };
     static float[] Q(FQuat q) => new[] { q.X, q.Y, q.Z, q.W };
     static float[] R(FRotator r) => new[] { r.Pitch, r.Yaw, r.Roll };

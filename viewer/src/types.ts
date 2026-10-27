@@ -2,6 +2,8 @@ export interface IndexModel {
   game: string;
   id: string;
   kind: 'pal' | 'human' | 'object' | string;
+  category?: string; // top-level picker tab: pals | weapons | humans | furniture | other
+  subcategory?: string | null;
   displayName: string;
   clips: number;
   variantGroups: string[];
@@ -16,10 +18,12 @@ export interface IndexModel {
   skin?: string | null;
   codeName?: string | null;
 }
+export interface CategoryInfo { id: string; label: string; count: number; subs: { id: string; label: string; count: number }[] }
 export interface GameIndex {
   indexVersion: number;
   game: string;
   name: string;
+  categories?: CategoryInfo[];
   models: IndexModel[];
 }
 export interface GameSummary { name: string; count: number; kinds: Record<string, number> }
@@ -27,7 +31,7 @@ export interface VariantOption { variant: number; name: string; label: string; d
 export interface VariantGroup { name: string; label: string; options: VariantOption[] }
 export interface ClipInfo {
   name: string; index: number; duration: number; frameRate: number; frameCount: number;
-  loop: boolean; category: string; default: boolean; visibility?: VisibilityTracks; uvOffset?: UvOffsetTracks; uvOffsetMode?: 'gltf_step';
+  loop: boolean; category: string; mountOk?: boolean; default: boolean; visibility?: VisibilityTracks; uvOffset?: UvOffsetTracks; uvOffsetMode?: 'gltf_step';
 }
 /** Per-material texture offset animation (BDSP eye gaze): material name -> keys in seconds, offsets in UV units (x right, y up). */
 export type UvOffsetTracks = Record<string, { times: number[]; values: [number, number][] }>;
@@ -50,11 +54,26 @@ export interface PaletteEntry { label: string; materials: string[]; divide: numb
   own?: number }
 export interface PartOption { id: string; label: string; default: boolean; nodes: string[]; palettes?: PaletteEntry[];
   /** Hidden-by-default beard meshes of this face: the Appearance section offers a Facial hair toggle. */
-  facialHair?: string[] }
+  facialHair?: string[];
+  /** Variant (by name) this option follows: picking that variant selects this option (brow set of an eye cell). */
+  variant?: string }
 export interface PartGroup { name: string; label: string; options: PartOption[] }
 export interface PropInfo { bone: string; side: string; clips: string[]; always?: boolean }
 /** A default held item (Palworld: the weapon a Pal carries) with its local offset on the prop bone (glTF metres, xyzw). */
 export interface HeldItemDefault { item: string; bone: string; position: number[]; rotation: number[]; scale?: number[]; always?: boolean }
+/** A tower boss riding this Pal: the boss model, the Pal bone it sits on, the offset in that bone's space, and the Pal's in-game size. */
+/** rotationSpace 'model': the rotation is in the Pal model's frame and ignores the bone's (the seat has bAbsoluteRotation); only `position` follows the bone. */
+export interface BossRide { boss: string; bone: string; position: number[]; rotation: number[]; rotationSpace?: 'model'; palScale: number; pairs?: ClipPair[] }
+export interface MountInfo { pal: string; bone: string; position: number[]; rotation: number[]; rotationSpace?: 'model'; palScale: number; scale?: number[]; pairs?: ClipPair[] }
+/** While the boss plays `boss`, the Pal plays `pal` in order (montage play `rate`; `loop` segments share the time the others leave). From the
+ *  game's tables (marker WazaMontage / Anim List <-> the Pal's waza action montages), see PalExtract BossClipPairs. */
+export interface ClipPair { boss: string; pal: { clip: string; rate?: number; loop?: boolean; from?: number; to?: number }[] }
+/** One KawaiiPhysics node of the game's anim layer: a bone chain below `root` simulated as cloth / hair (glTF metres, bone-local colliders). */
+export interface PhysicsNode {
+  root: string; extraRoots: string[]; exclude: string[]; damping: number; stiffness: number; radius: number; limitAngle: number; gravity: number[]; fps: number;
+  capsules: { bone: string; a: number[]; b: number[]; radius: number }[];
+  spheres: { bone: string; center: number[]; radius: number; inside: boolean }[];
+}
 export interface Manifest {
   manifestVersion: number;
   heldItem?: HeldItemDefault;
@@ -74,7 +93,7 @@ export interface Manifest {
   /** Z-A Holocast material sets (`holo`, `holo_red`): hologram presets from the data */
   holocast?: HolocastPreset[];
   stats: { joints: number; meshes: number; triangles: number; textures: number; clips: number; glbBytes: number };
-  extras?: { dex?: number; dexSuffix?: string; form?: string; species?: string; elements?: string[]; skin?: string; codeName?: string; rarity?: number };
+  extras?: { dex?: number; dexSuffix?: string; form?: string; species?: string; elements?: string[]; skin?: string; codeName?: string; rarity?: number; bossRide?: BossRide; physics?: PhysicsNode[]; auras?: { color: number[]; intensity: number; width: number; curve: number[][] }[]; mount?: MountInfo; /** ride clips carry the seat in the mount's frame: attach at its model origin, at tower size */ seatInClip?: boolean };
 }
 
 /** A calibrated gameplay screenshot (refs/<game>/index.json, written by tools/lightrefs/build_presets.py). */

@@ -11,12 +11,14 @@ export function dexLabel(m: Pick<IndexModel, 'dex' | 'dexSuffix'>): string {
   return m.dex != null ? '#' + String(m.dex).padStart(3, '0') + (m.dexSuffix ?? '') : '';
 }
 
-export type PalFilter = 'all' | 'pals' | 'skins';
-export const PAL_FILTERS: [PalFilter, string][] = [['all', 'All'], ['pals', 'Pals'], ['skins', 'Skins']];
+/** Category / subcategory of a model (older indexes lack the fields: derive them from `kind`). */
+export function categoryOf(m: IndexModel): string {
+  return m.category ?? (m.kind === 'pal' ? 'pals' : m.kind === 'object' ? 'weapons' : 'other');
+}
 
-export function filterModel(m: IndexModel, filter: PalFilter, query: string): boolean {
-  if (filter === 'pals' && m.skin) return false;
-  if (filter === 'skins' && !m.skin) return false;
+export function filterModel(m: IndexModel, category: string, sub: string, query: string): boolean {
+  if (categoryOf(m) !== category) return false;
+  if (sub !== 'all' && (m.subcategory ?? (m.skin ? 'skins' : 'pals')) !== sub) return false;
   const q = query.trim().toLowerCase();
   if (!q) return true;
   const hay = [m.displayName, m.id, m.codeName ?? '', dexLabel(m), String(m.dex ?? ''), ...(m.elements ?? [])].join(' ').toLowerCase();

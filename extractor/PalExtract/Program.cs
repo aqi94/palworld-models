@@ -7,6 +7,8 @@
 //   PalExtract tables                                 -> raw/tables/*.json (Pal data tables, English names)
 //   PalExtract pal    <code name>... | --all-pals     -> raw/palworld/<CodeName>/
 //   PalExtract weapon [<code name>...]                -> raw/palworld_weapons/<Weapon>/ + held.json (pal -> weapon)
+//   PalExtract human  <id>... | --all-humans          -> raw/palworld_humans/<Id>/ (NPCs, bosses, Player_<Gender> + parts/)
+//   PalExtract weapons-all [<id>...]                  -> raw/palworld_weapons/<Class>_<NNN>/ for every Model/Weapon mesh
 //
 // Options: --game <Pal dir> (default: Steam install), --raw <dir> (default: ../../raw relative to repo),
 //          --usmap <file> (optional mappings), --force (re-export existing).
@@ -43,6 +45,8 @@ public static class Program
         Force = args.Remove("--force");
         if (args.Count == 0) { Console.Error.WriteLine("usage: PalExtract list|probe|json|tables|pal ..."); return 2; }
 
+        if (args[0] == "reflect") { Shaders.Reflect(args[1]); return 0; } // API discovery, no game needed
+
         using var provider = Open();
         var cmd = args[0];
         var rest = args.Skip(1).ToList();
@@ -50,12 +54,17 @@ public static class Program
         {
             case "list": Commands.List(provider, rest); break;
             case "probe": Commands.Probe(provider, rest[0]); break;
+            case "shader": Shaders.Dump(provider, rest); break;
             case "json": Commands.Json(provider, rest[0], rest[1]); break;
             case "tables": Tables.Export(provider); break;
             case "pal": Pals.Export(provider, rest); break;
             case "refs": Pals.FindRefs(provider, rest); break;
             case "props": Pals.ScanProps(provider); break;
             case "weapon": Pals.ExportWeapons(provider, rest); break;
+            case "human": Humans.Export(provider, rest); break;
+            case "physics": Humans.ExportPhysics(provider, rest); break;
+            case "bossride": Humans.ExportBossRides(provider); break;
+            case "weapons-all": Humans.ExportAllWeapons(provider, rest); break;
             default: Console.Error.WriteLine($"unknown command {cmd}"); return 2;
         }
         return 0;

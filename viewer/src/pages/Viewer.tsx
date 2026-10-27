@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import type { GameIndex, IndexModel, Manifest, PaletteEntry, RefEntry } from '../types';
+import type { ClipInfo, GameIndex, IndexModel, Manifest, PaletteEntry, RefEntry } from '../types';
 import { loadGameIndex, loadRefIndex, modelAsset } from '../data';
 import { DEFAULT_ENV, LIGHTING_PRESETS, type Environment } from '../scene/environment';
 import { ReferencePanel, type RefMode } from '../ui/ReferencePanel';
@@ -38,6 +38,9 @@ import { InfoSection } from '../ui/InfoSection';
 import { AnimationsSection } from '../ui/AnimationsSection';
 import { VariationsSection } from '../ui/VariationsSection';
 import { HeldItemSection } from '../ui/HeldItemSection';
+import { RideSection } from '../ui/RideSection';
+import { MountSection } from '../ui/MountSection';
+import { ExpressionSection } from '../ui/ExpressionSection';
 import { PartsSection } from '../ui/PartsSection';
 import { PartGroupsSection } from '../ui/PartGroupsSection';
 import { HologramSection, defaultHologram } from '../ui/HologramSection';
@@ -78,6 +81,8 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
   const [lockParts, setLockParts] = useState(false);
   const [partsVis, setPartsVis] = useState<Record<string, boolean>>({});
   const [variantSel, setVariantSel] = useState<Record<string, number>>({});
+  const [morphNames, setMorphNames] = useState<string[]>([]);
+  const [morphVals, setMorphVals] = useState<Record<string, number>>({});
   const [groupSel, setGroupSel] = useState<Record<string, string>>({});
   const [palSel, setPalSel] = useState<Record<string, number[]>>({});
   const [variantColors, setVariantColors] = useState<Record<number, string | null>>({});
@@ -120,6 +125,18 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
   const [heldBone, setHeldBone] = useState('');
   const [heldOnly, setHeldOnly] = useState(true);
   const itemsRef = useRef<IndexModel[]>([]);
+  // tower boss riding this Pal (RideSection)
+  const [riders, setRiders] = useState<IndexModel[]>([]);
+  const ridersRef = useRef<IndexModel[]>([]);
+  const [rider, setRider] = useState('');
+  const [riderClips, setRiderClips] = useState<ClipInfo[]>([]);
+  const [riderClip, setRiderClip] = useState('');
+  const [towerSize, setTowerSize] = useState(false);
+  // Pal this boss rides (MountSection)
+  const [mountOn, setMountOn] = useState(false);
+  const [mountClips, setMountClips] = useState<ClipInfo[]>([]);
+  const [mountClip, setMountClip] = useState('');
+  const mountManRef = useRef<{ man: Manifest; url: string } | null>(null);
   // GPU context-loss recovery: the scene is rebuilt in place and the per-model state below is re-applied.
   const [reloadKey, setReloadKey] = useState(0);
   const [gpuFailed, setGpuFailed] = useState(false);
@@ -605,7 +622,7 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
     vs.setAutoRotate(o.autoRotate); vs.setMirror(o.mirror); vs.setShadows(o.shadows); vs.setWireframe(o.wireframe);
     vs.setOutline(outlineState(o));
     vs.setBackgroundVisible(!refBgHiddenRef.current);
-    setManifest(null); setError(null); setGpuFailed(false); setProgress(0); setHeldItem(''); setPb(EMPTY); setVariantColors({});
+    setManifest(null); setError(null); setGpuFailed(false); setProgress(0); setHeldItem(''); setRider(''); setRiderClips([]); setRiderClip(''); setTowerSize(false); setMountOn(false); setMountClips([]); setMountClip(''); mountManRef.current = null; setPb(EMPTY); setVariantColors({});
     const snap = snapRef.current?.id === id ? snapRef.current : null;
     snapRef.current = null;
     if (!snap) { palApplied.current = {}; lossTimes.current = []; }
@@ -617,6 +634,9 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
         if (!entry) throw new Error(`Model not found in index: ${game}/${id}`);
         const objs = index.models.filter((m) => m.kind === 'object').sort((a, b) => a.id.localeCompare(b.id));
         itemsRef.current = objs; setItems(objs);
+        if (sceneRef.current) sceneRef.current.heldUrl = (itemId) => { const it = objs.find((m) => m.id === itemId); return it ? modelAsset(`${it.path}model.glb`) : null; };
+        const hum = index.models.filter((m) => m.kind === 'human');
+        ridersRef.current = hum; setRiders(hum);
         setGameName(index.name);
         const man: Manifest = await (await fetch(modelAsset(entry.path + 'manifest.json'))).json();
         // manifests can contain duplicate clip names; the glTF mixer can only address one per name
@@ -630,6 +650,7 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
         const pv: Record<string, boolean> = {};
         for (const p of man.parts) if (p.lod === 0) pv[p.node] = vs.findNode(p.node)?.visible ?? false;
         setPartsVis(pv);
+        setMorphNames(vs.morphNames()); setMorphVals({});
         const sel: Record<string, number> = {};
         for (const g of man.variantGroups) sel[g.name] = g.options.find((o) => o.default)?.variant ?? g.options[0]?.variant ?? 0;
         setVariantSel(sel);
@@ -758,6 +779,57 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
     void sceneRef.current?.setHeldItem(it ? modelAsset(`${it.path}model.glb`) : null, prop, manifest?.heldItem?.item === itemId ? manifest.heldItem : undefined);
   };
 
+  /** Seat a tower boss on the Pal's BossRideMarker bone (offset from the Pal's blueprint) and have it follow the mount's animation. */
+  const applyRider = async (bossId: string) => {
+    const vs = sceneRef.current, ride = manifest?.extras?.bossRide;
+    setRider(bossId); setRiderClip('');
+    if (!vs || !ride) return;
+    const entry = ridersRef.current.find((m) => m.id === bossId);
+    if (!entry) { await vs.setRider(null, null, null); setRiderClips([]); setTowerSize(false); vs.setModelScale(1); return; }
+    const man: Manifest = await (await fetch(modelAsset(entry.path + 'manifest.json'))).json();
+    const seen = new Set<string>();
+    man.clips = man.clips.filter((c) => !seen.has(c.name) && !!seen.add(c.name));
+    setTowerSize(true); vs.setModelScale(ride.palScale); // a mount is always at the size the game shows it with a rider (the seat is authored for it)
+    const short = bossId.replace(/^Boss_/, '').replace(/\d+$/, ''); // Boss_ElectricBoss001 -> ElectricBoss
+    vs.riderClipFor = (_mount, clips) => (clips.find((c) => c.name.startsWith(`${short}_Ride_Idle`)) ?? clips.find((c) => c.name.startsWith(`${short}_`) && c.name.includes('Idle')))?.name ?? null;
+    await vs.setRider(modelAsset(entry.path + man.files.model), man, ride);
+    setRiderClips(vs.riderClips());
+  };
+
+  const changeRiderClip = (name: string) => {
+    const vs = sceneRef.current;
+    setRiderClip(name);
+    if (!vs) return;
+    const auto = !name;
+    vs.riderClipFor = auto ? vs.riderClipFor : () => null; // a picked clip stays until Auto is chosen again
+    vs.riderAuto = auto; // Auto also follows the clip pairs (the boss clip authored with the Pal's current clip)
+    if (name) vs.setRiderClip(name); else if (rider) void applyRider(rider);
+  };
+
+  /** Boss page: seat the boss on the Pal it rides (Pal manifest fetched once; only its mount-compatible clips are offered). */
+  const applyMount = async (on: boolean, clip = '') => {
+    const vs = sceneRef.current, mount = manifest?.extras?.mount;
+    setMountOn(on);
+    if (!vs || !mount) return;
+    if (!on) { await vs.setMount(null, null, null); return; }
+    const entry = (await loadGameIndex(game)).models.find((m) => m.id === mount.pal);
+    if (!entry) return;
+    if (!mountManRef.current) {
+      const man: Manifest = await (await fetch(modelAsset(entry.path + 'manifest.json'))).json();
+      const seen = new Set<string>();
+      man.clips = man.clips.filter((c) => !seen.has(c.name) && !!seen.add(c.name));
+      mountManRef.current = { man, url: modelAsset(entry.path + man.files.model) };
+    }
+    const { man, url } = mountManRef.current;
+    // offered by hand: the mount-compatible clips plus every clip the boss's ride clips pair with (Grizzbolt's Spa under Zoe's Ride_Spa)
+    const paired = new Set((mount.pairs ?? []).flatMap((p) => p.pal.map((s) => s.clip)));
+    const ok = man.clips.filter((c) => c.mountOk !== false || paired.has(c.name));
+    setMountClips(ok);
+    const start = clip || mountClip; // '' = Auto: follow the boss through the clip pairs
+    setMountClip(start);
+    await vs.setMount(url, man, mount, mount.palScale, start); // always at tower size, as in the game
+  };
+
   const changeLock = (v: boolean) => {
     setLockParts(v);
     sceneRef.current?.setLockPartsToClip(v);
@@ -787,6 +859,14 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
   const selectVariant = async (group: string, variant: number) => {
     const opts = manifest?.variantGroups.find((x) => x.name === group)?.options.map((o) => o.variant);
     const applied = await sceneRef.current?.variants?.select(variant, opts);
+    if (applied !== false) {
+      // Part options that follow a variant (Nox's brow / eyelash set of each eye cell, matched by the importer through UV1).
+      const name = manifest?.variantGroups.find((x) => x.name === group)?.options.find((o) => o.variant === variant)?.name;
+      for (const g of manifest?.partGroups ?? []) {
+        const o = name ? g.options.find((x) => x.variant === name) : undefined;
+        if (o) selectPartOption(g.name, o.id);
+      }
+    }
     if (applied === false || group !== 'skin') return; // overtaken by a newer pick: its own call re-bakes
     const tone = skinTone({ ...variantSel, skin: variant });
     for (const [key, ap] of Object.entries(palApplied.current)) {
@@ -843,6 +923,7 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
   };
 
   const visibleParts = manifest ? manifest.parts.filter((p) => p.lod === 0 && (!p.group || groupSel[p.group] === p.option)) : [];
+  const pickableGroups = (manifest?.partGroups ?? []).filter((g) => !g.options.every((o) => o.variant));
 
   return (
     <div className={'viewer' + (panelsHidden ? ' no-panels' : '')} style={{ ['--sidebar-w' as string]: sidebarW + 'px' }}>
@@ -936,6 +1017,37 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
                 id: 'look', label: 'Appearance', content: (
                   <SplitPane storageKey="partsPaneH" bottom={
                     <PartsSection parts={visibleParts} visible={partsVis} driven={partsDriven} onToggle={togglePart} onAll={allParts} lockToClip={lockParts} onLockChange={changeLock}>
+                      {manifest.extras?.bossRide && (
+                        <RideSection
+                          riders={riders.filter((m) => m.id === manifest.extras!.bossRide!.boss)}
+                          rider={rider}
+                          clips={riderClips}
+                          clip={riderClip}
+                          towerScale={manifest.extras.bossRide.palScale}
+                          towerSize={towerSize}
+                          onRider={(b) => void applyRider(b)}
+                          onClip={changeRiderClip}
+                          onTowerSize={(v) => { setTowerSize(v); sceneRef.current?.setModelScale(v ? manifest.extras!.bossRide!.palScale : 1); }}
+                        />
+                      )}
+                      {morphNames.length > 0 && (
+                        <ExpressionSection
+                          names={morphNames}
+                          values={morphVals}
+                          onChange={(n, w) => { sceneRef.current?.setMorph(n, w); setMorphVals((c) => ({ ...c, [n]: w })); }}
+                          onReset={() => { for (const n of morphNames) sceneRef.current?.setMorph(n, 0); setMorphVals({}); }}
+                        />
+                      )}
+                      {manifest.extras?.mount && (
+                        <MountSection
+                          palName={manifest.extras.mount.pal}
+                          on={mountOn}
+                          clips={mountClips}
+                          clip={mountClip}
+                          onToggle={(v) => void applyMount(v)}
+                          onClip={(c) => { setMountClip(c); sceneRef.current?.setMountClip(c); }}
+                        />
+                      )}
                       {(manifest.props?.length ?? 0) > 0 && (
                         <HeldItemSection
                           items={items}
@@ -962,8 +1074,9 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
                       colors={variantColors}
                       onSelect={(g, v) => { setVariantSel((s) => ({ ...s, [g]: v })); void selectVariant(g, v); }}
                     />
-                    {(manifest.partGroups?.length ?? 0) > 0 && (
-                      <PartGroupsSection groups={manifest.partGroups!} selected={groupSel} palettes={palSel} onSelect={selectPartOption} onPalette={selectPalette} skin={skinTone()} partsVis={partsVis} onTogglePart={(n, v) => { togglePart(n, v); setPartsVis((c) => ({ ...c, [n]: v })); }} />
+                    {/* groups driven by a variant (Nox's brows follow the Eye pick) get no picker of their own */}
+                    {pickableGroups.length > 0 && (
+                      <PartGroupsSection groups={pickableGroups} selected={groupSel} palettes={palSel} onSelect={selectPartOption} onPalette={selectPalette} skin={skinTone()} partsVis={partsVis} onTogglePart={(n, v) => { togglePart(n, v); setPartsVis((c) => ({ ...c, [n]: v })); }} />
                     )}
                     {(manifest.holocast?.length ?? 0) > 0 && <HologramSection presets={manifest.holocast ?? []} state={hologram} onChange={setHologram} />}
                   </>

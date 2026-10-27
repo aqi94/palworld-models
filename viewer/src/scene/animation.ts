@@ -92,6 +92,22 @@ export class AnimationController {
     return a ? { duration: a.getClip().duration, once: a.loop === THREE.LoopOnce } : null;
   }
 
+  /** A clip's duration in seconds (0 if unknown). */
+  duration(name: string) { return this.clips.get(name)?.duration ?? 0; }
+
+  /** Pose clip `name` at `t` seconds, switching to it if needed; the action stays paused (driven from outside, e.g. by a rider's clip). */
+  poseAt(name: string, t: number) {
+    if (this.current !== name) this.play(name);
+    const a = this.action;
+    if (!a) return;
+    a.enabled = true;
+    a.paused = true;
+    a.time = Math.min(a.getClip().duration, Math.max(0, t));
+    const ts = this.mixer.timeScale;
+    this.mixer.update(0);
+    this.mixer.timeScale = ts;
+  }
+
   /** Pause and pose the current clip at `t` seconds (frame-exact exports). */
   seekTime(t: number) {
     const a = this.action;
