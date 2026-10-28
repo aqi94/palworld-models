@@ -9,6 +9,7 @@
 //   PalExtract weapon [<code name>...]                -> raw/palworld_weapons/<Weapon>/ + held.json (pal -> weapon)
 //   PalExtract human  <id>... | --all-humans          -> raw/palworld_humans/<Id>/ (NPCs, bosses, Player_<Gender> + parts/)
 //   PalExtract weapons-all [<id>...]                  -> raw/palworld_weapons/<Class>_<NNN>/ for every Model/Weapon mesh
+//   PalExtract items                                  -> raw/palworld_weapons/items.json (weapon blueprints: parts, material overrides)
 //
 // Options: --game <Pal dir> (default: Steam install), --raw <dir> (default: ../../raw relative to repo),
 //          --usmap <file> (optional mappings), --force (re-export existing).
@@ -65,6 +66,10 @@ public static class Program
             case "physics": Humans.ExportPhysics(provider, rest); break;
             case "bossride": Humans.ExportBossRides(provider); break;
             case "weapons-all": Humans.ExportAllWeapons(provider, rest); break;
+            case "retarget": Retarget.Patch(provider, rest); break;
+            case "npcsets": NpcSets.Export(provider, rest); break;
+            case "animpack": NpcSets.ExportPacks(provider, rest); break;
+            case "items": Items.Export(provider, rest); break;
             default: Console.Error.WriteLine($"unknown command {cmd}"); return 2;
         }
         return 0;

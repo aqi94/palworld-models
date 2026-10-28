@@ -1,6 +1,17 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import type { ClipInfo, GameIndex, IndexModel, Manifest, PaletteEntry, RefEntry } from '../types';
+import type { AnimPack, ClipInfo, GameIndex, IndexModel, Manifest, PaletteEntry, RefEntry } from '../types';
 import { loadGameIndex, loadRefIndex, modelAsset } from '../data';
+
+/** Shared animation packs' manifests (clip lists), fetched once per session. */
+const packManifests = new Map<string, Promise<Manifest | null>>();
+function packManifest(path: string): Promise<Manifest | null> {
+  let p = packManifests.get(path);
+  if (!p) {
+    p = fetch(modelAsset(path + 'manifest.json')).then((r) => (r.ok ? (r.json() as Promise<Manifest>) : null)).catch(() => null);
+    packManifests.set(path, p);
+  }
+  return p;
+}
 import { DEFAULT_ENV, LIGHTING_PRESETS, type Environment } from '../scene/environment';
 import { ReferencePanel, type RefMode } from '../ui/ReferencePanel';
 import { RefImageLayer } from '../ui/RefImageLayer';
@@ -13,7 +24,7 @@ import { loadExcludes, storeExcludes, type RefBox } from '../scene/refImage';
 import type { SolveSummary } from '../ui/RefImageSection';
 import { loadLastEnv, storeLastEnv } from '../scene/userPresets';
 import { ViewerScene } from '../scene/ViewerScene';
-import { TIME_SCALES, type PlaybackState } from '../scene/animation';
+import { TIME_SCALES, type PackRetarget, type PlaybackState } from '../scene/animation';
 import { exportGlb } from '../scene/exporter';
 import { DEFAULT_EXPORT, loadExportOptions, saveExportOptions, type ExportOptions } from '../scene/exportOptions';
 import { ExportPanel } from '../ui/ExportPanel';
@@ -125,6 +136,9 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
   const [heldBone, setHeldBone] = useState('');
   const [heldOnly, setHeldOnly] = useState(true);
   const itemsRef = useRef<IndexModel[]>([]);
+  // humans: shared animation packs of this model, and whether the user picked the held item by hand (then packs stop swapping it)
+  const packsRef = useRef<{ packs: AnimPack[]; defaults: Record<string, string | undefined>; retarget: Record<string, PackRetarget | undefined> }>({ packs: [], defaults: {}, retarget: {} });
+  const heldManual = useRef(false);
   // tower boss riding this Pal (RideSection)
   const [riders, setRiders] = useState<IndexModel[]>([]);
   const ridersRef = useRef<IndexModel[]>([]);
@@ -622,6 +636,7 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
     vs.setAutoRotate(o.autoRotate); vs.setMirror(o.mirror); vs.setShadows(o.shadows); vs.setWireframe(o.wireframe);
     vs.setOutline(outlineState(o));
     vs.setBackgroundVisible(!refBgHiddenRef.current);
+    packsRef.current = { packs: [], defaults: {}, retarget: {} }; heldManual.current = false;
     setManifest(null); setError(null); setGpuFailed(false); setProgress(0); setHeldItem(''); setRider(''); setRiderClips([]); setRiderClip(''); setTowerSize(false); setMountOn(false); setMountClips([]); setMountClip(''); mountManRef.current = null; setPb(EMPTY); setVariantColors({});
     const snap = snapRef.current?.id === id ? snapRef.current : null;
     snapRef.current = null;
@@ -645,6 +660,34 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
         modelUrl.current = modelAsset(entry.path + man.files.model);
         await vs.load(man, modelUrl.current, (f) => setProgress(f));
         if (cancelled) return;
+        // humans: append the clips of their shared animation packs (own sets first); a pack's GLB loads when one of its clips plays
+        const packs = man.extras?.animPacks ?? [];
+        if (packs.length) {
+          const pms = await Promise.all(packs.map((p) => packManifest(p.path)));
+          if (cancelled) return;
+          const defaults: Record<string, string | undefined> = {};
+          const retarget: Record<string, PackRetarget | undefined> = {};
+          packs.forEach((p, i) => {
+            const pm = pms[i];
+            if (!pm) return;
+            defaults[p.id] = pm.defaultClip;
+            retarget[p.id] = (pm.extras as { retarget?: PackRetarget } | undefined)?.retarget;
+            for (const c of pm.clips) if (!seen.has(c.name)) { seen.add(c.name); man.clips.push({ ...c, pack: p.id, default: false }); }
+          });
+          packsRef.current = { packs, defaults, retarget };
+          const byName = new Map(man.clips.map((c) => [c.name, c]));
+          // a weapon is in hand while its pack's clips play (unarmed / action sets put it away)
+          vs.heldClipGate = (clip) => { const pk = byName.get(clip)?.pack; return !!pk && !!packs.find((p) => p.id === pk)?.heldItems?.length; };
+          const dp = packs.find((p) => p.id === man.extras?.defaultPack);
+          const start = dp && defaults[dp.id];
+          if (!man.defaultClip && dp && start) {
+            await vs.loadClipPack(modelAsset(dp.path + 'model.glb'), man.clips.filter((c) => c.pack === dp.id), retarget[dp.id]);
+            if (cancelled) return;
+            man.defaultClip = start;
+            for (const c of man.clips) c.default = c.name === start;
+            vs.anim?.play(start);
+          }
+        }
         if (optionsRef.current.skeleton) vs.setSkeleton(true);
         if (optionsRef.current.albedo !== 'baked') void vs.setAlbedoMode(optionsRef.current.albedo);
         const pv: Record<string, boolean> = {};
@@ -693,10 +736,36 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
   }, [game, id, reloadKey]);
 
   const clips = manifest?.clips ?? [];
-  const playClip = useCallback((name: string) => {
-    sceneRef.current?.anim?.play(name);
-    const s = sceneRef.current?.anim?.state(); if (s) setPb(s);
+  /** Put the weapon of a pack in hand (humans): the item the character's generator hands out for that weapon type. */
+  const equipPackWeapon = useCallback(async (pack: AnimPack) => {
+    const vs = sceneRef.current, man = vs?.manifest;
+    const hs = pack.heldItems ?? [];
+    if (!vs || !man || heldManual.current || !hs.length || live.current.heldItem === hs[0].item) return;
+    const prop = (h: { bone: string }) => man.props?.find((p) => p.bone === h.bone) ?? { bone: h.bone, side: h.bone.endsWith('_l') ? 'left' : 'right', clips: [] };
+    const it = itemsRef.current.find((m) => m.id === hs[0].item);
+    if (!it) return;
+    setHeldItem(it.id); setHeldBone(hs[0].bone);
+    await vs.setHeldItem(modelAsset(`${it.path}model.glb`), prop(hs[0]), hs[0]);
+    const extras = hs.slice(1).flatMap((h) => {
+      const m = itemsRef.current.find((x) => x.id === h.item);
+      return m ? [{ url: modelAsset(`${m.path}model.glb`), prop: prop(h), offset: h }] : [];
+    });
+    if (extras.length) await vs.setExtraHeld(extras);
   }, []);
+  const playClip = useCallback(async (name: string) => {
+    const vs = sceneRef.current;
+    if (!vs?.anim) return;
+    const info = vs.manifest?.clips.find((c) => c.name === name);
+    const pack = info?.pack ? packsRef.current.packs.find((p) => p.id === info.pack) : undefined;
+    if (pack && !vs.anim.has(name)) {
+      const anim = vs.anim;
+      if (!(await vs.loadClipPack(modelAsset(pack.path + 'model.glb'), vs.manifest!.clips.filter((c) => c.pack === pack.id), packsRef.current.retarget[pack.id]))) return;
+      if (sceneRef.current !== vs || vs.anim !== anim) return;
+    }
+    vs.anim.play(name);
+    if (pack) void equipPackWeapon(pack);
+    const s = vs.anim.state(); if (s) setPb(s);
+  }, [equipPackWeapon]);
   const step = useCallback((d: number) => {
     const a = sceneRef.current?.anim;
     if (!a || !clips.length) return;
@@ -965,7 +1034,7 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
           <Panel title="Models" grow flex={railSplit}><ModelPicker index={index} id={id} onSelect={onSelect} /></Panel>
           <div className="rail-split" onPointerDown={startRailDrag} title="Drag to resize" />
           <Panel title={`Animations${clips.length ? ` (${clips.length})` : ''}`} grow flex={1 - railSplit}>
-            <AnimationsSection clips={clips} state={pb} onSelect={playClip} />
+            <AnimationsSection clips={clips} state={pb} onSelect={(n) => void playClip(n)} packs={manifest?.extras?.animPacks} />
           </Panel>
         </aside>
         <div className="center">
@@ -1055,7 +1124,7 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
                           item={heldItem}
                           bone={heldBone}
                           onlyInClips={heldOnly}
-                          onItem={(i) => { setHeldItem(i); applyHeld(i, heldBone); }}
+                          onItem={(i) => { heldManual.current = true; setHeldItem(i); applyHeld(i, heldBone); }}
                           onBone={(b) => { setHeldBone(b); applyHeld(heldItem, b); }}
                           onOnlyInClips={(v) => { setHeldOnly(v); heldOnlyRef.current = v; sceneRef.current?.setHeldOnlyInClips(v); }}
                         />

@@ -13,6 +13,9 @@ export interface PlaybackState {
 
 export const TIME_SCALES = [0.25, 0.5, 1, 2];
 
+/** Animation pack manifest extras.retarget: bones whose translation depends on the target mesh -> mode + source translation per clip. */
+export type PackRetarget = Record<string, { mode: 'AnimationScaled' | 'AnimationRelative'; sources: Record<string, [number, number, number]> }>;
+
 export class AnimationController {
   mixer: THREE.AnimationMixer;
   private clips = new Map<string, THREE.AnimationClip>();
@@ -22,13 +25,53 @@ export class AnimationController {
   paused = false;
   timeScale = 1;
 
+  /** node name -> bind-pose position, captured before anything plays (pack clips are fitted to these) */
+  private bind = new Map<string, THREE.Vector3>();
+
   constructor(root: THREE.Object3D, clips: THREE.AnimationClip[], infos: ClipInfo[]) {
     this.mixer = new THREE.AnimationMixer(root);
+    root.traverse((o) => { if (!this.bind.has(o.name)) this.bind.set(o.name, o.position.clone()); });
     clips.forEach((c) => this.clips.set(c.name, c));
     infos.forEach((i) => this.infos.set(i.name, i));
   }
 
   has(name: string) { return this.clips.has(name); }
+
+  private nodeNames?: Set<string>;
+  /** Register clips from another GLB (a shared animation pack). Tracks bind by node name; tracks for bones this model lacks are dropped
+   *  (the human skeleton has every outfit's cloth bones). Clips are rebuilt per model, so a cached pack can serve several models.
+   *  The first clip registered under a name wins. */
+  addClips(root: THREE.Object3D, clips: THREE.AnimationClip[], infos: ClipInfo[], retarget?: PackRetarget) {
+    if (!this.nodeNames) { const n = new Set<string>(); root.traverse((o) => { n.add(o.name); }); this.nodeNames = n; }
+    const names = this.nodeNames;
+    for (const c of clips) {
+      if (this.clips.has(c.name)) continue;
+      const tracks = c.tracks.filter((t) => names.has(THREE.PropertyBinding.parseTrackName(t.name).nodeName)).map((t) => this.fit(t, c.name, retarget));
+      this.clips.set(c.name, new THREE.AnimationClip(c.name, c.duration, tracks));
+    }
+    for (const i of infos) if (!this.infos.has(i.name)) this.infos.set(i.name, i);
+  }
+
+  /** The engine's translation retargeting for a pack track (Skeleton-mode bones carry no translation track at all, so they keep the
+   *  mesh's offset): AnimationScaled = scaled by this mesh's bone length over the source's; AnimationRelative = shifted by the difference. */
+  private fit(t: THREE.KeyframeTrack, clip: string, retarget?: PackRetarget): THREE.KeyframeTrack {
+    const p = THREE.PropertyBinding.parseTrackName(t.name);
+    const r = retarget?.[p.nodeName];
+    if (!r || p.propertyName !== 'position') return t;
+    const src = r.sources[clip], dst = this.bind.get(p.nodeName);
+    if (!src || !dst) return t;
+    const v = Float32Array.from(t.values as ArrayLike<number>);
+    if (r.mode === 'AnimationScaled') {
+      const ls = Math.hypot(src[0], src[1], src[2]), k = ls > 1e-6 ? dst.length() / ls : 1;
+      for (let i = 0; i < v.length; i++) v[i] *= k;
+    } else if (r.mode === 'AnimationRelative') {
+      const d = [dst.x - src[0], dst.y - src[1], dst.z - src[2]];
+      for (let i = 0; i < v.length; i++) v[i] += d[i % 3];
+    }
+    const out = t.clone();
+    out.values = v;
+    return out;
+  }
 
   play(name: string) {
     const clip = this.clips.get(name);

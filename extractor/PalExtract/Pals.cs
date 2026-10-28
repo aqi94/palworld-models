@@ -213,7 +213,7 @@ public static class Pals
     internal static double[] Rot(Newtonsoft.Json.Linq.JToken? t) => t == null ? new double[3] : new[] { (double)(t["Pitch"] ?? 0), (double)(t["Yaw"] ?? 0), (double)(t["Roll"] ?? 0) };
 
     // SK_Weapon_Shotgun_004 -> Shotgun_004, SM_Weapon_Handgun_002 -> Handgun_002, SK_QueenBee_spear -> QueenBee_spear
-    static string MeshItemName(string meshPath) => System.Text.RegularExpressions.Regex.Replace(meshPath.Split('/').Last(), @"^(S[KM]_)(Weapon_)?", "");
+    internal static string MeshItemName(string meshPath) => System.Text.RegularExpressions.Regex.Replace(meshPath.Split('/').Last(), @"^(S[KM]_)(Weapon_)?", "", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
 
     // socket name -> (bone, relative location, relative rotation [pitch,yaw,roll]) from the Pal's skeleton; a socket that is not
     // found is taken to be a bone name
@@ -432,7 +432,7 @@ public static class Pals
                 t = V(skeleton.ReferenceSkeleton.FinalRefBonePose[i].Translation),
                 r = Q(skeleton.ReferenceSkeleton.FinalRefBonePose[i].Rotation),
                 s = V(skeleton.ReferenceSkeleton.FinalRefBonePose[i].Scale3D),
-                retarget = i < skeleton.BoneTree.Length ? skeleton.BoneTree[i].ToString() : "",
+                retarget = Retarget.For(skeleton).modes.GetValueOrDefault(bi.Name.Text, ""), // raw property: the typed BoneTree field reads Animation for every bone
             }).ToList(),
             materials,
             lods,
@@ -654,7 +654,7 @@ public static class Pals
     // EAdditiveAnimationType: 0 None, 1 LocalSpaceBase, 2 RotationOffsetMeshSpace
     static readonly string[] AdditiveNames = { "AAT_None", "AAT_LocalSpaceBase", "AAT_RotationOffsetMeshSpace" };
 
-    static object WriteAnim(UAnimSequence seq, string dir)
+    internal static object WriteAnim(UAnimSequence seq, string dir)
     {
         var rawAdd = RawEnum(seq, "AdditiveAnimType");
         var addType = int.TryParse(rawAdd, out var ai) && ai >= 0 && ai < AdditiveNames.Length ? AdditiveNames[ai]
@@ -707,7 +707,7 @@ public static class Pals
     }
 
     // Material instance chain -> JSON files; collects every referenced texture package path.
-    static List<string> ExportMaterialChain(UMaterialInterface mat, HashSet<string> textures)
+    internal static List<string> ExportMaterialChain(UMaterialInterface mat, HashSet<string> textures)
     {
         var chain = new List<string>();
         UMaterialInterface? cur = mat;
@@ -735,14 +735,13 @@ public static class Pals
                 // Base UMaterial: keep only its declared properties + parameter defaults (expressions are huge).
                 var defaults = MaterialDefaults(cur);
                 // engine / project stand-ins (DefaultBaseTexture, Engine Black...) mean "no map": not exported (importer.is_placeholder_texture)
-        foreach (var t in defaults.textures.Values)
-            if (!t.StartsWith("Engine/") && !System.Text.RegularExpressions.Regex.IsMatch(t[(t.LastIndexOf('/') + 1)..], "^(Default|T_Black|T_White|T_Default(Mask|Normal)|Black|White|Grey|Gray|FlatNormal)", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
-                textures.Add(t);
-                if (Program.Force || !File.Exists(outPath) || !File.ReadAllText(outPath).Contains("\"Defaults\""))
+                foreach (var t in defaults.textures.Values.Concat(defaults.referenced))
+                    if (!IsPlaceholderTexture(t)) textures.Add(t);
+                if (Program.Force || !File.Exists(outPath) || !File.ReadAllText(outPath).Contains("\"referenced\""))
                 {
                     Directory.CreateDirectory(Path.GetDirectoryName(outPath)!);
                     var props = cur.Properties.ToDictionary(p => p.Name.Text, p => p.Tag?.GenericValue);
-                    File.WriteAllText(outPath, JsonConvert.SerializeObject(new { Type = cur.ExportType, Name = cur.Name, Properties = props, Defaults = new { defaults.scalars, defaults.vectors, defaults.textures } }, Program.JsonSettings));
+                    File.WriteAllText(outPath, JsonConvert.SerializeObject(new { Type = cur.ExportType, Name = cur.Name, Properties = props, Defaults = new { defaults.scalars, defaults.vectors, defaults.textures, defaults.referenced } }, Program.JsonSettings));
                 }
                 cur = null;
             }
@@ -750,19 +749,32 @@ public static class Pals
         return chain;
     }
 
+    internal static bool IsPlaceholderTexture(string t) => t.StartsWith("Engine/") || System.Text.RegularExpressions.Regex.IsMatch(t[(t.LastIndexOf('/') + 1)..],
+        "^(Default|T_Black|T_White|T_Default(Mask|Normal)|Black|White|Grey|Gray|FlatNormal)", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+
     // Parameter defaults of a base UMaterial, from its CachedExpressionData: RuntimeEntries[i].ParameterInfoSet names line up with
     // ScalarValues (i=0), VectorValues (1) and TextureValues (3). Instances only store overrides, so e.g. M_Pal_Dream's MainTex
     // (Daedream's gradient) exists only here. Texture soft paths "/Game/X.Y" become package paths "Pal/Content/X".
-    internal static (Dictionary<string, float> scalars, Dictionary<string, Newtonsoft.Json.Linq.JToken> vectors, Dictionary<string, string> textures) MaterialDefaults(UObject mat)
+    // ReferencedTextures: every texture the expression graph samples, parameter or not, as package paths. Plain weapon materials
+    // (M_Weapon_AssaultRifle_008_Magazine) sample their maps through TextureSample nodes, so this is the only place their textures are named.
+    internal static (Dictionary<string, float> scalars, Dictionary<string, Newtonsoft.Json.Linq.JToken> vectors, Dictionary<string, string> textures, List<string> referenced) MaterialDefaults(UObject mat)
     {
         var scalars = new Dictionary<string, float>();
         var vectors = new Dictionary<string, Newtonsoft.Json.Linq.JToken>();
         var tex = new Dictionary<string, string>();
+        var referenced = new List<string>();
         try
         {
             var j = Newtonsoft.Json.Linq.JToken.Parse(JsonConvert.SerializeObject(mat, Program.JsonSettings));
             var ced = (j is Newtonsoft.Json.Linq.JArray a ? a[0] : j)["CachedExpressionData"];
-            if (ced == null) return (scalars, vectors, tex);
+            if (ced == null) return (scalars, vectors, tex, referenced);
+            foreach (var r in ced["ReferencedTextures"] ?? new Newtonsoft.Json.Linq.JArray())
+            {
+                var op = r.Type == Newtonsoft.Json.Linq.JTokenType.Object ? (string?)r["ObjectPath"] : null;
+                if (string.IsNullOrEmpty(op)) continue;
+                var pkg = op[..(op.LastIndexOf('.') is var d && d > op.LastIndexOf('/') ? d : op.Length)];
+                if (!referenced.Contains(pkg)) referenced.Add(pkg);
+            }
             List<string> Names(int i) => ced[i == 0 ? "RuntimeEntries" : $"RuntimeEntries[{i}]"]?["ParameterInfoSet"]?
                 .Select(p => (string)p["Name"]!).ToList() ?? new List<string>();
             var sn = Names(0); var sv = ced["ScalarValues"]?.ToList() ?? new();
@@ -778,10 +790,10 @@ public static class Pals
             }
         }
         catch (Exception e) { Console.Error.WriteLine($"material defaults {mat.Name}: {e.Message}"); }
-        return (scalars, vectors, tex);
+        return (scalars, vectors, tex, referenced);
     }
 
-    static void ExportTexture(DefaultFileProvider provider, string path)
+    internal static void ExportTexture(DefaultFileProvider provider, string path)
     {
         var outPath = Path.Combine(Program.RawDir, "textures", path.Replace('/', Path.DirectorySeparatorChar) + ".png");
         var meta = Path.ChangeExtension(outPath, ".json");

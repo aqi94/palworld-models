@@ -62,6 +62,36 @@ def clip_name(asset: str, code: str) -> str:
     return name.split("_", 1)[1] if "_" in name else name
 
 
+# Human clip names keep their owner (Player_Female_Idle_AssaultRifle, NPC_Fat_Attack_HeavyWeapon); the rules read the action after it.
+HUMAN_OWNER_RE = re.compile(r"^(Player|NPC|UniqueNPC)_((Female2?|Male|Fat)_)?")
+HUMAN_RULES: list[tuple[str, str]] = [
+    ("battle", r"(^|_)(Reload|Draw|Aim|Attack|Combo|Iai|Shot|Shoot|Fire|Throw)"),
+    ("move", r"^(Jog|Crouch|Sliding|AirJump|Jump|Walk|Run|Sprint|Swim|Climb|Crawl|Glide|TwoHandGlide|OneHandGlide|RollFwd|AirDash|Dodge)"),
+    ("ride", r"(HorseRide|SitRide|CarpetRide|HumanRide|BiggerHorseRide|UniqueRide)"),
+    ("emote", r"(Emote|Talking|Listen|Pray|Surprise|Lean_|Give|Petting|Cheer|Dance|Wave)"),
+]
+# looping human motions: stances and locomotion (Idle_AssaultRifle, Crouch_Walk_Handgun, JogFwd_Aim_Bowgun); never a Start / End / In / Out
+HUMAN_LOOP_RE = re.compile(r"(^|_)(Idle|Walk|Jog|Run|Sprint|Swim|Aim|Crawl_Walk)(Fwd|Bwd|Left|Right)?(_[A-Za-z0-9]+)?$")
+HUMAN_ONESHOT_RE = re.compile(r"(Start|End|_In|_Out|JumpIn|JumpOut)(_|$)")
+
+
+def human_action(name: str) -> str:
+    return HUMAN_OWNER_RE.sub("", name)
+
+
+def human_categorize(name: str) -> str:
+    base = human_action(name)
+    for cat, rx in HUMAN_RULES:
+        if re.search(rx, base):
+            return cat
+    return categorize(base)
+
+
+def human_loop(name: str) -> bool:
+    base = human_action(name)
+    return bool((LOOP_RE.search(base) or HUMAN_LOOP_RE.search(base)) and not HUMAN_ONESHOT_RE.search(base))
+
+
 def categorize(name: str) -> str:
     for cat, rx in CATEGORY_RULES:
         if re.search(rx, name, re.I):
@@ -303,6 +333,33 @@ class TextureCache:
         out[..., 1] = (g * 255.0 + 0.5).astype(np.uint8)
         out[..., 2] = (r * 255.0 + 0.5).astype(np.uint8)
         out[..., 3] = 255
+        self.model.textures[key] = TextureImage(key, out, srgb=False)
+        return key
+
+    def orm_split(self, metal: str | None, rough: str | None) -> str | None:
+        """Separate metallic / roughness maps (R channel each, Handgun_006) -> one glTF ORM texture (no occlusion)."""
+        imgs = {}
+        for k, p in (("m", metal), ("r", rough)):
+            img = self._load(p) if p else None
+            if img is not None:
+                if self.pal.texture_meta(p).get("srgb", False):
+                    img = (_srgb_to_linear(img) * 255.0 + 0.5).astype(np.uint8)
+                imgs[k] = img
+        if not imgs:
+            return None
+        key = "_".join(p.rsplit("/", 1)[-1] for p in (metal, rough) if p) + "_ORM"
+        if key in self.model.textures:
+            return key
+        shape = next(iter(imgs.values())).shape[:2]
+        out = np.full((*shape, 4), 255, np.uint8)
+        for k, ch in (("r", 1), ("m", 2)):
+            if k in imgs:
+                img = imgs[k]
+                if img.shape[:2] != shape:
+                    img = np.array(Image.fromarray(img).resize(shape[::-1]))
+                out[..., ch] = img[..., 0]
+            elif k == "m":
+                out[..., ch] = 0
         self.model.textures[key] = TextureImage(key, out, srgb=False)
         return key
 
@@ -1028,14 +1085,39 @@ def bake_additive(pal: RawPal, a: dict, base: dict) -> dict[str, np.ndarray]:
     return out
 
 
+def human_owner(code: str) -> str:
+    """The clip-name owner of a human: Boss_GrassBoss001_Skin001 -> GrassBoss, Boss_ElectricBoss_Unique -> ElectricBoss,
+    NPC_Male_Scholar01_v02 -> NPC_Male_Scholar."""
+    if code.startswith("Boss_"):
+        return re.match(r"Boss_([A-Za-z]+?)\d*(_|$)", code).group(1)
+    return re.sub(r"(\d+)?(_v\d+)?$", "", code)
+
+
+def shared_human_skeleton(pal: RawPal) -> bool:
+    """Is the mesh on the shared human skeleton (or one compatible with it), per animsets.json?"""
+    p = os.path.join(pal.root, "palworld_humans", "animsets.json")
+    if not os.path.isfile(p):
+        return True
+    with open(p, encoding="utf-8") as f:
+        doc = json.load(f)
+    return pal.info.get("skeleton") in set(doc.get("compatible") or [doc.get("skeleton")])
+
+
 def build_clips(pal: RawPal) -> list[Clip]:
     bones = {b["name"]: b for b in pal.info["bones"]}
     skel = {b["name"]: b for b in (pal.info.get("skeletonBones") or [])}
     clips: list[Clip] = []
     seen: dict[str, int] = {}
-    # humans share one skeleton, so the extractor finds every character's clips; keep the character's own (AS_<Boss>_*)
-    human = pal.sub == "palworld_humans"
-    owner = pal.code.removeprefix("Boss_").rstrip("0123456789") if pal.sub == "palworld_humans" else None
+    # human clips keep their owner in the name (Player_Female_Idle_None, GrassBoss_Ride_Idle). Shared sets live in animation packs
+    # (raw/palworld_animpacks, `PalExtract animpack`); a human's own folder holds only boss / cutscene sequences, of every boss (shared
+    # skeleton), so it keeps its own (AS_<Boss>_*).
+    human = pal.sub in ("palworld_humans", "palworld_animpacks")
+    pack = pal.sub == "palworld_animpacks"
+    pack_retarget: dict[str, dict] = {}  # bone -> {mode, sources: {sequence: source translation (glTF)}}, for the viewer
+    pal.info["_packRetarget"] = pack_retarget
+    # only a mesh on the shared human skeleton sees every boss's clips (the extractor binds by skeleton): it keeps its own, AS_<Owner>_*.
+    # A mesh with its own skeleton (a boss's cutscene mesh) owns every clip on it.
+    owner = human_owner(pal.code) if pal.sub == "palworld_humans" and shared_human_skeleton(pal) else None
     for i, a in enumerate(pal.info["anims"]):
         if "error" in a or not a.get("tracks"):
             continue
@@ -1054,6 +1136,9 @@ def build_clips(pal: RawPal) -> list[Clip]:
         rate = float(a.get("rateScale") or 1.0) or 1.0
         times = (np.arange(frames, dtype=np.float32) / fps / abs(rate)).astype(np.float32)
         data = baked if baked is not None else pal.anim_frames(a)
+        # the pose AnimationScaled / AnimationRelative bones were authored against: the sequence's retarget source, else the skeleton's
+        # (UE 5.1: the source mesh's pose baked into the sequence, else the named retarget source)
+        src_pose = a.get("retargetSourcePose") or (pal.info.get("retargetSources") or {}).get(a.get("retargetSource") or "", {})
         tracks = []
         for bone, kv in data.items():
             if bone not in bones:
@@ -1064,9 +1149,19 @@ def build_clips(pal: RawPal) -> list[Clip]:
             for k in range(1, len(q)):
                 if np.dot(q[k], q[k - 1]) < 0:
                     q[k] = -q[k]
-            t = _retarget(kv[:, 4:7], bones[bone], skel.get(bone))
             tracks.append(Track(bone, "rotation", times, q.astype(np.float32)))
-            tracks.append(Track(bone, "translation", times, cv.pos(t)))
+            mode = (skel.get(bone) or {}).get("retarget") or "Animation"
+            if pack:
+                # the target mesh is not known yet: Skeleton-mode bones get no translation (the viewer keeps each mesh's own offset, as
+                # the engine does); the rest stay as authored and the viewer rescales AnimationScaled / AnimationRelative ones
+                if mode != "Skeleton":
+                    tracks.append(Track(bone, "translation", times, cv.pos(kv[:, 4:7])))
+                    if mode in ("AnimationScaled", "AnimationRelative"):
+                        src = src_pose.get(bone, (skel.get(bone) or bones[bone])["t"])
+                        pack_retarget.setdefault(bone, {"mode": mode, "sources": {}})["sources"][a["name"]] = [round(float(x), 5) for x in cv.pos(src)]
+            else:
+                t = _retarget(kv[:, 4:7], bones[bone], skel.get(bone), src_pose.get(bone))
+                tracks.append(Track(bone, "translation", times, cv.pos(t)))
             sc = kv[:, 7:10]
             if np.abs(sc - 1.0).max() > 1e-4:
                 tracks.append(Track(bone, "scale", times, cv.scale(sc)))
@@ -1083,9 +1178,9 @@ def build_clips(pal: RawPal) -> list[Clip]:
             name = f"{name} [{seen[name]}]"
         else:
             seen[name] = 0
-        category = "ride" if human and "_Ride_" in name else categorize(name)
+        category = "ride" if human and "_Ride_" in name else human_categorize(name) if human else categorize(name)
         clips.append(Clip(name=name, tracks=tracks, frame_rate=round(fps * abs(rate), 3), frame_count=frames,
-                          loop=bool(LOOP_RE.search(name)), index=i, category=category, source=a["name"],
+                          loop=human_loop(name) if human else bool(LOOP_RE.search(name)), index=i, category=category, source=a["name"],
                           mount_ok=human or mount_ok(name, category)))
     return clips
 
@@ -1105,13 +1200,16 @@ def ride_seat_in_clip(clips: list[Clip]) -> bool:
     return False
 
 
-def _retarget(t: np.ndarray, mesh_bone: dict, skel_bone: dict | None) -> np.ndarray:
-    mode = (skel_bone or {}).get("retarget", "Animation")
+def _retarget(t: np.ndarray, mesh_bone: dict, skel_bone: dict | None, source_t=None) -> np.ndarray:
+    """The engine's translation retargeting (EBoneTranslationRetargetingMode, read from the raw BoneTree): Skeleton = the mesh's own
+    offset; AnimationScaled = scaled by mesh / source length; AnimationRelative = shifted by mesh - source. Source = the sequence's
+    retarget source pose (`source_t`), else the skeleton reference pose."""
+    mode = (skel_bone or {}).get("retarget") or "Animation"
     if mode == "Skeleton":
         return np.broadcast_to(np.asarray(mesh_bone["t"], np.float32), t.shape)
-    if skel_bone is None:
+    if skel_bone is None and source_t is None:
         return t
-    src = np.asarray(skel_bone["t"], np.float32)
+    src = np.asarray(source_t if source_t is not None else skel_bone["t"], np.float32)
     dst = np.asarray(mesh_bone["t"], np.float32)
     if mode == "AnimationScaled":
         ls, ld = float(np.linalg.norm(src)), float(np.linalg.norm(dst))
@@ -1291,78 +1389,124 @@ def build_skin_variants(pal: RawPal, model: Model, mats: list[Material], texcach
 # --- held items (weapons) ---------------------------------------------------------------------
 
 
+# Weapon map kinds by name, first match wins: (regex on the parameter or texture name, kind, ORM packing). Packings were read from the
+# cooked base-pass pixel shaders (UniformTextureParameters[i].TextureIndex -> ReferencedTextures, sample swizzle -> GBufferB):
+#   T_Revolver_AORM, *_orm / *_ORM / *_OcclusionRoughnessMetallic: R occlusion G roughness B metallic (glTF order);
+#   Tex_MissileLauncher_Met_Rough_AO: R metallic G roughness B occlusion ("mro"); *_AO_Metallic_Roughness: "amr";
+#   Handgun_006 _M / _R: separate metallic / roughness maps, R channel each. *_Spec feeds Specular only (glTF default).
+_MAP_KINDS = [
+    (r"(^|[ _])(spec|specular)$", None, None),
+    (r"(^|[ _])rma($|[ _])", "orm", "rma"),
+    (r"(^|[ _])amr($|[ _])|ao_metallic_roughness", "orm", "amr"),
+    (r"met(allic)?_rough(ness)?_ao", "orm", "mro"),
+    (r"(^|[ _])(a?orm|arm)($|[ _])|occlusionroughnessmetallic", "orm", "orm"),
+    (r"normal|(^|[ _])(nrm|n)$", "normal", None),
+    (r"dif+use|(^|[ _])diff?$|albedo|base ?colou?r|base texture|(^|[ _])(d|b|c|bc|bco|alb)$", "base", None),
+    (r"emissive|(^|[ _])e$", "emissive", None),
+    (r"(^|[ _])(m|metal|metallic)$", "metal", None),
+    (r"(^|[ _])(r|rough|roughness)$", "rough", None),
+]
+
+
 def _classify_map(param: str, tex: str) -> tuple[str | None, str | None]:
-    """(kind, packing) of a texture bound to a plain master material: kind base|normal|orm, packing for orm (see TextureCache.orm)."""
+    """(kind, packing) of a texture bound to a plain master material: kind base|normal|orm|emissive|metal|rough, packing for orm
+    (see TextureCache.orm). The parameter name is tried first ("Difuse texture", "ORM map", "Base Normal"), then the texture name."""
     for label in (param.lower(), tex.lower()):
-        if re.search(r"(^|[ _])(rma)($|[ _])", label):
-            return "orm", "rma"
-        if re.search(r"(^|[ _])(amr)($|[ _])", label):
-            return "orm", "amr"
-        if re.search(r"(^|[ _])(a?orm|arm)($|[ _])", label):
-            return "orm", "orm"
-        if re.search(r"normal|(^|[ _])(nrm|n)$", label):
-            return "normal", None
-        if re.search(r"dif+use|albedo|base ?colou?r|base texture|(^|[ _])(d|b|bc|bco|alb)$", label):
-            return "base", None
+        if not label:
+            continue
+        for rx, kind, packing in _MAP_KINDS:
+            if re.search(rx, label):
+                return kind, packing
     return None, None
+
+
+def weapon_maps(textures: dict[str, str], referenced: list[str], folder: list[str]) -> dict[str, tuple[str, str | None]]:
+    """kind -> (texture path, packing) for one weapon material. Candidates, first per kind wins: the instance chain's texture
+    parameters, then every texture the base material's shader samples (ReferencedTextures, exact), and only for extracts made before
+    `referenced` existed, the T_* files in the mesh's folder (magazines in Magazine/ sub-folders found nothing there; folders holding
+    several material sets gave every slot the same map)."""
+    cands = [(k, v) for k, v in textures.items()] + [("", t) for t in referenced]
+    if not referenced:
+        cands += [("", t) for t in folder]
+    found: dict[str, tuple[str, str | None]] = {}
+    for pname, tp in cands:
+        if is_placeholder_texture(tp):
+            continue
+        kind, packing = _classify_map(pname, tp.rsplit("/", 1)[-1])
+        if kind and kind not in found:
+            found[kind] = (tp, packing)
+    return found
 
 
 def build_weapon_material(pal: RawPal, slot: dict, texcache: TextureCache) -> Material:
     """Weapon materials come in three shapes: a PalLit instance (launcher, hammer: same model as the Pals), an instance of a
-    plain master material with Albedo / Normal / RMA parameters (shotgun), or a bare UMaterial whose maps are found by name
-    among the mesh folder's textures (rifles: *_BaseColor|_B, *_Normal|_N, *_AO_Metallic_Roughness (amr) | *_orm)."""
+    plain master material with Albedo / Normal / RMA parameters (shotgun), or a bare UMaterial that samples its maps directly
+    (magazines, rifles); `weapon_maps` names them."""
     chain = slot.get("chain") or []
-    tx: dict[str, str] = {}
-    if len(chain) > 1:
+    prm: dict = {"textures": {}, "vectors": {}}
+    if chain:
         try:
-            tx = resolve_params(pal.root, chain)["textures"]
+            prm = resolve_params(pal.root, chain)
         except (OSError, KeyError):
-            tx = {}
-        if _first(tx, BASE_PARAMS):  # PalLit family
-            return build_material(pal, slot, texcache)
-        if tx.get("Albedo"):
-            m = Material(name=slot["slot"])
-            m.base_color = texcache.plain(tx["Albedo"], srgb=True)
-            m.normal = texcache.normal(tx.get("Normal"))
-            orm = texcache.orm(tx.get("RMA"), packing="rma")
-            if orm:
-                m.metallic_roughness = m.occlusion = orm
-                m.metallic_factor = m.roughness_factor = 1.0
-            return m
+            pass
+    tx = prm["textures"]
+    if len(chain) > 1 and _first(tx, BASE_PARAMS):  # PalLit family
+        return build_material(pal, slot, texcache)
+    if len(chain) > 1 and tx.get("Albedo"):
+        tx = {"Albedo": tx["Albedo"], "Normal": tx.get("Normal") or "", "RMA": tx.get("RMA") or "", **tx}
+    base = (load_material(pal.root, chain[-1]) or {}) if chain else {}
+    referenced = ((base.get("Defaults") or {}).get("referenced")) or []
+    found = weapon_maps({k: v for k, v in tx.items() if v}, referenced, pal.info.get("folderTextures") or [])
     m = Material(name=slot["slot"])
-    found: dict[str, tuple[str, str | None]] = {}
-    for tp in pal.info.get("folderTextures") or []:
-        n = tp.rsplit("/", 1)[-1].lower()
-        for kind, suffixes, packing in (("base", ("basecolor", "_b"), None), ("normal", ("normal", "_n"), None),
-                                        ("orm", ("ao_metallic_roughness",), "amr"), ("orm", ("_orm",), "orm")):
-            if any(n.endswith(s) for s in suffixes):
-                found[kind] = (tp, packing)
-    # instances of other master materials name their maps freely ("Difuse texture", "ORM map", "Base Normal", T_Pans_ARM, TX_*_RMA):
-    # classify each bound texture by parameter name, then by texture name, for the kinds the folder search did not find
-    for pname, tp in tx.items():
-        kind, packing = _classify_map(pname, tp.rsplit("/", 1)[-1])
-        if kind and kind not in found:
-            found[kind] = (tp, packing)
     m.base_color = texcache.plain(found.get("base", (None,))[0], srgb=True)
     m.normal = texcache.normal(found.get("normal", (None,))[0])
+    orm = None
     if "orm" in found:
         orm = texcache.orm(found["orm"][0], packing=found["orm"][1])
-        if orm:
-            m.metallic_roughness = orm
-            m.occlusion = orm
-            m.metallic_factor = m.roughness_factor = 1.0
+    elif "metal" in found or "rough" in found:
+        orm = texcache.orm_split(found.get("metal", (None,))[0], found.get("rough", (None,))[0])
+    if orm:
+        m.metallic_roughness = orm
+        m.occlusion = orm if "orm" in found else None
+        m.metallic_factor = m.roughness_factor = 1.0
+    else:
+        m.roughness_factor = 0.5  # an unconnected Roughness pin is 0.5 in Unreal (RocketLauncher_001's shader: constant 0.5)
+    if "emissive" in found:
+        m.emissive = texcache.plain(found["emissive"][0], srgb=True)
+        m.emissive_factor = (1.0, 1.0, 1.0)
+    if m.base_color is None and m.emissive is None:
+        # textureless materials (tracer shells, boost-gun liquid): colours are vector parameters. Only names that say what they
+        # are: "EmiisiveColor" / "Emissive Color" glow, "Base Color" / "Color" / "Albedo" is the albedo; anything else (asset-pack
+        # ID masters: RedCh_Color, AO_Color) is not guessed.
+        vec = {k: v for k, v in (prm.get("vectors") or {}).items() if isinstance(v, dict)}
+        rgb = lambda v: tuple(float(v.get(c, 0.0)) for c in "RGB")
+        emi = next((rgb(v) for k, v in vec.items() if re.search(r"emi+s+ive", k, re.I)), None)
+        alb = next((rgb(v) for k, v in vec.items() if re.fullmatch(r"(base ?)?colou?r|albedo|diffuse ?colou?r", k.strip(), re.I)), None)
+        if emi is not None:
+            peak = max(max(emi), 1.0)  # glTF emissiveFactor is 0..1: keep the hue, clip the HDR intensity
+            m.emissive_factor = tuple(c / peak for c in emi)
+            m.base_color_factor = (0.0, 0.0, 0.0, 1.0)
+        if alb is not None:
+            m.base_color_factor = (*alb, 1.0)
     return m
 
 
-def import_weapon(raw_root: str, name: str, model_id: str | None = None, display_name: str | None = None) -> Model:
+def import_weapon(raw_root: str, name: str, model_id: str | None = None, display_name: str | None = None,
+                  material_overrides: list | None = None) -> Model:
+    """`material_overrides`: per material slot, a material chain a blueprint puts on the mesh instead (OverrideMaterials), or None."""
     pal = load_pal(raw_root, name, "palworld_weapons")
     model = Model(id=model_id or name, game="palworld", display_name=display_name or name, kind="object", skeleton=None,
                   meshes=[], materials={}, textures={})
     model.skeleton, _ = build_skeleton(pal)
     texcache = TextureCache(pal, model)
     mats = []
-    for slot in pal.info["materials"]:
+    for i, slot in enumerate(pal.info["materials"]):
+        ov = (material_overrides or [])[i] if i < len(material_overrides or []) else None
+        if ov:
+            slot = {**slot, "chain": ov, "path": ov[0]}
         m = build_weapon_material(pal, slot, texcache)
+        if ov:  # same slot, other material: name it after the material so its textures and name do not pass as the mesh's own
+            m.name = ov[0].rsplit("/", 1)[-1]
         model.materials[m.name] = m
         mats.append(m)
     model.meshes = build_meshes(pal, mats)
@@ -1374,6 +1518,37 @@ def import_weapon(raw_root: str, name: str, model_id: str | None = None, display
 
 
 # --- entry ----------------------------------------------------------------------------------
+
+
+PACK_IDLE_RE = re.compile(r"(^|_)Idle(_None|_[A-Z]\w*)?$")
+
+
+def pack_default_clip(clips: list[Clip]) -> str | None:
+    """A pack's standing pose: its plain looping Idle (Player_Female_Idle_None, Player_Female_Idle_AssaultRifle), else its first idle."""
+    idle = sorted((c.name for c in clips if c.loop and PACK_IDLE_RE.search(c.name) and not re.search(r"Ride|Crouch|Swim|Climb|Glide|Sit|Sleep", c.name)),
+                  key=lambda n: (len(n), n))
+    return idle[0] if idle else next((c.name for c in clips if c.category == "idle"), clips[0].name if clips else None)
+
+
+def import_animpack(raw_root: str, set_id: str, model_id: str | None = None, display_name: str | None = None) -> Model:
+    """A shared human animation set (raw/palworld_animpacks/<SetId>): the SK_PalHuman_Skeleton reference pose and the set's clips, no mesh.
+    Every human bone uses retarget mode Animation, so the viewer plays these unchanged on any human (it binds tracks by bone name)."""
+    pal = load_pal(raw_root, set_id, "palworld_animpacks")
+    model = Model(id=model_id or set_id, game="palworld", display_name=display_name or set_id, kind="animpack", skeleton=None,
+                  meshes=[], materials={}, textures={})
+    model.skeleton, _ = build_skeleton(pal)
+    model.clips = build_clips(pal)
+    # the stance the set's blueprint names (ShooterAnime IdlePoseMap[Stand]), else the plainest looping idle
+    idle = (pal.info.get("set") or {}).get("idle")
+    model.default_clip = next((c.name for c in model.clips if idle and c.source == idle), None) or pack_default_clip(model.clips)
+    # bones whose translation the viewer must fit to each mesh: {bone: {mode, sources: {clip: source translation}}}
+    clip_of = {c.source: c.name for c in model.clips}
+    if (rt := pal.info.get("_packRetarget")):
+        model.extras["retarget"] = {b: {"mode": v["mode"], "sources": {clip_of[s]: t for s, t in v["sources"].items() if s in clip_of}} for b, v in rt.items()}
+    model.source_paths = [set_id]
+    model.extras["skeleton"] = pal.info.get("skeleton")
+    model.extras["set"] = pal.info.get("set")
+    return model
 
 
 def import_pal(raw_root: str, code: str, model_id: str | None = None, display_name: str | None = None, with_anim: bool = True,
@@ -1409,10 +1584,13 @@ def import_pal(raw_root: str, code: str, model_id: str | None = None, display_na
             model.extras["seatInClip"] = True
         idle =[c.name for c in model.clips if c.name.lower() == "idle"] or [c.name for c in model.clips if c.category == "idle"]
         if kind == "human":  # shared skeleton: clips of every character; a standing idle of any (not a ride / emote), the model's own first
-            own = (model_id or code).removeprefix("Boss_").rstrip("0123456789")
-            idle = sorted((c.name for c in model.clips if re.match(rf"^{own}_.*Idle", c.name)),
-                          key=lambda n: ("Ride" in n, "Skin" in n, len(n), n)) or idle
-        model.default_clip = idle[0] if idle else (model.clips[0].name if model.clips else None)
+            own = human_owner(model_id or code)
+            # skin-variant idles (GrassBoss_Stand_Idle_Skin001) belong to the skin's mesh; with none left the viewer stands the character
+            # in its default animation pack (extras.defaultPack)
+            idle = sorted((c.name for c in model.clips if re.match(rf"^{own}_.*Idle", c.name) and "Skin" not in c.name),
+                          key=lambda n: ("Ride" in n, len(n), n))
+            idle = [n for n in idle if "Ride" not in n]
+        model.default_clip = idle[0] if idle else (model.clips[0].name if model.clips and kind != "human" else None)
     model.source_paths = [pal.info["mesh"]]
     model.extras["skeleton"] = pal.info.get("skeleton")
     return model

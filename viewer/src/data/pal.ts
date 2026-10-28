@@ -18,9 +18,9 @@ export function categoryOf(m: IndexModel): string {
 
 export function filterModel(m: IndexModel, category: string, sub: string, query: string): boolean {
   if (categoryOf(m) !== category) return false;
-  if (sub !== 'all' && (m.subcategory ?? (m.skin ? 'skins' : 'pals')) !== sub) return false;
+  if (sub !== 'all' && (m.subcategory ?? (m.kind === 'pal' ? (m.skin ? 'skins' : 'pals') : null)) !== sub) return false;
   const q = query.trim().toLowerCase();
   if (!q) return true;
-  const hay = [m.displayName, m.id, m.codeName ?? '', dexLabel(m), String(m.dex ?? ''), ...(m.elements ?? [])].join(' ').toLowerCase();
+  const hay = [m.displayName, m.id, m.codeName ?? '', dexLabel(m), String(m.dex ?? ''), ...(m.elements ?? []), ...(m.aliases ?? [])].join(' ').toLowerCase();
   return q.split(/\s+/).every((w) => hay.includes(w.replace(/^#0*/, '#').startsWith('#') ? w.replace(/^#/, '') : w));
 }

@@ -30,8 +30,13 @@ scripts and viewer; only the importer side is new). Nothing downstream of the im
   (verified: anim frame 0 matches the bind pose without conjugation).
 - Unreal → glTF = swap Y/Z, ×0.01 (a reflection = the handedness change). Quaternion (v,w) → (−Mv, w). Unreal front faces
   are clockwise; after the reflection they are glTF CCW, so indices are kept. Tested in `pipeline/tests/test_palworld.py`.
-- Animation translations are authored at the *mesh* bone lengths (the USkeleton ref pose can be larger, Lamball 1.25×);
-  every surveyed bone uses retarget mode `Animation` (use as-is). Other modes are implemented like the engine.
+- Animation translations are authored at the *mesh* bone lengths (the USkeleton ref pose can be larger, Lamball 1.25×).
+  Retarget modes come from the RAW `BoneTree[i].TranslationRetargetingMode` number (0 Animation, 1 Skeleton, 2 AnimationScaled, 3 Relative):
+  CUE4Parse's typed field reads `Animation` for every bone (usmap enum has no values). `PalExtract retarget [palworld|palworld_humans|
+  palworld_animpacks]` patches existing pal.json in place (also `anims[].retargetSourcePose` = UE 5.1's `RetargetSourceAssetReferencePose`
+  baked into the sequence, skeleton bone order at save time; else `retargetSource` name -> skeleton `AnimRetargetSources`). Pals: Animation
+  except PinkCat (6 Skeleton) and WeaselDragon (4). SK_PalHuman_Skeleton: Skeleton for 4075 bones, root/pelvis AnimationScaled, weapon_l/r
+  Animation. `_retarget` implements the modes like the engine (source = the sequence's source pose, else the skeleton ref).
 - fps = (frames − 1) / SequenceLength (CUE4Parse's FramesPerSecond is frames / length). Additive sequences (`AdditiveAnimType` is read from the asset's own properties: CUE4Parse's field stays `AAT_None`; `Minigun_Aim_*` are
   `AAT_RotationOffsetMeshSpace`) are baked onto frame 0 of their `<prefix>_Idle` (`bake_additive`: mesh-space rotation delta, translation added, base scale kept); with no such base they are skipped.
 - Loop flags are not in UE 5.1 sequences; derived from names (`LOOP_RE`). Categories: idle / move / battle / work / other.
@@ -71,7 +76,22 @@ scripts and viewer; only the importer side is new). Nothing downstream of the im
   (the player holds the Pal); skill props (Robinquill bow, Wing Golem cutter) only exist inside skill BPs. `PalExtract props|refs` survey tools.
   Weapons are `kind: object` models `Weapon_<Item>`; manifest `heldItem`/`heldItems` (+`scale`); props show a weapon only in clips matching
   `HELD_CLIP_RE` (Aim/Minigun/Fire_/Shoot) unless the component is visible by default (`always`, the spears). Viewer: `setHeldItem` + `setExtraHeld`.
-  Weapon materials: PalLit instances via `build_material`, Albedo/Normal/RMA instances, or bare UMaterials by texture suffix (`build_weapon_material`).
+  Weapon materials: PalLit instances via `build_material`, Albedo/Normal/RMA instances, or bare UMaterials (`build_weapon_material`).
+  A bare UMaterial samples its maps through plain TextureSample nodes: the only record of them is `CachedExpressionData.ReferencedTextures`
+  (extractor -> `Defaults.referenced`). `weapon_maps` classifies, in order, instance params, then referenced, then (old extracts only) the mesh
+  folder's T_* (magazines sit in `Magazine/` sub-folders, so the folder scan found nothing). Packings read from the cooked pixel shaders
+  (`UniformTextureParameters[i].TextureIndex` -> referenced, sample swizzle -> GBufferB): `_orm`/`_ORM`/`_AORM`/`_OcclusionRoughnessMetallic` glTF
+  order, `_Met_Rough_AO` = mro, `_AO_Metallic_Roughness` = amr, Handgun_006 `_M` + `_R` separate (R channel each, `orm_split`), `_Spec` unused.
+  No roughness map = 0.5 (an unconnected pin; RocketLauncher_001's shader has the constant).
+  Names (`pipeline/catalog/weapon_names.py`): `PalExtract items` -> `raw/palworld_weapons/items.json`, every BP under `Blueprint/Weapon/**`
+  with its components merged down the SuperStruct chain (child replaces mesh / OverrideMaterials / transform) and the
+  `DT_ItemActorClassDataTable` classes that point at it (not always `BP_<class>`: NormalPistol = BP_HandGun). It exports only meshes of item
+  BPs and NPC BPs, never Pal bodies (the Flamethrower fires Foxparks) or effect meshes. One model per visual (folder + material overrides):
+  `Weapon_<folder>`, recolours `Weapon_<folder>__<class>` (Mechanical Bow, Grass Boss pink rifle) with `materialOverrides`. Name: the lowest-rank
+  English item name (`DT_ItemNameText_Common`, key case differs from the row; `bLegalInGame` false skipped; others in `extras.items`),
+  else part of a BP's body / folder `<gun>_<Magazine|Mag|Bullet...>` -> "<gun> – Magazine", else NPC "<item> (Grass Boss)" / own mesh
+  "Believer Cane (NPC)", else Pal "<Pal>'s <weapon>", else the folder with its number. NPC BPs (`NPCWeapon/BP_<X>_NPC[_Otomo]`) inherit the
+  player BP and mostly look identical (`extras.users.npc`); distinct: GrassBoss rifle (pink), Otomo laser rifle (scientist gun), katana, believer cane.
 - Vertex colours are shader masks: never exported as COLOR_0. Tangents are not exported (viewer derives them).
 - Eyes/mouths are atlases (Lamball eye: 2×4 cells); the mesh UVs sit in the neutral cell. Expressions are set by gameplay
   code, not anim curves (AS_ have no curves). TODO: offer the cells as a variant group via KHR_texture_transform.
@@ -80,6 +100,7 @@ scripts and viewer; only the importer side is new). Nothing downstream of the im
 ```
 dotnet raw/../extractor/PalExtract/bin/Release/net10.0/PalExtract.dll pal SheepBall      (run from raw/)
 dotnet ../extractor/PalExtract/bin/Release/net10.0/PalExtract.dll shader --from-raw   (cooked effect shaders -> raw/shaders/)
+dotnet ../extractor/PalExtract/bin/Release/net10.0/PalExtract.dll npcsets ; ... animpack ; ... human --all-humans --force   (humans, in that order)
 .venv/Scripts/python.exe -m pipeline convert --all [--resume]
 .venv/Scripts/python.exe -m pipeline thumbs | export --id X | index | relabel
 .venv/Scripts/python.exe -m pytest -q
@@ -96,9 +117,35 @@ cd viewer && npm run dev   (port 5180; 5173 is the Pokémon viewer)
 - Hosting: same pattern as the Pokémon repo (`tools/deploy_pages.py`: app → gh-pages, GLBs → Hugging Face). Ask first.
 
 ## Humans, weapons, mounts, cloth (tower-boss canary)
-- `PalExtract human <Boss_XBoss001>... | --all-humans` -> `raw/palworld_humans/<Id>/` (NPC/boss meshes under `Model/Character/NPC/**`; they share
-  `SK_PalHuman_Skeleton`, so the extractor finds every character's clips: the importer keeps only `AS_<Owner>_*`, clip names keep the owner, ride clips are
-  category `ride`). `weapons-all` -> every `Model/Weapon` mesh as `Weapon_<Class>_<NNN>`. `bossride` -> `raw/palworld_humans/rides.json`.
+- `PalExtract human <Boss_XBoss001>... | --all-humans` -> `raw/palworld_humans/<Id>/` (NPC/boss meshes under `Model/Character/NPC/**`: 2 deep,
+  `Boss/<X>Boss/` 3-4 deep (`_Unique` outfits, Zoe's Skin001); `*_weapon` meshes are items). Its `anims/` holds only sequences in no shared set
+  (boss-owned + cutscenes; shared skeleton, so every boss's): the importer keeps `AS_<Owner>_*`, clip names keep the owner, ride clips are category
+  `ride`. `weapons-all` -> every `Model/Weapon` mesh as `Weapon_<Class>_<NNN>`. `bossride` -> `raw/palworld_humans/rides.json`.
+- NPC animations are shared sets, read from data (`PalExtract npcsets` -> `raw/palworld_humans/animsets.json`; `animpack` ->
+  `raw/palworld_animpacks/<SetId>/`, skeleton-only pal.json): `DT_PalHumanParameter[CharacterID].BPClass` -> `DT_PalBPClass` -> `BP_NPC_<X>` ->
+  SuperStruct chain to a data set (`BP_NPC_StandardHumanDataSet` / `FatHumanDataSet`): `PalShooterComponent.DefaultWeaponAnimeAssetBPSoftClassMap`
+  (weapon type -> ShooterAnime BP, mostly the PLAYER's `BP_Player_Female_ShooterAnime_<W>`, `None` = unarmed; child BPs override keys:
+  `NPC_Female2_ShooterAnime_None`) + `*MontageMap`/`*BlendSpaceMap` (actions). A set = sequences reachable from a BP (montage segments,
+  blend-space samples, soft refs) on `SK_PalHuman_Skeleton`; a ShooterAnime's BP parents are their own sets (`_Base`). `NPC_Extra` /
+  `Player_Female_Extra` catch the rest (lean/pray/talk idles, melee combos, gliders...: played by code). `Imp/ABP_NPC_<Outfit>_Implimentation` layers
+  are only cloth physics. A set binds only to meshes on SK_PalHuman_Skeleton or its `CompatibleSkeletons` (animsets `compatible`); the
+  bosses' cutscene meshes (`Boss_<X>_Unique`, own skeletons, nothing compatible) get only their own skeleton's clips (the Demo/BossBattle
+  cutscenes, matched by skeleton equality, NOT by name: base boss meshes are on the human skeleton). Packs drop translation tracks of
+  Skeleton-mode bones (each mesh keeps its own offsets: the Fat body's pelvis is 137.7 cm vs the player's 95) and keep AnimationScaled
+  root/pelvis raw with their source per clip (manifest `extras.retarget`); the viewer scales them by mesh/source length
+  (`AnimationController.fit`, bind captured before anything plays). Pack default = the set BP's `AnimeInfo.IdlePoseMap[Stand]`.
+  NPC weapon: `DT_PalHumanParameter.Weapon` (when `WeaponEquip`) is a NUMBER (usmap has EPalWeaponType without values): the names come from data
+  (generator `WeaponIDMap` key name -> item -> `DT_ItemDataTable.ItemActorClass` -> `PalEditor/.../DT_ItemActorClassDataTable` -> weapon BP whose
+  CDO stores `WeaponType` as the number: 2 Handgun, 3 AssaultRifle, 4 Shotgun, 6 RocketLauncher, 7 Melee, 9 BowGun, 10 FlameThrower, 11 Gatling,
+  13 LaserRifle, 14 MissileLauncher, 15 GrenadeLauncher, 16 Katana, 18 GiantClub; 0 = none). Weapon mesh = that BP chain's mesh components on `weapon_r`.
+  Generator per BP (`BP_NPCWeaponGenerator[_GrassBoss|_StrongOldMan|...]`). Mesh -> most common weapon / name over its CharacterIDs (tower bosses:
+  `PAL_NAME_<CID>`). A mesh no BP names (`_Unique`) uses the mapped mesh in its nearest folder.
+  Catalog: `Pack_<SetId>` models (`kind: animpack`, no mesh, not in the browse index); humans get `extras.animPacks` [{id, path, label, own,
+  weaponType, heldItems}] (own: actions, unarmed, own weapon, extras; then every other weapon set with the item the NPC's generator gives),
+  `defaultPack`, `heldItem(s)`, name from `DT_HumanNameText` (shared names get the outfit in brackets). Human clip rules: `human_categorize` /
+  `human_loop` read the action after the owner prefix. Viewer: pack manifests merged into the clip list (`ClipInfo.pack`), a pack GLB loads on first
+  play (`ViewerScene.loadClipPack`, `AnimationController.addClips` drops tracks for bones the mesh lacks), playing a weapon pack equips its weapon
+  unless the user picked one, `heldClipGate` shows it only during weapon-pack clips. Humans are subcategorised Boss / NPC / Player.
 - Tower bosses ride Pals: `BP_<Pal>_GYM` holds a `BP_PalBossNPCMarker` (boss mesh + offset). Catalog links them: Pal
   `extras.bossRide`, boss `extras.mount` (same seat data); viewer Rider section on the Pal (`RideSection.tsx`, `ViewerScene.setRider`) and
   Mount section on the boss (`MountSection.tsx`, `setMount`: boss stays fixed, the Pal gets the inverse seat each frame). Zoe's body is the `_ALL` outfit mesh.

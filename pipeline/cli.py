@@ -31,7 +31,7 @@ def _catalog(args) -> PalworldCatalog:
     return PalworldCatalog(args.data)
 
 
-KINDS = ["pal", "human", "object"]
+KINDS = ["pal", "human", "object", "animpack"]
 
 
 def _refs_by_kind(cat, kind: str | None) -> list[ModelRef]:
@@ -108,7 +108,7 @@ def cmd_convert(args) -> None:
 
 
 CATEGORY_LABELS = {"pals": "Pals", "weapons": "Weapons", "humans": "Humans", "furniture": "Furniture", "other": "Other"}
-SUB_LABELS = {"pals": "Pals", "skins": "Skins", "special": "Special", "held": "Held items"}
+SUB_LABELS = {"pals": "Pals", "skins": "Skins", "special": "Special", "held": "Held items", "npc": "NPCs", "boss": "Bosses", "player": "Player"}
 
 
 def categorize_model(kind: str, mid: str, extras: dict) -> tuple[str, str | None]:
@@ -117,7 +117,9 @@ def categorize_model(kind: str, mid: str, extras: dict) -> tuple[str, str | None
         return "pals", "skins" if extras.get("skin") else "pals" if extras.get("dex") else "special"
     if kind == "object":
         return ("weapons", "held") if mid.startswith("Weapon_") else ("other", None)
-    return {"human": "humans", "furniture": "furniture"}.get(kind, "other"), None
+    if kind == "human":
+        return "humans", (extras.get("group") or "NPC").lower()
+    return {"furniture": "furniture"}.get(kind, "other"), None
 
 
 def category_tree(models: list[dict]) -> list[dict]:
@@ -144,6 +146,8 @@ def build_index(out_root: str) -> dict:
                 continue
             with open(mp, encoding="utf-8") as f:
                 m = json.load(f)
+            if m["kind"] == "animpack":  # shared clip sets: loaded by the humans that use them, not browsed
+                continue
             cat, sub = categorize_model(m["kind"], m["id"], m.get("extras", {}))
             models.append(
                 {
@@ -166,6 +170,8 @@ def build_index(out_root: str) -> dict:
                     "species": m.get("extras", {}).get("species"),
                     "skin": m.get("extras", {}).get("skin"),
                     "codeName": m.get("extras", {}).get("codeName"),
+                    # every game item that uses this weapon model (search: "Fire Bow" finds the Old Bow model)
+                    "aliases": [i["name"] for i in m.get("extras", {}).get("items", []) if i["name"] != m["displayName"]] or None,
                 }
             )
     # Paldeck order (12B after 12); models without a number (skins of unnumbered Pals, bosses) keep id order.
@@ -260,6 +266,8 @@ def cmd_thumbs(args) -> None:
                 kind, pose = man.get("kind", ""), man.get("defaultClip")
             except (OSError, ValueError):
                 pass
+            if kind == "animpack":  # clips only, nothing to draw
+                continue
             r = inspect(glb, os.path.join(tmp, mid), pose_clip=pose)
             # maps are wide and flat: the 35 deg "top" shot shows the layout, the 12 deg front shot only the near edge
             src = os.path.join(tmp, mid, "preview_top.png" if kind == "map" else "preview_front.png")

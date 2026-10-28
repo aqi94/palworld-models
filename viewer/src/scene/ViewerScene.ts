@@ -3,7 +3,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import type { GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { SpringBones } from './springBones';
 import type { ClipInfo, ClipPair, Manifest, PropInfo } from '../types';
-import { AnimationController, type PlaybackState } from './animation';
+import { AnimationController, type PackRetarget, type PlaybackState } from './animation';
 import { bossAt, layoutPair, pairForPalClip, palAt, type PairSeg } from './clipPairs';
 import { VariantSwitcher } from './variants';
 import { loadGlb } from './loader';
@@ -1645,9 +1645,31 @@ export class ViewerScene {
 
   setHeldOnlyInClips(on: boolean) { this.heldOnlyInClips = on; this.applyHeldVisibility(); }
 
+  /** Humans: held items show while a clip of a weapon pack plays (the pack sets which weapon); replaces the per-prop clip lists. */
+  heldClipGate: ((clip: string) => boolean) | null = null;
+
+  private static packCache = new Map<string, Promise<THREE.AnimationClip[]>>();
+  /** Load a shared animation pack GLB (cached across models) and register its clips on the current model. */
+  async loadClipPack(url: string, infos: ClipInfo[], retarget?: PackRetarget): Promise<boolean> {
+    let p = ViewerScene.packCache.get(url);
+    if (!p) {
+      p = loadGlb(url).then((g) => { disposeTree(g.scene); return g.animations; });
+      ViewerScene.packCache.set(url, p);
+      p.catch(() => ViewerScene.packCache.delete(url));
+    }
+    const anim = this.anim, root = this.gltf?.scene;
+    const clips = await p;
+    if (this.disposed || !root || anim !== this.anim || !anim) return false;
+    anim.addClips(root, clips, infos, retarget);
+    return true;
+  }
+
   private applyHeldVisibility() {
     for (const h of [this.held, ...this.extraHeld]) {
-      if (h) h.obj.visible = !this.heldOnlyInClips || !!h.prop.always || (!!this.anim?.current && h.prop.clips.includes(this.anim.current));
+      if (!h) continue;
+      const cur = this.anim?.current;
+      h.obj.visible = !this.heldOnlyInClips || (this.heldClipGate ? !!cur && this.heldClipGate(cur)
+        : !!h.prop.always || (!!cur && h.prop.clips.includes(cur)));
     }
   }
 

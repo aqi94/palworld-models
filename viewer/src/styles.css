@@ -98,6 +98,9 @@ a { color: inherit; text-decoration: none; }
 
 .anim-list { max-height: 260px; overflow-y: auto; margin-top: 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); }
 .anim-cat { position: sticky; top: 0; background: var(--bg3); padding: 3px 9px; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--dim); }
+/* human animation packs: one sticky header per pack; the "other weapons" divider scrolls away */
+.anim-pack { display: flex; width: 100%; border: 0; cursor: pointer; text-align: left; font: inherit; font-size: 12px; }
+.anim-divider { position: static; margin-top: 6px; border-top: 1px solid var(--line, #444); }
 .anim-item { display: flex; justify-content: space-between; width: 100%; background: none; border: 0; padding: 5px 9px; text-align: left; }
 .anim-item:hover { background: var(--bg3); }
 .anim-item.active { background: var(--accent); color: #fff; }

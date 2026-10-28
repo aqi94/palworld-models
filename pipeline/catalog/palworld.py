@@ -64,6 +64,30 @@ def attach_offset(part: dict) -> dict:
     return out
 
 
+PACK_PREFIX = "Pack_"  # animation-pack model ids (out/palworld/Pack_<SetId>/), kept out of the browse index
+
+
+def _words(x: str) -> str:
+    return re.sub(r"(?<=[a-z])(?=[A-Z])", " ", x).replace("_", " ").strip()
+
+
+def pack_label(sid: str) -> str:
+    """Player_Female_ShooterAnime_AssaultRifle -> Assault Rifle; NPC_Fat_ShooterAnime_HeavyWeapon -> Heavy Weapon (Fat);
+    Actions_NPC_StandardHumanDataSet -> Actions (Standard); NPC_Extra -> NPC extras."""
+    if sid.startswith("Actions_"):
+        who = sid[len("Actions_"):].replace("NPC_", "").replace("HumanDataSet", "").replace("DataSet", "")
+        return f"Actions ({_words(who)})"
+    if sid.endswith("_Extra"):
+        return _words(sid[: -len("_Extra")].replace("Player_Female", "Player")) + " extras"
+    m = re.match(r"(.*?)_?ShooterAnime_(.*)$", sid)
+    if m:
+        who, what = m.group(1), m.group(2)
+        what = "Unarmed" if what == "None" else _words(what)
+        who = "" if who in ("", "Player_Female") else _words(who.replace("NPC_", ""))
+        return f"{what} ({who})" if who else what
+    return _words(sid)
+
+
 def clip_pairs(pairs: list[dict], pal_code: str) -> list[dict]:
     """rides.json `pairs` (asset names, `PalExtract bossride`) -> manifest clip names: which Pal clips play, in order, while the boss plays
     `boss` (the boss's ride clips are authored against them). `rate` = montage play rate; `loop` segments fill the time the others leave."""
@@ -121,6 +145,13 @@ def _enum(v) -> int:
         except ValueError:
             return 0
     return int(v or 0)
+
+
+def _read_mesh(pal_json: str) -> tuple[str | None, str | None]:
+    """(`mesh`, `skeleton`) package paths of an extracted pal.json."""
+    with open(pal_json, encoding="utf-8") as f:
+        d = json.load(f)
+    return d.get("mesh"), d.get("skeleton")
 
 
 class PalworldCatalog:
@@ -197,6 +228,8 @@ class PalworldCatalog:
             refs += self._human_refs()
             self._link_boss_rides(refs)
             refs += self._weapon_refs(refs)
+            refs += self._pack_refs()
+            self._link_human_packs(refs)
             self._refs = refs
         return self._refs
 
@@ -232,10 +265,16 @@ class PalworldCatalog:
             if r.id in by_pal:
                 r.extras["heldItem"] = by_pal[r.id][0]
                 r.extras["heldItems"] = by_pal[r.id]
-        names = sorted({p["item"] for h in held for p in (h.get("parts") or [{"item": h["weapon"]}]) if not p.get("mounted")}
-                       | {d for d in os.listdir(root) if os.path.isfile(os.path.join(root, d, "pal.json"))})  # + `weapons-all` meshes
-        return [ModelRef(game="palworld", kind="object", id=f"Weapon_{n}", folder=os.path.join(root, n), display_name=_item_label(n), species="Weapon", form=n)
-                for n in names if os.path.isfile(os.path.join(root, n, "pal.json"))]
+        # one model per visual (mesh folder + a blueprint's material overrides), named after the game's items (weapon_names)
+        from .weapon_names import build as weapon_visuals
+
+        pal_names = {r.id: r.display_name for r in pal_refs if getattr(r, "kind", "pal") == "pal" and hasattr(r, "display_name")}
+        refs = []
+        for mid, v in sorted(weapon_visuals(self.raw, pal_names).items()):
+            extras = {k: v[k] for k in ("items", "users", "materialOverrides", "partOf") if k in v}
+            refs.append(ModelRef(game="palworld", kind="object", id=mid, folder=os.path.join(root, v["folder"]), display_name=v["name"],
+                                 species="Weapon", form=v["folder"], extras=extras))
+        return refs
 
     @staticmethod
     def _human_label(hid: str) -> str:
@@ -255,14 +294,153 @@ class PalworldCatalog:
         root = os.path.join(self.raw, "palworld_humans")
         if not os.path.isdir(root):
             return []
+        # meshes under Model/Character/NPC that are weapons, not characters (the ninja's katana, the believer's cane, Lily's spear)
+        weapon_meshes = {p["mesh"] for w in self._animsets().get("weapons", {}).values() for p in w.get("parts", [])}
+        rides = os.path.join(root, "rides.json")
+        if os.path.isfile(rides):
+            with open(rides, encoding="utf-8") as f:
+                weapon_meshes |= {h["mesh"] for r in json.load(f) for h in r.get("held") or []}
+        # ... and every mesh exported as a weapon model (the scientist's gun is in no generator, but it is an item)
+        wroot = os.path.join(self.raw, "palworld_weapons")
+        if os.path.isdir(wroot):
+            for w in os.listdir(wroot):
+                wp = os.path.join(wroot, w, "pal.json")
+                if os.path.isfile(wp):
+                    weapon_meshes.add(_read_mesh(wp)[0])
         refs = []
         for hid in sorted(os.listdir(root)):
-            if not os.path.isfile(os.path.join(root, hid, "pal.json")):
+            pj = os.path.join(root, hid, "pal.json")
+            if not os.path.isfile(pj):
+                continue
+            mesh, skeleton = _read_mesh(pj)
+            if mesh in weapon_meshes:
                 continue
             group = "Boss" if hid.startswith("Boss_") else "Player" if hid.startswith("Player_") else "NPC"
             refs.append(ModelRef(game="palworld", kind="human", id=hid, folder=os.path.join(root, hid), display_name=self._human_label(hid),
-                                 species=group, form=hid.split("_", 1)[-1], extras={"codeName": hid, "group": group}))
+                                 species=group, form=hid.split("_", 1)[-1], extras={"codeName": hid, "group": group, "mesh": mesh, "skeleton": skeleton}))
         return refs
+
+    def _animsets(self) -> dict:
+        """raw/palworld_humans/animsets.json (`PalExtract npcsets`): shared animation sets, the sets / weapon / name of every NPC mesh."""
+        if getattr(self, "_sets_doc", None) is None:
+            p = os.path.join(self.raw, "palworld_humans", "animsets.json")
+            self._sets_doc = json.load(open(p, encoding="utf-8")) if os.path.isfile(p) else {}
+        return self._sets_doc
+
+    def _pack_refs(self) -> list[ModelRef]:
+        """One clips-only model per shared animation set (raw/palworld_animpacks, `PalExtract animpack`)."""
+        root = os.path.join(self.raw, "palworld_animpacks")
+        refs = []
+        for sid, st in sorted(self._animsets().get("sets", {}).items()):
+            if not st.get("anims") or not os.path.isfile(os.path.join(root, sid, "pal.json")):
+                continue
+            refs.append(ModelRef(game="palworld", kind="animpack", id=PACK_PREFIX + sid, folder=os.path.join(root, sid), display_name=pack_label(sid),
+                                 species="AnimPack", form=sid,
+                                 extras={"set": sid, "packKind": st["kind"], **({"weaponType": st["weaponType"]} if st.get("weaponType") else {})}))
+        return refs
+
+    def _link_human_packs(self, refs: list[ModelRef]) -> None:
+        """Every human gets `animPacks`: its own sets first (as its blueprint wires them: data-set actions, unarmed locomotion, its weapon's
+        set, the NPC extras), then every other weapon set; a weapon set carries the weapon the NPC's generator hands out for it.
+        `defaultPack` = the set the character stands in (its weapon's, else unarmed); `heldItem(s)` = its in-game weapon; the display name
+        comes from DT_HumanNameText (outfit suffix when several meshes share it)."""
+        doc = self._animsets()
+        if not doc:
+            return
+        packs = {r.extras["set"]: r for r in refs if r.kind == "animpack"}
+        weapon_ids = {r.id for r in refs if r.kind == "object"}
+        sets, meshes, weapons = doc.get("sets", {}), doc.get("meshes", {}), doc.get("weapons", {})
+
+        def entry_for(mesh: str | None) -> dict | None:
+            if not mesh:
+                return None
+            if mesh in meshes:
+                return meshes[mesh]
+            # an outfit no blueprint names (a boss's _Unique, Police01_Unique): the blueprint-mapped mesh in the nearest enclosing folder
+            folder = mesh.rsplit("/", 1)[0]
+            while "/NPC/" in folder + "/" and not folder.endswith(("/NPC", "/NPC/Boss")):
+                for m, e in sorted(meshes.items()):
+                    if m.startswith(folder + "/"):
+                        return e
+                folder = folder.rsplit("/", 1)[0]
+            return None
+
+        # characters no blueprint names (the player): the unarmed sets of the most common data set
+        actions = [e["actions"] for e in meshes.values()]
+        common = max(set(actions), key=actions.count) if actions else None
+        default = next((e for e in meshes.values() if e["actions"] == common and not e.get("weaponType")), None)
+
+        def held_for(gen: str, wt: str | None) -> list[dict]:
+            if not wt or wt == "None":
+                return []
+            w = weapons.get(f"{gen.rsplit('/', 1)[-1]}|{wt}") or weapons.get(f"BP_NPCWeaponGenerator|{wt}")
+            if not w:
+                return []
+            cls = w["blueprint"].rsplit("/", 1)[-1].removeprefix("BP_")
+            out = []
+            for p in w["parts"]:
+                mid = f"Weapon_{p['item']}__{cls}"  # a recoloured NPC weapon (Grass Boss's pink rifle) is its own model
+                if mid not in weapon_ids:
+                    mid = f"Weapon_{p['item']}"
+                if mid in weapon_ids:
+                    out.append({"item": mid, "bone": p["bone"], **attach_offset(p)})
+            return out
+
+        # the engine plays a set only on meshes of its skeleton or a declared-compatible one (CompatibleSkeletons); the bosses' cutscene
+        # meshes (Boss_<X>_Unique, own skeletons with no compatibility) keep just the clips of their own skeleton
+        compatible = set(doc.get("compatible") or [doc.get("skeleton")])
+        names: dict[str, list[ModelRef]] = {}
+        for r in refs:
+            if r.kind != "human":
+                continue
+            direct = meshes.get(r.extras.get("mesh") or "")
+            e = entry_for(r.extras.get("mesh")) or default
+            if e is None:
+                continue
+            if r.extras.get("skeleton") not in compatible:
+                if direct is None and e.get("name"):
+                    r.display_name = f"{e['name']} (cutscene)" if r.id.startswith("Boss_") else f"{e['name']} ({self._human_label(r.id)})"
+                continue
+            gen = e.get("generator", "")
+            weapon = e.get("weaponType")
+            shooters = {**doc.get("shooters", {}), **e.get("shooters", {})}  # the character's own data set wins (Fat heavy weapon)
+            own = list(e["own"]) + ["Player_Female_Extra" if r.extras["group"] == "Player" else "NPC_Extra"]
+            lst: list[dict] = []
+            seen: set[str] = set()
+
+            def add(sid: str, is_own: bool, wt: str | None) -> None:
+                if sid in seen or sid not in packs:
+                    return
+                seen.add(sid)
+                p = {"id": sid, "path": f"palworld/{packs[sid].id}/", "label": packs[sid].display_name, "own": is_own,
+                     **({"weaponType": wt} if wt else {})}
+                if h := held_for(gen, wt):
+                    p["heldItems"] = h
+                lst.append(p)
+
+            for sid in own:
+                st = sets.get(sid, {})
+                add(sid, True, st.get("weaponType") if st.get("kind") == "weapon" else None)
+            for wt, chain in sorted(shooters.items()):
+                for sid in chain:
+                    add(sid, False, wt if sets.get(sid, {}).get("kind") == "weapon" else None)
+            r.extras["animPacks"] = lst
+            # the stance: its weapon's set, else a set its own blueprint maps over the data set's (Zoe's GrassBoss stance), else unarmed
+            ov = [k for k in e.get("overrides", []) if shooters.get(k)]
+            stand = (shooters.get(weapon) or [])[-1:] or (shooters[ov[0]][-1:] if ov else []) or (shooters.get("None") or [])[-1:]
+            if stand and stand[0] in packs:
+                r.extras["defaultPack"] = stand[0]
+            if weapon and weapon != "None" and "heldItem" not in r.extras and (h := held_for(gen, weapon)):
+                r.extras["heldItem"], r.extras["heldItems"] = h[0], h
+            if weapon:
+                r.extras["weaponType"] = weapon
+            if direct is not None and direct.get("name"):
+                names.setdefault(direct["name"], []).append(r)
+            elif direct is None and e is not default and e.get("name"):  # an outfit no blueprint names: its folder's character
+                r.display_name = f"{e['name']} ({self._human_label(r.id).replace(' (', ', ').rstrip(')')})"
+        for name, rs in names.items():
+            for r in rs:  # a shared name ("Islander", 40 meshes) keeps the outfit as a suffix
+                r.display_name = name if len(rs) == 1 else f"{name} ({self._human_label(r.id).replace(' (', ', ').rstrip(')')})"
 
     def _link_boss_rides(self, refs: list[ModelRef]) -> None:
         """Tower bosses fight riding a Pal (raw/palworld_humans/rides.json, `PalExtract bossride`): the Pal's extras get `bossRide`
@@ -306,10 +484,14 @@ class PalworldCatalog:
         return None
 
     def import_ref(self, ref: ModelRef, with_anim: bool = True) -> Model:
-        from ..importers.palworld.importer import import_pal, import_weapon
+        from ..importers.palworld.importer import import_animpack, import_pal, import_weapon
+
+        if ref.kind == "animpack":
+            return import_animpack(self.raw, ref.extras["set"], model_id=ref.id, display_name=ref.display_name)
 
         if ref.kind == "object":
-            return import_weapon(self.raw, os.path.basename(ref.folder), model_id=ref.id, display_name=ref.display_name)
+            return import_weapon(self.raw, os.path.basename(ref.folder), model_id=ref.id, display_name=ref.display_name,
+                                 material_overrides=ref.extras.get("materialOverrides"))
         if ref.kind == "human":
             return import_pal(self.raw, ref.id, model_id=ref.id, display_name=ref.display_name, with_anim=with_anim, sub="palworld_humans", kind="human")
         return import_pal(self.raw, ref.id, model_id=ref.id, display_name=ref.display_name, with_anim=with_anim)

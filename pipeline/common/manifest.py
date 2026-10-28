@@ -82,6 +82,13 @@ def build_manifest(model: Model, glb_summary: dict | None = None) -> dict:
         for bone in dict.fromkeys(h["bone"] for h in held_items):
             always = not aim or any(h.get("always") for h in held_items if h["bone"] == bone)
             props.append({"bone": bone, "side": "right" if bone.endswith("_r") else "left", "clips": aim, **({"always": True} if always else {})})
+    # humans: the weapons of their animation packs hang on these bones too (the viewer swaps the item per pack and shows it only while
+    # that pack plays), so an unarmed NPC still gets the hand prop
+    joints = {j.name for j in model.skeleton.joints} if model.skeleton else set()
+    for pk in model.extras.get("animPacks") or []:
+        for h in pk.get("heldItems") or []:
+            if h["bone"] in joints and not any(p["bone"] == h["bone"] for p in props):
+                props.append({"bone": h["bone"], "side": "right" if h["bone"].endswith("_r") else "left", "clips": [], "always": True})
     return {
         "manifestVersion": MANIFEST_VERSION,
         "props": props,

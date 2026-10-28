@@ -39,10 +39,14 @@ public static class Humans
             var p = k[NpcRoot.Length..].Split('/');
             var file = p[^1][..^".uasset".Length];
             if (!file.StartsWith("SK_NPC_", StringComparison.OrdinalIgnoreCase) || IsSkip(file)) continue;
-            // NPC/SK_NPC_X/SK_NPC_X_v02 (2 deep) or NPC/Boss/<X>Boss/SK_NPC_<X>Boss001 (3 deep); anything deeper is a sub-part folder
-            if (!(p.Length == 2 || (p.Length == 3 && p[0].Equals("Boss", StringComparison.OrdinalIgnoreCase)))) continue;
+            // NPC/SK_NPC_X/SK_NPC_X_v02 (2 deep), NPC/Boss/<X>Boss/SK_NPC_<X>Boss001 (3 deep) or a boss's own sub-folder
+            // (Boss/<X>Boss/Unique/SK_NPC_<X>Boss001_Unique, Boss/GrassBoss/SK_NPC_GrassBoss001_Skin001/...); Old/ is unused content
+            var boss = p[0].Equals("Boss", StringComparison.OrdinalIgnoreCase);
+            if (!(p.Length == 2 || (boss && (p.Length == 3 || p.Length == 4)))) continue;
             if (file.Contains("Hair0") || file.Contains("Head0") || file.Contains("_Outfit_")) continue;
-            var id = p.Length == 3 ? "Boss_" + file["SK_NPC_".Length..] : file["SK_".Length..];
+            // a boss's weapon mesh (SK_NPC_ForestBoss001_weapon) is a held item (BossHeldItems), not a character
+            if (file.EndsWith("_weapon", StringComparison.OrdinalIgnoreCase)) continue;
+            var id = boss ? "Boss_" + file["SK_NPC_".Length..] : file["SK_".Length..];
             map[id] = k[..^".uasset".Length];
         }
         // Zoe (GrassBoss) has no SK_NPC_GrassBoss001: her whole body is the "_ALL" outfit mesh (what Grizzbolt's tower blueprint carries)
@@ -53,6 +57,8 @@ public static class Humans
 
     // AS_ package -> skeleton package path (loaded once; each human then filters by its own skeleton)
     static Dictionary<string, string?>? animSkeletons;
+    // sequences of the shared animation sets (`npcsets`) live in raw/palworld_animpacks, not in every human's folder
+    static HashSet<string>? packed;
     static IEnumerable<string> AnimsFor(DefaultFileProvider provider, string? skelPath, bool player, string? key = null)
     {
         if (animSkeletons == null)
@@ -74,10 +80,12 @@ public static class Humans
             Console.WriteLine($"indexed {animSkeletons.Count} human animation sequences");
         }
         var root = player ? PlayerAnim : NpcAnim;
+        packed ??= NpcSets.PackedSequences();
         return animSkeletons.Where(kv => kv.Value != null && kv.Value == skelPath && kv.Key.StartsWith(root, StringComparison.OrdinalIgnoreCase))
-            // a boss's intro cutscene is authored on its own skeleton (SK_NPC_<X>Boss001_Skeleton, same bone names as its mesh): take those too
-            .Concat(key == null ? Enumerable.Empty<KeyValuePair<string, string?>>() : animSkeletons.Where(kv => kv.Key.StartsWith(DemoAnim, StringComparison.OrdinalIgnoreCase) && kv.Value != null && kv.Value.Contains($"/SK_NPC_{key}", StringComparison.OrdinalIgnoreCase)))
-            .Select(kv => kv.Key).ToList();
+            // boss intro cutscenes (Demo/BossBattle<X>Start) animate the boss's cutscene mesh (Boss/<X>Boss/[Unique/]SK_NPC_<X>Boss001_Unique), which
+            // has its own skeleton (SK_NPC_<X>Boss001_Skeleton, no CompatibleSkeletons): only a mesh on that skeleton gets them, as in the engine
+            .Concat(animSkeletons.Where(kv => kv.Key.StartsWith(DemoAnim, StringComparison.OrdinalIgnoreCase) && kv.Value != null && kv.Value == skelPath))
+            .Select(kv => kv.Key).Where(k => !packed.Contains(k)).ToList();
     }
 
     // `bossride`: tower bosses fight riding a Pal. The tower Pal's blueprint (BP_<Pal>_GYM) holds a BP_PalBossNPCMarker component
@@ -346,17 +354,25 @@ public static class Humans
     public static void ExportPhysics(DefaultFileProvider provider, List<string> args)
     {
         var ids = args.Contains("--all-humans")
-            ? Directory.GetDirectories(Path.Combine(Program.RawDir, "palworld_humans")).Select(d => Path.GetFileName(d)!).Where(n => n.StartsWith("Boss_")).ToList()
+            ? Directory.GetDirectories(Path.Combine(Program.RawDir, "palworld_humans")).Select(d => Path.GetFileName(d)!).ToList()
             : args.Where(a => !a.StartsWith("--")).ToList();
         foreach (var id in ids)
         {
             try
             {
+                // the blueprints that use this mesh (from `npcsets`), else the old name guess BP_NPC_<id minus Boss_ and digits>
+                var pj = Path.Combine(Program.RawDir, "palworld_humans", id, "pal.json");
+                if (!File.Exists(pj)) continue;
+                var bps = NpcSets.BlueprintsFor((string?)Newtonsoft.Json.Linq.JObject.Parse(File.ReadAllText(pj))["mesh"]);
                 var shortName = System.Text.RegularExpressions.Regex.Replace(id.Replace("Boss_", ""), @"\d+$", "");
-                var bp = $"{Root}Blueprint/Character/NPC/Normal/BP_NPC_{shortName}";
-                if (!provider.Files.ContainsKey(bp + ".uasset")) { Console.WriteLine($"{id,-26} no blueprint {bp}"); continue; }
-                var json = JsonConvert.SerializeObject(provider.LoadPackage(bp).GetExports(), Program.JsonSettings);
-                var m = System.Text.RegularExpressions.Regex.Match(json, @"""AnimLayerClass"":\s*\{[^}]*?""ObjectPath"":\s*""([^""]+?)\.\d+""");
+                bps.Add($"{Root}Blueprint/Character/NPC/Normal/BP_NPC_{shortName}");
+                System.Text.RegularExpressions.Match m = System.Text.RegularExpressions.Match.Empty;
+                foreach (var bp in bps.Where(b => provider.Files.ContainsKey(b + ".uasset")))
+                {
+                    var json = JsonConvert.SerializeObject(provider.LoadPackage(bp).GetExports(), Program.JsonSettings);
+                    m = System.Text.RegularExpressions.Regex.Match(json, @"""AnimLayerClass"":\s*\{[^}]*?""ObjectPath"":\s*""([^""]+?)\.\d+""");
+                    if (m.Success) break;
+                }
                 if (!m.Success) { Console.WriteLine($"{id,-26} no AnimLayerClass"); continue; }
                 var abp = m.Groups[1].Value;
                 var nodes = new List<object>();

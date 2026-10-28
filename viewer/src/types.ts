@@ -17,6 +17,8 @@ export interface IndexModel {
   species?: string | null;
   skin?: string | null;
   codeName?: string | null;
+  /** Other game items that use this model (weapons sharing a mesh). */
+  aliases?: string[] | null;
 }
 export interface CategoryInfo { id: string; label: string; count: number; subs: { id: string; label: string; count: number }[] }
 export interface GameIndex {
@@ -32,6 +34,17 @@ export interface VariantGroup { name: string; label: string; options: VariantOpt
 export interface ClipInfo {
   name: string; index: number; duration: number; frameRate: number; frameCount: number;
   loop: boolean; category: string; mountOk?: boolean; default: boolean; visibility?: VisibilityTracks; uvOffset?: UvOffsetTracks; uvOffsetMode?: 'gltf_step';
+  /** Set by the viewer: the shared animation pack (AnimPack.id) the clip comes from; absent = the model's own GLB. */
+  pack?: string;
+}
+/** A shared human animation set (out/palworld/Pack_<id>/): clips only, bound to any human by bone name. */
+export interface AnimPack {
+  id: string; path: string; label: string;
+  /** wired to this character in game (its data set, unarmed locomotion, its weapon); the rest are every other weapon's set */
+  own: boolean;
+  weaponType?: string;
+  /** the weapon the character's generator hands out for this set (shown while its clips play) */
+  heldItems?: HeldItemDefault[];
 }
 /** Per-material texture offset animation (BDSP eye gaze): material name -> keys in seconds, offsets in UV units (x right, y up). */
 export type UvOffsetTracks = Record<string, { times: number[]; values: [number, number][] }>;
@@ -93,7 +106,8 @@ export interface Manifest {
   /** Z-A Holocast material sets (`holo`, `holo_red`): hologram presets from the data */
   holocast?: HolocastPreset[];
   stats: { joints: number; meshes: number; triangles: number; textures: number; clips: number; glbBytes: number };
-  extras?: { dex?: number; dexSuffix?: string; form?: string; species?: string; elements?: string[]; skin?: string; codeName?: string; rarity?: number; bossRide?: BossRide; physics?: PhysicsNode[]; auras?: { color: number[]; intensity: number; width: number; curve: number[][] }[]; mount?: MountInfo; /** ride clips carry the seat in the mount's frame: attach at its model origin, at tower size */ seatInClip?: boolean };
+  extras?: { dex?: number; dexSuffix?: string; form?: string; species?: string; elements?: string[]; skin?: string; codeName?: string; rarity?: number; bossRide?: BossRide; physics?: PhysicsNode[]; auras?: { color: number[]; intensity: number; width: number; curve: number[][] }[]; mount?: MountInfo; /** ride clips carry the seat in the mount's frame: attach at its model origin, at tower size */ seatInClip?: boolean;
+    /** humans: shared clip sets (own first) and the one the character stands in */ animPacks?: AnimPack[]; defaultPack?: string; group?: string; weaponType?: string };
 }
 
 /** A calibrated gameplay screenshot (refs/<game>/index.json, written by tools/lightrefs/build_presets.py). */

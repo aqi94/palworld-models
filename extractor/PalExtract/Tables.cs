@@ -18,10 +18,17 @@ public static class Tables
         "Pal/Content/Pal/DataTable/Skin/DT_SkinDataTable_Common",
         "Pal/Content/Pal/DataTable/Skin/DT_SkinAssetMapTable",
         "Pal/Content/Pal/DataTable/Skin/DT_SkinAssetMapTable_Common",
+        // humans: CharacterID -> weapon type / names; items: NPC weapon item -> weapon blueprint
+        "Pal/Content/Pal/DataTable/Character/DT_PalHumanParameter",
+        "Pal/Content/Pal/DataTable/Character/DT_PalHumanParameter_Common",
+        "Pal/Content/Pal/DataTable/Item/DT_ItemDataTable",
+        "Pal/Content/Pal/DataTable/Item/DT_ItemDataTable_Common",
+        "Pal/Content/L10N/en/Pal/DataTable/Text/DT_HumanNameText_Common",
         "Pal/Content/L10N/en/Pal/DataTable/Text/DT_PalNameText_Common",
         "Pal/Content/L10N/en/Pal/DataTable/Text/DT_PalLongDescriptionText",
         "Pal/Content/L10N/en/Pal/DataTable/Text/DT_SkinNameText_Common",
         "Pal/Content/L10N/en/Pal/DataTable/Text/DT_SkinNameText",
+        "Pal/Content/L10N/en/Pal/DataTable/Text/DT_ItemNameText_Common",
     };
 
     public static void Export(DefaultFileProvider provider)

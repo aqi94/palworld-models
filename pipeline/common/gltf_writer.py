@@ -443,7 +443,7 @@ def write_glb(model: Model, path: str) -> dict:
 
     # ---- finish --------------------------------------------------------------
     g["buffers"].append({"byteLength": len(b.bin)})
-    for k in ("animations", "skins", "extensionsUsed", "images", "textures"):
+    for k in ("animations", "skins", "extensionsUsed", "images", "textures", "meshes", "materials", "samplers"):  # glTF arrays must not be empty (animation packs have no mesh)
         if not g[k]:
             del g[k]
     g["extras"] = {
@@ -468,11 +468,11 @@ def write_glb(model: Model, path: str) -> dict:
         f.write(bin_bytes)
     return {
         "bytes": total,
-        "meshes": len(g["meshes"]),
-        "primitives": sum(len(m["primitives"]) for m in g["meshes"]),
+        "meshes": len(g.get("meshes", [])),
+        "primitives": sum(len(m["primitives"]) for m in g.get("meshes", [])),
         "nodes": len(g["nodes"]),
         "joints": len(joint_node),
-        "materials": len(g["materials"]),
+        "materials": len(g.get("materials", [])),
         "images": len(g.get("images", [])),
         "animations": len(g.get("animations", [])),
         "droppedTracks": dropped,
