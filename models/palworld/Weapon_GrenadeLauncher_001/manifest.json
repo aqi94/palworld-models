@@ -1,0 +1,50 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_GrenadeLauncher_001",
+ "kind": "object",
+ "displayName": "Grenade Launcher",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "PalProp_Weapon_RocketLauncher_002",
+   "label": "PalProp Weapon RocketLauncher 002",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 4,
+  "meshes": 1,
+  "triangles": 4590,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 8216364
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\GrenadeLauncher_001"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Grenade Launcher",
+    "class": "GrenadeLauncher"
+   }
+  ],
+  "users": {
+   "npc": [
+    "GrenadeLauncher_NPC",
+    "GrenadeLauncher_NPC_Otomo"
+   ]
+  },
+  "species": "Weapon",
+  "form": "GrenadeLauncher_001"
+ }
+}

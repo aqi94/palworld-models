@@ -1,0 +1,56 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_AssaultRifle_008",
+ "kind": "object",
+ "displayName": "Makeshift Assault Rifle",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_AssaultRifle_008_Body1",
+   "label": "Body1",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Weapon_AssaultRifle_008_Magazine",
+   "label": "Magazine",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Weapon_AssaultRifle_008_Body2",
+   "label": "Body2",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 9,
+  "meshes": 3,
+  "triangles": 49887,
+  "textures": 9,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 25255596
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\AssaultRifle_008"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Makeshift Assault Rifle",
+    "class": "MakeshiftAssaultRifle"
+   }
+  ],
+  "species": "Weapon",
+  "form": "AssaultRifle_008"
+ }
+}

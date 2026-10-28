@@ -1,0 +1,68 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Sci-fi_Bow",
+ "kind": "object",
+ "displayName": "Advanced Bow",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Handles",
+   "label": "Handles",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Gun",
+   "label": "Gun",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "DigitalTarget_Inst",
+   "label": "DigitalTarget Inst",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "RopeSupport",
+   "label": "RopeSupport",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Heads",
+   "label": "Heads",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 25,
+  "meshes": 5,
+  "triangles": 301585,
+  "textures": 10,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 25166148
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Sci-fi_Bow"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Advanced Bow",
+    "class": "SFBow"
+   }
+  ],
+  "species": "Weapon",
+  "form": "Sci-fi_Bow"
+ }
+}

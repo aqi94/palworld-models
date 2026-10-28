@@ -1,0 +1,704 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "LotusDragon",
+ "kind": "pal",
+ "displayName": "Ophydia",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [
+  {
+   "name": "eye",
+   "label": "Eye",
+   "options": [
+    {
+     "variant": 0,
+     "name": "eye_1",
+     "label": "1",
+     "default": true
+    },
+    {
+     "variant": 1,
+     "name": "eye_2",
+     "label": "2",
+     "default": false
+    },
+    {
+     "variant": 2,
+     "name": "eye_3",
+     "label": "3",
+     "default": false
+    },
+    {
+     "variant": 3,
+     "name": "eye_4",
+     "label": "4",
+     "default": false
+    },
+    {
+     "variant": 4,
+     "name": "eye_5",
+     "label": "5",
+     "default": false
+    },
+    {
+     "variant": 5,
+     "name": "eye_6",
+     "label": "6",
+     "default": false
+    },
+    {
+     "variant": 6,
+     "name": "eye_7",
+     "label": "7",
+     "default": false
+    },
+    {
+     "variant": 7,
+     "name": "eye_8",
+     "label": "8",
+     "default": false
+    }
+   ]
+  }
+ ],
+ "clips": [
+  {
+   "name": "Damage",
+   "index": 0,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Eat",
+   "index": 1,
+   "duration": 4.0,
+   "frameRate": 30.0,
+   "frameCount": 121,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Encount",
+   "index": 2,
+   "duration": 1.5333,
+   "frameRate": 30.0,
+   "frameCount": 47,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Action",
+   "index": 3,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_ActionLoop",
+   "index": 4,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_End",
+   "index": 5,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Start",
+   "index": 6,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_StartLoop",
+   "index": 7,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GetUp_FrontDown",
+   "index": 8,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Hit",
+   "index": 9,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Idle",
+   "index": 10,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "Idle_Riding",
+   "index": 11,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Idle_Swim",
+   "index": 12,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "JumpEnd",
+   "index": 13,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "JumpLoop",
+   "index": 14,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "LotusBloom_End",
+   "index": 15,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "LotusBloom_Start",
+   "index": 16,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Petting",
+   "index": 17,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Rest01",
+   "index": 18,
+   "duration": 4.0,
+   "frameRate": 30.0,
+   "frameCount": 121,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Rest02",
+   "index": 19,
+   "duration": 4.4,
+   "frameRate": 30.0,
+   "frameCount": 133,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Run",
+   "index": 20,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Run_Swim",
+   "index": 21,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepEnd",
+   "index": 22,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepLoop",
+   "index": 23,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepStart",
+   "index": 24,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Walk",
+   "index": 25,
+   "duration": 1.6,
+   "frameRate": 30.0,
+   "frameCount": 49,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Walk_Swim",
+   "index": 26,
+   "duration": 1.6,
+   "frameRate": 30.0,
+   "frameCount": 49,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Watering",
+   "index": 27,
+   "duration": 3.3333,
+   "frameRate": 30.0,
+   "frameCount": 101,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "Idle",
+ "parts": [
+  {
+   "node": "Body",
+   "label": "Body",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Eye",
+   "label": "Eye",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Brow1_1",
+   "label": "Brow1 1",
+   "lod": 0,
+   "visible": true,
+   "group": "brow",
+   "option": "brow_1"
+  },
+  {
+   "node": "Brow2_1",
+   "label": "Brow2 1",
+   "lod": 0,
+   "visible": true,
+   "group": "brow",
+   "option": "brow_1"
+  },
+  {
+   "node": "Brow3_1",
+   "label": "Brow3 1",
+   "lod": 0,
+   "visible": true,
+   "group": "brow",
+   "option": "brow_1"
+  },
+  {
+   "node": "Brow1_2",
+   "label": "Brow1 2",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_2"
+  },
+  {
+   "node": "Brow2_2",
+   "label": "Brow2 2",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_2"
+  },
+  {
+   "node": "Brow3_2",
+   "label": "Brow3 2",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_2"
+  },
+  {
+   "node": "Brow1_3",
+   "label": "Brow1 3",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_3"
+  },
+  {
+   "node": "Brow2_3",
+   "label": "Brow2 3",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_3"
+  },
+  {
+   "node": "Brow3_3",
+   "label": "Brow3 3",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_3"
+  },
+  {
+   "node": "Brow1_4",
+   "label": "Brow1 4",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_4"
+  },
+  {
+   "node": "Brow2_4",
+   "label": "Brow2 4",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_4"
+  },
+  {
+   "node": "Brow3_4",
+   "label": "Brow3 4",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_4"
+  },
+  {
+   "node": "Brow1_5",
+   "label": "Brow1 5",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_5"
+  },
+  {
+   "node": "Brow2_5",
+   "label": "Brow2 5",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_5"
+  },
+  {
+   "node": "Brow3_5",
+   "label": "Brow3 5",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_5"
+  },
+  {
+   "node": "Brow1_6",
+   "label": "Brow1 6",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_6"
+  },
+  {
+   "node": "Brow2_6",
+   "label": "Brow2 6",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_6"
+  },
+  {
+   "node": "Brow3_6",
+   "label": "Brow3 6",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_6"
+  },
+  {
+   "node": "Brow1_7",
+   "label": "Brow1 7",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_7"
+  },
+  {
+   "node": "Brow2_7",
+   "label": "Brow2 7",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_7"
+  },
+  {
+   "node": "Brow3_7",
+   "label": "Brow3 7",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_7"
+  },
+  {
+   "node": "Brow1_8",
+   "label": "Brow1 8",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_8"
+  },
+  {
+   "node": "Brow2_8",
+   "label": "Brow2 8",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_8"
+  },
+  {
+   "node": "Brow3_8",
+   "label": "Brow3 8",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_8"
+  }
+ ],
+ "partGroups": [
+  {
+   "name": "brow",
+   "label": "Brows & lashes",
+   "options": [
+    {
+     "id": "brow_1",
+     "label": "1",
+     "default": true,
+     "variant": "eye_1",
+     "nodes": [
+      "Brow1_1",
+      "Brow2_1",
+      "Brow3_1"
+     ]
+    },
+    {
+     "id": "brow_2",
+     "label": "2",
+     "default": false,
+     "variant": "eye_2",
+     "nodes": [
+      "Brow1_2",
+      "Brow2_2",
+      "Brow3_2"
+     ]
+    },
+    {
+     "id": "brow_3",
+     "label": "3",
+     "default": false,
+     "variant": "eye_3",
+     "nodes": [
+      "Brow1_3",
+      "Brow2_3",
+      "Brow3_3"
+     ]
+    },
+    {
+     "id": "brow_4",
+     "label": "4",
+     "default": false,
+     "variant": "eye_4",
+     "nodes": [
+      "Brow1_4",
+      "Brow2_4",
+      "Brow3_4"
+     ]
+    },
+    {
+     "id": "brow_5",
+     "label": "5",
+     "default": false,
+     "variant": "eye_5",
+     "nodes": [
+      "Brow1_5",
+      "Brow2_5",
+      "Brow3_5"
+     ]
+    },
+    {
+     "id": "brow_6",
+     "label": "6",
+     "default": false,
+     "variant": "eye_6",
+     "nodes": [
+      "Brow1_6",
+      "Brow2_6",
+      "Brow3_6"
+     ]
+    },
+    {
+     "id": "brow_7",
+     "label": "7",
+     "default": false,
+     "variant": "eye_7",
+     "nodes": [
+      "Brow1_7",
+      "Brow2_7",
+      "Brow3_7"
+     ]
+    },
+    {
+     "id": "brow_8",
+     "label": "8",
+     "default": false,
+     "variant": "eye_8",
+     "nodes": [
+      "Brow1_8",
+      "Brow2_8",
+      "Brow3_8"
+     ]
+    }
+   ]
+  }
+ ],
+ "stats": {
+  "joints": 122,
+  "meshes": 26,
+  "triangles": 18042,
+  "textures": 5,
+  "clips": 28,
+  "droppedTracks": 0,
+  "glbBytes": 15040096
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld\\LotusDragon"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/LotusDragon/SK_LotusDragon_Skeleton",
+  "dex": 175,
+  "elements": [
+   "Grass",
+   "Water"
+  ],
+  "rarity": 9,
+  "codeName": "LotusDragon",
+  "species": "LotusDragon",
+  "form": ""
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_OctaviaShotgun001",
+ "kind": "object",
+ "displayName": "Core Eject Shotgun",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "OctaviaShotgun001",
+   "label": "OctaviaShotgun001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Moniter",
+   "label": "Moniter",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 6,
+  "meshes": 2,
+  "triangles": 6726,
+  "textures": 4,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 11417900
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\OctaviaShotgun001"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Core Eject Shotgun",
+    "class": "OctaviaShotgun"
+   }
+  ],
+  "species": "Weapon",
+  "form": "OctaviaShotgun001"
+ }
+}

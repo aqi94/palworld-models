@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Melee_008",
+ "kind": "object",
+ "displayName": "Metal Bat",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Material_001",
+   "label": "Material 001",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 4544,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 3002048
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Melee_008"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Metal Bat",
+    "class": "Bat3"
+   }
+  ],
+  "species": "Weapon",
+  "form": "Melee_008"
+ }
+}

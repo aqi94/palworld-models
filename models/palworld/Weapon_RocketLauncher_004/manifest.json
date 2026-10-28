@@ -1,0 +1,50 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_RocketLauncher_004",
+ "kind": "object",
+ "displayName": "Guided Missile Launcher",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_RocketLauncher_004_1",
+   "label": "1",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Weapon_RocketLauncher_004_2",
+   "label": "2",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 17,
+  "meshes": 2,
+  "triangles": 87325,
+  "textures": 6,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 25428160
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\RocketLauncher_004"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Guided Missile Launcher",
+    "class": "GuidedMissileLauncher"
+   }
+  ],
+  "species": "Weapon",
+  "form": "RocketLauncher_004"
+ }
+}

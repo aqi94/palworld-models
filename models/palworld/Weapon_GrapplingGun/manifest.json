@@ -1,0 +1,60 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_GrapplingGun",
+ "kind": "object",
+ "displayName": "Grappling Gun",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "PalProp_GrapplingGun",
+   "label": "PalProp GrapplingGun",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 3627,
+  "textures": 4,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 13738324
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\GrapplingGun"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Grappling Gun",
+    "class": "GrapplingGun"
+   },
+   {
+    "name": "Mega Grappling Gun",
+    "class": "GrapplingGun_2"
+   },
+   {
+    "name": "Giga Grappling Gun",
+    "class": "GrapplingGun_3"
+   },
+   {
+    "name": "Hyper Grappling Gun",
+    "class": "GrapplingGun_4"
+   },
+   {
+    "name": "Ultra Grappling Gun",
+    "class": "GrapplingGun_5"
+   }
+  ],
+  "species": "Weapon",
+  "form": "GrapplingGun"
+ }
+}

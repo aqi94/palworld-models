@@ -1,0 +1,1493 @@
+{
+ "manifestVersion": 1,
+ "props": [
+  {
+   "bone": "weapon_r",
+   "side": "right",
+   "clips": [],
+   "always": true
+  }
+ ],
+ "game": "palworld",
+ "id": "Boss_GrassBoss001",
+ "kind": "human",
+ "displayName": "Zoe",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "GrassBoss_CommonWork",
+   "index": 15,
+   "duration": 6.6667,
+   "frameRate": 30.0,
+   "frameCount": 201,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Ride_Carrying",
+   "index": 16,
+   "duration": 3.0667,
+   "frameRate": 30.0,
+   "frameCount": 93,
+   "loop": true,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Ride_CommonWaza",
+   "index": 17,
+   "duration": 2.3333,
+   "frameRate": 30.0,
+   "frameCount": 71,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Ride_Encount",
+   "index": 18,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Ride_Idle",
+   "index": 19,
+   "duration": 3.3333,
+   "frameRate": 30.0,
+   "frameCount": 101,
+   "loop": true,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Ride_Petting",
+   "index": 20,
+   "duration": 4.2667,
+   "frameRate": 30.0,
+   "frameCount": 129,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Ride_SleepEnd",
+   "index": 21,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Ride_SleepLoop",
+   "index": 22,
+   "duration": 3.3333,
+   "frameRate": 30.0,
+   "frameCount": 101,
+   "loop": true,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Ride_SleepStart",
+   "index": 23,
+   "duration": 5.0,
+   "frameRate": 30.0,
+   "frameCount": 151,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Ride_Spa",
+   "index": 24,
+   "duration": 2.3,
+   "frameRate": 30.0,
+   "frameCount": 70,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Ride_Waza",
+   "index": 25,
+   "duration": 3.3333,
+   "frameRate": 30.0,
+   "frameCount": 101,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Ride_WazaIn",
+   "index": 26,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Ride_WazaOut",
+   "index": 27,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_Idle_Skin001",
+   "index": 28,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_Rest01",
+   "index": 29,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_Rest01_Skin001",
+   "index": 30,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_Rest02",
+   "index": 31,
+   "duration": 3.3333,
+   "frameRate": 30.0,
+   "frameCount": 101,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_Rest03",
+   "index": 32,
+   "duration": 4.3333,
+   "frameRate": 30.0,
+   "frameCount": 131,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_Rest04",
+   "index": 33,
+   "duration": 4.3333,
+   "frameRate": 30.0,
+   "frameCount": 131,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_SleepLoopTogether",
+   "index": 34,
+   "duration": 3.1667,
+   "frameRate": 30.0,
+   "frameCount": 96,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_Spa2",
+   "index": 35,
+   "duration": 12.0,
+   "frameRate": 30.0,
+   "frameCount": 361,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_Walk_Skin001",
+   "index": 36,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "NPC_Outfit_GrassBoss001_M00",
+   "label": "NPC Outfit GrassBoss001 M00",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_Outfit_GrassBoss001_M01",
+   "label": "NPC Outfit GrassBoss001 M01",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_Outfit_GrassBoss001_M02",
+   "label": "NPC Outfit GrassBoss001 M02",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_GrassBossBody001",
+   "label": "NPC GrassBossBody001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_GrassBossHead001",
+   "label": "NPC GrassBossHead001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_GrassBossBrow001",
+   "label": "NPC GrassBossBrow001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_GrassBossEye001",
+   "label": "NPC GrassBossEye001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_GrassBossHair001",
+   "label": "NPC GrassBossHair001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_Outfit_GrassBoss001_M01_Jewel",
+   "label": "NPC Outfit GrassBoss001 M01 Jewel",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 122,
+  "meshes": 9,
+  "triangles": 45068,
+  "textures": 23,
+  "clips": 22,
+  "droppedTracks": 0,
+  "glbBytes": 52519872
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_humans\\Boss_GrassBoss001"
+ ],
+ "extras": {
+  "physics": [
+   {
+    "root": "NPC_GrassBoss001_hair_05_r",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [
+     {
+      "bone": "upperarm_r",
+      "a": [
+       -0.20777000486850739,
+       0.004040000028908253,
+       -0.0
+      ],
+      "b": [
+       -0.02281000092625618,
+       0.0004400000034365803,
+       -0.0
+      ],
+      "radius": 0.06433
+     }
+    ],
+    "spheres": []
+   },
+   {
+    "root": "NPC_GrassBoss001_hair_01_r",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [],
+    "spheres": [
+     {
+      "bone": "head",
+      "center": [
+       -0.011819999665021896,
+       -0.004490000195801258,
+       0.002360000042244792
+      ],
+      "radius": 0.08993,
+      "inside": false
+     }
+    ]
+   },
+   {
+    "root": "NPC_GrassBoss001_collar_02_r",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [],
+    "spheres": [
+     {
+      "bone": "spine_03",
+      "center": [
+       0.13815000653266907,
+       -0.0,
+       0.034279998391866684
+      ],
+      "radius": 0.064,
+      "inside": false
+     }
+    ]
+   },
+   {
+    "root": "NPC_GrassBoss001_sleeve_02_l",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [],
+    "spheres": []
+   },
+   {
+    "root": "NPC_GrassBoss001_hair_01_l",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [],
+    "spheres": [
+     {
+      "bone": "head",
+      "center": [
+       -0.003800000064074993,
+       0.0019099999917671084,
+       0.003470000112429261
+      ],
+      "radius": 0.08978,
+      "inside": false
+     }
+    ]
+   },
+   {
+    "root": "NPC_GrassBoss001_collar_01_r",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [],
+    "spheres": [
+     {
+      "bone": "spine_03",
+      "center": [
+       0.14024999737739563,
+       0.0,
+       0.04230000078678131
+      ],
+      "radius": 0.06327,
+      "inside": false
+     }
+    ]
+   },
+   {
+    "root": "NPC_GrassBoss001_sleeve_01_l",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [],
+    "spheres": []
+   },
+   {
+    "root": "NPC_GrassBoss001_collar_01_l",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [],
+    "spheres": [
+     {
+      "bone": "spine_03",
+      "center": [
+       0.14395999908447266,
+       -0.0,
+       0.03756000101566315
+      ],
+      "radius": 0.06277,
+      "inside": false
+     }
+    ]
+   },
+   {
+    "root": "NPC_GrassBoss001_collar_02_l",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [],
+    "spheres": [
+     {
+      "bone": "spine_03",
+      "center": [
+       0.1420699954032898,
+       0.0,
+       0.03819999843835831
+      ],
+      "radius": 0.06245,
+      "inside": false
+     }
+    ]
+   },
+   {
+    "root": "NPC_GrassBoss001_sleeve_04_l",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [],
+    "spheres": []
+   },
+   {
+    "root": "NPC_GrassBoss001_sleeve_03_l",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [],
+    "spheres": []
+   },
+   {
+    "root": "NPC_GrassBoss001_sleeve_03_r",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [],
+    "spheres": []
+   },
+   {
+    "root": "NPC_GrassBoss001_sleeve_01_r",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [],
+    "spheres": []
+   },
+   {
+    "root": "NPC_GrassBoss001_sleeve_04_r",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [],
+    "spheres": []
+   },
+   {
+    "root": "NPC_GrassBoss001_sleeve_02_r",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [],
+    "spheres": []
+   },
+   {
+    "root": "NPC_GrassBoss001_elecPanda",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [],
+    "spheres": [
+     {
+      "bone": "thigh_l",
+      "center": [
+       -0.025369999930262566,
+       0.009329999797046185,
+       0.021789999678730965
+      ],
+      "radius": 0.11854,
+      "inside": false
+     }
+    ]
+   },
+   {
+    "root": "NPC_GrassBoss001_skirtE_01_r",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [
+     {
+      "bone": "thigh_r",
+      "a": [
+       -0.013620000332593918,
+       -0.023669999092817307,
+       0.0
+      ],
+      "b": [
+       0.17637999355793,
+       -0.023669999092817307,
+       0.0
+      ],
+      "radius": 0.1
+     }
+    ],
+    "spheres": []
+   },
+   {
+    "root": "NPC_GrassBoss001_skirtD_01_r",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [
+     {
+      "bone": "thigh_r",
+      "a": [
+       -0.0232900008559227,
+       -0.026259999722242355,
+       -0.0
+      ],
+      "b": [
+       0.1667100042104721,
+       -0.026259999722242355,
+       -0.0
+      ],
+      "radius": 0.1
+     }
+    ],
+    "spheres": []
+   },
+   {
+    "root": "NPC_GrassBoss001_beltTail_01",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [
+     {
+      "bone": "pelvis",
+      "a": [
+       -0.14556999504566193,
+       -0.23389999568462372,
+       -0.03669999912381172
+      ],
+      "b": [
+       -0.1557600051164627,
+       0.019440000876784325,
+       -0.07840000092983246
+      ],
+      "radius": 0.14247
+     }
+    ],
+    "spheres": []
+   },
+   {
+    "root": "NPC_GrassBoss001_skirtA_01",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [
+     {
+      "bone": "thigh_l",
+      "a": [
+       -0.02687999978661537,
+       -0.003109999932348728,
+       0.07130999863147736
+      ],
+      "b": [
+       -0.0005600000149570405,
+       0.1749500036239624,
+       0.07130999863147736
+      ],
+      "radius": 0.11
+     },
+     {
+      "bone": "thigh_r",
+      "a": [
+       0.019460000097751617,
+       -0.21588000655174255,
+       -0.029999999329447746
+      ],
+      "b": [
+       0.032189998775720596,
+       -0.036329999566078186,
+       -0.029999999329447746
+      ],
+      "radius": 0.11
+     }
+    ],
+    "spheres": []
+   },
+   {
+    "root": "NPC_GrassBoss001_skirtC_01_r",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [
+     {
+      "bone": "thigh_r",
+      "a": [
+       -0.015259999781847,
+       -0.0147299999371171,
+       0.0
+      ],
+      "b": [
+       0.1747400015592575,
+       -0.0147299999371171,
+       0.0
+      ],
+      "radius": 0.1
+     }
+    ],
+    "spheres": []
+   },
+   {
+    "root": "NPC_GrassBoss001_skirtB_01",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [],
+    "spheres": [
+     {
+      "bone": "thigh_l",
+      "center": [
+       -0.11399000138044357,
+       0.10892000049352646,
+       -0.019589999690651894
+      ],
+      "radius": 0.16543,
+      "inside": false
+     },
+     {
+      "bone": "thigh_r",
+      "center": [
+       0.12118999660015106,
+       -0.10140000283718109,
+       0.009519999846816063
+      ],
+      "radius": 0.15338,
+      "inside": false
+     }
+    ]
+   },
+   {
+    "root": "NPC_GrassBoss001_skirtC_01_l",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [
+     {
+      "bone": "thigh_l",
+      "a": [
+       -0.17475999891757965,
+       0.036479998379945755,
+       -0.00559999980032444
+      ],
+      "b": [
+       0.015239999629557133,
+       0.036479998379945755,
+       -0.00559999980032444
+      ],
+      "radius": 0.1
+     }
+    ],
+    "spheres": []
+   },
+   {
+    "root": "NPC_GrassBoss001_skirtD_01_l",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [
+     {
+      "bone": "thigh_l",
+      "a": [
+       -0.1824900060892105,
+       0.028689999133348465,
+       -0.01343000028282404
+      ],
+      "b": [
+       0.00750999990850687,
+       0.028689999133348465,
+       -0.01343000028282404
+      ],
+      "radius": 0.1
+     }
+    ],
+    "spheres": []
+   },
+   {
+    "root": "NPC_GrassBoss001_skirtE_01_l",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [
+     {
+      "bone": "thigh_l",
+      "a": [
+       -0.19575999677181244,
+       0.013650000095367432,
+       -0.004240000154823065
+      ],
+      "b": [
+       -0.005760000087320805,
+       0.013650000095367432,
+       -0.004240000154823065
+      ],
+      "radius": 0.1
+     }
+    ],
+    "spheres": []
+   },
+   {
+    "root": "NPC_GrassBoss001_hair_05_l",
+    "extraRoots": [],
+    "exclude": [],
+    "damping": 0.1,
+    "stiffness": 0.05,
+    "radius": 0.03,
+    "limitAngle": 0.0,
+    "gravity": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fps": 60,
+    "capsules": [
+     {
+      "bone": "upperarm_l",
+      "a": [
+       0.03799000009894371,
+       0.0036700000055134296,
+       -0.012129999697208405
+      ],
+      "b": [
+       0.23239000141620636,
+       0.022450000047683716,
+       0.012120000086724758
+      ],
+      "radius": 0.07002
+     }
+    ],
+    "spheres": []
+   }
+  ],
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/Human/SK_PalHuman_Skeleton",
+  "codeName": "Boss_GrassBoss001",
+  "group": "Boss",
+  "mesh": "Pal/Content/Pal/Model/Character/NPC/Boss/GrassBoss/SK_NPC_Outfit_GrassBoss001/SK_NPC_Outfit_GrassBoss001_ALL",
+  "animPacks": [
+   {
+    "id": "Actions_NPC_GrassBoss",
+    "path": "palworld/Pack_Actions_NPC_GrassBoss/",
+    "label": "Actions (Grass Boss)",
+    "own": true
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Base",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Base/",
+    "label": "Base",
+    "own": true
+   },
+   {
+    "id": "Player_Female_ShooterAnime_None",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_None/",
+    "label": "Unarmed",
+    "own": true,
+    "weaponType": "None"
+   },
+   {
+    "id": "NPC_GrassBoss_ShooterAnime_None",
+    "path": "palworld/Pack_NPC_GrassBoss_ShooterAnime_None/",
+    "label": "Unarmed (Grass Boss)",
+    "own": true,
+    "weaponType": "LaserMiningTool"
+   },
+   {
+    "id": "NPC_Extra",
+    "path": "palworld/Pack_NPC_Extra/",
+    "label": "NPC extras",
+    "own": true
+   },
+   {
+    "id": "Player_Female_ShooterAnime_AssaultRifle",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_AssaultRifle/",
+    "label": "Assault Rifle",
+    "own": false,
+    "weaponType": "AssaultRifle",
+    "heldItems": [
+     {
+      "item": "Weapon_AssaultRifle_001__AssaultRifle_NPC_GrassBoss",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Bowgun",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Bowgun/",
+    "label": "Bowgun",
+    "own": false,
+    "weaponType": "BowGun",
+    "heldItems": [
+     {
+      "item": "Weapon_Bowgun_001",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Flamethrower",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Flamethrower/",
+    "label": "Flamethrower",
+    "own": false,
+    "weaponType": "FlameThrower",
+    "heldItems": [
+     {
+      "item": "Weapon_Flamethrower_002",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "NPC_Fat_ShooterAnime_HeavyWeapon",
+    "path": "palworld/Pack_NPC_Fat_ShooterAnime_HeavyWeapon/",
+    "label": "Heavy Weapon (Fat)",
+    "own": false,
+    "weaponType": "GatlingGun",
+    "heldItems": [
+     {
+      "item": "Weapon_AssaultRifle_002",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ],
+      "scale": [
+       0.467,
+       0.467,
+       0.467
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Melee",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Melee/",
+    "label": "Melee",
+    "own": false,
+    "weaponType": "GiantClub",
+    "heldItems": [
+     {
+      "item": "Weapon_NPC_Male_Believer01Cane",
+      "bone": "weapon_r",
+      "position": [
+       -0.0,
+       1.25825,
+       0.0
+      ],
+      "rotation": [
+       -0.707107,
+       -0.0,
+       0.0,
+       0.707107
+      ],
+      "scale": [
+       5.1473,
+       5.1473,
+       2.0432
+      ]
+     }
+    ]
+   },
+   {
+    "id": "NPC_Fat_ShooterAnime_Melee",
+    "path": "palworld/Pack_NPC_Fat_ShooterAnime_Melee/",
+    "label": "Melee (Fat)",
+    "own": false,
+    "weaponType": "GiantClub",
+    "heldItems": [
+     {
+      "item": "Weapon_NPC_Male_Believer01Cane",
+      "bone": "weapon_r",
+      "position": [
+       -0.0,
+       1.25825,
+       0.0
+      ],
+      "rotation": [
+       -0.707107,
+       -0.0,
+       0.0,
+       0.707107
+      ],
+      "scale": [
+       5.1473,
+       5.1473,
+       2.0432
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_GrenadeLauncher",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_GrenadeLauncher/",
+    "label": "Grenade Launcher",
+    "own": false,
+    "weaponType": "GrenadeLauncher",
+    "heldItems": [
+     {
+      "item": "Weapon_GrenadeLauncher_001",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Handgun",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Handgun/",
+    "label": "Handgun",
+    "own": false,
+    "weaponType": "Handgun",
+    "heldItems": [
+     {
+      "item": "Weapon_Handgun_001",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Male_ShooterAnime_HandgunShield",
+    "path": "palworld/Pack_Player_Male_ShooterAnime_HandgunShield/",
+    "label": "Handgun Shield (Player Male)",
+    "own": false,
+    "weaponType": "HandgunShield"
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Katana",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Katana/",
+    "label": "Katana",
+    "own": false,
+    "weaponType": "Katana",
+    "heldItems": [
+     {
+      "item": "Weapon_NPC_Male_Ninja01Weapon",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_LaserRifle",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_LaserRifle/",
+    "label": "Laser Rifle",
+    "own": false,
+    "weaponType": "LaserRifle",
+    "heldItems": [
+     {
+      "item": "Weapon_AssaultRifle_006",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_PalCarry",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_PalCarry/",
+    "label": "Pal Carry",
+    "own": false,
+    "weaponType": "Liftup"
+   },
+   {
+    "id": "Player_Female_ShooterAnime_RocketLauncher",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_RocketLauncher/",
+    "label": "Rocket Launcher",
+    "own": false,
+    "weaponType": "MissileLauncher",
+    "heldItems": [
+     {
+      "item": "Weapon_RocketLauncher_003",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     },
+     {
+      "item": "Weapon_RocketLauncher_004_Missile",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_GuidedMissileLauncher",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_GuidedMissileLauncher/",
+    "label": "Guided Missile Launcher",
+    "own": false
+   },
+   {
+    "id": "Player_Female_ShooterAnime_MultiGuidedMissileLauncher",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_MultiGuidedMissileLauncher/",
+    "label": "Multi Guided Missile Launcher",
+    "own": false,
+    "weaponType": "MissileLauncher",
+    "heldItems": [
+     {
+      "item": "Weapon_RocketLauncher_003",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     },
+     {
+      "item": "Weapon_RocketLauncher_004_Missile",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_PumpActionShotgun",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_PumpActionShotgun/",
+    "label": "Pump Action Shotgun",
+    "own": false,
+    "weaponType": "Shotgun",
+    "heldItems": [
+     {
+      "item": "Weapon_Shotgun_003",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "ShooterAnime_ThrowBase",
+    "path": "palworld/Pack_ShooterAnime_ThrowBase/",
+    "label": "Throw Base",
+    "own": false
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Throw",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Throw/",
+    "label": "Throw",
+    "own": false,
+    "weaponType": "ThrowObject",
+    "heldItems": [
+     {
+      "item": "Weapon_Modern_Weapons_Grenade_01",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ],
+      "scale": [
+       2.0,
+       2.0,
+       2.0
+      ]
+     }
+    ]
+   }
+  ],
+  "defaultPack": "NPC_GrassBoss_ShooterAnime_None",
+  "species": "Boss",
+  "form": "GrassBoss001"
+ }
+}

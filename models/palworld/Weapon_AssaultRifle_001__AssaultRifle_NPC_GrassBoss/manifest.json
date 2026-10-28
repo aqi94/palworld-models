@@ -1,0 +1,49 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_AssaultRifle_001__AssaultRifle_NPC_GrassBoss",
+ "kind": "object",
+ "displayName": "Assault Rifle (Grass Boss)",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_AssaultRifle_001_pink",
+   "label": "Weapon AssaultRifle 001 pink",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 7,
+  "meshes": 1,
+  "triangles": 7471,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 7125608
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\AssaultRifle_001"
+ ],
+ "extras": {
+  "users": {
+   "npc": [
+    "AssaultRifle_NPC_GrassBoss"
+   ]
+  },
+  "materialOverrides": [
+   [
+    "Pal/Content/Pal/Model/Weapon/AssaultRifle/SK_Weapon_AssaultRifle_001/Materials/M_Weapon_AssaultRifle_001_pink",
+    "Pal/Content/Others/MilitaryWeapSilver/Weapons/Materials/M_WeaponMaster_01"
+   ]
+  ],
+  "species": "Weapon",
+  "form": "AssaultRifle_001"
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_TigerHammer",
+ "kind": "object",
+ "displayName": "Bastigor's Tiger Hammer",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "PalProp_Weapon_Hammer_001",
+   "label": "PalProp Weapon Hammer 001",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 3906,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 14500300
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\TigerHammer"
+ ],
+ "extras": {
+  "users": {
+   "pals": [
+    "SnowTigerBeastman"
+   ]
+  },
+  "species": "Weapon",
+  "form": "TigerHammer"
+ }
+}

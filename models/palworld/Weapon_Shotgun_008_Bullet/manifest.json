@@ -1,0 +1,38 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Shotgun_008_Bullet",
+ "kind": "object",
+ "displayName": "Prototype Shotgun – Bullet",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_Shotgun_008_Bullet",
+   "label": "Weapon Shotgun 008 Bullet",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 11856,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 5699100
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Shotgun_008_Bullet"
+ ],
+ "extras": {
+  "species": "Weapon",
+  "form": "Shotgun_008_Bullet"
+ }
+}

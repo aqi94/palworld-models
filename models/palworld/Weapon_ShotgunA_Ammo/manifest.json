@@ -1,0 +1,39 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_ShotgunA_Ammo",
+ "kind": "object",
+ "displayName": "Energy Shotgun – Shotgun A Ammo",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Shotgun_01",
+   "label": "Shotgun 01",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 248,
+  "textures": 2,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 7356640
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\ShotgunA_Ammo"
+ ],
+ "extras": {
+  "partOf": "Weapon_Shotgun_007",
+  "species": "Weapon",
+  "form": "ShotgunA_Ammo"
+ }
+}

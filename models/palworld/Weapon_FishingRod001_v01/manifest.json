@@ -1,0 +1,48 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_FishingRod001_v01",
+ "kind": "object",
+ "displayName": "Beginner Fishing Rod (Chillet)",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "v01",
+   "label": "v01",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 25,
+  "meshes": 1,
+  "triangles": 8224,
+  "textures": 4,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 7112960
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\FishingRod001_v01"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Beginner Fishing Rod (Chillet)",
+    "class": "FishingRod_1"
+   },
+   {
+    "name": "Beginner Fishing Rod (Gumoss)",
+    "class": "FishingRod_2"
+   }
+  ],
+  "species": "Weapon",
+  "form": "FishingRod001_v01"
+ }
+}

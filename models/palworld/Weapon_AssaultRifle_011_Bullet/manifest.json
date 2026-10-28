@@ -1,0 +1,39 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_AssaultRifle_011_Bullet",
+ "kind": "object",
+ "displayName": "Charge Rifle – Bullet",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Magazine",
+   "label": "Magazine",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 11107,
+  "textures": 2,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 2386908
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\AssaultRifle_011_Bullet"
+ ],
+ "extras": {
+  "partOf": "Weapon_AssaultRifle_011",
+  "species": "Weapon",
+  "form": "AssaultRifle_011_Bullet"
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_AssaultRifle_002",
+ "kind": "object",
+ "displayName": "Gatling Gun",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_AssaultRifle_002",
+   "label": "Weapon AssaultRifle 002",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 10,
+  "meshes": 1,
+  "triangles": 91202,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 20665228
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\AssaultRifle_002"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Gatling Gun",
+    "class": "GatlingGun"
+   }
+  ],
+  "users": {
+   "npc": [
+    "GatlingGun_NPC",
+    "GatlingGun_NPC_GrassBoss",
+    "GatlingGun_NPC_Otomo"
+   ]
+  },
+  "species": "Weapon",
+  "form": "AssaultRifle_002"
+ }
+}

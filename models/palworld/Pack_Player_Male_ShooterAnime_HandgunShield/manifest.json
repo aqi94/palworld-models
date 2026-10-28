@@ -1,0 +1,69 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Pack_Player_Male_ShooterAnime_HandgunShield",
+ "kind": "animpack",
+ "displayName": "Handgun Shield (Player Male)",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "Player_Female_Idle_HandgunWithShield",
+   "index": 0,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": true
+  }
+ ],
+ "defaultClip": "Player_Female_Idle_HandgunWithShield",
+ "parts": [],
+ "stats": {
+  "joints": 4079,
+  "meshes": 0,
+  "triangles": 0,
+  "textures": 0,
+  "clips": 1,
+  "droppedTracks": 0,
+  "glbBytes": 1334236
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_animpacks\\Player_Male_ShooterAnime_HandgunShield"
+ ],
+ "extras": {
+  "retarget": {
+   "root": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "Player_Female_Idle_HandgunWithShield": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "pelvis": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "Player_Female_Idle_HandgunWithShield": [
+      0.0,
+      0.95031,
+      -0.00272
+     ]
+    }
+   }
+  },
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/Human/SK_PalHuman_Skeleton",
+  "set": "Player_Male_ShooterAnime_HandgunShield",
+  "packKind": "weapon",
+  "weaponType": "HandgunShield",
+  "species": "AnimPack",
+  "form": "Player_Male_ShooterAnime_HandgunShield"
+ }
+}

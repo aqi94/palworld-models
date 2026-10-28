@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Shotgun_005",
+ "kind": "object",
+ "displayName": "Semi-Auto Shotgun",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_Shotgun_004",
+   "label": "Weapon Shotgun 004",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 10,
+  "meshes": 1,
+  "triangles": 74477,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 17161808
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Shotgun_005"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Semi-Auto Shotgun",
+    "class": "SemiAutoShotgun"
+   }
+  ],
+  "species": "Weapon",
+  "form": "Shotgun_005"
+ }
+}

@@ -1,0 +1,49 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_AssaultRifle_006",
+ "kind": "object",
+ "displayName": "Laser Rifle",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "NPC_Weapon_Scientist01Gun",
+   "label": "NPC Weapon Scientist01Gun",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 3,
+  "meshes": 1,
+  "triangles": 4000,
+  "textures": 4,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 781040
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\AssaultRifle_006"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Laser Rifle",
+    "class": "LaserRifle"
+   }
+  ],
+  "users": {
+   "npc": [
+    "LaserRifle_NPC"
+   ]
+  },
+  "species": "Weapon",
+  "form": "AssaultRifle_006"
+ }
+}

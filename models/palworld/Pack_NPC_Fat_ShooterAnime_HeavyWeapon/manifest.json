@@ -1,0 +1,678 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Pack_NPC_Fat_ShooterAnime_HeavyWeapon",
+ "kind": "animpack",
+ "displayName": "Heavy Weapon (Fat)",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "NPC_Fat_Aim_HeavyWeapon",
+   "index": 0,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Fat_Crouch_Aim_HeavyWeapon",
+   "index": 1,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Fat_Crouch_Idle_HeavyWeapon",
+   "index": 2,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Fat_Draw_HeavyWeapon",
+   "index": 3,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Fat_Idle_HeavyWeapon",
+   "index": 4,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "NPC_Fat_Jog_HeavyWeapon",
+   "index": 5,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Fat_Reload_HeavyWeapon",
+   "index": 6,
+   "duration": 3.8,
+   "frameRate": 30.0,
+   "frameCount": 115,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Fat_Sprint_HeavyWeapon",
+   "index": 7,
+   "duration": 0.5667,
+   "frameRate": 30.0,
+   "frameCount": 18,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Aim_AssaultRifle",
+   "index": 8,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Aim_AssaultRifle",
+   "index": 9,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Idle_AssaultRifle",
+   "index": 10,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Walk_AssaultRifle",
+   "index": 11,
+   "duration": 0.9,
+   "frameRate": 30.0,
+   "frameCount": 28,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_WalkBwd_Aim_AssaultRifle",
+   "index": 12,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_WalkFwd_Aim_AssaultRifle",
+   "index": 13,
+   "duration": 0.8667,
+   "frameRate": 30.0,
+   "frameCount": 27,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_WalkLeft_Aim_AssaultRifle",
+   "index": 14,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_WalkRight_Aim_AssaultRifle",
+   "index": 15,
+   "duration": 0.7333,
+   "frameRate": 30.0,
+   "frameCount": 23,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Idle_Rifle_Hip_AssaultRifle",
+   "index": 17,
+   "duration": 6.3,
+   "frameRate": 30.0,
+   "frameCount": 190,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JogBwd_Aim_AssaultRifle",
+   "index": 18,
+   "duration": 1.4667,
+   "frameRate": 30.0,
+   "frameCount": 45,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JogFwd_Aim_AssaultRifle",
+   "index": 19,
+   "duration": 1.4667,
+   "frameRate": 30.0,
+   "frameCount": 45,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JogLeft_Aim_AssaultRifle",
+   "index": 20,
+   "duration": 0.7333,
+   "frameRate": 30.0,
+   "frameCount": 23,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JogRight_Aim_AssaultRifle",
+   "index": 21,
+   "duration": 1.4667,
+   "frameRate": 30.0,
+   "frameCount": 45,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpDownLoop_AssaultRifle",
+   "index": 22,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpEnd_AssaultRifle",
+   "index": 23,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpUpLoop_AssaultRifle",
+   "index": 24,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SlidingEnd_AssaultRifle",
+   "index": 25,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SlidingLoop_AssaultRifle",
+   "index": 26,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_WalkBwd_Aim_AssaultRifle",
+   "index": 27,
+   "duration": 0.8667,
+   "frameRate": 30.0,
+   "frameCount": 27,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_WalkFwd_Aim_AssaultRifle",
+   "index": 28,
+   "duration": 0.9667,
+   "frameRate": 30.0,
+   "frameCount": 30,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_WalkLeft_Aim_AssaultRifle",
+   "index": 29,
+   "duration": 0.9333,
+   "frameRate": 30.0,
+   "frameCount": 29,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_WalkRight_Aim_AssaultRifle",
+   "index": 30,
+   "duration": 0.9333,
+   "frameRate": 30.0,
+   "frameCount": 29,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "NPC_Fat_Idle_HeavyWeapon",
+ "parts": [],
+ "stats": {
+  "joints": 4079,
+  "meshes": 0,
+  "triangles": 0,
+  "textures": 0,
+  "clips": 30,
+  "droppedTracks": 0,
+  "glbBytes": 3353776
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_animpacks\\NPC_Fat_ShooterAnime_HeavyWeapon"
+ ],
+ "extras": {
+  "retarget": {
+   "root": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "NPC_Fat_Aim_HeavyWeapon": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Fat_Crouch_Aim_HeavyWeapon": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Fat_Crouch_Idle_HeavyWeapon": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Fat_Draw_HeavyWeapon": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Fat_Idle_HeavyWeapon": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Fat_Jog_HeavyWeapon": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Fat_Reload_HeavyWeapon": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Fat_Sprint_HeavyWeapon": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Idle_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Walk_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_WalkBwd_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_WalkFwd_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_WalkLeft_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_WalkRight_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Idle_Rifle_Hip_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JogBwd_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JogFwd_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JogLeft_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JogRight_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpDownLoop_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpEnd_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpUpLoop_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SlidingEnd_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SlidingLoop_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_WalkBwd_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_WalkFwd_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_WalkLeft_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_WalkRight_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "pelvis": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "NPC_Fat_Aim_HeavyWeapon": [
+      0.0,
+      1.37725,
+      -0.01663
+     ],
+     "NPC_Fat_Crouch_Aim_HeavyWeapon": [
+      0.0,
+      1.37725,
+      -0.01663
+     ],
+     "NPC_Fat_Crouch_Idle_HeavyWeapon": [
+      0.0,
+      1.37725,
+      -0.01663
+     ],
+     "NPC_Fat_Draw_HeavyWeapon": [
+      0.0,
+      1.37725,
+      -0.01663
+     ],
+     "NPC_Fat_Idle_HeavyWeapon": [
+      0.0,
+      1.37725,
+      -0.01663
+     ],
+     "NPC_Fat_Jog_HeavyWeapon": [
+      0.0,
+      1.37725,
+      -0.01663
+     ],
+     "NPC_Fat_Reload_HeavyWeapon": [
+      0.0,
+      1.37725,
+      -0.01663
+     ],
+     "NPC_Fat_Sprint_HeavyWeapon": [
+      0.0,
+      1.37725,
+      -0.01663
+     ],
+     "Player_Female_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Idle_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Walk_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_WalkBwd_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_WalkFwd_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_WalkLeft_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_WalkRight_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Idle_Rifle_Hip_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JogBwd_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JogFwd_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JogLeft_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JogRight_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpDownLoop_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpEnd_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpUpLoop_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SlidingEnd_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SlidingLoop_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_WalkBwd_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_WalkFwd_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_WalkLeft_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_WalkRight_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ]
+    }
+   }
+  },
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/Human/SK_PalHuman_Skeleton",
+  "set": "NPC_Fat_ShooterAnime_HeavyWeapon",
+  "packKind": "weapon",
+  "weaponType": "GatlingGun",
+  "species": "AnimPack",
+  "form": "NPC_Fat_ShooterAnime_HeavyWeapon"
+ }
+}

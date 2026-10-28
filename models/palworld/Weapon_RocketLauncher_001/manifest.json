@@ -1,0 +1,50 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_RocketLauncher_001",
+ "kind": "object",
+ "displayName": "Rocket Launcher (Rocket Launcher 001)",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_RocketLauncher_001",
+   "label": "Weapon RocketLauncher 001",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 11344,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 7319152
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\RocketLauncher_001"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Rocket Launcher",
+    "class": "NormalLauncher"
+   }
+  ],
+  "users": {
+   "npc": [
+    "RocketLauncher_NPC",
+    "RocketLauncher_NPC_Otomo"
+   ]
+  },
+  "species": "Weapon",
+  "form": "RocketLauncher_001"
+ }
+}

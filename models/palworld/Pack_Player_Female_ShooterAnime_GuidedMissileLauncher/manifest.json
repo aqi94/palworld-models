@@ -1,0 +1,509 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Pack_Player_Female_ShooterAnime_GuidedMissileLauncher",
+ "kind": "animpack",
+ "displayName": "Guided Missile Launcher",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "Player_Female_BiggerHorseRide_Sprint",
+   "index": 0,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": true,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_BiggerHorseRide_Sprint_Start",
+   "index": 1,
+   "duration": 0.7667,
+   "frameRate": 30.0,
+   "frameCount": 24,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_Sprint",
+   "index": 2,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": true,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_Sprint_Start",
+   "index": 3,
+   "duration": 0.7667,
+   "frameRate": 30.0,
+   "frameCount": 24,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Aim_MissileLauncher",
+   "index": 23,
+   "duration": 1.3667,
+   "frameRate": 30.0,
+   "frameCount": 42,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_BiggerHorseRide_Aim_MissileLauncher",
+   "index": 24,
+   "duration": 2.6333,
+   "frameRate": 30.0,
+   "frameCount": 80,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_BiggerHorseRide_Idle_MissileLauncher",
+   "index": 25,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Aim_MissileLauncher",
+   "index": 26,
+   "duration": 4.0,
+   "frameRate": 30.0,
+   "frameCount": 121,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Idle_MissileLauncher",
+   "index": 27,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Walk_MissileLauncher",
+   "index": 28,
+   "duration": 0.8667,
+   "frameRate": 30.0,
+   "frameCount": 27,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Draw_MissileLauncher",
+   "index": 29,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_Aim_MissileLauncher",
+   "index": 30,
+   "duration": 2.6333,
+   "frameRate": 30.0,
+   "frameCount": 80,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_Idle_MissileLauncher",
+   "index": 31,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Idle_MissileLauncher",
+   "index": 32,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "Player_Female_Jog_MissileLauncher",
+   "index": 33,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpDownLoop_MissileLauncher",
+   "index": 34,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpEnd_MissileLauncher",
+   "index": 35,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpUpLoop_MissileLauncher",
+   "index": 36,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_MissileLauncher",
+   "index": 37,
+   "duration": 3.3333,
+   "frameRate": 30.0,
+   "frameCount": 101,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SlidingLoop_MissileLauncher",
+   "index": 38,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Sprint_MissileLauncher",
+   "index": 39,
+   "duration": 0.5667,
+   "frameRate": 30.0,
+   "frameCount": 18,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Walk_MissileLauncher",
+   "index": 40,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "Player_Female_Idle_MissileLauncher",
+ "parts": [],
+ "stats": {
+  "joints": 4079,
+  "meshes": 0,
+  "triangles": 0,
+  "textures": 0,
+  "clips": 22,
+  "droppedTracks": 0,
+  "glbBytes": 2839476
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_animpacks\\Player_Female_ShooterAnime_GuidedMissileLauncher"
+ ],
+ "extras": {
+  "retarget": {
+   "root": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "Player_Female_BiggerHorseRide_Sprint": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_BiggerHorseRide_Sprint_Start": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_Sprint": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_Sprint_Start": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Aim_MissileLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_BiggerHorseRide_Aim_MissileLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_BiggerHorseRide_Idle_MissileLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Aim_MissileLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Idle_MissileLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Walk_MissileLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Draw_MissileLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_Aim_MissileLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_Idle_MissileLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Idle_MissileLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Jog_MissileLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpDownLoop_MissileLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpEnd_MissileLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpUpLoop_MissileLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_MissileLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SlidingLoop_MissileLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Sprint_MissileLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Walk_MissileLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "pelvis": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "Player_Female_BiggerHorseRide_Sprint": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_BiggerHorseRide_Sprint_Start": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_Sprint": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_Sprint_Start": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Aim_MissileLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_BiggerHorseRide_Aim_MissileLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_BiggerHorseRide_Idle_MissileLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Aim_MissileLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Idle_MissileLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Walk_MissileLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Draw_MissileLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_Aim_MissileLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_Idle_MissileLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Idle_MissileLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Jog_MissileLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpDownLoop_MissileLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpEnd_MissileLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpUpLoop_MissileLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_MissileLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SlidingLoop_MissileLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Sprint_MissileLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Walk_MissileLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ]
+    }
+   }
+  },
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/Human/SK_PalHuman_Skeleton",
+  "set": "Player_Female_ShooterAnime_GuidedMissileLauncher",
+  "packKind": "base",
+  "species": "AnimPack",
+  "form": "Player_Female_ShooterAnime_GuidedMissileLauncher"
+ }
+}

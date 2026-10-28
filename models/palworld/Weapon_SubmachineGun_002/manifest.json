@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_SubmachineGun_002",
+ "kind": "object",
+ "displayName": "SMG",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_SubmachineGun_002",
+   "label": "Weapon SubmachineGun 002",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 7,
+  "meshes": 1,
+  "triangles": 11905,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 10482400
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\SubmachineGun_002"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "SMG",
+    "class": "SubmachineGun"
+   }
+  ],
+  "species": "Weapon",
+  "form": "SubmachineGun_002"
+ }
+}

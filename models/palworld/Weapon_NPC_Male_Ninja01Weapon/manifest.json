@@ -1,0 +1,50 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_NPC_Male_Ninja01Weapon",
+ "kind": "object",
+ "displayName": "Katana",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Ninja01Weapon",
+   "label": "Ninja01Weapon",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 1610,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 7158392
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\NPC_Male_Ninja01Weapon"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Katana",
+    "class": "Katana"
+   }
+  ],
+  "users": {
+   "npc": [
+    "Katana_NPC",
+    "Katana_NPC_Otomo"
+   ]
+  },
+  "species": "Weapon",
+  "form": "NPC_Male_Ninja01Weapon"
+ }
+}

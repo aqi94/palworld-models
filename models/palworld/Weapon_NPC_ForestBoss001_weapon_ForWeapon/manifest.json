@@ -1,0 +1,48 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_NPC_ForestBoss001_weapon_ForWeapon",
+ "kind": "object",
+ "displayName": "Lily's Spear",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_ForestBoss001",
+   "label": "Weapon ForestBoss001",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 7113,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 9189788
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\NPC_ForestBoss001_weapon_ForWeapon"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Lily's Spear",
+    "class": "Spear_ForestBoss"
+   },
+   {
+    "name": "Enhanced Lily's Spear",
+    "class": "Spear_ForestBoss2"
+   }
+  ],
+  "species": "Weapon",
+  "form": "NPC_ForestBoss001_weapon_ForWeapon"
+ }
+}

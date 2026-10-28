@@ -1,0 +1,647 @@
+{
+ "manifestVersion": 1,
+ "props": [
+  {
+   "bone": "ring_attach",
+   "side": "",
+   "clips": [
+    "HaloCutter",
+    "PaldiumCannon_End",
+    "PaldiumCannon_Start",
+    "010_WorldTreeDragon"
+   ]
+  }
+ ],
+ "game": "palworld",
+ "id": "WorldTreeDragon",
+ "kind": "pal",
+ "displayName": "Astralym",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [
+  {
+   "name": "eye",
+   "label": "Eye",
+   "options": [
+    {
+     "variant": 0,
+     "name": "eye_1",
+     "label": "1",
+     "default": true
+    },
+    {
+     "variant": 1,
+     "name": "eye_2",
+     "label": "2",
+     "default": false
+    },
+    {
+     "variant": 2,
+     "name": "eye_3",
+     "label": "3",
+     "default": false
+    },
+    {
+     "variant": 3,
+     "name": "eye_4",
+     "label": "4",
+     "default": false
+    },
+    {
+     "variant": 4,
+     "name": "eye_5",
+     "label": "5",
+     "default": false
+    },
+    {
+     "variant": 5,
+     "name": "eye_6",
+     "label": "6",
+     "default": false
+    },
+    {
+     "variant": 6,
+     "name": "eye_7",
+     "label": "7",
+     "default": false
+    }
+   ]
+  }
+ ],
+ "clips": [
+  {
+   "name": "Damage",
+   "index": 0,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Action",
+   "index": 1,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_ActionLoop",
+   "index": 2,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_End",
+   "index": 3,
+   "duration": 1.1667,
+   "frameRate": 30.0,
+   "frameCount": 36,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Start",
+   "index": 4,
+   "duration": 1.1667,
+   "frameRate": 30.0,
+   "frameCount": 36,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_StartLoop",
+   "index": 5,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "HaloBeam_End",
+   "index": 6,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "HaloBeam_Loop",
+   "index": 7,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "HaloBeam_Start",
+   "index": 8,
+   "duration": 1.6667,
+   "frameRate": 30.0,
+   "frameCount": 51,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "HaloCutter",
+   "index": 9,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Idle",
+   "index": 11,
+   "duration": 6.1333,
+   "frameRate": 30.0,
+   "frameCount": 185,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "LaserGliding_End",
+   "index": 12,
+   "duration": 3.5,
+   "frameRate": 30.0,
+   "frameCount": 106,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "LaserGliding_Loop",
+   "index": 13,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "LaserGliding_Start",
+   "index": 14,
+   "duration": 2.8333,
+   "frameRate": 30.0,
+   "frameCount": 86,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "PaldiumCannon_Attack",
+   "index": 15,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "PaldiumCannon_Attack_Loop",
+   "index": 16,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "PaldiumCannon_End",
+   "index": 17,
+   "duration": 3.5,
+   "frameRate": 30.0,
+   "frameCount": 106,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "PaldiumCannon_Start",
+   "index": 18,
+   "duration": 2.2,
+   "frameRate": 30.0,
+   "frameCount": 67,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "PaldiumCannon_Start_Loop",
+   "index": 19,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "PaldiumExplosion_Cancel",
+   "index": 20,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "PaldiumExplosion_End",
+   "index": 21,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "PaldiumExplosion_Loop",
+   "index": 22,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "PaldiumExplosion_Start",
+   "index": 23,
+   "duration": 2.5,
+   "frameRate": 30.0,
+   "frameCount": 76,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "PaldiumRain_End",
+   "index": 27,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "PaldiumRain_Loop",
+   "index": 28,
+   "duration": 2.5,
+   "frameRate": 30.0,
+   "frameCount": 76,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "PaldiumRain_Start",
+   "index": 29,
+   "duration": 2.3333,
+   "frameRate": 30.0,
+   "frameCount": 71,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "PaldiumShot_End",
+   "index": 30,
+   "duration": 1.1667,
+   "frameRate": 30.0,
+   "frameCount": 36,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "PaldiumShot_Loop",
+   "index": 31,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "PaldiumShot_Start",
+   "index": 32,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Supernova_End",
+   "index": 33,
+   "duration": 3.5,
+   "frameRate": 30.0,
+   "frameCount": 106,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Supernova_Loop",
+   "index": 34,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Supernova_Start",
+   "index": 35,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Walk",
+   "index": 36,
+   "duration": 3.4667,
+   "frameRate": 30.0,
+   "frameCount": 105,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "010_WorldTreeDragon",
+   "index": 37,
+   "duration": 21.3333,
+   "frameRate": 60.0,
+   "frameCount": 1281,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "020_WorldTreeDragon",
+   "index": 38,
+   "duration": 14.0,
+   "frameRate": 60.0,
+   "frameCount": 841,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "030_WorldTreeDragon",
+   "index": 39,
+   "duration": 30.0,
+   "frameRate": 60.0,
+   "frameCount": 1801,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  }
+ ],
+ "defaultClip": "Idle",
+ "parts": [
+  {
+   "node": "Body",
+   "label": "Body",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Extra",
+   "label": "Extra",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Eye",
+   "label": "Eye",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 137,
+  "meshes": 3,
+  "triangles": 23928,
+  "textures": 8,
+  "clips": 36,
+  "droppedTracks": 0,
+  "glbBytes": 37476104
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld\\WorldTreeDragon"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/WorldTreeDragon/SK_WorldTreeDragon_Skeleton",
+  "dex": 204,
+  "rarity": 10,
+  "codeName": "WorldTreeDragon",
+  "bossRide": {
+   "boss": "Boss_WorldTreeBoss001",
+   "bone": "spine_03",
+   "position": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation": [
+    -0.707107,
+    0.0,
+    0.0,
+    0.707107
+   ],
+   "palScale": 1.0,
+   "pairs": [
+    {
+     "boss": "WorldTreeBoss_Ride_Idle",
+     "pal": [
+      {
+       "clip": "Idle"
+      }
+     ]
+    },
+    {
+     "boss": "WorldTreeBoss_Ride_CommonWaza",
+     "pal": [
+      {
+       "clip": "FarSkill_Start",
+       "to": 1.1667
+      },
+      {
+       "clip": "FarSkill_StartLoop",
+       "loop": true,
+       "to": 1.3333
+      },
+      {
+       "clip": "FarSkill_Action",
+       "to": 0.3333
+      },
+      {
+       "clip": "FarSkill_ActionLoop",
+       "loop": true,
+       "to": 0.6667
+      },
+      {
+       "clip": "FarSkill_End",
+       "to": 1.1667
+      }
+     ]
+    },
+    {
+     "boss": "WorldTreeBoss_Ride_PaldiumCannon",
+     "pal": [
+      {
+       "clip": "PaldiumCannon_Start",
+       "to": 2.2
+      },
+      {
+       "clip": "PaldiumCannon_Start_Loop",
+       "loop": true,
+       "to": 1.3333
+      },
+      {
+       "clip": "PaldiumCannon_Attack",
+       "to": 0.3333
+      },
+      {
+       "clip": "PaldiumCannon_Attack_Loop",
+       "loop": true,
+       "to": 0.6667
+      },
+      {
+       "clip": "PaldiumCannon_End",
+       "to": 3.5
+      }
+     ]
+    },
+    {
+     "boss": "WorldTreeBoss_Ride_Supernova",
+     "pal": [
+      {
+       "clip": "Supernova_Start",
+       "to": 2.0
+      },
+      {
+       "clip": "Supernova_Loop",
+       "loop": true,
+       "to": 1.3333
+      },
+      {
+       "clip": "Supernova_End",
+       "to": 3.5
+      }
+     ]
+    },
+    {
+     "boss": "WorldTreeBoss_Ride_LaserGliding",
+     "pal": [
+      {
+       "clip": "LaserGliding_Start",
+       "to": 2.8333
+      },
+      {
+       "clip": "LaserGliding_Loop",
+       "loop": true,
+       "to": 1.3333
+      },
+      {
+       "clip": "LaserGliding_End",
+       "to": 3.5
+      }
+     ]
+    }
+   ]
+  },
+  "species": "WorldTreeDragon",
+  "form": ""
+ }
+}

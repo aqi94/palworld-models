@@ -1,0 +1,151 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Boss_ElectricBoss_Unique",
+ "kind": "human",
+ "displayName": "Electric Boss Unique (Boss)",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "ElectricBossStartDemo_01_ElectricBoss",
+   "index": 0,
+   "duration": 6.3333,
+   "frameRate": 60.0,
+   "frameCount": 381,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "ElectricBossStartDemo_02_ElectricBoss",
+   "index": 1,
+   "duration": 5.7667,
+   "frameRate": 60.0,
+   "frameCount": 347,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "ElectricBossStartDemo_03_ElectricBoss",
+   "index": 2,
+   "duration": 1.6667,
+   "frameRate": 60.0,
+   "frameCount": 101,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "ElectricBossStartDemo_04_ElectricBoss",
+   "index": 3,
+   "duration": 6.4667,
+   "frameRate": 60.0,
+   "frameCount": 389,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "ElectricBossStartDemo_05_ElectricBoss",
+   "index": 4,
+   "duration": 5.9167,
+   "frameRate": 60.0,
+   "frameCount": 356,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "ElectricBossStartDemo_06_ElectricBoss",
+   "index": 5,
+   "duration": 5.7667,
+   "frameRate": 60.0,
+   "frameCount": 347,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "NPC_Outfit_ElectricBoss001_M01",
+   "label": "NPC Outfit ElectricBoss001 M01",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_Outfit_ElectricBoss001_M02",
+   "label": "NPC Outfit ElectricBoss001 M02",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_Outfit_ElectricBoss001_M00",
+   "label": "NPC Outfit ElectricBoss001 M00",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_ElectricBossHead001",
+   "label": "NPC ElectricBossHead001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_ElectricBoss_Body",
+   "label": "NPC ElectricBoss Body",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_ElectricBossBrow001",
+   "label": "NPC ElectricBossBrow001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_ElectricBossHair001",
+   "label": "NPC ElectricBossHair001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_ElectricBossEye001",
+   "label": "NPC ElectricBossEye001",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 78,
+  "meshes": 8,
+  "triangles": 26406,
+  "textures": 22,
+  "clips": 6,
+  "droppedTracks": 0,
+  "glbBytes": 53141420
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_humans\\Boss_ElectricBoss_Unique"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/NPC/Boss/ElectricBoss/SK_NPC_ElectricBoss001_Skeleton",
+  "codeName": "Boss_ElectricBoss_Unique",
+  "group": "Boss",
+  "mesh": "Pal/Content/Pal/Model/Character/NPC/Boss/ElectricBoss/SK_NPC_ElectricBoss_Unique",
+  "species": "Boss",
+  "form": "ElectricBoss_Unique"
+ }
+}

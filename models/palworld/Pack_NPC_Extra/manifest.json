@@ -1,0 +1,635 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Pack_NPC_Extra",
+ "kind": "animpack",
+ "displayName": "NPC extras",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "NPC_Fat_Attack_HeavyWeapon",
+   "index": 0,
+   "duration": 2.1667,
+   "frameRate": 30.0,
+   "frameCount": 66,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Fat_NormalAttack_Melee",
+   "index": 1,
+   "duration": 3.2,
+   "frameRate": 30.0,
+   "frameCount": 97,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_Give",
+   "index": 2,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "emote",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_GroundSit_In",
+   "index": 3,
+   "duration": 1.6333,
+   "frameRate": 30.0,
+   "frameCount": 50,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_Lean_Fence",
+   "index": 4,
+   "duration": 27.6333,
+   "frameRate": 30.0,
+   "frameCount": 830,
+   "loop": false,
+   "category": "emote",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_Lean_Wall",
+   "index": 5,
+   "duration": 8.9333,
+   "frameRate": 30.0,
+   "frameCount": 269,
+   "loop": false,
+   "category": "emote",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_Listen",
+   "index": 6,
+   "duration": 27.2333,
+   "frameRate": 30.0,
+   "frameCount": 818,
+   "loop": false,
+   "category": "emote",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_Pray",
+   "index": 7,
+   "duration": 5.3333,
+   "frameRate": 30.0,
+   "frameCount": 161,
+   "loop": false,
+   "category": "emote",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_Sit_Eat_Start",
+   "index": 8,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_Sit_In",
+   "index": 9,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_Sit_Relax",
+   "index": 10,
+   "duration": 14.5667,
+   "frameRate": 30.0,
+   "frameCount": 438,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_Surprise",
+   "index": 11,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "emote",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_Talking2",
+   "index": 12,
+   "duration": 19.3333,
+   "frameRate": 30.0,
+   "frameCount": 581,
+   "loop": false,
+   "category": "emote",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_Talking3",
+   "index": 13,
+   "duration": 27.3667,
+   "frameRate": 30.0,
+   "frameCount": 822,
+   "loop": false,
+   "category": "emote",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_Talking4",
+   "index": 14,
+   "duration": 22.6,
+   "frameRate": 30.0,
+   "frameCount": 679,
+   "loop": false,
+   "category": "emote",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_Trader2",
+   "index": 15,
+   "duration": 5.0,
+   "frameRate": 30.0,
+   "frameCount": 151,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_UseDevice",
+   "index": 16,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "UniqueNPC_Reward_BossDefeat",
+   "index": 17,
+   "duration": 4.0,
+   "frameRate": 30.0,
+   "frameCount": 121,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_BeamSword_Combo_Full",
+   "index": 18,
+   "duration": 2.8667,
+   "frameRate": 30.0,
+   "frameCount": 87,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_JumpAttack_Melee",
+   "index": 19,
+   "duration": 1.3667,
+   "frameRate": 30.0,
+   "frameCount": 42,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_NormalAttack_Melee",
+   "index": 20,
+   "duration": 1.8667,
+   "frameRate": 30.0,
+   "frameCount": 57,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Ninja_BeamSword",
+   "index": 21,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Ninja_Iai",
+   "index": 22,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Police01_SleepEnd",
+   "index": 23,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Police01_SleepLoop",
+   "index": 24,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Police01_SleepStart",
+   "index": 25,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Male_Reward_Paldex_Idle",
+   "index": 26,
+   "duration": 4.0,
+   "frameRate": 30.0,
+   "frameCount": 121,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "NPC_Male_Scholar_SitRead",
+   "index": 27,
+   "duration": 14.5333,
+   "frameRate": 30.0,
+   "frameCount": 437,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "NPC_Male_Reward_Paldex_Idle",
+ "parts": [],
+ "stats": {
+  "joints": 4079,
+  "meshes": 0,
+  "triangles": 0,
+  "textures": 0,
+  "clips": 28,
+  "droppedTracks": 0,
+  "glbBytes": 9135424
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_animpacks\\NPC_Extra"
+ ],
+ "extras": {
+  "retarget": {
+   "root": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "NPC_Fat_Attack_HeavyWeapon": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Fat_NormalAttack_Melee": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_Give": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_GroundSit_In": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_Lean_Fence": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_Lean_Wall": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_Listen": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_Pray": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_Sit_Eat_Start": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_Sit_In": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_Sit_Relax": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_Surprise": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_Talking2": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_Talking3": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_Talking4": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_Trader2": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_UseDevice": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "UniqueNPC_Reward_BossDefeat": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_BeamSword_Combo_Full": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_JumpAttack_Melee": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_NormalAttack_Melee": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Ninja_BeamSword": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Ninja_Iai": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Police01_SleepEnd": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Police01_SleepLoop": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Police01_SleepStart": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Male_Reward_Paldex_Idle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Male_Scholar_SitRead": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "pelvis": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "NPC_Fat_Attack_HeavyWeapon": [
+      0.0,
+      1.37725,
+      -0.01663
+     ],
+     "NPC_Fat_NormalAttack_Melee": [
+      0.0,
+      1.37725,
+      -0.01663
+     ],
+     "NPC_Female_Give": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Female_GroundSit_In": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Female_Lean_Fence": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Female_Lean_Wall": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Female_Listen": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Female_Pray": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Female_Sit_Eat_Start": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Female_Sit_In": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Female_Sit_Relax": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Female_Surprise": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Female_Talking2": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Female_Talking3": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Female_Talking4": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Female_Trader2": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Female_UseDevice": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "UniqueNPC_Reward_BossDefeat": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_BeamSword_Combo_Full": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_JumpAttack_Melee": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_NormalAttack_Melee": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Ninja_BeamSword": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Ninja_Iai": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Police01_SleepEnd": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Police01_SleepLoop": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Police01_SleepStart": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Male_Reward_Paldex_Idle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Male_Scholar_SitRead": [
+      0.0,
+      0.95031,
+      -0.00272
+     ]
+    }
+   }
+  },
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/Human/SK_PalHuman_Skeleton",
+  "set": "NPC_Extra",
+  "packKind": "extra",
+  "species": "AnimPack",
+  "form": "NPC_Extra"
+ }
+}

@@ -1,0 +1,174 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Pack_Player_Female_ShooterAnime_LaserRifle",
+ "kind": "animpack",
+ "displayName": "Laser Rifle",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "Player_Female_Crouch_Idle_AssaultRifle",
+   "index": 18,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Idle_AssaultRifle",
+   "index": 19,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "Player_Female_Aim_LaserRifle",
+   "index": 20,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Aim_LaserRifle",
+   "index": 21,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Draw_LaserRifle",
+   "index": 22,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_LaserRifle",
+   "index": 24,
+   "duration": 1.8333,
+   "frameRate": 30.0,
+   "frameCount": 56,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "Player_Female_Idle_AssaultRifle",
+ "parts": [],
+ "stats": {
+  "joints": 4079,
+  "meshes": 0,
+  "triangles": 0,
+  "textures": 0,
+  "clips": 6,
+  "droppedTracks": 0,
+  "glbBytes": 1733920
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_animpacks\\Player_Female_ShooterAnime_LaserRifle"
+ ],
+ "extras": {
+  "retarget": {
+   "root": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "Player_Female_Crouch_Idle_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Idle_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Aim_LaserRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Aim_LaserRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Draw_LaserRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_LaserRifle": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "pelvis": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "Player_Female_Crouch_Idle_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Idle_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Aim_LaserRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Aim_LaserRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Draw_LaserRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_LaserRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ]
+    }
+   }
+  },
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/Human/SK_PalHuman_Skeleton",
+  "set": "Player_Female_ShooterAnime_LaserRifle",
+  "packKind": "weapon",
+  "weaponType": "LaserRifle",
+  "species": "AnimPack",
+  "form": "Player_Female_ShooterAnime_LaserRifle"
+ }
+}

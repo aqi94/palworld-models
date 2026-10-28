@@ -1,0 +1,5560 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Pack_Player_Female_Extra",
+ "kind": "animpack",
+ "displayName": "Player extras",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "Player_Female_AirDash",
+   "index": 0,
+   "duration": 0.5,
+   "frameRate": 30.0,
+   "frameCount": 16,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_AirDash_B",
+   "index": 1,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_AirDash_L",
+   "index": 2,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_AirDash_R",
+   "index": 3,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Architecture2",
+   "index": 4,
+   "duration": 15.8333,
+   "frameRate": 30.0,
+   "frameCount": 476,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Architecture2_End",
+   "index": 5,
+   "duration": 2.5,
+   "frameRate": 30.0,
+   "frameCount": 76,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Architecture2_Start",
+   "index": 6,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_BiggerHorseRide_JumpOut",
+   "index": 7,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_CallRidePal",
+   "index": 8,
+   "duration": 0.8667,
+   "frameRate": 30.0,
+   "frameCount": 27,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_CarpetRide_JumpIn",
+   "index": 9,
+   "duration": 1.2333,
+   "frameRate": 30.0,
+   "frameCount": 38,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Climb_ClimpAtTop",
+   "index": 10,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Climb_Down",
+   "index": 11,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Climb_Idle",
+   "index": 12,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Climb_Left",
+   "index": 13,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Climb_Right",
+   "index": 14,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Climb_Up",
+   "index": 15,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Cooking2",
+   "index": 16,
+   "duration": 19.1333,
+   "frameRate": 30.0,
+   "frameCount": 575,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Cooking2_End",
+   "index": 17,
+   "duration": 1.5333,
+   "frameRate": 30.0,
+   "frameCount": 47,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Cooking2_Start",
+   "index": 18,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crawl_Death",
+   "index": 19,
+   "duration": 3.2667,
+   "frameRate": 30.0,
+   "frameCount": 99,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crawl_Idle",
+   "index": 20,
+   "duration": 3.2667,
+   "frameRate": 30.0,
+   "frameCount": 99,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crawl_Walk_Fwd",
+   "index": 21,
+   "duration": 1.7667,
+   "frameRate": 30.0,
+   "frameCount": 54,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Revive",
+   "index": 22,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Dig",
+   "index": 23,
+   "duration": 3.0667,
+   "frameRate": 30.0,
+   "frameCount": 93,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Draw",
+   "index": 24,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Eat",
+   "index": 25,
+   "duration": 1.8667,
+   "frameRate": 30.0,
+   "frameCount": 57,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_EggLauncherIdle",
+   "index": 26,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_EggLauncherShot",
+   "index": 27,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Emote_Cheer",
+   "index": 28,
+   "duration": 6.0333,
+   "frameRate": 30.0,
+   "frameCount": 182,
+   "loop": false,
+   "category": "emote",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Emote_Dance",
+   "index": 29,
+   "duration": 0.4667,
+   "frameRate": 30.0,
+   "frameCount": 15,
+   "loop": false,
+   "category": "emote",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Emote_Kick_None",
+   "index": 30,
+   "duration": 1.3,
+   "frameRate": 30.0,
+   "frameCount": 40,
+   "loop": false,
+   "category": "emote",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Emote_Wave",
+   "index": 31,
+   "duration": 3.4667,
+   "frameRate": 30.0,
+   "frameCount": 105,
+   "loop": false,
+   "category": "emote",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Feeding",
+   "index": 32,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Glide_Idle",
+   "index": 33,
+   "duration": 1.6333,
+   "frameRate": 30.0,
+   "frameCount": 50,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_JumpIn_Front",
+   "index": 34,
+   "duration": 1.2333,
+   "frameRate": 30.0,
+   "frameCount": 38,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_JumpIn_Left",
+   "index": 35,
+   "duration": 1.2333,
+   "frameRate": 30.0,
+   "frameCount": 38,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_JumpIn_Rear",
+   "index": 36,
+   "duration": 1.2667,
+   "frameRate": 30.0,
+   "frameCount": 39,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_JumpIn_Right",
+   "index": 37,
+   "duration": 1.2667,
+   "frameRate": 30.0,
+   "frameCount": 39,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_JumpOut",
+   "index": 38,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HumanRide_JumpIn",
+   "index": 39,
+   "duration": 1.2333,
+   "frameRate": 30.0,
+   "frameCount": 38,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HumanRide_JumpOut",
+   "index": 40,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpSpot_Prepare_None",
+   "index": 41,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_OneHandGlide_Idle",
+   "index": 42,
+   "duration": 1.6333,
+   "frameRate": 30.0,
+   "frameCount": 50,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_OneHandGlide_Start",
+   "index": 43,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_PalAppear",
+   "index": 44,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_PalCommand",
+   "index": 45,
+   "duration": 2.9333,
+   "frameRate": 30.0,
+   "frameCount": 89,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_PalReturn",
+   "index": 46,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Petting_Large",
+   "index": 47,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": false,
+   "category": "emote",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Petting_Middle",
+   "index": 48,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": false,
+   "category": "emote",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Petting_Middle_Beckon",
+   "index": 49,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "emote",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Petting_Small",
+   "index": 50,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": false,
+   "category": "emote",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Petting_Small_Beckon",
+   "index": 51,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "emote",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Petting_SmallMiddle",
+   "index": 52,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": false,
+   "category": "emote",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Pickup_None",
+   "index": 53,
+   "duration": 0.7333,
+   "frameRate": 30.0,
+   "frameCount": 23,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_PickupRelic_None",
+   "index": 55,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_RollFwd",
+   "index": 57,
+   "duration": 1.1,
+   "frameRate": 30.0,
+   "frameCount": 34,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SitRide_JumpOut",
+   "index": 58,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SleepOnSideLoop",
+   "index": 59,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SleepSideEnd",
+   "index": 60,
+   "duration": 1.6333,
+   "frameRate": 30.0,
+   "frameCount": 50,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SleepSideIn",
+   "index": 61,
+   "duration": 1.8333,
+   "frameRate": 30.0,
+   "frameCount": 56,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_TwoHandGlide_CallRidePal",
+   "index": 62,
+   "duration": 0.8667,
+   "frameRate": 30.0,
+   "frameCount": 27,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_TwoHandGlide_Idle",
+   "index": 63,
+   "duration": 1.6667,
+   "frameRate": 30.0,
+   "frameCount": 51,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_TwoHandGlide_Start",
+   "index": 64,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Use_ReturnItem",
+   "index": 65,
+   "duration": 7.2667,
+   "frameRate": 30.0,
+   "frameCount": 219,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Watering_None",
+   "index": 66,
+   "duration": 3.0333,
+   "frameRate": 30.0,
+   "frameCount": 92,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Aim_MakeshiftAssaultRifle",
+   "index": 67,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Aim_SubmachineGun",
+   "index": 68,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Aim_MakeshiftAssaultRifle",
+   "index": 69,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Draw_MakeshiftAssaultRifle",
+   "index": 70,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_ElectricArcAssaultRifle",
+   "index": 71,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_EnergyShotgun",
+   "index": 72,
+   "duration": 3.6667,
+   "frameRate": 30.0,
+   "frameCount": 111,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_MakeshiftAssaultRifle",
+   "index": 73,
+   "duration": 3.5667,
+   "frameRate": 30.0,
+   "frameCount": 108,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_OverheatRifle",
+   "index": 74,
+   "duration": 4.0333,
+   "frameRate": 30.0,
+   "frameCount": 122,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_SubmachineGun",
+   "index": 75,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_WidePenetrateShotgun",
+   "index": 76,
+   "duration": 2.8333,
+   "frameRate": 30.0,
+   "frameCount": 86,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Aim_BeamLauncher",
+   "index": 77,
+   "duration": 1.3667,
+   "frameRate": 30.0,
+   "frameCount": 42,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Aim_BeamLauncher",
+   "index": 78,
+   "duration": 4.0,
+   "frameRate": 30.0,
+   "frameCount": 121,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Idle_BeamLauncher",
+   "index": 79,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Walk_BeamLauncher",
+   "index": 80,
+   "duration": 0.8667,
+   "frameRate": 30.0,
+   "frameCount": 27,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Idle_BeamLauncher",
+   "index": 81,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Jog_BeamLauncher",
+   "index": 82,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_BeamLauncher",
+   "index": 83,
+   "duration": 3.8667,
+   "frameRate": 30.0,
+   "frameCount": 117,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Sprint_BeamLauncher",
+   "index": 84,
+   "duration": 0.5667,
+   "frameRate": 30.0,
+   "frameCount": 18,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Walk_BeamLauncher",
+   "index": 85,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Aim_Bow",
+   "index": 86,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_BiggerHorseRide_Aim_Bow",
+   "index": 87,
+   "duration": 1.6333,
+   "frameRate": 30.0,
+   "frameCount": 50,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_BiggerHorseRide_Idle_Bow",
+   "index": 88,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Aim_Bow",
+   "index": 89,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Idle_Bow",
+   "index": 90,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Walk_Bow",
+   "index": 91,
+   "duration": 0.8667,
+   "frameRate": 30.0,
+   "frameCount": 27,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Draw_Bow",
+   "index": 92,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Fire_Bow",
+   "index": 93,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_FireCharge_Bow",
+   "index": 94,
+   "duration": 1.0333,
+   "frameRate": 30.0,
+   "frameCount": 32,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_FireChargeLoop_Bow",
+   "index": 95,
+   "duration": 1.9667,
+   "frameRate": 30.0,
+   "frameCount": 60,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_Aim_Bow",
+   "index": 96,
+   "duration": 1.6667,
+   "frameRate": 30.0,
+   "frameCount": 51,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_Fire_Bow",
+   "index": 97,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_FireCharge_Bow",
+   "index": 98,
+   "duration": 1.0333,
+   "frameRate": 30.0,
+   "frameCount": 32,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_Idle_Bow",
+   "index": 99,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Idle_Bow",
+   "index": 100,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "Player_Female_Jog_Bow",
+   "index": 101,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpDownLoop_Bow",
+   "index": 102,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpEnd_Bow",
+   "index": 103,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpUpLoop_Bow",
+   "index": 104,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SlidingEnd_Bow",
+   "index": 105,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SlidingLoop_Bow",
+   "index": 106,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Sprint_Bow",
+   "index": 107,
+   "duration": 0.5667,
+   "frameRate": 30.0,
+   "frameCount": 18,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Walk_Bow",
+   "index": 108,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Aim_Bullpup",
+   "index": 109,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Aim_SkyGrenadeLauncher",
+   "index": 110,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Aim_Bullpup",
+   "index": 111,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Draw_Bullpup",
+   "index": 112,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Idle_Bullpup",
+   "index": 115,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Jog_Bullpup",
+   "index": 116,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_SkyAssaultRifle",
+   "index": 117,
+   "duration": 2.5,
+   "frameRate": 120.0,
+   "frameCount": 301,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_SkyGrenadeLauncher",
+   "index": 118,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_SkyShotgun",
+   "index": 119,
+   "duration": 4.1667,
+   "frameRate": 30.0,
+   "frameCount": 126,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_SkySubmachineGun",
+   "index": 120,
+   "duration": 2.8333,
+   "frameRate": 30.0,
+   "frameCount": 86,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Sprint_Bullpup",
+   "index": 121,
+   "duration": 0.5667,
+   "frameRate": 30.0,
+   "frameCount": 18,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Walk_Bullpup",
+   "index": 122,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_DodgeBwd",
+   "index": 123,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_DodgeForward",
+   "index": 124,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_DodgeLeft",
+   "index": 125,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_DodgeRight",
+   "index": 126,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Aim_DoubleBarrelShotgun",
+   "index": 127,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Aim_DoubleBarrelShotgun",
+   "index": 128,
+   "duration": 1.3667,
+   "frameRate": 30.0,
+   "frameCount": 42,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Idle_DoubleBarrelShotgun",
+   "index": 129,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Walk_DoubleBarrelShotgun",
+   "index": 130,
+   "duration": 0.9,
+   "frameRate": 30.0,
+   "frameCount": 28,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Draw_DoubleBarrelShotgun",
+   "index": 131,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Idle_DoubleBarrelShotgun",
+   "index": 132,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Jog_DoubleBarrelShotgun",
+   "index": 133,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpDownLoop_DoubleBarrelShotgun",
+   "index": 134,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpEnd_DoubleBarrelShotgun",
+   "index": 135,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpUpLoop_DoubleBarrelShotgun",
+   "index": 136,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_DoubleBarrelShotgun",
+   "index": 137,
+   "duration": 2.3333,
+   "frameRate": 30.0,
+   "frameCount": 71,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SlidingEnd_DoubleBarrelShotgun",
+   "index": 138,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SlidingLoop_DoubleBarrelShotgun",
+   "index": 139,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Sprint_DoubleBarrelShotgun",
+   "index": 140,
+   "duration": 0.5667,
+   "frameRate": 30.0,
+   "frameCount": 18,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Walk_DoubleBarrelShotgun",
+   "index": 141,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_CaughtEnd_FishingRod",
+   "index": 142,
+   "duration": 4.2,
+   "frameRate": 30.0,
+   "frameCount": 127,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_CaughtFail_FishingRod",
+   "index": 143,
+   "duration": 4.2,
+   "frameRate": 30.0,
+   "frameCount": 127,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_CaughtLoop_FishingRod",
+   "index": 144,
+   "duration": 11.3333,
+   "frameRate": 30.0,
+   "frameCount": 341,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_End_FishingRod",
+   "index": 145,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Loop_FishingRod",
+   "index": 146,
+   "duration": 8.0,
+   "frameRate": 30.0,
+   "frameCount": 241,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_ShowFish_Large",
+   "index": 147,
+   "duration": 2.6,
+   "frameRate": 30.0,
+   "frameCount": 79,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_ShowFish_Middle",
+   "index": 148,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_ShowFish_Small1",
+   "index": 149,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_ShowFish_Small2",
+   "index": 150,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Start_FishingRod",
+   "index": 151,
+   "duration": 8.0,
+   "frameRate": 30.0,
+   "frameCount": 241,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Grapple_Handgun",
+   "index": 154,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_DecalGun",
+   "index": 155,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_MakeshiftHandgun",
+   "index": 156,
+   "duration": 2.4333,
+   "frameRate": 30.0,
+   "frameCount": 74,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_MakeshiftShotgun",
+   "index": 157,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_OldRevolver",
+   "index": 158,
+   "duration": 3.6667,
+   "frameRate": 30.0,
+   "frameCount": 111,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_PalDopingShot",
+   "index": 159,
+   "duration": 2.3333,
+   "frameRate": 30.0,
+   "frameCount": 71,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Draw_HeavyWeapon",
+   "index": 160,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_HeavyWeapon",
+   "index": 161,
+   "duration": 3.8,
+   "frameRate": 30.0,
+   "frameCount": 115,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_LaserGatlingGun",
+   "index": 162,
+   "duration": 3.8,
+   "frameRate": 30.0,
+   "frameCount": 115,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Blow_Bwd",
+   "index": 163,
+   "duration": 1.9667,
+   "frameRate": 30.0,
+   "frameCount": 60,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Blow_Fwd",
+   "index": 164,
+   "duration": 1.9333,
+   "frameRate": 30.0,
+   "frameCount": 59,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_StaggerMove_Bwd",
+   "index": 165,
+   "duration": 0.6,
+   "frameRate": 30.0,
+   "frameCount": 19,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_StaggerMove_Fwd",
+   "index": 166,
+   "duration": 0.6,
+   "frameRate": 30.0,
+   "frameCount": 19,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Dismembering_Melee",
+   "index": 167,
+   "duration": 5.0,
+   "frameRate": 30.0,
+   "frameCount": 151,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Draw_Sword",
+   "index": 168,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Idle_Sword",
+   "index": 169,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Combo1_Beamsword",
+   "index": 170,
+   "duration": 1.1333,
+   "frameRate": 30.0,
+   "frameCount": 35,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Combo2_Beamsword",
+   "index": 171,
+   "duration": 0.9667,
+   "frameRate": 30.0,
+   "frameCount": 30,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Combo3_Beamsword",
+   "index": 172,
+   "duration": 1.4,
+   "frameRate": 30.0,
+   "frameCount": 43,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Iai_Beamsword",
+   "index": 173,
+   "duration": 1.4667,
+   "frameRate": 30.0,
+   "frameCount": 45,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Attack_Spear",
+   "index": 174,
+   "duration": 0.7333,
+   "frameRate": 30.0,
+   "frameCount": 23,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Idle_Spear",
+   "index": 175,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Walk_Spear",
+   "index": 176,
+   "duration": 0.8667,
+   "frameRate": 30.0,
+   "frameCount": 27,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Idle_Spear",
+   "index": 177,
+   "duration": 2.3,
+   "frameRate": 30.0,
+   "frameCount": 70,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Jog_Spear",
+   "index": 178,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SlidingLoop_Spear",
+   "index": 179,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Walk_Spear",
+   "index": 180,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Combo1_Sword",
+   "index": 182,
+   "duration": 1.4,
+   "frameRate": 30.0,
+   "frameCount": 43,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Combo2_Sword",
+   "index": 183,
+   "duration": 1.7333,
+   "frameRate": 30.0,
+   "frameCount": 53,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Combo3_Sword",
+   "index": 184,
+   "duration": 1.6667,
+   "frameRate": 30.0,
+   "frameCount": 51,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_BiggerHorseRide_MetalDetector",
+   "index": 185,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Idle_MetalDetector",
+   "index": 186,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Walk_MetalDetector",
+   "index": 187,
+   "duration": 0.9,
+   "frameRate": 30.0,
+   "frameCount": 28,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_Aim_MetalDetector",
+   "index": 188,
+   "duration": 5.0,
+   "frameRate": 30.0,
+   "frameCount": 151,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_MetalDetector",
+   "index": 189,
+   "duration": 5.0,
+   "frameRate": 30.0,
+   "frameCount": 151,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Idle_MetalDetector",
+   "index": 190,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Jog_MetalDetector",
+   "index": 191,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpDownLoop_MetalDetector",
+   "index": 192,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpEnd_MetalDetector",
+   "index": 193,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpUpLoop_MetalDetector",
+   "index": 194,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SlidingLoop_MetalDetector",
+   "index": 195,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Sprint_MetalDetector",
+   "index": 196,
+   "duration": 0.5667,
+   "frameRate": 30.0,
+   "frameCount": 18,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_Musket",
+   "index": 197,
+   "duration": 6.2667,
+   "frameRate": 30.0,
+   "frameCount": 189,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Idle_EggLauncher",
+   "index": 198,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Idle_PartnerSkill_Kitsunebi",
+   "index": 199,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Walk_EggLauncher",
+   "index": 200,
+   "duration": 0.8667,
+   "frameRate": 30.0,
+   "frameCount": 27,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Walk_PartnerSkill_Kitsunebi",
+   "index": 201,
+   "duration": 0.9,
+   "frameRate": 30.0,
+   "frameCount": 28,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_EggLauncherIdle [1]",
+   "index": 202,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Idle_PartnerSkill_Kitsunebi",
+   "index": 203,
+   "duration": 1.3667,
+   "frameRate": 30.0,
+   "frameCount": 42,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Jog_EggLauncher",
+   "index": 204,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Jog_PartnerSkill_Kitsunebi",
+   "index": 205,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpDownLoop_PartnerSkill_Kitsunebi",
+   "index": 206,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpEnd_PartnerSkill_Kitsunebi",
+   "index": 207,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpUpLoop_PartnerSkill_Kitsunebi",
+   "index": 208,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SheepShield_End",
+   "index": 209,
+   "duration": 0.7333,
+   "frameRate": 30.0,
+   "frameCount": 23,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SheepShield_Loop",
+   "index": 210,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SheepShield_Start",
+   "index": 211,
+   "duration": 0.7667,
+   "frameRate": 30.0,
+   "frameCount": 24,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SlidingLoop_PartnerSkill_Kitsunebi",
+   "index": 212,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Sprint_EggLauncher",
+   "index": 213,
+   "duration": 0.5667,
+   "frameRate": 30.0,
+   "frameCount": 18,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Sprint_PartnerSkill_Kitsunebi",
+   "index": 214,
+   "duration": 0.5667,
+   "frameRate": 30.0,
+   "frameCount": 18,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_BiggerHorseRide_Aim_OctaviaShotgun",
+   "index": 215,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_Aim_OctaviaShotgun",
+   "index": 216,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Aim_EnergyRocketLauncher",
+   "index": 217,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_EnergyRocketLauncher",
+   "index": 218,
+   "duration": 3.6667,
+   "frameRate": 30.0,
+   "frameCount": 111,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Aim_SemiAutoShotgun",
+   "index": 219,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Aim_SemiAutoShotgun",
+   "index": 220,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Idle_SemiAutoShotgun",
+   "index": 221,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Walk_SemiAutoShotgun",
+   "index": 222,
+   "duration": 0.8667,
+   "frameRate": 30.0,
+   "frameCount": 27,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Draw_SemiAutoShotgun",
+   "index": 223,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Idle_SemiAutoShotgun",
+   "index": 225,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Jog_SemiAutoShotgun",
+   "index": 226,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpDownLoop_SemiAutoShotgun",
+   "index": 227,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpEnd_SemiAutoShotgun",
+   "index": 228,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpUpLoop_SemiAutoShotgun",
+   "index": 229,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_SemiAutoShotgun",
+   "index": 230,
+   "duration": 2.8333,
+   "frameRate": 30.0,
+   "frameCount": 86,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SlidingLoop_SemiAutoShotgun",
+   "index": 231,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Sprint_SemiAutoShotgun",
+   "index": 232,
+   "duration": 0.5667,
+   "frameRate": 30.0,
+   "frameCount": 18,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Aim_ChargeLaserRifle",
+   "index": 233,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Aim_SingleShotRifle",
+   "index": 234,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Aim_SingleShotRifle",
+   "index": 235,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Draw_ChargeLaserRifle",
+   "index": 236,
+   "duration": 1.1667,
+   "frameRate": 30.0,
+   "frameCount": 36,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Draw_SingleShotRifle",
+   "index": 237,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_Aim_SingleShotRifle",
+   "index": 240,
+   "duration": 2.6333,
+   "frameRate": 30.0,
+   "frameCount": 80,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_Idle_SingleShotRifle",
+   "index": 241,
+   "duration": 2.6333,
+   "frameRate": 30.0,
+   "frameCount": 80,
+   "loop": true,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Jog_SingleShotRifle",
+   "index": 242,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpDownLoop_SingleShotRifle",
+   "index": 243,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpEnd_SingleShotRifle",
+   "index": 244,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpUpLoop_SingleShotRifle",
+   "index": 245,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_ChargeLaserRifle",
+   "index": 246,
+   "duration": 1.9333,
+   "frameRate": 60.0,
+   "frameCount": 117,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_MakeshiftSubmachinegun",
+   "index": 247,
+   "duration": 4.0333,
+   "frameRate": 30.0,
+   "frameCount": 122,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_SemiAutoRifle",
+   "index": 248,
+   "duration": 3.5667,
+   "frameRate": 30.0,
+   "frameCount": 108,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Reload_SingleShotRifle",
+   "index": 249,
+   "duration": 2.5,
+   "frameRate": 30.0,
+   "frameCount": 76,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SlidingLoop_SingleShotRifle",
+   "index": 250,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Sprint_SingleShotRifle",
+   "index": 251,
+   "duration": 0.5667,
+   "frameRate": 30.0,
+   "frameCount": 18,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Walk_SingleShotRifle",
+   "index": 252,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Grab_PalCarry",
+   "index": 253,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_BlackFurDragonRide_Idle",
+   "index": 254,
+   "duration": 0.1667,
+   "frameRate": 30.0,
+   "frameCount": 6,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_ElecPandaRide_Idle",
+   "index": 255,
+   "duration": 0.1667,
+   "frameRate": 30.0,
+   "frameCount": 6,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_ElecPandaRide_WithBoss_Idle",
+   "index": 256,
+   "duration": 3.3333,
+   "frameRate": 30.0,
+   "frameCount": 101,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_LazyDragonRide_Idle",
+   "index": 257,
+   "duration": 0.1667,
+   "frameRate": 30.0,
+   "frameCount": 6,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_MoonQueenRide_Idle",
+   "index": 258,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_WingGlider",
+   "index": 259,
+   "duration": 0.4,
+   "frameRate": 30.0,
+   "frameCount": 13,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_WingGlider_Fire",
+   "index": 262,
+   "duration": 0.4,
+   "frameRate": 30.0,
+   "frameCount": 13,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_WingGlider_Start",
+   "index": 265,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Attack_YakushimaLantern",
+   "index": 268,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Idle_YakushimaLantern",
+   "index": 269,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Walk_YakushimaLantern",
+   "index": 270,
+   "duration": 0.9,
+   "frameRate": 30.0,
+   "frameCount": 28,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Idle_YakushimaLantern",
+   "index": 271,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Jog_YakushimaLantern",
+   "index": 272,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpDownLoop_YakushimaLantern",
+   "index": 273,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpEnd_YakushimaLantern",
+   "index": 274,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpUpLoop_YakushimaLantern",
+   "index": 275,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SlidingLoop_YakushimaLantern",
+   "index": 276,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Sprint_YakushimaLantern",
+   "index": 277,
+   "duration": 0.5667,
+   "frameRate": 30.0,
+   "frameCount": 18,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Walk_YakushimaLantern",
+   "index": 278,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "Player_Female_Idle_Bow",
+ "parts": [],
+ "stats": {
+  "joints": 4079,
+  "meshes": 0,
+  "triangles": 0,
+  "textures": 0,
+  "clips": 263,
+  "droppedTracks": 0,
+  "glbBytes": 24137396
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_animpacks\\Player_Female_Extra"
+ ],
+ "extras": {
+  "retarget": {
+   "root": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "Player_Female_AirDash": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_AirDash_B": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_AirDash_L": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_AirDash_R": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Architecture2": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Architecture2_End": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Architecture2_Start": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_BiggerHorseRide_JumpOut": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_CallRidePal": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_CarpetRide_JumpIn": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Climb_ClimpAtTop": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Climb_Down": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Climb_Idle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Climb_Left": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Climb_Right": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Climb_Up": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Cooking2": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Cooking2_End": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Cooking2_Start": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crawl_Death": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crawl_Idle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crawl_Walk_Fwd": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Revive": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Dig": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Draw": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Eat": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_EggLauncherIdle [1]": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_EggLauncherShot": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Emote_Cheer": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Emote_Dance": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Emote_Kick_None": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Emote_Wave": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Feeding": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Glide_Idle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_JumpIn_Front": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_JumpIn_Left": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_JumpIn_Rear": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_JumpIn_Right": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_JumpOut": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HumanRide_JumpIn": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HumanRide_JumpOut": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpSpot_Prepare_None": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_OneHandGlide_Idle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_OneHandGlide_Start": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_PalAppear": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_PalCommand": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_PalReturn": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Petting_Large": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Petting_Middle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Petting_Middle_Beckon": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Petting_Small": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Petting_Small_Beckon": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Petting_SmallMiddle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Pickup_None": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_PickupRelic_None": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_RollFwd": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SitRide_JumpOut": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SleepOnSideLoop": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SleepSideEnd": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SleepSideIn": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_TwoHandGlide_CallRidePal": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_TwoHandGlide_Idle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_TwoHandGlide_Start": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Use_ReturnItem": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Watering_None": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Aim_MakeshiftAssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Aim_SubmachineGun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Aim_MakeshiftAssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Draw_MakeshiftAssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_ElectricArcAssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_EnergyShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_MakeshiftAssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_OverheatRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_SubmachineGun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_WidePenetrateShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Aim_BeamLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Aim_BeamLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Idle_BeamLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Walk_BeamLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Idle_BeamLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Jog_BeamLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_BeamLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Sprint_BeamLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Walk_BeamLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Aim_Bow": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_BiggerHorseRide_Aim_Bow": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_BiggerHorseRide_Idle_Bow": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Aim_Bow": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Idle_Bow": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Walk_Bow": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Draw_Bow": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Fire_Bow": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_FireCharge_Bow": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_FireChargeLoop_Bow": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_Aim_Bow": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_Fire_Bow": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_FireCharge_Bow": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_Idle_Bow": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Idle_Bow": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Jog_Bow": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpDownLoop_Bow": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpEnd_Bow": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpUpLoop_Bow": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SlidingEnd_Bow": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SlidingLoop_Bow": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Sprint_Bow": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Walk_Bow": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Aim_Bullpup": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Aim_SkyGrenadeLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Aim_Bullpup": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Draw_Bullpup": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Idle_Bullpup": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Jog_Bullpup": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_SkyAssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_SkyGrenadeLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_SkyShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_SkySubmachineGun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Sprint_Bullpup": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Walk_Bullpup": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_DodgeBwd": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_DodgeForward": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_DodgeLeft": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_DodgeRight": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Aim_DoubleBarrelShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Aim_DoubleBarrelShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Idle_DoubleBarrelShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Walk_DoubleBarrelShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Draw_DoubleBarrelShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Idle_DoubleBarrelShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Jog_DoubleBarrelShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpDownLoop_DoubleBarrelShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpEnd_DoubleBarrelShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpUpLoop_DoubleBarrelShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_DoubleBarrelShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SlidingEnd_DoubleBarrelShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SlidingLoop_DoubleBarrelShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Sprint_DoubleBarrelShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Walk_DoubleBarrelShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_CaughtEnd_FishingRod": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_CaughtFail_FishingRod": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_CaughtLoop_FishingRod": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_End_FishingRod": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Loop_FishingRod": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_ShowFish_Large": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_ShowFish_Middle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_ShowFish_Small1": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_ShowFish_Small2": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Start_FishingRod": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Grapple_Handgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_DecalGun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_MakeshiftHandgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_MakeshiftShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_OldRevolver": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_PalDopingShot": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Draw_HeavyWeapon": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_HeavyWeapon": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_LaserGatlingGun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Blow_Bwd": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Blow_Fwd": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_StaggerMove_Bwd": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_StaggerMove_Fwd": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Dismembering_Melee": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Draw_Sword": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Idle_Sword": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Combo1_Beamsword": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Combo2_Beamsword": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Combo3_Beamsword": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Iai_Beamsword": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Attack_Spear": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Idle_Spear": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Walk_Spear": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Idle_Spear": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Jog_Spear": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SlidingLoop_Spear": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Walk_Spear": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Combo1_Sword": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Combo2_Sword": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Combo3_Sword": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_BiggerHorseRide_MetalDetector": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Idle_MetalDetector": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Walk_MetalDetector": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_Aim_MetalDetector": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_MetalDetector": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Idle_MetalDetector": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Jog_MetalDetector": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpDownLoop_MetalDetector": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpEnd_MetalDetector": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpUpLoop_MetalDetector": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SlidingLoop_MetalDetector": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Sprint_MetalDetector": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_Musket": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Idle_EggLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Idle_PartnerSkill_Kitsunebi": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Walk_EggLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Walk_PartnerSkill_Kitsunebi": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Idle_PartnerSkill_Kitsunebi": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Jog_EggLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Jog_PartnerSkill_Kitsunebi": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpDownLoop_PartnerSkill_Kitsunebi": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpEnd_PartnerSkill_Kitsunebi": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpUpLoop_PartnerSkill_Kitsunebi": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SheepShield_End": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SheepShield_Loop": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SheepShield_Start": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SlidingLoop_PartnerSkill_Kitsunebi": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Sprint_EggLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Sprint_PartnerSkill_Kitsunebi": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_BiggerHorseRide_Aim_OctaviaShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_Aim_OctaviaShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Aim_EnergyRocketLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_EnergyRocketLauncher": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Aim_SemiAutoShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Aim_SemiAutoShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Idle_SemiAutoShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Walk_SemiAutoShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Draw_SemiAutoShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Idle_SemiAutoShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Jog_SemiAutoShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpDownLoop_SemiAutoShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpEnd_SemiAutoShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpUpLoop_SemiAutoShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_SemiAutoShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SlidingLoop_SemiAutoShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Sprint_SemiAutoShotgun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Aim_ChargeLaserRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Aim_SingleShotRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Aim_SingleShotRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Draw_ChargeLaserRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Draw_SingleShotRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_Aim_SingleShotRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_Idle_SingleShotRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Jog_SingleShotRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpDownLoop_SingleShotRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpEnd_SingleShotRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpUpLoop_SingleShotRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_ChargeLaserRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_MakeshiftSubmachinegun": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_SemiAutoRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Reload_SingleShotRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SlidingLoop_SingleShotRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Sprint_SingleShotRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Walk_SingleShotRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Grab_PalCarry": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_BlackFurDragonRide_Idle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_ElecPandaRide_Idle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_ElecPandaRide_WithBoss_Idle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_LazyDragonRide_Idle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_MoonQueenRide_Idle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_WingGlider": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_WingGlider_Fire": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_WingGlider_Start": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Attack_YakushimaLantern": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Idle_YakushimaLantern": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Walk_YakushimaLantern": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Idle_YakushimaLantern": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Jog_YakushimaLantern": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpDownLoop_YakushimaLantern": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpEnd_YakushimaLantern": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpUpLoop_YakushimaLantern": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SlidingLoop_YakushimaLantern": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Sprint_YakushimaLantern": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Walk_YakushimaLantern": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "pelvis": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "Player_Female_AirDash": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_AirDash_B": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_AirDash_L": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_AirDash_R": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Architecture2": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Architecture2_End": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Architecture2_Start": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_BiggerHorseRide_JumpOut": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_CallRidePal": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_CarpetRide_JumpIn": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Climb_ClimpAtTop": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Climb_Down": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Climb_Idle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Climb_Left": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Climb_Right": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Climb_Up": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Cooking2": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Cooking2_End": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Cooking2_Start": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crawl_Death": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crawl_Idle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crawl_Walk_Fwd": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Revive": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Dig": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Draw": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Eat": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_EggLauncherIdle [1]": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_EggLauncherShot": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Emote_Cheer": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Emote_Dance": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Emote_Kick_None": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Emote_Wave": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Feeding": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Glide_Idle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_JumpIn_Front": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_JumpIn_Left": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_JumpIn_Rear": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_JumpIn_Right": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_JumpOut": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HumanRide_JumpIn": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HumanRide_JumpOut": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpSpot_Prepare_None": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_OneHandGlide_Idle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_OneHandGlide_Start": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_PalAppear": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_PalCommand": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_PalReturn": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Petting_Large": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Petting_Middle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Petting_Middle_Beckon": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Petting_Small": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Petting_Small_Beckon": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Petting_SmallMiddle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Pickup_None": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_PickupRelic_None": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_RollFwd": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SitRide_JumpOut": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SleepOnSideLoop": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SleepSideEnd": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SleepSideIn": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_TwoHandGlide_CallRidePal": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_TwoHandGlide_Idle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_TwoHandGlide_Start": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Use_ReturnItem": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Watering_None": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Aim_MakeshiftAssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Aim_SubmachineGun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Aim_MakeshiftAssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Draw_MakeshiftAssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_ElectricArcAssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_EnergyShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_MakeshiftAssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_OverheatRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_SubmachineGun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_WidePenetrateShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Aim_BeamLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Aim_BeamLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Idle_BeamLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Walk_BeamLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Idle_BeamLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Jog_BeamLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_BeamLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Sprint_BeamLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Walk_BeamLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Aim_Bow": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_BiggerHorseRide_Aim_Bow": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_BiggerHorseRide_Idle_Bow": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Aim_Bow": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Idle_Bow": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Walk_Bow": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Draw_Bow": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Fire_Bow": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_FireCharge_Bow": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_FireChargeLoop_Bow": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_Aim_Bow": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_Fire_Bow": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_FireCharge_Bow": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_Idle_Bow": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Idle_Bow": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Jog_Bow": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpDownLoop_Bow": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpEnd_Bow": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpUpLoop_Bow": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SlidingEnd_Bow": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SlidingLoop_Bow": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Sprint_Bow": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Walk_Bow": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Aim_Bullpup": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Aim_SkyGrenadeLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Aim_Bullpup": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Draw_Bullpup": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Idle_Bullpup": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Jog_Bullpup": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_SkyAssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_SkyGrenadeLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_SkyShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_SkySubmachineGun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Sprint_Bullpup": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Walk_Bullpup": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_DodgeBwd": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_DodgeForward": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_DodgeLeft": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_DodgeRight": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Aim_DoubleBarrelShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Aim_DoubleBarrelShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Idle_DoubleBarrelShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Walk_DoubleBarrelShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Draw_DoubleBarrelShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Idle_DoubleBarrelShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Jog_DoubleBarrelShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpDownLoop_DoubleBarrelShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpEnd_DoubleBarrelShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpUpLoop_DoubleBarrelShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_DoubleBarrelShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SlidingEnd_DoubleBarrelShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SlidingLoop_DoubleBarrelShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Sprint_DoubleBarrelShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Walk_DoubleBarrelShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_CaughtEnd_FishingRod": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_CaughtFail_FishingRod": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_CaughtLoop_FishingRod": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_End_FishingRod": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Loop_FishingRod": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_ShowFish_Large": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_ShowFish_Middle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_ShowFish_Small1": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_ShowFish_Small2": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Start_FishingRod": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Grapple_Handgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_DecalGun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_MakeshiftHandgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_MakeshiftShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_OldRevolver": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_PalDopingShot": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Draw_HeavyWeapon": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_HeavyWeapon": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_LaserGatlingGun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Blow_Bwd": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Blow_Fwd": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_StaggerMove_Bwd": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_StaggerMove_Fwd": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Dismembering_Melee": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Draw_Sword": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Idle_Sword": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Combo1_Beamsword": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Combo2_Beamsword": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Combo3_Beamsword": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Iai_Beamsword": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Attack_Spear": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Idle_Spear": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Walk_Spear": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Idle_Spear": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Jog_Spear": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SlidingLoop_Spear": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Walk_Spear": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Combo1_Sword": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Combo2_Sword": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Combo3_Sword": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_BiggerHorseRide_MetalDetector": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Idle_MetalDetector": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Walk_MetalDetector": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_Aim_MetalDetector": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_MetalDetector": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Idle_MetalDetector": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Jog_MetalDetector": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpDownLoop_MetalDetector": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpEnd_MetalDetector": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpUpLoop_MetalDetector": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SlidingLoop_MetalDetector": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Sprint_MetalDetector": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_Musket": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Idle_EggLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Idle_PartnerSkill_Kitsunebi": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Walk_EggLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Walk_PartnerSkill_Kitsunebi": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Idle_PartnerSkill_Kitsunebi": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Jog_EggLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Jog_PartnerSkill_Kitsunebi": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpDownLoop_PartnerSkill_Kitsunebi": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpEnd_PartnerSkill_Kitsunebi": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpUpLoop_PartnerSkill_Kitsunebi": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SheepShield_End": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SheepShield_Loop": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SheepShield_Start": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SlidingLoop_PartnerSkill_Kitsunebi": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Sprint_EggLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Sprint_PartnerSkill_Kitsunebi": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_BiggerHorseRide_Aim_OctaviaShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_Aim_OctaviaShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Aim_EnergyRocketLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_EnergyRocketLauncher": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Aim_SemiAutoShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Aim_SemiAutoShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Idle_SemiAutoShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Walk_SemiAutoShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Draw_SemiAutoShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Idle_SemiAutoShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Jog_SemiAutoShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpDownLoop_SemiAutoShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpEnd_SemiAutoShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpUpLoop_SemiAutoShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_SemiAutoShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SlidingLoop_SemiAutoShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Sprint_SemiAutoShotgun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Aim_ChargeLaserRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Aim_SingleShotRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Aim_SingleShotRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Draw_ChargeLaserRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Draw_SingleShotRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_Aim_SingleShotRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_Idle_SingleShotRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Jog_SingleShotRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpDownLoop_SingleShotRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpEnd_SingleShotRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpUpLoop_SingleShotRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_ChargeLaserRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_MakeshiftSubmachinegun": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_SemiAutoRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Reload_SingleShotRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SlidingLoop_SingleShotRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Sprint_SingleShotRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Walk_SingleShotRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Grab_PalCarry": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_BlackFurDragonRide_Idle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_ElecPandaRide_Idle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_ElecPandaRide_WithBoss_Idle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_LazyDragonRide_Idle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_MoonQueenRide_Idle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_WingGlider": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_WingGlider_Fire": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_WingGlider_Start": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Attack_YakushimaLantern": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Idle_YakushimaLantern": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Walk_YakushimaLantern": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Idle_YakushimaLantern": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Jog_YakushimaLantern": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpDownLoop_YakushimaLantern": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpEnd_YakushimaLantern": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpUpLoop_YakushimaLantern": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SlidingLoop_YakushimaLantern": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Sprint_YakushimaLantern": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Walk_YakushimaLantern": [
+      0.0,
+      0.95031,
+      -0.00272
+     ]
+    }
+   }
+  },
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/Human/SK_PalHuman_Skeleton",
+  "set": "Player_Female_Extra",
+  "packKind": "extra",
+  "species": "AnimPack",
+  "form": "Player_Female_Extra"
+ }
+}

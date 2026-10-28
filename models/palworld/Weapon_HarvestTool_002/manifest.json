@@ -1,0 +1,52 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_HarvestTool_002",
+ "kind": "object",
+ "displayName": "Stone Axe",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "AxeBlock",
+   "label": "AxeBlock",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 790,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 14868220
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\HarvestTool_002"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Stone Axe",
+    "class": "Axe_Tier_00"
+   },
+   {
+    "name": "Metal Axe",
+    "class": "Axe_Tier_01"
+   },
+   {
+    "name": "Refined Metal Axe",
+    "class": "Axe_Tier_02"
+   }
+  ],
+  "species": "Weapon",
+  "form": "HarvestTool_002"
+ }
+}

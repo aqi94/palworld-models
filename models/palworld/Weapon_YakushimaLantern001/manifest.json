@@ -1,0 +1,56 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_YakushimaLantern001",
+ "kind": "object",
+ "displayName": "Nightglow",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Body",
+   "label": "Body",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Extra",
+   "label": "Extra",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Glass",
+   "label": "Glass",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 3,
+  "meshes": 3,
+  "triangles": 7048,
+  "textures": 6,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 12042208
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\YakushimaLantern001"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Nightglow",
+    "class": "YakushimaLantern001"
+   }
+  ],
+  "species": "Weapon",
+  "form": "YakushimaLantern001"
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_AssaultRifle_012",
+ "kind": "object",
+ "displayName": "Heavy Assault Rifle",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_AssaultRifle_012_Body",
+   "label": "Body",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Weapon_AssaultRifle_012_Grip",
+   "label": "Grip",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Weapon_AssaultRifle_012_Magazine",
+   "label": "Magazine",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 8,
+  "meshes": 3,
+  "triangles": 18436,
+  "textures": 8,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 19146704
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\AssaultRifle_012"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Heavy Assault Rifle",
+    "class": "SkyAssaultRifle"
+   }
+  ],
+  "species": "Weapon",
+  "form": "AssaultRifle_012"
+ }
+}

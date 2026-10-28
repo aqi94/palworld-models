@@ -1,0 +1,56 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Shotgun_003",
+ "kind": "object",
+ "displayName": "Pump-Action Shotgun",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_Shotgun_003",
+   "label": "Weapon Shotgun 003",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "01",
+   "label": "01",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 6,
+  "meshes": 2,
+  "triangles": 8297,
+  "textures": 6,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 20464008
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Shotgun_003"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Pump-Action Shotgun",
+    "class": "PumpActionShotgun"
+   }
+  ],
+  "users": {
+   "npc": [
+    "Shotgun_NPC",
+    "Shotgun_NPC_Otomo"
+   ]
+  },
+  "species": "Weapon",
+  "form": "Shotgun_003"
+ }
+}

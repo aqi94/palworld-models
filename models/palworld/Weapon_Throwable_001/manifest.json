@@ -1,0 +1,50 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Throwable_001",
+ "kind": "object",
+ "displayName": "Pal Recovery Grenade",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Body1",
+   "label": "Body1",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Body2",
+   "label": "Body2",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 2,
+  "triangles": 12569,
+  "textures": 6,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 19203800
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Throwable_001"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Pal Recovery Grenade",
+    "class": "PalHealingGrenade"
+   }
+  ],
+  "species": "Weapon",
+  "form": "Throwable_001"
+ }
+}

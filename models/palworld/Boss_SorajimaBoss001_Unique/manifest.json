@@ -1,0 +1,157 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Boss_SorajimaBoss001_Unique",
+ "kind": "human",
+ "displayName": "Sorajima Boss 001 Unique (Boss)",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "SorajimaBossStartDemo_010_SorajimaBoss",
+   "index": 0,
+   "duration": 6.0,
+   "frameRate": 60.0,
+   "frameCount": 361,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SorajimaBossStartDemo_020_SorajimaBoss",
+   "index": 1,
+   "duration": 8.85,
+   "frameRate": 60.0,
+   "frameCount": 532,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SorajimaBossStartDemo_025_SorajimaBoss",
+   "index": 2,
+   "duration": 5.0,
+   "frameRate": 60.0,
+   "frameCount": 301,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SorajimaBossStartDemo_040_SorajimaBoss",
+   "index": 3,
+   "duration": 2.6667,
+   "frameRate": 60.0,
+   "frameCount": 161,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SorajimaBossStartDemo_050_SorajimaBoss",
+   "index": 4,
+   "duration": 6.3333,
+   "frameRate": 60.0,
+   "frameCount": 381,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SorajimaBossStartDemo_060_SorajimaBoss",
+   "index": 5,
+   "duration": 7.0,
+   "frameRate": 60.0,
+   "frameCount": 421,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "NPC_SorajimaBossHair001_Unique",
+   "label": "NPC SorajimaBossHair001 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_SorajimaBossEye001_Unique",
+   "label": "NPC SorajimaBossEye001 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_SorajimaBossBrow001_Unique",
+   "label": "NPC SorajimaBossBrow001 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_SorajimaBoss001_M02_Unique",
+   "label": "NPC SorajimaBoss001 M02 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_SorajimaBossHead001_Unique",
+   "label": "NPC SorajimaBossHead001 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_SorajimaBoss001_M00_Unique",
+   "label": "NPC SorajimaBoss001 M00 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_SorajimaBoss001_Crystal_Unique",
+   "label": "NPC SorajimaBoss001 Crystal Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_SorajimaBoss001_M01_Unique",
+   "label": "NPC SorajimaBoss001 M01 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_SorajimaBossBody001_Unique",
+   "label": "NPC SorajimaBossBody001 Unique",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 135,
+  "meshes": 9,
+  "triangles": 50911,
+  "textures": 25,
+  "clips": 6,
+  "droppedTracks": 0,
+  "glbBytes": 56741056
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_humans\\Boss_SorajimaBoss001_Unique"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/NPC/Boss/Sorajimaboss/Unique/SK_NPC_SorajimaBoss001_Skeleton",
+  "codeName": "Boss_SorajimaBoss001_Unique",
+  "group": "Boss",
+  "mesh": "Pal/Content/Pal/Model/Character/NPC/Boss/Sorajimaboss/Unique/SK_NPC_SorajimaBoss001_Unique",
+  "species": "Boss",
+  "form": "SorajimaBoss001_Unique"
+ }
+}

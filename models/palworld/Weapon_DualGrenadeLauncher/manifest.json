@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_DualGrenadeLauncher",
+ "kind": "object",
+ "displayName": "Mossanda's Dual Grenade Launcher",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "PalProp_Weapon_RocketLauncher_002",
+   "label": "PalProp Weapon RocketLauncher 002",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 5,
+  "meshes": 1,
+  "triangles": 4564,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 8211060
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\DualGrenadeLauncher"
+ ],
+ "extras": {
+  "users": {
+   "pals": [
+    "GrassPanda",
+    "GrassPanda_Electric"
+   ]
+  },
+  "species": "Weapon",
+  "form": "DualGrenadeLauncher"
+ }
+}

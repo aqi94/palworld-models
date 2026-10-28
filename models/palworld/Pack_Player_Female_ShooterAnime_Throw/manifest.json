@@ -1,0 +1,678 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Pack_Player_Female_ShooterAnime_Throw",
+ "kind": "animpack",
+ "displayName": "Throw",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "Player_Female_AirJump_None",
+   "index": 0,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_BiggerHorseRide_Sprint",
+   "index": 1,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": true,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_BiggerHorseRide_Sprint_Start",
+   "index": 2,
+   "duration": 0.7667,
+   "frameRate": 30.0,
+   "frameCount": 24,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_Sprint",
+   "index": 3,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": true,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_Sprint_Start",
+   "index": 4,
+   "duration": 0.7667,
+   "frameRate": 30.0,
+   "frameCount": 24,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Aim_AssaultRifle",
+   "index": 7,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Aim_AssaultRifle",
+   "index": 8,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_WalkBwd_Aim_AssaultRifle",
+   "index": 9,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_WalkFwd_Aim_AssaultRifle",
+   "index": 10,
+   "duration": 0.8667,
+   "frameRate": 30.0,
+   "frameCount": 27,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_WalkLeft_Aim_AssaultRifle",
+   "index": 11,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_WalkRight_Aim_AssaultRifle",
+   "index": 12,
+   "duration": 0.7333,
+   "frameRate": 30.0,
+   "frameCount": 23,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_WalkBwd_Aim_AssaultRifle",
+   "index": 13,
+   "duration": 0.8667,
+   "frameRate": 30.0,
+   "frameCount": 27,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_WalkFwd_Aim_AssaultRifle",
+   "index": 14,
+   "duration": 0.9667,
+   "frameRate": 30.0,
+   "frameCount": 30,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_WalkLeft_Aim_AssaultRifle",
+   "index": 15,
+   "duration": 0.9333,
+   "frameRate": 30.0,
+   "frameCount": 29,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_WalkRight_Aim_AssaultRifle",
+   "index": 16,
+   "duration": 0.9333,
+   "frameRate": 30.0,
+   "frameCount": 29,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Idle_Melee",
+   "index": 17,
+   "duration": 2.3,
+   "frameRate": 30.0,
+   "frameCount": 70,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JogBwd_Aim_Melee",
+   "index": 18,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JogFwd_Aim_Melee",
+   "index": 19,
+   "duration": 1.4667,
+   "frameRate": 30.0,
+   "frameCount": 45,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JogRight_Aim_Melee",
+   "index": 20,
+   "duration": 1.8,
+   "frameRate": 30.0,
+   "frameCount": 55,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_BiggerHorseRide_Aim_Throw",
+   "index": 36,
+   "duration": 1.9667,
+   "frameRate": 30.0,
+   "frameCount": 60,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Aim_Throw",
+   "index": 37,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Idle_Throw",
+   "index": 38,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Walk_Throw",
+   "index": 39,
+   "duration": 0.9,
+   "frameRate": 30.0,
+   "frameCount": 28,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_Aim_Throw",
+   "index": 40,
+   "duration": 1.9667,
+   "frameRate": 30.0,
+   "frameCount": 60,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_Fire_Throw_Aim",
+   "index": 41,
+   "duration": 1.2333,
+   "frameRate": 30.0,
+   "frameCount": 38,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_Throw_Left",
+   "index": 42,
+   "duration": 1.2333,
+   "frameRate": 30.0,
+   "frameCount": 38,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_Throw_Right",
+   "index": 43,
+   "duration": 1.2333,
+   "frameRate": 30.0,
+   "frameCount": 38,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Idle_Throw",
+   "index": 44,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "Player_Female_Jog_Throw",
+   "index": 45,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Sprint_Throw",
+   "index": 46,
+   "duration": 0.5667,
+   "frameRate": 30.0,
+   "frameCount": 18,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "Player_Female_Idle_Throw",
+ "parts": [],
+ "stats": {
+  "joints": 4079,
+  "meshes": 0,
+  "triangles": 0,
+  "textures": 0,
+  "clips": 30,
+  "droppedTracks": 0,
+  "glbBytes": 3282564
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_animpacks\\Player_Female_ShooterAnime_Throw"
+ ],
+ "extras": {
+  "retarget": {
+   "root": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "Player_Female_AirJump_None": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_BiggerHorseRide_Sprint": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_BiggerHorseRide_Sprint_Start": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_Sprint": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_Sprint_Start": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_WalkBwd_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_WalkFwd_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_WalkLeft_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_WalkRight_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_WalkBwd_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_WalkFwd_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_WalkLeft_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_WalkRight_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Idle_Melee": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JogBwd_Aim_Melee": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JogFwd_Aim_Melee": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JogRight_Aim_Melee": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_BiggerHorseRide_Aim_Throw": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Aim_Throw": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Idle_Throw": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Walk_Throw": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_Aim_Throw": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_Fire_Throw_Aim": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_Throw_Left": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_Throw_Right": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Idle_Throw": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Jog_Throw": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Sprint_Throw": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "pelvis": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "Player_Female_AirJump_None": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_BiggerHorseRide_Sprint": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_BiggerHorseRide_Sprint_Start": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_Sprint": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_Sprint_Start": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_WalkBwd_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_WalkFwd_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_WalkLeft_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_WalkRight_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_WalkBwd_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_WalkFwd_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_WalkLeft_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_WalkRight_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Idle_Melee": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JogBwd_Aim_Melee": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JogFwd_Aim_Melee": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JogRight_Aim_Melee": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_BiggerHorseRide_Aim_Throw": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Aim_Throw": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Idle_Throw": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Walk_Throw": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_Aim_Throw": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_Fire_Throw_Aim": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_Throw_Left": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_Throw_Right": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Idle_Throw": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Jog_Throw": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Sprint_Throw": [
+      0.0,
+      0.95031,
+      -0.00272
+     ]
+    }
+   }
+  },
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/Human/SK_PalHuman_Skeleton",
+  "set": "Player_Female_ShooterAnime_Throw",
+  "packKind": "weapon",
+  "weaponType": "ThrowObject",
+  "species": "AnimPack",
+  "form": "Player_Female_ShooterAnime_Throw"
+ }
+}

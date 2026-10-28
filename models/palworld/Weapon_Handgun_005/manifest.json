@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Handgun_005",
+ "kind": "object",
+ "displayName": "Old Revolver",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_Handgun_005",
+   "label": "Weapon Handgun 005",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 6,
+  "meshes": 1,
+  "triangles": 6922,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 18373520
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Handgun_005"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Old Revolver",
+    "class": "OldRevolver"
+   }
+  ],
+  "species": "Weapon",
+  "form": "Handgun_005"
+ }
+}

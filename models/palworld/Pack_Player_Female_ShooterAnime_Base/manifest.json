@@ -1,0 +1,131 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Pack_Player_Female_ShooterAnime_Base",
+ "kind": "animpack",
+ "displayName": "Base",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "Player_Female_BiggerHorseRide_Sprint",
+   "index": 0,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": true,
+   "category": "ride",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "Player_Female_BiggerHorseRide_Sprint_Start",
+   "index": 1,
+   "duration": 0.7667,
+   "frameRate": 30.0,
+   "frameCount": 24,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_Sprint",
+   "index": 2,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": true,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_Sprint_Start",
+   "index": 3,
+   "duration": 0.7667,
+   "frameRate": 30.0,
+   "frameCount": 24,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "Player_Female_BiggerHorseRide_Sprint",
+ "parts": [],
+ "stats": {
+  "joints": 4079,
+  "meshes": 0,
+  "triangles": 0,
+  "textures": 0,
+  "clips": 4,
+  "droppedTracks": 0,
+  "glbBytes": 1455792
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_animpacks\\Player_Female_ShooterAnime_Base"
+ ],
+ "extras": {
+  "retarget": {
+   "root": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "Player_Female_BiggerHorseRide_Sprint": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_BiggerHorseRide_Sprint_Start": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_Sprint": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_Sprint_Start": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "pelvis": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "Player_Female_BiggerHorseRide_Sprint": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_BiggerHorseRide_Sprint_Start": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_Sprint": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_Sprint_Start": [
+      0.0,
+      0.95031,
+      -0.00272
+     ]
+    }
+   }
+  },
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/Human/SK_PalHuman_Skeleton",
+  "set": "Player_Female_ShooterAnime_Base",
+  "packKind": "base",
+  "species": "AnimPack",
+  "form": "Player_Female_ShooterAnime_Base"
+ }
+}

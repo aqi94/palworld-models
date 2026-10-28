@@ -1,0 +1,845 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Pack_Actions_NPC_GrassBoss",
+ "kind": "animpack",
+ "displayName": "Actions (Grass Boss)",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "GrassBoss_GroundSit",
+   "index": 0,
+   "duration": 4.0,
+   "frameRate": 30.0,
+   "frameCount": 121,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_Eat",
+   "index": 1,
+   "duration": 2.3333,
+   "frameRate": 30.0,
+   "frameCount": 71,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_Happy",
+   "index": 2,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_Idle_None",
+   "index": 3,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "GrassBoss_Stand_Petting",
+   "index": 4,
+   "duration": 4.0,
+   "frameRate": 30.0,
+   "frameCount": 121,
+   "loop": false,
+   "category": "emote",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_Run",
+   "index": 5,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_SleepEnd",
+   "index": 6,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_SleepLoop",
+   "index": 7,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_SleepStart",
+   "index": 8,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_Spa",
+   "index": 9,
+   "duration": 8.0,
+   "frameRate": 30.0,
+   "frameCount": 241,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_Walk",
+   "index": 10,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_Cooling",
+   "index": 11,
+   "duration": 5.6333,
+   "frameRate": 30.0,
+   "frameCount": 170,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_FireBlow",
+   "index": 12,
+   "duration": 4.3333,
+   "frameRate": 30.0,
+   "frameCount": 131,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_Gunner",
+   "index": 13,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_Looting",
+   "index": 14,
+   "duration": 1.7,
+   "frameRate": 30.0,
+   "frameCount": 52,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_Sit",
+   "index": 15,
+   "duration": 14.5333,
+   "frameRate": 30.0,
+   "frameCount": 437,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_Sit_Drink",
+   "index": 16,
+   "duration": 5.0,
+   "frameRate": 30.0,
+   "frameCount": 151,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_Sit_Eat",
+   "index": 17,
+   "duration": 8.1,
+   "frameRate": 30.0,
+   "frameCount": 244,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_Sit_Meat",
+   "index": 18,
+   "duration": 8.1,
+   "frameRate": 30.0,
+   "frameCount": 244,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_Talking",
+   "index": 19,
+   "duration": 9.1,
+   "frameRate": 30.0,
+   "frameCount": 274,
+   "loop": false,
+   "category": "emote",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_Female_Transport",
+   "index": 20,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_PalRelease",
+   "index": 21,
+   "duration": 1.2333,
+   "frameRate": 30.0,
+   "frameCount": 38,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_RollLeft",
+   "index": 22,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "NPC_RollRight",
+   "index": 23,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Watering_None",
+   "index": 24,
+   "duration": 3.0333,
+   "frameRate": 30.0,
+   "frameCount": 92,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_CommonWork",
+   "index": 25,
+   "duration": 6.6667,
+   "frameRate": 30.0,
+   "frameCount": 201,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Architecture",
+   "index": 26,
+   "duration": 1.3667,
+   "frameRate": 30.0,
+   "frameCount": 42,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Damage",
+   "index": 27,
+   "duration": 1.6,
+   "frameRate": 30.0,
+   "frameCount": 49,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Deforest_None",
+   "index": 28,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Mining",
+   "index": 30,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Planting_None",
+   "index": 31,
+   "duration": 2.8,
+   "frameRate": 30.0,
+   "frameCount": 85,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Swim",
+   "index": 32,
+   "duration": 1.6667,
+   "frameRate": 30.0,
+   "frameCount": 51,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Swim_Idle",
+   "index": 33,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SwimFast",
+   "index": 34,
+   "duration": 1.0333,
+   "frameRate": 30.0,
+   "frameCount": 32,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Wakeup_FaceDown",
+   "index": 35,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_WakeUp_Faceup",
+   "index": 36,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Aim_AssaultRifle",
+   "index": 37,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Jog_PalCarry",
+   "index": 38,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "GrassBoss_Stand_Idle_None",
+ "parts": [],
+ "stats": {
+  "joints": 4079,
+  "meshes": 0,
+  "triangles": 0,
+  "textures": 0,
+  "clips": 38,
+  "droppedTracks": 0,
+  "glbBytes": 7536488
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_animpacks\\Actions_NPC_GrassBoss"
+ ],
+ "extras": {
+  "retarget": {
+   "root": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "GrassBoss_GroundSit": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "GrassBoss_Stand_Eat": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "GrassBoss_Stand_Happy": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "GrassBoss_Stand_Idle_None": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "GrassBoss_Stand_Petting": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "GrassBoss_Stand_Run": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "GrassBoss_Stand_SleepEnd": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "GrassBoss_Stand_SleepLoop": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "GrassBoss_Stand_SleepStart": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "GrassBoss_Stand_Spa": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "GrassBoss_Stand_Walk": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_Cooling": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_FireBlow": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_Gunner": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_Looting": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_Sit": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_Sit_Drink": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_Sit_Eat": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_Sit_Meat": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_Talking": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_Female_Transport": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_PalRelease": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_RollLeft": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "NPC_RollRight": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Watering_None": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_CommonWork": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Architecture": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Damage": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Deforest_None": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Mining": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Planting_None": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Swim": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Swim_Idle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SwimFast": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Wakeup_FaceDown": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_WakeUp_Faceup": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Jog_PalCarry": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "pelvis": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "GrassBoss_GroundSit": [
+      0.0,
+      0.99322,
+      -0.00272
+     ],
+     "GrassBoss_Stand_Eat": [
+      0.0,
+      0.99322,
+      -0.00272
+     ],
+     "GrassBoss_Stand_Happy": [
+      0.0,
+      0.99322,
+      -0.00272
+     ],
+     "GrassBoss_Stand_Idle_None": [
+      0.0,
+      0.99322,
+      -0.00272
+     ],
+     "GrassBoss_Stand_Petting": [
+      0.0,
+      0.99322,
+      -0.00272
+     ],
+     "GrassBoss_Stand_Run": [
+      0.0,
+      0.99322,
+      -0.00272
+     ],
+     "GrassBoss_Stand_SleepEnd": [
+      0.0,
+      0.99322,
+      -0.00272
+     ],
+     "GrassBoss_Stand_SleepLoop": [
+      0.0,
+      0.99322,
+      -0.00272
+     ],
+     "GrassBoss_Stand_SleepStart": [
+      0.0,
+      0.99322,
+      -0.00272
+     ],
+     "GrassBoss_Stand_Spa": [
+      0.0,
+      0.99322,
+      -0.00272
+     ],
+     "GrassBoss_Stand_Walk": [
+      0.0,
+      0.99322,
+      -0.00272
+     ],
+     "NPC_Female_Cooling": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Female_FireBlow": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Female_Gunner": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Female_Looting": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Female_Sit": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Female_Sit_Drink": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Female_Sit_Eat": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Female_Sit_Meat": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Female_Talking": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_Female_Transport": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_PalRelease": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_RollLeft": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "NPC_RollRight": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Watering_None": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_CommonWork": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Architecture": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Damage": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Deforest_None": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Mining": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Planting_None": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Swim": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Swim_Idle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SwimFast": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Wakeup_FaceDown": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_WakeUp_Faceup": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Jog_PalCarry": [
+      0.0,
+      0.95031,
+      -0.00272
+     ]
+    }
+   }
+  },
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/Human/SK_PalHuman_Skeleton",
+  "set": "Actions_NPC_GrassBoss",
+  "packKind": "actions",
+  "species": "AnimPack",
+  "form": "Actions_NPC_GrassBoss"
+ }
+}

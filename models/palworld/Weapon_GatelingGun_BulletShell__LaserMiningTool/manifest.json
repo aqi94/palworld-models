@@ -1,0 +1,45 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_GatelingGun_BulletShell__LaserMiningTool",
+ "kind": "object",
+ "displayName": "Plasma Multicutter – Gateling Gun Bullet Shell",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "BulletMaterial_LaserMiningTool",
+   "label": "BulletMaterial LaserMiningTool",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 28,
+  "textures": 0,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 3224
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\GatelingGun_BulletShell"
+ ],
+ "extras": {
+  "materialOverrides": [
+   [
+    "Pal/Content/Pal/Model/Weapon/AssaultRifle/NormalGun/MI_BulletMaterial_LaserMiningTool",
+    "Pal/Content/Pal/Model/Weapon/AssaultRifle/NormalGun/M_BulletMaterial"
+   ]
+  ],
+  "partOf": "Weapon_MiningLaserGun",
+  "species": "Weapon",
+  "form": "GatelingGun_BulletShell"
+ }
+}

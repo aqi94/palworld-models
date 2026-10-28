@@ -1,0 +1,195 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Boss_WorldTreeBoss001_Unique",
+ "kind": "human",
+ "displayName": "World Tree Boss 001 Unique (Boss)",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "WorldTreeBossEndDemo_010_WorldTreeBoss",
+   "index": 0,
+   "duration": 21.3333,
+   "frameRate": 60.0,
+   "frameCount": 1281,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "WorldTreeBossEndDemo_020_WorldTreeBoss",
+   "index": 1,
+   "duration": 14.0,
+   "frameRate": 60.0,
+   "frameCount": 841,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "WorldTreeBossEndDemo_030_WorldTreeBoss",
+   "index": 2,
+   "duration": 30.0,
+   "frameRate": 60.0,
+   "frameCount": 1801,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "WorldTreeBossStartDemo_010_WorldTreeBoss",
+   "index": 3,
+   "duration": 27.8333,
+   "frameRate": 60.0,
+   "frameCount": 1671,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "WorldTreeBossStartDemo_020_WorldTreeBoss",
+   "index": 4,
+   "duration": 10.0,
+   "frameRate": 60.0,
+   "frameCount": 601,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "WorldTreeBossStartDemo_030_WorldTreeBoss",
+   "index": 5,
+   "duration": 6.65,
+   "frameRate": 60.0,
+   "frameCount": 400,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "WorldTreeBossStartDemo_032_WorldTreeBoss",
+   "index": 6,
+   "duration": 10.5,
+   "frameRate": 60.0,
+   "frameCount": 631,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "WorldTreeBossStartDemo_040_WorldTreeBoss",
+   "index": 7,
+   "duration": 7.6667,
+   "frameRate": 60.0,
+   "frameCount": 461,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "WorldTreeBossStartDemo_050_WorldTreeBoss",
+   "index": 8,
+   "duration": 4.1667,
+   "frameRate": 60.0,
+   "frameCount": 251,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "WorldTreeBossStartDemo_060_WorldTreeBoss",
+   "index": 9,
+   "duration": 8.3333,
+   "frameRate": 60.0,
+   "frameCount": 501,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "NPC_WorldTreeBoss001_Body_Unique",
+   "label": "NPC WorldTreeBoss001 Body Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_WorldTreeBossHead001_Unique",
+   "label": "NPC WorldTreeBossHead001 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_WorldTreeBossBrow001_Unique",
+   "label": "NPC WorldTreeBossBrow001 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_WorldTreeBossEye001_Unique",
+   "label": "NPC WorldTreeBossEye001 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_WorldTreeBossHair001_Unique",
+   "label": "NPC WorldTreeBossHair001 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_Outfit_WorldTreeBoss001_M00_Unique",
+   "label": "NPC Outfit WorldTreeBoss001 M00 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_Outfit_WorldTreeBoss001_M01_Unique",
+   "label": "NPC Outfit WorldTreeBoss001 M01 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_Outfit_WorldTreeBoss001_M02_Unique",
+   "label": "NPC Outfit WorldTreeBoss001 M02 Unique",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 248,
+  "meshes": 8,
+  "triangles": 48118,
+  "textures": 22,
+  "clips": 10,
+  "droppedTracks": 0,
+  "glbBytes": 99833880
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_humans\\Boss_WorldTreeBoss001_Unique"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/NPC/Boss/WorldTreeBoss/Unique/SK_NPC_WorldTreeBoss001_Skeleton",
+  "codeName": "Boss_WorldTreeBoss001_Unique",
+  "group": "Boss",
+  "mesh": "Pal/Content/Pal/Model/Character/NPC/Boss/WorldTreeBoss/Unique/SK_NPC_WorldTreeBoss001_Unique",
+  "species": "Boss",
+  "form": "WorldTreeBoss001_Unique"
+ }
+}

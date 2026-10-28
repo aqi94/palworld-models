@@ -1,0 +1,638 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "OctopusGirl_Neutral",
+ "kind": "pal",
+ "displayName": "Gloopie Primo",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [
+  {
+   "name": "eye",
+   "label": "Eye",
+   "options": [
+    {
+     "variant": 0,
+     "name": "eye_1",
+     "label": "1",
+     "default": true
+    },
+    {
+     "variant": 1,
+     "name": "eye_2",
+     "label": "2",
+     "default": false
+    },
+    {
+     "variant": 2,
+     "name": "eye_3",
+     "label": "3",
+     "default": false
+    },
+    {
+     "variant": 3,
+     "name": "eye_4",
+     "label": "4",
+     "default": false
+    },
+    {
+     "variant": 4,
+     "name": "eye_5",
+     "label": "5",
+     "default": false
+    },
+    {
+     "variant": 5,
+     "name": "eye_6",
+     "label": "6",
+     "default": false
+    },
+    {
+     "variant": 6,
+     "name": "eye_7",
+     "label": "7",
+     "default": false
+    },
+    {
+     "variant": 7,
+     "name": "eye_8",
+     "label": "8",
+     "default": false
+    }
+   ]
+  }
+ ],
+ "clips": [
+  {
+   "name": "Architecture",
+   "index": 0,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Carrying",
+   "index": 1,
+   "duration": 0.7333,
+   "frameRate": 30.0,
+   "frameCount": 23,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Carrying_Start",
+   "index": 2,
+   "duration": 0.2667,
+   "frameRate": 30.0,
+   "frameCount": 9,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "CommonWork",
+   "index": 3,
+   "duration": 3.2,
+   "frameRate": 30.0,
+   "frameCount": 97,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Damage",
+   "index": 4,
+   "duration": 1.6,
+   "frameRate": 30.0,
+   "frameCount": 49,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Eat",
+   "index": 5,
+   "duration": 3.2,
+   "frameRate": 30.0,
+   "frameCount": 97,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Encount",
+   "index": 6,
+   "duration": 1.6,
+   "frameRate": 30.0,
+   "frameCount": 49,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Action",
+   "index": 7,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_ActionLoop",
+   "index": 8,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_End",
+   "index": 9,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Start",
+   "index": 10,
+   "duration": 0.8667,
+   "frameRate": 30.0,
+   "frameCount": 27,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_StartLoop",
+   "index": 11,
+   "duration": 1.6,
+   "frameRate": 30.0,
+   "frameCount": 49,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FishingCaught",
+   "index": 12,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GetUp_FrontDown",
+   "index": 13,
+   "duration": 1.6,
+   "frameRate": 30.0,
+   "frameCount": 49,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Gunner",
+   "index": 14,
+   "duration": 3.2,
+   "frameRate": 30.0,
+   "frameCount": 97,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Hit",
+   "index": 15,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Idle",
+   "index": 16,
+   "duration": 8.5333,
+   "frameRate": 30.0,
+   "frameCount": 257,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "InkJet_End",
+   "index": 17,
+   "duration": 1.6667,
+   "frameRate": 30.0,
+   "frameCount": 51,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "InkJet_Loop",
+   "index": 18,
+   "duration": 0.4,
+   "frameRate": 30.0,
+   "frameCount": 13,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "InkJet_Start",
+   "index": 19,
+   "duration": 2.8,
+   "frameRate": 30.0,
+   "frameCount": 85,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "JumpEnd",
+   "index": 20,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "JumpLoop",
+   "index": 21,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "JumpStart",
+   "index": 22,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Petting",
+   "index": 23,
+   "duration": 1.6,
+   "frameRate": 30.0,
+   "frameCount": 49,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Rest01",
+   "index": 24,
+   "duration": 1.6,
+   "frameRate": 30.0,
+   "frameCount": 49,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Rest02",
+   "index": 25,
+   "duration": 6.4,
+   "frameRate": 30.0,
+   "frameCount": 193,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Rest03",
+   "index": 26,
+   "duration": 3.2,
+   "frameRate": 30.0,
+   "frameCount": 97,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Run",
+   "index": 27,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepEnd",
+   "index": 28,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepLoop",
+   "index": 29,
+   "duration": 3.2,
+   "frameRate": 30.0,
+   "frameCount": 97,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepStart",
+   "index": 30,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Spa",
+   "index": 31,
+   "duration": 3.2,
+   "frameRate": 30.0,
+   "frameCount": 97,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Transport",
+   "index": 32,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Walk",
+   "index": 33,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Watering",
+   "index": 34,
+   "duration": 3.2,
+   "frameRate": 30.0,
+   "frameCount": 97,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "Idle",
+ "parts": [
+  {
+   "node": "Eye",
+   "label": "Eye",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Brow_1",
+   "label": "Brow 1",
+   "lod": 0,
+   "visible": true,
+   "group": "brow",
+   "option": "brow_1"
+  },
+  {
+   "node": "Brow_2",
+   "label": "Brow 2",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_2"
+  },
+  {
+   "node": "Brow_3",
+   "label": "Brow 3",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_3"
+  },
+  {
+   "node": "Brow_4",
+   "label": "Brow 4",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_4"
+  },
+  {
+   "node": "Brow_5",
+   "label": "Brow 5",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_5"
+  },
+  {
+   "node": "Brow_6",
+   "label": "Brow 6",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_6"
+  },
+  {
+   "node": "Brow_7",
+   "label": "Brow 7",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_7"
+  },
+  {
+   "node": "Brow_8",
+   "label": "Brow 8",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_8"
+  },
+  {
+   "node": "Body",
+   "label": "Body",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "partGroups": [
+  {
+   "name": "brow",
+   "label": "Brow",
+   "options": [
+    {
+     "id": "brow_1",
+     "label": "1",
+     "default": true,
+     "variant": "eye_1",
+     "nodes": [
+      "Brow_1"
+     ]
+    },
+    {
+     "id": "brow_2",
+     "label": "2",
+     "default": false,
+     "variant": "eye_2",
+     "nodes": [
+      "Brow_2"
+     ]
+    },
+    {
+     "id": "brow_3",
+     "label": "3",
+     "default": false,
+     "variant": "eye_3",
+     "nodes": [
+      "Brow_3"
+     ]
+    },
+    {
+     "id": "brow_4",
+     "label": "4",
+     "default": false,
+     "variant": "eye_4",
+     "nodes": [
+      "Brow_4"
+     ]
+    },
+    {
+     "id": "brow_5",
+     "label": "5",
+     "default": false,
+     "variant": "eye_5",
+     "nodes": [
+      "Brow_5"
+     ]
+    },
+    {
+     "id": "brow_6",
+     "label": "6",
+     "default": false,
+     "variant": "eye_6",
+     "nodes": [
+      "Brow_6"
+     ]
+    },
+    {
+     "id": "brow_7",
+     "label": "7",
+     "default": false,
+     "variant": "eye_7",
+     "nodes": [
+      "Brow_7"
+     ]
+    },
+    {
+     "id": "brow_8",
+     "label": "8",
+     "default": false,
+     "variant": "eye_8",
+     "nodes": [
+      "Brow_8"
+     ]
+    }
+   ]
+  }
+ ],
+ "stats": {
+  "joints": 88,
+  "meshes": 10,
+  "triangles": 17146,
+  "textures": 8,
+  "clips": 35,
+  "droppedTracks": 0,
+  "glbBytes": 14452232
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld\\OctopusGirl_Neutral"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/OctopusGirl/SK_OctopusGirl_Skeleton",
+  "dex": 48,
+  "dexSuffix": "B",
+  "elements": [
+   "Water",
+   "Neutral"
+  ],
+  "rarity": 6,
+  "codeName": "OctopusGirl_Neutral",
+  "species": "OctopusGirl_Neutral",
+  "form": ""
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_AssaultRifle_004",
+ "kind": "object",
+ "displayName": "Tanzee's Assault Rifle",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_AssaultRifle_004",
+   "label": "Weapon AssaultRifle 004",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 7,
+  "meshes": 1,
+  "triangles": 4295,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 7186696
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\AssaultRifle_004"
+ ],
+ "extras": {
+  "users": {
+   "pals": [
+    "Monkey",
+    "Monkey_Fire"
+   ]
+  },
+  "species": "Weapon",
+  "form": "AssaultRifle_004"
+ }
+}

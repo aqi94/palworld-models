@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_YakushimaBlade002",
+ "kind": "object",
+ "displayName": "Terra Blade",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "YakushimaBlade002",
+   "label": "YakushimaBlade002",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 1638,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 7032704
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\YakushimaBlade002"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Terra Blade",
+    "class": "TerraBlade"
+   }
+  ],
+  "species": "Weapon",
+  "form": "YakushimaBlade002"
+ }
+}

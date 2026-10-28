@@ -1,0 +1,735 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Horus",
+ "kind": "pal",
+ "displayName": "Faleris",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [
+  {
+   "name": "eye",
+   "label": "Eye",
+   "options": [
+    {
+     "variant": 0,
+     "name": "eye_1",
+     "label": "1",
+     "default": true
+    },
+    {
+     "variant": 1,
+     "name": "eye_2",
+     "label": "2",
+     "default": false
+    },
+    {
+     "variant": 2,
+     "name": "eye_3",
+     "label": "3",
+     "default": false
+    },
+    {
+     "variant": 3,
+     "name": "eye_4",
+     "label": "4",
+     "default": false
+    },
+    {
+     "variant": 4,
+     "name": "eye_5",
+     "label": "5",
+     "default": false
+    },
+    {
+     "variant": 5,
+     "name": "eye_6",
+     "label": "6",
+     "default": false
+    },
+    {
+     "variant": 6,
+     "name": "eye_7",
+     "label": "7",
+     "default": false
+    },
+    {
+     "variant": 7,
+     "name": "eye_8",
+     "label": "8",
+     "default": false
+    }
+   ]
+  },
+  {
+   "name": "skin",
+   "label": "Skin",
+   "options": [
+    {
+     "variant": 8,
+     "name": "skin_default",
+     "label": "Default",
+     "default": true
+    },
+    {
+     "variant": 9,
+     "name": "skin_skindark",
+     "label": "Dark",
+     "default": false
+    }
+   ]
+  }
+ ],
+ "clips": [
+  {
+   "name": "Carrying",
+   "index": 0,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Carrying_Start",
+   "index": 1,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Cooking",
+   "index": 2,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Damage",
+   "index": 3,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Eat",
+   "index": 4,
+   "duration": 4.0,
+   "frameRate": 30.0,
+   "frameCount": 121,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Encount",
+   "index": 5,
+   "duration": 1.6667,
+   "frameRate": 30.0,
+   "frameCount": 51,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "FarSkill_Action",
+   "index": 6,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_ActionLoop",
+   "index": 7,
+   "duration": 0.6333,
+   "frameRate": 30.0,
+   "frameCount": 20,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_End",
+   "index": 8,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Start",
+   "index": 9,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_StartLoop",
+   "index": 10,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FlareStorm_End",
+   "index": 11,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "FlareStorm_Loop",
+   "index": 12,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "FlareStorm_Start",
+   "index": 13,
+   "duration": 3.6667,
+   "frameRate": 30.0,
+   "frameCount": 111,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "FlyingDown",
+   "index": 14,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "GetUp_FrontDown",
+   "index": 15,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Idle",
+   "index": 17,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "Idle_Riding",
+   "index": 18,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Petting",
+   "index": 19,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Rest01",
+   "index": 20,
+   "duration": 4.0,
+   "frameRate": 30.0,
+   "frameCount": 121,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Rest02",
+   "index": 21,
+   "duration": 6.0,
+   "frameRate": 30.0,
+   "frameCount": 181,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Run",
+   "index": 22,
+   "duration": 0.7333,
+   "frameRate": 30.0,
+   "frameCount": 23,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Run_Riding",
+   "index": 23,
+   "duration": 0.7333,
+   "frameRate": 30.0,
+   "frameCount": 23,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepEnd",
+   "index": 24,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "SleepLoop",
+   "index": 25,
+   "duration": 4.0,
+   "frameRate": 30.0,
+   "frameCount": 121,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "SleepStart",
+   "index": 26,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Transport",
+   "index": 27,
+   "duration": 1.1667,
+   "frameRate": 30.0,
+   "frameCount": 36,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Walk",
+   "index": 28,
+   "duration": 1.1667,
+   "frameRate": 30.0,
+   "frameCount": 36,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Walk_Riding",
+   "index": 29,
+   "duration": 1.1667,
+   "frameRate": 30.0,
+   "frameCount": 36,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "02_Horus",
+   "index": 30,
+   "duration": 12.1667,
+   "frameRate": 60.0,
+   "frameCount": 731,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "03_Horus",
+   "index": 31,
+   "duration": 11.6667,
+   "frameRate": 60.0,
+   "frameCount": 701,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  }
+ ],
+ "defaultClip": "Idle",
+ "parts": [
+  {
+   "node": "Eye",
+   "label": "Eye",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Brow_1",
+   "label": "Brow 1",
+   "lod": 0,
+   "visible": true,
+   "group": "brow",
+   "option": "brow_1"
+  },
+  {
+   "node": "Eyelash_1",
+   "label": "Eyelash 1",
+   "lod": 0,
+   "visible": true,
+   "group": "brow",
+   "option": "brow_1"
+  },
+  {
+   "node": "Brow_2",
+   "label": "Brow 2",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_2"
+  },
+  {
+   "node": "Eyelash_2",
+   "label": "Eyelash 2",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_2"
+  },
+  {
+   "node": "Eyelash_3",
+   "label": "Eyelash 3",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_3"
+  },
+  {
+   "node": "Eyelash_4",
+   "label": "Eyelash 4",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_4"
+  },
+  {
+   "node": "Eyelash_5",
+   "label": "Eyelash 5",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_5"
+  },
+  {
+   "node": "Eyelash_6",
+   "label": "Eyelash 6",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_6"
+  },
+  {
+   "node": "Eyelash_7",
+   "label": "Eyelash 7",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_7"
+  },
+  {
+   "node": "Brow_8",
+   "label": "Brow 8",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_8"
+  },
+  {
+   "node": "Eyelash_8",
+   "label": "Eyelash 8",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_8"
+  },
+  {
+   "node": "Body",
+   "label": "Body",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "partGroups": [
+  {
+   "name": "brow",
+   "label": "Brows & lashes",
+   "options": [
+    {
+     "id": "brow_1",
+     "label": "1",
+     "default": true,
+     "variant": "eye_1",
+     "nodes": [
+      "Brow_1",
+      "Eyelash_1"
+     ]
+    },
+    {
+     "id": "brow_2",
+     "label": "2",
+     "default": false,
+     "variant": "eye_2",
+     "nodes": [
+      "Brow_2",
+      "Eyelash_2"
+     ]
+    },
+    {
+     "id": "brow_3",
+     "label": "3",
+     "default": false,
+     "variant": "eye_3",
+     "nodes": [
+      "Eyelash_3"
+     ]
+    },
+    {
+     "id": "brow_4",
+     "label": "4",
+     "default": false,
+     "variant": "eye_4",
+     "nodes": [
+      "Eyelash_4"
+     ]
+    },
+    {
+     "id": "brow_5",
+     "label": "5",
+     "default": false,
+     "variant": "eye_5",
+     "nodes": [
+      "Eyelash_5"
+     ]
+    },
+    {
+     "id": "brow_6",
+     "label": "6",
+     "default": false,
+     "variant": "eye_6",
+     "nodes": [
+      "Eyelash_6"
+     ]
+    },
+    {
+     "id": "brow_7",
+     "label": "7",
+     "default": false,
+     "variant": "eye_7",
+     "nodes": [
+      "Eyelash_7"
+     ]
+    },
+    {
+     "id": "brow_8",
+     "label": "8",
+     "default": false,
+     "variant": "eye_8",
+     "nodes": [
+      "Brow_8",
+      "Eyelash_8"
+     ]
+    }
+   ]
+  }
+ ],
+ "stats": {
+  "joints": 86,
+  "meshes": 13,
+  "triangles": 11306,
+  "textures": 9,
+  "clips": 31,
+  "droppedTracks": 0,
+  "glbBytes": 20334704
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld\\Horus"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/Horus/SK_Horus_Skeleton",
+  "dex": 188,
+  "elements": [
+   "Fire"
+  ],
+  "rarity": 9,
+  "codeName": "Horus",
+  "bossRide": {
+   "boss": "Boss_DesertBoss001",
+   "bone": "BossRideMarker",
+   "position": [
+    0.11186,
+    0.12473,
+    -0.59771
+   ],
+   "rotation": [
+    0.0,
+    -0.087156,
+    0.0,
+    -0.996195
+   ],
+   "palScale": 1.45,
+   "rotationSpace": "model",
+   "pairs": [
+    {
+     "boss": "DesertBoss_Idle_DesertBoss",
+     "pal": [
+      {
+       "clip": "Idle"
+      }
+     ]
+    },
+    {
+     "boss": "DesertBoss_CommonWaza_DesertBoss",
+     "pal": [
+      {
+       "clip": "FarSkill_Start",
+       "to": 0.8333
+      },
+      {
+       "clip": "FarSkill_StartLoop",
+       "loop": true,
+       "to": 0.8
+      },
+      {
+       "clip": "FarSkill_Action",
+       "to": 0.3333
+      },
+      {
+       "clip": "FarSkill_ActionLoop",
+       "loop": true,
+       "to": 0.6333
+      },
+      {
+       "clip": "FarSkill_End",
+       "to": 0.83
+      }
+     ]
+    },
+    {
+     "boss": "DesertBoss_UniqueWazaIn_DesertBoss",
+     "pal": [
+      {
+       "clip": "FlareStorm_Start"
+      }
+     ]
+    },
+    {
+     "boss": "DesertBoss_UniqueWazaLoop_DesertBoss",
+     "pal": [
+      {
+       "clip": "FlareStorm_Loop",
+       "loop": true
+      }
+     ]
+    },
+    {
+     "boss": "DesertBoss_UniqueWazaEnd_DesertBoss",
+     "pal": [
+      {
+       "clip": "FlareStorm_End"
+      }
+     ]
+    }
+   ]
+  },
+  "species": "Horus",
+  "form": ""
+ }
+}

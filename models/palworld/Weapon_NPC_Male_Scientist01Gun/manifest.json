@@ -1,0 +1,43 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_NPC_Male_Scientist01Gun",
+ "kind": "object",
+ "displayName": "Scientist Gun (NPC follower)",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_Scientist01Gun",
+   "label": "Weapon Scientist01Gun",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 2,
+  "meshes": 1,
+  "triangles": 4000,
+  "textures": 4,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 803040
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\NPC_Male_Scientist01Gun"
+ ],
+ "extras": {
+  "users": {
+   "npc": [
+    "LaserRifle_NPC_Otomo"
+   ]
+  },
+  "species": "Weapon",
+  "form": "NPC_Male_Scientist01Gun"
+ }
+}

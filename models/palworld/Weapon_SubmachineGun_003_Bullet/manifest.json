@@ -1,0 +1,38 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_SubmachineGun_003_Bullet",
+ "kind": "object",
+ "displayName": "Combat SMG – Bullet",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_SubmachineGun_003_Bullet",
+   "label": "Weapon SubmachineGun 003 Bullet",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 100000,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 9638684
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\SubmachineGun_003_Bullet"
+ ],
+ "extras": {
+  "species": "Weapon",
+  "form": "SubmachineGun_003_Bullet"
+ }
+}

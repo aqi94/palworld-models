@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_QueenBee_spear_ForWeapon",
+ "kind": "object",
+ "displayName": "Elizabee's Staff",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Spear",
+   "label": "Spear",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 804,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 2365960
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\QueenBee_spear_ForWeapon"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Elizabee's Staff",
+    "class": "Spear_QueenBee"
+   }
+  ],
+  "species": "Weapon",
+  "form": "QueenBee_spear_ForWeapon"
+ }
+}

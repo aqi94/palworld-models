@@ -1,0 +1,43 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_SoldierBee_spear",
+ "kind": "object",
+ "displayName": "Beegarde's Soldier Bee Spear",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Spear",
+   "label": "Spear",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 324,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 2129720
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\SoldierBee_spear"
+ ],
+ "extras": {
+  "users": {
+   "pals": [
+    "SoldierBee"
+   ]
+  },
+  "species": "Weapon",
+  "form": "SoldierBee_spear"
+ }
+}

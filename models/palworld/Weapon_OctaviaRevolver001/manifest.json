@@ -1,0 +1,50 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_OctaviaRevolver001",
+ "kind": "object",
+ "displayName": "Marksman Revolver",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Body",
+   "label": "Body",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Monitor",
+   "label": "Monitor",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 3,
+  "meshes": 2,
+  "triangles": 6190,
+  "textures": 4,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 7844624
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\OctaviaRevolver001"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Marksman Revolver",
+    "class": "OctaviaRevolver"
+   }
+  ],
+  "species": "Weapon",
+  "form": "OctaviaRevolver001"
+ }
+}

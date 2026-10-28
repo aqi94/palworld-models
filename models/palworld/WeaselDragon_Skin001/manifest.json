@@ -1,0 +1,733 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "WeaselDragon_Skin001",
+ "kind": "pal",
+ "displayName": "Chillet (Skin 1)",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [
+  {
+   "name": "eye",
+   "label": "Eye",
+   "options": [
+    {
+     "variant": 0,
+     "name": "eye_1",
+     "label": "1",
+     "default": true
+    },
+    {
+     "variant": 1,
+     "name": "eye_2",
+     "label": "2",
+     "default": false
+    },
+    {
+     "variant": 2,
+     "name": "eye_3",
+     "label": "3",
+     "default": false
+    },
+    {
+     "variant": 3,
+     "name": "eye_4",
+     "label": "4",
+     "default": false
+    },
+    {
+     "variant": 4,
+     "name": "eye_5",
+     "label": "5",
+     "default": false
+    },
+    {
+     "variant": 5,
+     "name": "eye_6",
+     "label": "6",
+     "default": false
+    },
+    {
+     "variant": 6,
+     "name": "eye_7",
+     "label": "7",
+     "default": false
+    },
+    {
+     "variant": 7,
+     "name": "eye_8",
+     "label": "8",
+     "default": false
+    }
+   ]
+  },
+  {
+   "name": "mouth",
+   "label": "Mouth",
+   "options": [
+    {
+     "variant": 8,
+     "name": "mouth_1",
+     "label": "1",
+     "default": true
+    },
+    {
+     "variant": 9,
+     "name": "mouth_2",
+     "label": "2",
+     "default": false
+    },
+    {
+     "variant": 10,
+     "name": "mouth_3",
+     "label": "3",
+     "default": false
+    },
+    {
+     "variant": 11,
+     "name": "mouth_4",
+     "label": "4",
+     "default": false
+    }
+   ]
+  },
+  {
+   "name": "extra",
+   "label": "Extra",
+   "options": [
+    {
+     "variant": 12,
+     "name": "extra_1",
+     "label": "1",
+     "default": true
+    },
+    {
+     "variant": 13,
+     "name": "extra_2",
+     "label": "2",
+     "default": false
+    },
+    {
+     "variant": 14,
+     "name": "extra_3",
+     "label": "3",
+     "default": false
+    },
+    {
+     "variant": 15,
+     "name": "extra_4",
+     "label": "4",
+     "default": false
+    },
+    {
+     "variant": 16,
+     "name": "extra_5",
+     "label": "5",
+     "default": false
+    },
+    {
+     "variant": 17,
+     "name": "extra_6",
+     "label": "6",
+     "default": false
+    },
+    {
+     "variant": 18,
+     "name": "extra_7",
+     "label": "7",
+     "default": false
+    },
+    {
+     "variant": 19,
+     "name": "extra_8",
+     "label": "8",
+     "default": false
+    },
+    {
+     "variant": 20,
+     "name": "extra_9",
+     "label": "9",
+     "default": false
+    },
+    {
+     "variant": 21,
+     "name": "extra_10",
+     "label": "10",
+     "default": false
+    },
+    {
+     "variant": 22,
+     "name": "extra_11",
+     "label": "11",
+     "default": false
+    },
+    {
+     "variant": 23,
+     "name": "extra_12",
+     "label": "12",
+     "default": false
+    },
+    {
+     "variant": 24,
+     "name": "extra_13",
+     "label": "13",
+     "default": false
+    },
+    {
+     "variant": 25,
+     "name": "extra_14",
+     "label": "14",
+     "default": false
+    },
+    {
+     "variant": 26,
+     "name": "extra_15",
+     "label": "15",
+     "default": false
+    },
+    {
+     "variant": 27,
+     "name": "extra_16",
+     "label": "16",
+     "default": false
+    },
+    {
+     "variant": 28,
+     "name": "extra_17",
+     "label": "17",
+     "default": false
+    },
+    {
+     "variant": 29,
+     "name": "extra_18",
+     "label": "18",
+     "default": false
+    },
+    {
+     "variant": 30,
+     "name": "extra_19",
+     "label": "19",
+     "default": false
+    },
+    {
+     "variant": 31,
+     "name": "extra_20",
+     "label": "20",
+     "default": false
+    },
+    {
+     "variant": 32,
+     "name": "extra_21",
+     "label": "21",
+     "default": false
+    },
+    {
+     "variant": 33,
+     "name": "extra_22",
+     "label": "22",
+     "default": false
+    },
+    {
+     "variant": 34,
+     "name": "extra_23",
+     "label": "23",
+     "default": false
+    },
+    {
+     "variant": 35,
+     "name": "extra_24",
+     "label": "24",
+     "default": false
+    },
+    {
+     "variant": 36,
+     "name": "extra_25",
+     "label": "25",
+     "default": false
+    },
+    {
+     "variant": 37,
+     "name": "extra_26",
+     "label": "26",
+     "default": false
+    },
+    {
+     "variant": 38,
+     "name": "extra_27",
+     "label": "27",
+     "default": false
+    },
+    {
+     "variant": 39,
+     "name": "extra_28",
+     "label": "28",
+     "default": false
+    },
+    {
+     "variant": 40,
+     "name": "extra_29",
+     "label": "29",
+     "default": false
+    },
+    {
+     "variant": 41,
+     "name": "extra_30",
+     "label": "30",
+     "default": false
+    },
+    {
+     "variant": 42,
+     "name": "extra_31",
+     "label": "31",
+     "default": false
+    },
+    {
+     "variant": 43,
+     "name": "extra_32",
+     "label": "32",
+     "default": false
+    }
+   ]
+  }
+ ],
+ "clips": [
+  {
+   "name": "Carrying",
+   "index": 0,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Carrying_Start",
+   "index": 1,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Cooking",
+   "index": 2,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Damage",
+   "index": 3,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Eat",
+   "index": 4,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Encount",
+   "index": 5,
+   "duration": 1.6667,
+   "frameRate": 30.0,
+   "frameCount": 51,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "FarSkill_Action",
+   "index": 6,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_ActionLoop",
+   "index": 7,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_End",
+   "index": 8,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Start",
+   "index": 9,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_StartLoop",
+   "index": 10,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FlyingTackle",
+   "index": 11,
+   "duration": 5.0,
+   "frameRate": 30.0,
+   "frameCount": 151,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GetUp_FrontDown",
+   "index": 12,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Hit",
+   "index": 13,
+   "duration": 0.5,
+   "frameRate": 30.0,
+   "frameCount": 16,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Idle",
+   "index": 14,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "Idle_Swim",
+   "index": 15,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "JumpEnd",
+   "index": 16,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "JumpLoop",
+   "index": 17,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "JumpStart",
+   "index": 18,
+   "duration": 1.1,
+   "frameRate": 30.0,
+   "frameCount": 34,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Petting",
+   "index": 19,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Rest01",
+   "index": 20,
+   "duration": 2.8667,
+   "frameRate": 30.0,
+   "frameCount": 87,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Rest02",
+   "index": 21,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Rest03",
+   "index": 22,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Run",
+   "index": 23,
+   "duration": 0.4,
+   "frameRate": 30.0,
+   "frameCount": 13,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Run_Riding",
+   "index": 24,
+   "duration": 0.4,
+   "frameRate": 30.0,
+   "frameCount": 13,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Run_Swim",
+   "index": 25,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepEnd",
+   "index": 26,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "SleepLoop",
+   "index": 27,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "SleepLoopTogether",
+   "index": 28,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "SleepStart",
+   "index": 29,
+   "duration": 3.3333,
+   "frameRate": 30.0,
+   "frameCount": 101,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Spa_v01",
+   "index": 30,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Walk",
+   "index": 31,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Walk_Riding",
+   "index": 32,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "Idle",
+ "parts": [
+  {
+   "node": "Eye",
+   "label": "Eye",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Body",
+   "label": "Body",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Mouth",
+   "label": "Mouth",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Extra",
+   "label": "Extra",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Skin001",
+   "label": "Skin001",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 42,
+  "meshes": 5,
+  "triangles": 8458,
+  "textures": 8,
+  "clips": 33,
+  "droppedTracks": 0,
+  "glbBytes": 14738268
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld\\WeaselDragon_Skin001"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/WeaselDragon/SK_WeaselDragon_Skeleton",
+  "dex": 103,
+  "elements": [
+   "Ice",
+   "Dragon"
+  ],
+  "rarity": 4,
+  "codeName": "WeaselDragon_Skin001",
+  "skin": "Skin001",
+  "species": "WeaselDragon",
+  "form": "Skin001"
+ }
+}

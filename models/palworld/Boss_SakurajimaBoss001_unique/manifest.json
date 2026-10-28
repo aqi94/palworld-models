@@ -1,0 +1,96 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Boss_SakurajimaBoss001_unique",
+ "kind": "human",
+ "displayName": "Saya & Selyne (cutscene)",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "SakurajimaBossDemo_SakurajimaBoss",
+   "index": 0,
+   "duration": 31.3333,
+   "frameRate": 60.0,
+   "frameCount": 1881,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "NPC_SakurajimaBoss001_M00_Unique",
+   "label": "NPC SakurajimaBoss001 M00 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_SakurajimaBossHair001_Unique",
+   "label": "NPC SakurajimaBossHair001 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_SakurajimaBossBody001_Unique",
+   "label": "NPC SakurajimaBossBody001 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_SakurajimaBossBrow001_Unique",
+   "label": "NPC SakurajimaBossBrow001 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_SakurajimaBossHead001_Unique",
+   "label": "NPC SakurajimaBossHead001 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_SakurajimaBoss001_M02_Unique",
+   "label": "NPC SakurajimaBoss001 M02 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_SakurajimaBoss001_M01_Unique",
+   "label": "NPC SakurajimaBoss001 M01 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_SakurajimaBossEye001_Unique",
+   "label": "NPC SakurajimaBossEye001 Unique",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 241,
+  "meshes": 8,
+  "triangles": 50966,
+  "textures": 26,
+  "clips": 1,
+  "droppedTracks": 0,
+  "glbBytes": 54335084
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_humans\\Boss_SakurajimaBoss001_unique"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/NPC/Boss/SakurajimaBoss/Unique/SK_NPC_SakurajimaBoss001_Skeleton",
+  "codeName": "Boss_SakurajimaBoss001_unique",
+  "group": "Boss",
+  "mesh": "Pal/Content/Pal/Model/Character/NPC/Boss/SakurajimaBoss/Unique/SK_NPC_SakurajimaBoss001_unique",
+  "species": "Boss",
+  "form": "SakurajimaBoss001_unique"
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_PiercingShotgun",
+ "kind": "object",
+ "displayName": "Beam Scatter",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "PalProp_PiercingShotgun",
+   "label": "PalProp PiercingShotgun",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 11,
+  "meshes": 1,
+  "triangles": 9956,
+  "textures": 4,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 5917056
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\PiercingShotgun"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Beam Scatter",
+    "class": "WidePenetrateShotgun"
+   }
+  ],
+  "species": "Weapon",
+  "form": "PiercingShotgun"
+ }
+}

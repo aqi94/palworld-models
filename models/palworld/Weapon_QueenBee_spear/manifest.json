@@ -1,0 +1,43 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_QueenBee_spear",
+ "kind": "object",
+ "displayName": "Elizabee's Queen Bee Spear",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Spear",
+   "label": "Spear",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 804,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 2365952
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\QueenBee_spear"
+ ],
+ "extras": {
+  "users": {
+   "pals": [
+    "QueenBee"
+   ]
+  },
+  "species": "Weapon",
+  "form": "QueenBee_spear"
+ }
+}

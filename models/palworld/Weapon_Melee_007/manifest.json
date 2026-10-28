@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Melee_007",
+ "kind": "object",
+ "displayName": "Primitive Sword",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "longsword",
+   "label": "longsword",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 1924,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 13492372
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Melee_007"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Primitive Sword",
+    "class": "BronzeSword"
+   }
+  ],
+  "species": "Weapon",
+  "form": "Melee_007"
+ }
+}

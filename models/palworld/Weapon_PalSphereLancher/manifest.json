@@ -1,0 +1,52 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_PalSphereLancher",
+ "kind": "object",
+ "displayName": "Single-Shot Sphere Launcher",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "PalProp_PalSphereLancher",
+   "label": "PalProp PalSphereLancher",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 9920,
+  "textures": 4,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 15687452
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\PalSphereLancher"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Single-Shot Sphere Launcher",
+    "class": "SphereLauncher_Once"
+   },
+   {
+    "name": "Scatter Sphere Launcher",
+    "class": "SphereLauncher"
+   },
+   {
+    "name": "Homing Sphere Launcher",
+    "class": "HomingSphereLauncher"
+   }
+  ],
+  "species": "Weapon",
+  "form": "PalSphereLancher"
+ }
+}

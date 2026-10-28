@@ -1,0 +1,38 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_MultiMissile_2",
+ "kind": "object",
+ "displayName": "Multi Missile 2",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Mat_MissileLauncherTurret",
+   "label": "Mat MissileLauncherTurret",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 2368,
+  "textures": 4,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 10127744
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\MultiMissile_2"
+ ],
+ "extras": {
+  "species": "Weapon",
+  "form": "MultiMissile_2"
+ }
+}

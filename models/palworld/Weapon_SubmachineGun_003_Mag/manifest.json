@@ -1,0 +1,38 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_SubmachineGun_003_Mag",
+ "kind": "object",
+ "displayName": "Combat SMG – Magazine",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_SubmachineGun_003_Magazine_Opaque",
+   "label": "Weapon SubmachineGun 003 Magazine Opaque",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 12180,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 4932084
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\SubmachineGun_003_Mag"
+ ],
+ "extras": {
+  "species": "Weapon",
+  "form": "SubmachineGun_003_Mag"
+ }
+}

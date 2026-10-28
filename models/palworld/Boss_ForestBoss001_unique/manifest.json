@@ -1,0 +1,129 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Boss_ForestBoss001_unique",
+ "kind": "human",
+ "displayName": "Lily & Lyleen (cutscene)",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "ForestBossStartDemo_01_ForestBoss",
+   "index": 0,
+   "duration": 5.9167,
+   "frameRate": 60.0,
+   "frameCount": 356,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "ForestBossStartDemo_02_ForestBoss",
+   "index": 1,
+   "duration": 12.1333,
+   "frameRate": 60.0,
+   "frameCount": 729,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "ForestBossStartDemo_03_ForestBoss",
+   "index": 2,
+   "duration": 3.5167,
+   "frameRate": 60.0,
+   "frameCount": 212,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "ForestBossStartDemo_04__ver02_ForestBoss",
+   "index": 3,
+   "duration": 9.5,
+   "frameRate": 60.0,
+   "frameCount": 571,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "NPC_ForestBossBody001_Unique",
+   "label": "NPC ForestBossBody001 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_ForestBossHead001_Unique",
+   "label": "NPC ForestBossHead001 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_Outfit_ForestBoss001_M02_Inst",
+   "label": "NPC Outfit ForestBoss001 M02 Inst",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_Outfit_ForestBoss001_M00_Unique",
+   "label": "NPC Outfit ForestBoss001 M00 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_Outfit_ForestBoss001_M01_Unique",
+   "label": "NPC Outfit ForestBoss001 M01 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_ForestBossHair001_Unique",
+   "label": "NPC ForestBossHair001 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_ForestBossEye001_Unique",
+   "label": "NPC ForestBossEye001 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_ForestBossBrow001_Unique",
+   "label": "NPC ForestBossBrow001 Unique",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 110,
+  "meshes": 8,
+  "triangles": 53980,
+  "textures": 22,
+  "clips": 4,
+  "droppedTracks": 0,
+  "glbBytes": 53417936
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_humans\\Boss_ForestBoss001_unique"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/NPC/Boss/ForestBoss/SK_NPC_ForestBoss001_Skeleton",
+  "codeName": "Boss_ForestBoss001_unique",
+  "group": "Boss",
+  "mesh": "Pal/Content/Pal/Model/Character/NPC/Boss/ForestBoss/SK_NPC_ForestBoss001_unique",
+  "species": "Boss",
+  "form": "ForestBoss001_unique"
+ }
+}

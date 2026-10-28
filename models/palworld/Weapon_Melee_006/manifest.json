@@ -1,0 +1,53 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Melee_006",
+ "kind": "object",
+ "displayName": "Beam Sword",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_Melee_005",
+   "label": "Weapon Melee 005",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 273861,
+  "textures": 0,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 13199396
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Melee_006"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Beam Sword",
+    "class": "BeamSword"
+   },
+   {
+    "name": "Laser Sword",
+    "class": "SkyBeamSword"
+   }
+  ],
+  "users": {
+   "npc": [
+    "BeamSword_NPC"
+   ]
+  },
+  "species": "Weapon",
+  "form": "Melee_006"
+ }
+}

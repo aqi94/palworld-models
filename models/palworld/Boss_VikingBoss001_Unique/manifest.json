@@ -1,0 +1,84 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Boss_VikingBoss001_Unique",
+ "kind": "human",
+ "displayName": "Bjorn & Bastigor (cutscene)",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "VikingBossStartDemo_VikingBoss",
+   "index": 0,
+   "duration": 25.3333,
+   "frameRate": 60.0,
+   "frameCount": 1521,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "NPC_VikingBossBody001",
+   "label": "NPC VikingBossBody001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_VikingBossHead001",
+   "label": "NPC VikingBossHead001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_VikingBoss001Eye",
+   "label": "NPC VikingBoss001Eye",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_VIkingBossHair001",
+   "label": "NPC VIkingBossHair001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_VikingBoss001_M01",
+   "label": "NPC VikingBoss001 M01",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_VikingBoss001_M02",
+   "label": "NPC VikingBoss001 M02",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 126,
+  "meshes": 6,
+  "triangles": 54970,
+  "textures": 16,
+  "clips": 1,
+  "droppedTracks": 0,
+  "glbBytes": 59078360
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_humans\\Boss_VikingBoss001_Unique"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/NPC/Boss/VikingBoss/Unique/SK_NPC_VikingBoss001_Skeleton",
+  "codeName": "Boss_VikingBoss001_Unique",
+  "group": "Boss",
+  "mesh": "Pal/Content/Pal/Model/Character/NPC/Boss/VikingBoss/Unique/SK_NPC_VikingBoss001_Unique",
+  "species": "Boss",
+  "form": "VikingBoss001_Unique"
+ }
+}

@@ -1,0 +1,62 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Modern_Weapons_Grenade_01",
+ "kind": "object",
+ "displayName": "Frag Grenade",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "01",
+   "label": "01",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 1648,
+  "textures": 1,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 730620
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Modern_Weapons_Grenade_01"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Frag Grenade",
+    "class": "FragGrenade"
+   },
+   {
+    "name": "Shock Grenade",
+    "class": "FragGrenade_Elec"
+   },
+   {
+    "name": "Incendiary Grenade",
+    "class": "FragGrenade_Fire"
+   },
+   {
+    "name": "Frag Grenade Mk2",
+    "class": "FragGrenade_Super"
+   }
+  ],
+  "users": {
+   "npc": [
+    "ThrowWeapon_FragGrenade_NPC",
+    "ThrowWeapon_FragGrenade_NPC_Otomo"
+   ]
+  },
+  "species": "Weapon",
+  "form": "Modern_Weapons_Grenade_01"
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_SubmachineGun_001",
+ "kind": "object",
+ "displayName": "Makeshift SMG",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_SubmachineGun_001",
+   "label": "Weapon SubmachineGun 001",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 4,
+  "meshes": 1,
+  "triangles": 7664,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 8452580
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\SubmachineGun_001"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Makeshift SMG",
+    "class": "MakeshiftSubmachineGun"
+   }
+  ],
+  "species": "Weapon",
+  "form": "SubmachineGun_001"
+ }
+}

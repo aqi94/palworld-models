@@ -1,0 +1,50 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_ClubWood",
+ "kind": "object",
+ "displayName": "Wooden Club",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "PalProp_ClubWood",
+   "label": "PalProp ClubWood",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 2334,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 10258744
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\ClubWood"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Wooden Club",
+    "class": "Bat"
+   }
+  ],
+  "users": {
+   "npc": [
+    "Bat_NPC",
+    "Bat_NPC_Otomo"
+   ]
+  },
+  "species": "Weapon",
+  "form": "ClubWood"
+ }
+}

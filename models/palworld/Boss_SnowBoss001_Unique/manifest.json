@@ -1,0 +1,90 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Boss_SnowBoss001_Unique",
+ "kind": "human",
+ "displayName": "Victor & Shadowbeak (cutscene)",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "SnowBossStartDemo_SnowBoss",
+   "index": 0,
+   "duration": 35.0,
+   "frameRate": 60.0,
+   "frameCount": 2101,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "NPC_Outfit_SnowBoss001_M01_Unique",
+   "label": "NPC Outfit SnowBoss001 M01 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_SnowBossHair001_Unique",
+   "label": "NPC SnowBossHair001 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_SnowBossHead001_Unique",
+   "label": "NPC SnowBossHead001 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_SnowBossBrow001_Unique",
+   "label": "NPC SnowBossBrow001 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_SnowBossEye001_Unique",
+   "label": "NPC SnowBossEye001 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_Outfit_SnowBoss001_M00_Unique",
+   "label": "NPC Outfit SnowBoss001 M00 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_Outfit_SnowBoss001_M02_Unique",
+   "label": "NPC Outfit SnowBoss001 M02 Unique",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 133,
+  "meshes": 7,
+  "triangles": 33996,
+  "textures": 19,
+  "clips": 1,
+  "droppedTracks": 0,
+  "glbBytes": 51982548
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_humans\\Boss_SnowBoss001_Unique"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/NPC/Boss/SnowBoss/SK_NPC_SnowBoss001_Skeleton",
+  "codeName": "Boss_SnowBoss001_Unique",
+  "group": "Boss",
+  "mesh": "Pal/Content/Pal/Model/Character/NPC/Boss/SnowBoss/SK_NPC_SnowBoss001_Unique",
+  "species": "Boss",
+  "form": "SnowBoss001_Unique"
+ }
+}

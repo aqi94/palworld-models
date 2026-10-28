@@ -1,0 +1,124 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Boss_DesertBoss001_Unique",
+ "kind": "human",
+ "displayName": "Desert Boss 001 Unique (Boss)",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "DesertBossStartDemo_01_DesertBoss",
+   "index": 0,
+   "duration": 18.1333,
+   "frameRate": 60.0,
+   "frameCount": 1089,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "DesertBossStartDemo_02_DesertBoss",
+   "index": 1,
+   "duration": 12.1667,
+   "frameRate": 60.0,
+   "frameCount": 731,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "DesertBossStartDemo_03_DesertBoss",
+   "index": 2,
+   "duration": 11.6667,
+   "frameRate": 60.0,
+   "frameCount": 701,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "NPC_DesertBoss_Body_Unique",
+   "label": "NPC DesertBoss Body Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_DesertBossHead001_Unique",
+   "label": "NPC DesertBossHead001 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_DesertBrow001_Unique",
+   "label": "NPC DesertBrow001 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_DesertBossEye001_Unique",
+   "label": "NPC DesertBossEye001 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_DesertBossHair001_Unique",
+   "label": "NPC DesertBossHair001 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_Outfit_DesertBoss001_M00_Unique",
+   "label": "NPC Outfit DesertBoss001 M00 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_Outfit_DesertBoss001_M01_Unique",
+   "label": "NPC Outfit DesertBoss001 M01 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_Outfit_DesertBoss001_M02_Unique",
+   "label": "NPC Outfit DesertBoss001 M02 Unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_Outfit_DesertBoss001_M03_Unique",
+   "label": "NPC Outfit DesertBoss001 M03 Unique",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 118,
+  "meshes": 9,
+  "triangles": 59236,
+  "textures": 25,
+  "clips": 3,
+  "droppedTracks": 0,
+  "glbBytes": 65080352
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_humans\\Boss_DesertBoss001_Unique"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/NPC/Boss/DesertBoss/SK_NPC_DesertBoss001_Skeleton",
+  "codeName": "Boss_DesertBoss001_Unique",
+  "group": "Boss",
+  "mesh": "Pal/Content/Pal/Model/Character/NPC/Boss/DesertBoss/SK_NPC_DesertBoss001_Unique",
+  "species": "Boss",
+  "form": "DesertBoss001_Unique"
+ }
+}
