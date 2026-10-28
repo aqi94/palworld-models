@@ -52,6 +52,11 @@ def main():
 
     index = json.loads((OUT / GAME / 'index.json').read_text(encoding='utf-8'))
     ids = [m['id'] for m in index['models']]
+    # shared human animation packs (Pack_<SetId>) are not browsable, so not in the index; the humans load them by path
+    for d in sorted((OUT / GAME).iterdir()):
+        mp = d / 'manifest.json'
+        if d.name not in ids and mp.is_file() and (d / 'model.glb').is_file() and json.loads(mp.read_text(encoding='utf-8')).get('kind') == 'animpack':
+            ids.append(d.name)
 
     # 1. stage small model files
     rmtree(SITE)
