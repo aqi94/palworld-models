@@ -22,8 +22,9 @@ import { COAT_ENV_INTENSITY, installCoatReflection, installEyeHighlight, setEyeH
 import type { SurfaceAnchor } from './refImage';
 import { DEFAULT_OUTLINE, makeAura, makeOutlineMesh, pulseAura, updateOutlineUniform, type Aura, type OutlineState } from './outline';
 import { installFresnel } from './fresnel';
-import { hasEffect, installEffect, setEffectTextures, updateEffect } from './effects';
+import { hasEffect, installEffect, setEffectLoop, setEffectTextures, updateEffect } from './effects';
 import { SpritePass, encodeSpriteGif, type SpriteFrame } from './spriteStyle';
+import { buildStl, DEFAULT_STL, type StlOptions } from './stl';
 
 export type ShadingMode = 'game' | 'pbr';
 export type CameraPreset = 'fit' | 'vs' | 'front' | 'side' | 'back' | 'top' | 'idle' | 'battle' | 'battleBack';
@@ -31,6 +32,15 @@ export type CameraPreset = 'fit' | 'vs' | 'front' | 'side' | 'back' | 'top' | 'i
  *  or a lens solve leaves a narrow FOV behind, which used to make the next preset's fit distance exceed maxDistance). */
 // FITTED: DEFAULT_FOV 35 deg chosen by eye (viewer default since the first version), 2026-10-19 (engine-rules debt)
 export const DEFAULT_FOV = 35;
+
+/** Camera as the Camera panel edits it: orbit around `target` plus world-space position (metres, degrees).
+ *  yaw 0 = camera in front of the model (+Z), +90 = on its +X side (mirrored with the model); pitch + = looking down. */
+export interface CameraOrbit {
+  yaw: number; pitch: number; distance: number; roll: number; fov: number;
+  target: [number, number, number]; position: [number, number, number];
+}
+/** Pitch stays off the poles, where OrbitControls' up vector degenerates. */
+export const MAX_PITCH = 89.9;
 // FITTED: battle camera = Pokemon Showdown sprites/ani (front) + ani-back, read off pikachu/charizard/garchomp/snorlax/eevee:
 // front yaw 20 deg toward the viewer's left, pitch 12 deg; back yaw 20 deg toward the right, pitch 22 deg; mild perspective
 // fov 20; subject fills ~90% of the frame (bounding-sphere fit * 0.9). 2026-10-19
@@ -64,6 +74,12 @@ export class ViewerScene {
   skeletonHelper?: THREE.SkeletonHelper;
   manifest?: Manifest;
   onFrame?: (s: PlaybackState) => void;
+  /** Throttled (~15 Hz) whenever the camera moves, for the Camera panel. */
+  onCameraChange?: (o: CameraOrbit) => void;
+  /** Camera roll (deg) the user set; re-applied after OrbitControls every frame (it rebuilds the orientation). */
+  private userRoll = 0;
+  private camKey = '';
+  private lastCamEmit = 0;
   /** Effective per-part visibility and the nodes currently driven by the playing clip. */
   onPartsState?: (visible: Record<string, boolean>, driven: string[]) => void;
   private userOverride = new Map<string, boolean>();
@@ -425,6 +441,7 @@ export class ViewerScene {
   /** Fit camera to visible meshes (LOD0), at `fov` (the default FOV unless an export asks for another). */
   recenter(fov = DEFAULT_FOV) {
     this.releaseLens();
+    if (!this.exporting) this.userRoll = 0;
     if (!this.gltf) return;
     this.camera.fov = fov;
     this.camera.updateProjectionMatrix();
@@ -1298,7 +1315,8 @@ export class ViewerScene {
   private defaultClipName?: string;
 
   /** Explicit camera pose (world metres), used by the lighting reference tools and the Reference panel. */
-  setCameraPose(fov: number, position: [number, number, number], target: [number, number, number]) {
+  setCameraPose(fov: number, position: [number, number, number], target: [number, number, number], roll = 0) {
+    this.userRoll = roll;
     const damp = this.controls.enableDamping;
     this.controls.enableDamping = false;
     this.camera.fov = fov;
@@ -1317,9 +1335,85 @@ export class ViewerScene {
     this.controls.enableDamping = damp;
   }
 
-  cameraPose(): { fov: number; position: [number, number, number]; target: [number, number, number] } {
+  cameraPose(): { fov: number; position: [number, number, number]; target: [number, number, number]; roll?: number } {
     const p = this.camera.position, t = this.controls.target;
-    return { fov: this.camera.fov, position: [p.x, p.y, p.z], target: [t.x, t.y, t.z] };
+    return { fov: this.camera.fov, position: [p.x, p.y, p.z], target: [t.x, t.y, t.z], ...(this.userRoll ? { roll: this.userRoll } : {}) };
+  }
+
+  /** Current camera as orbit angles around the target + world position (see CameraOrbit). */
+  cameraOrbit(): CameraOrbit {
+    const p = this.camera.position, t = this.controls.target;
+    const off = p.clone().sub(t);
+    const distance = off.length();
+    const mx = this.root.scale.x < 0 ? -1 : 1;
+    const deg = THREE.MathUtils.radToDeg;
+    const yaw = distance > 1e-9 ? deg(Math.atan2(off.x * mx, off.z)) : 0;
+    const pitch = distance > 1e-9 ? deg(Math.asin(THREE.MathUtils.clamp(off.y / distance, -1, 1))) : 0;
+    return { yaw, pitch, distance, roll: this.userRoll, fov: this.camera.fov, target: [t.x, t.y, t.z], position: [p.x, p.y, p.z] };
+  }
+
+  /**
+   * Sets the camera from typed values. A patch with `position` moves the camera there (target kept); otherwise
+   * yaw / pitch / distance place it on the orbit around the (possibly new) target. Releases a reference lens lock.
+   */
+  setCameraOrbit(patch: Partial<CameraOrbit>) {
+    this.releaseLens();
+    const o = { ...this.cameraOrbit(), ...patch };
+    let pos = o.position;
+    if (!patch.position) {
+      const rad = THREE.MathUtils.degToRad;
+      const mx = this.root.scale.x < 0 ? -1 : 1;
+      const pitch = rad(THREE.MathUtils.clamp(o.pitch, -MAX_PITCH, MAX_PITCH));
+      const yaw = rad(o.yaw);
+      const d = Math.max(1e-4, o.distance);
+      pos = [o.target[0] + d * Math.cos(pitch) * Math.sin(yaw) * mx, o.target[1] + d * Math.sin(pitch), o.target[2] + d * Math.cos(pitch) * Math.cos(yaw)];
+    }
+    const fov = THREE.MathUtils.clamp(o.fov, 0.5, 170);
+    this.setCameraPose(fov, pos, o.target, wrapDeg(o.roll));
+    this.emitCamera(true);
+  }
+
+  /** Turns yaw / pitch / roll by `deg`, first snapping to the nearest multiple of |deg| so repeated steps land on exact angles. */
+  rotateCamera(axis: 'yaw' | 'pitch' | 'roll', deg: number) {
+    const o = this.cameraOrbit();
+    const step = Math.abs(deg) || 45;
+    const snapped = Math.round(o[axis] / step) * step;
+    // already on a step: move a whole step; between steps: the first press only snaps in the pressed direction
+    let v = Math.abs(snapped - o[axis]) < 1e-3 ? snapped + deg : (deg > 0 ? Math.ceil(o[axis] / step) : Math.floor(o[axis] / step)) * step;
+    if (axis === 'pitch') v = THREE.MathUtils.clamp(v, -MAX_PITCH, MAX_PITCH);
+    else v = wrapDeg(v);
+    this.setCameraOrbit({ [axis]: v });
+  }
+
+  /** Centre of the visible model (the Fit target), for the Camera panel. */
+  modelCenter(): [number, number, number] { const c = this.lightFrame.center; return [c.x, c.y, c.z]; }
+
+  /** Slider spans for the Camera panel, from the model's size (never from the camera's own values, which would make a
+   *  slider's range grow while it is dragged): distance from close-up to 3x the Fit distance at the current FOV. */
+  // FITTED: 0.3 r .. 3x fit distance, target +-2 r chosen by eye on Lamball, 2026-10-30
+  cameraRanges(): { center: [number, number, number]; radius: number; dMin: number; dMax: number } {
+    const r = this.lightFrame.radius;
+    const dMax = this.fitDistance(r) * 3;
+    return { center: this.modelCenter(), radius: r, dMin: Math.min(r * 0.3, dMax / 10), dMax };
+  }
+
+  private applyRoll() {
+    if (!this.userRoll || this.lens) return;
+    this.camera.rotateZ(THREE.MathUtils.degToRad(-this.userRoll));
+    this.camera.updateMatrixWorld();
+  }
+
+  private emitCamera(force = false) {
+    if (!this.onCameraChange) return;
+    const now = performance.now();
+    if (!force && now - this.lastCamEmit < 66) return;
+    const p = this.camera.position, t = this.controls.target;
+    const r = (n: number) => Math.round(n * 1e5);
+    const key = [p.x, p.y, p.z, t.x, t.y, t.z, this.camera.fov, this.userRoll, this.root.scale.x].map(r).join(',');
+    if (key === this.camKey) return;
+    this.camKey = key;
+    this.lastCamEmit = now;
+    this.onCameraChange(this.cameraOrbit());
   }
 
   /** Meshes of the model in traversal order (the index is how a SurfaceAnchor finds its mesh again). */
@@ -1596,6 +1690,7 @@ export class ViewerScene {
 
   setCameraPreset(name: CameraPreset) {
     this.releaseLens();
+    this.userRoll = 0;
     if (name === 'fit') { this.recenter(); return; }
     if (!this.gltf) { this.pendingPreset = name; return; }
     if (name === 'idle') { this.idleShot(); return; }
@@ -1779,6 +1874,7 @@ export class ViewerScene {
         a.setPaused(saved.paused);
       }
       ctl.update();
+      this.applyRoll();
     }
   }
 
@@ -1827,6 +1923,8 @@ export class ViewerScene {
     this.controls.update();
     this.applyLens();
     this.applyPivot();
+    this.applyRoll();
+    this.emitCamera();
     if (this.spriteLive()) this.renderSpriteLive();
     else this.renderer.render(this.scene, this.camera);
     const now = performance.now();
@@ -1903,6 +2001,27 @@ export class ViewerScene {
     this.renderer.getDrawingBufferSize(this.spriteBuf);
     this.renderSprite(Math.ceil(this.spriteBuf.x / px), Math.ceil(this.spriteBuf.y / px), this.outline.color);
     this.sprite().blit(this.renderer, this.scene.background ? this.bgColor : null);
+  }
+
+  /**
+   * GIF export: the live loop (which moves the rider and mount) is stopped, so pose them here at clip time `t`: a paired clip follows the main
+   * clip through syncRiderClip / syncMount, a free clip is seeked to t (wrapped to its own length).
+   */
+  private poseCompanionsAt(t: number) {
+    const seek = (c: AnimationController) => { const d = c.clipTiming()?.duration; if (d) c.seekTime(t % d); };
+    if (this.rider) {
+      const r = this.rider;
+      this.holdRiderRotation(); this.syncRiderClip();
+      if (!r.pairKey) seek(r.anim);
+      ViewerScene.showOwnHeld(r.items, r.anim.current);
+    }
+    if (this.mount) {
+      const m = this.mount;
+      this.syncMount();
+      if (!m.pairKey) seek(m.anim);
+      this.gltf!.scene.updateMatrixWorld(true); this.poseMount();
+      ViewerScene.showOwnHeld(m.items, m.anim.current);
+    }
   }
 
   /** Render target of the GIF export's normal (non-sprite) frames. */
@@ -1984,34 +2103,43 @@ export class ViewerScene {
     if (this.gifBusy) throw new Error('a GIF export is already running');
     this.gifBusy = true;
     const saved = a ? { clip: a.current, paused: a.paused, frame: a.state().frame } : null;
+    const gas0 = this.gasTime, holo0 = this.holoTime, aura0 = this.auraTime;
     try {
       this.controls.update();
       this.applyLens();
       this.applyPivot();
+      this.applyRoll();
       const timing = a?.clipTiming() ?? null;
-      const dur = timing?.duration ?? 0;
+      const clipDur = timing?.duration ?? 0;
+      // Nothing to pose but something moving (fire, hologram...): a `stillSeconds` loop instead of one frame.
+      const moving = this.fxMats.size > 0 || this.gasMats.size > 0 || !!this.hologram?.on || this.auras.length > 0;
+      const dur = clipDur > 0 ? clipDur : moving ? Math.max(0.1, o.stillSeconds) : 0;
+      const once = clipDur > 0 && !!timing?.once;
       // Loops skip the last frame (it equals the first); one-shots keep it.
-      const n = dur > 0 ? Math.max(1, timing!.once ? Math.floor(dur * o.fps + 1e-6) + 1 : Math.round(dur * o.fps)) : 1;
+      const n = dur > 0 ? Math.max(1, once ? Math.floor(dur * o.fps + 1e-6) + 1 : Math.round(dur * o.fps)) : 1;
+      // A looping GIF lasts n / fps: round the effect speeds to whole cycles of that so the loop has no jump.
+      if (!once && n > 1) for (const m of this.fxMats) setEffectLoop(m, n / o.fps);
       const setTime = (t: number) => a?.seekTime(t);
       if (a) a.setPaused(true);
       // Size: probe frame 0 at the canvas aspect, then scale so the subject is `height` px tall.
       this.renderer.getDrawingBufferSize(this.spriteBuf);
       const aspect = this.spriteBuf.x / Math.max(1, this.spriteBuf.y);
       const PH = 512;
-      setTime(0); this.prepareFrame(0);
+      const clocks = (t: number) => { this.gasTime = this.holoTime = this.auraTime = t; };
+      setTime(0); clocks(0); this.poseCompanionsAt(0); this.prepareFrame(0);
       const pb = rowBounds(this.renderGifFrame(Math.round(PH * aspect), PH));
       const subj = pb ? pb.y1 - pb.y0 + 1 : PH;
       const H = Math.max(8, Math.min(4096, Math.round(PH * o.height / Math.max(1, subj))));
       const W = Math.max(8, Math.min(4096, Math.round(H * aspect)));
       const frames: SpriteFrame[] = [];
-      const gas0 = this.gasTime, holo0 = this.holoTime;
       for (let i = 0; i < n; i++) {
-        setTime(i / o.fps);
-        this.prepareFrame(i === 0 ? 0 : 1 / o.fps);
+        // The clip is paused, so prepareFrame leaves the effect clocks alone: they are set here (from 0, repeatable).
+        setTime(i / o.fps); clocks(i / o.fps);
+        this.poseCompanionsAt(i / o.fps);
+        this.prepareFrame(0);
         frames.push(this.renderGifFrame(W, H));
         if (i % 4 === 3) { onProgress?.(i + 1, n); await new Promise((r) => setTimeout(r, 0)); }
       }
-      this.gasTime = gas0; this.holoTime = holo0;
       onProgress?.(n, n);
       return encodeSpriteGif(frames, { colors: o.colors, delayMs: o.delayMs });
     } finally {
@@ -2020,9 +2148,19 @@ export class ViewerScene {
         a.scrubToFrame(saved.frame);
         a.setPaused(saved.paused);
       }
+      for (const m of this.fxMats) setEffectLoop(m, null);
+      this.gasTime = gas0; this.holoTime = holo0; this.auraTime = aura0;
       this.prepareFrame(0);
       this.gifBusy = false;
     }
+  }
+
+  /** Binary STL of the current pose as the view shows it (model, held items, rider / mount), for 3D printing (stl.ts). */
+  stl(opts: Partial<StlOptions> = {}): { blob: Blob; triangles: number } {
+    this.prepareFrame(0); // visibility tracks / held-item gating for the current frame
+    const st = this.anim?.state();
+    const header = `${this.manifest?.id ?? 'model'} ${this.anim?.current ?? 'pose'} frame ${st ? Math.round(st.frame) : 0}`;
+    return buildStl(this.root, { ...DEFAULT_STL, ...opts }, header);
   }
 
   dispose() {
@@ -2082,8 +2220,10 @@ export interface GifExportOptions {
   delayMs: number;
   /** Palette size including transparency (Showdown: 16). */
   colors: number;
+  /** Loop length in seconds when there is no clip but something animates (fire, hologram). */
+  stillSeconds: number;
 }
-export const DEFAULT_GIF_EXPORT: GifExportOptions = { height: 96, fps: 30, delayMs: 30, colors: 16 };
+export const DEFAULT_GIF_EXPORT: GifExportOptions = { height: 96, fps: 30, delayMs: 30, colors: 16, stillSeconds: 2 };
 
 /** First and last rows with an opaque pixel. */
 function rowBounds(f: SpriteFrame) {
@@ -2164,4 +2304,10 @@ function disposeTree(root: THREE.Object3D) {
       mat.dispose();
     }
   });
+}
+
+/** Angle wrapped into (-180, 180]. */
+function wrapDeg(d: number): number {
+  const w = ((d % 360) + 360) % 360;
+  return w > 180 ? w - 360 : w;
 }

@@ -9,6 +9,7 @@ export interface PlaybackState {
   frameCount: number;
   paused: boolean;
   timeScale: number;
+  loop: boolean;
 }
 
 export const TIME_SCALES = [0.25, 0.5, 1, 2];
@@ -24,6 +25,8 @@ export class AnimationController {
   current: string | null = null;
   paused = false;
   timeScale = 1;
+  /** Whether clips repeat. Shared by every controller (main, rider, mount): the clips carry no loop flag we can trust. */
+  static loop = true;
 
   /** node name -> bind-pose position, captured before anything plays (pack clips are fitted to these) */
   private bind = new Map<string, THREE.Vector3>();
@@ -76,24 +79,36 @@ export class AnimationController {
   play(name: string) {
     const clip = this.clips.get(name);
     if (!clip) return;
-    const info = this.infos.get(name);
     const prev = this.action;
     const next = this.mixer.clipAction(clip);
     next.reset();
     next.enabled = true;
-    if (info?.loop === false) {
-      next.setLoop(THREE.LoopOnce, 1);
-      next.clampWhenFinished = true;
-    } else {
-      next.setLoop(THREE.LoopRepeat, Infinity);
-      next.clampWhenFinished = false;
-    }
+    this.applyLoop(next);
     if (prev && prev !== next) prev.stop();
     next.paused = this.paused;
     next.play();
     this.action = next;
     this.current = name;
     this.mixer.update(0);
+  }
+
+  private applyLoop(a: THREE.AnimationAction) {
+    if (AnimationController.loop) {
+      a.setLoop(THREE.LoopRepeat, Infinity);
+      a.clampWhenFinished = false;
+    } else {
+      a.setLoop(THREE.LoopOnce, 1);
+      a.clampWhenFinished = true;
+    }
+  }
+
+  setLoop(on: boolean) {
+    AnimationController.loop = on;
+    const a = this.action;
+    if (!a) return;
+    const done = a.loop === THREE.LoopOnce && a.time >= a.getClip().duration - 1e-4;
+    this.applyLoop(a);
+    if (on && done) { a.reset(); a.play(); }
   }
 
   update(dt: number) {
@@ -171,6 +186,6 @@ export class AnimationController {
     const time = a ? Math.min(dur, Math.max(0, a.time)) : 0;
     const fcount = info?.frameCount ?? 0;
     const frame = dur > 0 ? Math.round((time / dur) * Math.max(0, fcount - 1)) : 0;
-    return { clip: this.current, time, duration: dur, frame, frameCount: fcount, paused: this.paused, timeScale: this.timeScale };
+    return { clip: this.current, time, duration: dur, frame, frameCount: fcount, paused: this.paused, timeScale: this.timeScale, loop: AnimationController.loop };
   }
 }

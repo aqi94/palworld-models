@@ -24,13 +24,14 @@ import { loadExcludes, storeExcludes, type RefBox } from '../scene/refImage';
 import type { SolveSummary } from '../ui/RefImageSection';
 import { loadLastEnv, storeLastEnv } from '../scene/userPresets';
 import { ViewerScene } from '../scene/ViewerScene';
-import { TIME_SCALES, type PackRetarget, type PlaybackState } from '../scene/animation';
+import { AnimationController, TIME_SCALES, type PackRetarget, type PlaybackState } from '../scene/animation';
 import { exportGlb } from '../scene/exporter';
 import { DEFAULT_EXPORT, loadExportOptions, saveExportOptions, type ExportOptions } from '../scene/exportOptions';
 import { ExportPanel } from '../ui/ExportPanel';
 import { SPRITE_SILHOUETTE } from '../scene/spriteStyle';
-import { DEFAULT_GIF_EXPORT, type GifExportOptions } from '../scene/ViewerScene';
+import { DEFAULT_GIF_EXPORT, type CameraOrbit, type GifExportOptions } from '../scene/ViewerScene';
 import { download } from '../scene/exporter';
+import { DEFAULT_STL, type StlOptions } from '../scene/stl';
 import type { OutlineState } from '../scene/outline';
 
 /** Render-tab outline options -> ViewerScene state (the sprite style keeps its own silhouette colour). */
@@ -40,6 +41,11 @@ function outlineState(o: Options): OutlineState {
     style: sprite ? 'sprite' : 'hull', pixel: o.outlinePixel ?? 3 };
 }
 
+const STL_KEY = 'stlExport';
+function loadStlOptions(): StlOptions {
+  try { const raw = localStorage.getItem(STL_KEY); if (raw) return { ...DEFAULT_STL, ...JSON.parse(raw) }; } catch { /* storage unavailable */ }
+  return DEFAULT_STL;
+}
 const GIF_KEY = 'spriteGif';
 function loadGifOptions(): GifExportOptions {
   try { const raw = localStorage.getItem(GIF_KEY); if (raw) return { ...DEFAULT_GIF_EXPORT, ...JSON.parse(raw) }; } catch { /* storage unavailable */ }
@@ -68,7 +74,7 @@ import { OptionsBar } from '../ui/OptionsBar';
 import { SavedLooksSection } from '../ui/SavedLooksSection';
 import { deleteLook, loadLooks, saveLook, setDefaultLook, startupLook, useLooks, type Look } from '../scene/savedLooks';
 
-const EMPTY: PlaybackState = { clip: null, time: 0, duration: 0, frame: 0, frameCount: 0, paused: false, timeScale: 1 };
+const EMPTY: PlaybackState = { clip: null, time: 0, duration: 0, frame: 0, frameCount: 0, paused: false, timeScale: 1, loop: true };
 const DEFAULT_OPTIONS: Options = { shadows: false, skeleton: false, wireframe: false, outline: false, outlineWidth: 2, outlineColor: '#14121a', outlineTinted: false, outlineStyle: 'hull', outlinePixel: 3, outlineSpriteColor: SPRITE_SILHOUETTE, background: '#1b1d23', autoRotate: 0, mirror: false, albedo: 'baked', shading: 'pbr', env: loadLastEnv() };
 
 /** Everything the user changed on one model (same shape as a saved look), captured when the GPU context is lost and
@@ -88,6 +94,7 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
   const [error, setError] = useState<string | null>(null);
   const [progress, setProgress] = useState<number | null>(0);
   const [pb, setPb] = useState<PlaybackState>(EMPTY);
+  const [camOrbit, setCamOrbit] = useState<CameraOrbit | null>(null);
   const [partsDriven, setPartsDriven] = useState<string[]>([]);
   const [lockParts, setLockParts] = useState(false);
   const [partsVis, setPartsVis] = useState<Record<string, boolean>>({});
@@ -130,6 +137,11 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
   const [gifProgress, setGifProgress] = useState<string | null>(null);
   const patchGif = (patch: Partial<GifExportOptions>) => {
     setGifOpts((g) => { const next = { ...g, ...patch }; try { localStorage.setItem(GIF_KEY, JSON.stringify(next)); } catch { /* ignore */ } return next; });
+  };
+  const [stlOpts, setStlOpts] = useState<StlOptions>(loadStlOptions);
+  const [stlInfo, setStlInfo] = useState<string | null>(null);
+  const patchStl = (patch: Partial<StlOptions>) => {
+    setStlOpts((g) => { const next = { ...g, ...patch }; try { localStorage.setItem(STL_KEY, JSON.stringify(next)); } catch { /* ignore */ } return next; });
   };
   const [items, setItems] = useState<IndexModel[]>([]);
   const [heldItem, setHeldItem] = useState('');
@@ -562,7 +574,7 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
     if (look.lighting) patchOptions({ env: { ...DEFAULT_ENV, ...look.lighting } });
     const cam = look.camera;
     if (cam) {
-      vs.setCameraPose(cam.fov, cam.position, cam.target);
+      vs.setCameraPose(cam.fov, cam.position, cam.target, cam.roll ?? 0);
       const L = cam.lens;
       if (L) {
         // an image lock only makes sense over the same reference sample; otherwise keep the effective lens relative to the canvas
@@ -606,6 +618,7 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
     }
     sceneRef.current = vs;
     vs.onFrame = setPb;
+    vs.onCameraChange = setCamOrbit;
     vs.onPartsState = (v, d) => { setPartsVis(v); setPartsDriven(d); };
     // GPU context lost: three.js cannot rebuild a loaded scene in place, so snapshot the user's state, then
     // rebuild the scene on a fresh canvas (reloadKey) and re-apply it. After a loss we render at reduced
@@ -627,6 +640,11 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
     (window as any).__gif = (window as any).__sprite = async (opts: Partial<GifExportOptions> = {}) => {
       const b = await vs.animatedGif(opts);
       return await new Promise<string>((res) => { const r = new FileReader(); r.onload = () => res(r.result as string); r.readAsDataURL(b); });
+    };
+    // tools/*.mjs: STL of the current pose, as a data URL
+    (window as any).__stl = async (opts: Partial<StlOptions> = {}) => {
+      const { blob } = vs.stl(opts);
+      return await new Promise<string>((res) => { const r = new FileReader(); r.onload = () => res(r.result as string); r.readAsDataURL(blob); });
     };
     // tools: capture / apply a look without the UI (render scripts that want a saved look's state)
     (window as any).__looks = { capture: (name = '') => captureLook(vs, name), apply: (look: Look) => (vs.manifest ? applyLook(vs, vs.manifest, look, true) : Promise.resolve()) };
@@ -776,6 +794,10 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
     const a = sceneRef.current?.anim; if (!a) return;
     a.setPaused(!a.paused); setPb(a.state());
   }, []);
+  const toggleLoop = useCallback(() => {
+    const a = sceneRef.current?.anim; if (!a) return;
+    a.setLoop(!AnimationController.loop); setPb(a.state());
+  }, []);
   const cycleScale = useCallback(() => {
     const a = sceneRef.current?.anim; if (!a) return;
     a.setTimeScale(TIME_SCALES[(TIME_SCALES.indexOf(a.timeScale) + 1) % TIME_SCALES.length]); setPb(a.state());
@@ -809,17 +831,24 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
           return;
         }
       }
+      if (e.shiftKey && e.key.startsWith('Arrow') && !e.ctrlKey && !e.metaKey) {
+        // Shift+arrows: 45° camera steps (Shift+←/→ turn, Shift+↑/↓ tilt)
+        const r = { ArrowLeft: ['yaw', -45], ArrowRight: ['yaw', 45], ArrowUp: ['pitch', 45], ArrowDown: ['pitch', -45] } as const;
+        const hit = r[e.key as keyof typeof r];
+        if (hit) { sceneRef.current?.rotateCamera(hit[0], hit[1]); e.preventDefault(); return; }
+      }
       if (e.key === 'ArrowLeft') { step(-1); e.preventDefault(); }
       else if (e.key === 'ArrowRight') { step(1); e.preventDefault(); }
       else if (e.key === 'p' || e.key === 'P') togglePause();
       else if (e.key === 't' || e.key === 'T') cycleScale();
+      else if (e.key === 'l' || e.key === 'L') toggleLoop();
       else if (e.key === 'Tab') { setPanelsHidden((h) => !h); e.preventDefault(); }
       else if (e.key === 'f' || e.key === 'F') sceneRef.current?.setCameraPreset('fit');
       else if (e.key >= '1' && e.key <= '8') sceneRef.current?.setCameraPreset((['front', 'side', 'back', 'top', 'vs', 'idle', 'battle', 'battleBack'] as const)[Number(e.key) - 1]);
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [step, togglePause, cycleScale]);
+  }, [step, togglePause, cycleScale, toggleLoop]);
 
   const patchOptions = (patch: Partial<Options>) => {
     optionsRef.current = { ...optionsRef.current, ...patch };
@@ -997,7 +1026,14 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
   return (
     <div className={'viewer' + (panelsHidden ? ' no-panels' : '')} style={{ ['--sidebar-w' as string]: sidebarW + 'px' }}>
       <OptionsBar game={game} gameName={gameName} title={manifest?.displayName ?? id} options={options} onChange={patchOptions}
-        panelsHidden={panelsHidden} onTogglePanels={() => setPanelsHidden((h) => !h)} />
+        panelsHidden={panelsHidden} onTogglePanels={() => setPanelsHidden((h) => !h)}
+        camera={{
+          orbit: manifest ? camOrbit : null,
+          onChange: (p) => sceneRef.current?.setCameraOrbit(p),
+          onRotate: (axis, d) => sceneRef.current?.rotateCamera(axis, d),
+          onFit: () => sceneRef.current?.setCameraPreset('fit'),
+          ranges: () => sceneRef.current?.cameraRanges() ?? null,
+        }} />
       <div className="workspace">
         <Toolbox
           options={options}
@@ -1008,6 +1044,7 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
           onFullscreen={() => { stage.current?.requestFullscreen?.(); }}
           onPngOptions={(top) => setExportPanelTop((t) => (t === null ? top : null))}
           onGlb={() => manifest && void exportGlb(modelUrl.current, `${manifest.id}.glb`)}
+          onStl={(top) => setExportPanelTop((t) => (t === null ? top : null))}
           refImage={!!refImg}
           refVisible={refSet.visible}
           refTransforming={refXf}
@@ -1019,6 +1056,18 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
             onChange={patchExport} onClose={() => setExportPanelTop(null)}
             onExport={() => { if (manifest) sceneRef.current?.png(`${manifest.id}.png`, exportOpts ?? DEFAULT_EXPORT); }}
             gif={gifOpts} onGifChange={patchGif} gifProgress={gifProgress}
+            stl={stlOpts} onStlChange={patchStl} stlInfo={stlInfo}
+            onStl={() => {
+              const vs = sceneRef.current;
+              if (!vs || !manifest) return;
+              try {
+                const { blob, triangles } = vs.stl(stlOpts);
+                const clip = (vs.anim?.current ?? 'pose').replace(/[^\w.-]+/g, '_');
+                const frame = Math.round(vs.anim?.state().frame ?? 0);
+                download(blob, `${manifest.id}_${clip}_f${frame}.stl`);
+                setStlInfo(`${triangles.toLocaleString()} triangles`);
+              } catch (e) { console.error('[stl]', e); setStlInfo(String((e as Error).message ?? e)); }
+            }}
             onGif={() => {
               const vs = sceneRef.current;
               if (!vs || !manifest || gifProgress !== null) return;
@@ -1076,6 +1125,7 @@ export function Viewer({ game, id, onSelect }: { game: string; id: string; onSel
             onTogglePause={togglePause}
             onScrub={(f) => { sceneRef.current?.anim?.scrubToFrame(f); const s = sceneRef.current?.anim?.state(); if (s) setPb(s); }}
             onCycleScale={cycleScale}
+            onToggleLoop={toggleLoop}
           />
         </div>
         <div className="handle" onPointerDown={startDrag} role="separator" aria-orientation="vertical" />

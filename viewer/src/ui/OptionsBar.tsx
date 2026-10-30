@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { LightingPanel, type Options } from './OptionsSection';
 import { LightingSelect } from './LightingSelect';
+import { CameraPanel } from './CameraPanel';
+import type { CameraOrbit } from '../scene/ViewerScene';
 
 interface Props {
   game: string;
@@ -10,12 +12,33 @@ interface Props {
   onChange: (patch: Partial<Options>) => void;
   panelsHidden: boolean;
   onTogglePanels: () => void;
+  camera: {
+    orbit: CameraOrbit | null;
+    onChange: (patch: Partial<CameraOrbit>) => void;
+    onRotate: (axis: 'yaw' | 'pitch' | 'roll', deg: number) => void;
+    onFit: () => void;
+    ranges: () => { center: [number, number, number]; radius: number; dMin: number; dMax: number } | null;
+  };
 }
 
+type Pop = 'light' | 'camera' | null;
+const readPop = (): Pop => {
+  try {
+    if (localStorage.getItem('lightOpen') === '1') return 'light';
+    if (localStorage.getItem('camOpen') === '1') return 'camera';
+  } catch { /* ignore */ }
+  return null;
+};
+
 /** Photoshop-style options bar across the top: domain switcher, current model, and the settings tinkered with most (lighting, shading, albedo, background). */
-export function OptionsBar({ game, gameName, title, options, onChange, panelsHidden, onTogglePanels }: Props) {
-  const [lightOpen, setLightOpen] = useState(() => { try { return localStorage.getItem('lightOpen') === '1'; } catch { return false; } });
-  const toggleLight = () => setLightOpen((o) => { const n = !o; try { localStorage.setItem('lightOpen', n ? '1' : '0'); } catch { /* ignore */ } return n; });
+export function OptionsBar({ game, gameName, title, options, onChange, panelsHidden, onTogglePanels, camera }: Props) {
+  // one popover at a time (they share the spot under the bar)
+  const [pop, setPop] = useState<Pop>(readPop);
+  const toggle = (which: Exclude<Pop, null>) => setPop((cur) => {
+    const n = cur === which ? null : which;
+    try { localStorage.setItem('lightOpen', n === 'light' ? '1' : '0'); localStorage.setItem('camOpen', n === 'camera' ? '1' : '0'); } catch { /* ignore */ }
+    return n;
+  });
   return (
     <header className="optionsbar">
       <a className="btn small" href={import.meta.env.BASE_URL} title="All games">&#9664; Games</a>
@@ -23,8 +46,10 @@ export function OptionsBar({ game, gameName, title, options, onChange, panelsHid
       <strong className="ob-title">{title}</strong>
       <span className="spacer" />
       <div className="light-menu">
-        <button className={'btn small' + (lightOpen ? ' primary' : '')} onClick={toggleLight} title="Light settings" aria-expanded={lightOpen}>&#9728;</button>
-        {lightOpen && <div className="light-pop"><LightingPanel options={options} onChange={onChange} /></div>}
+        <button className={'btn small' + (pop === 'camera' ? ' primary' : '')} onClick={() => toggle('camera')} title="Camera settings" aria-expanded={pop === 'camera'}>&#127909;&#xFE0E;</button>
+        <button className={'btn small' + (pop === 'light' ? ' primary' : '')} onClick={() => toggle('light')} title="Light settings" aria-expanded={pop === 'light'}>&#9728;</button>
+        {pop === 'light' && <div className="light-pop"><LightingPanel options={options} onChange={onChange} /></div>}
+        {pop === 'camera' && <div className="light-pop cam-pop"><CameraPanel {...camera} /></div>}
       </div>
       <label className="ob-field">Lighting
         <LightingSelect env={options.env} onPick={(env) => onChange({ env })} />

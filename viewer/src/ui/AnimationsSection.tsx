@@ -45,7 +45,6 @@ export function AnimationsSection({ clips, state, onSelect, packs = [] }: Props)
       aria-selected={c.name === state.clip}
     >
       <span>{c.name}</span>
-      <span className="dim">{c.loop ? '↻' : ''}</span>
     </button>
   );
 

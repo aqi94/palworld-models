@@ -13,7 +13,7 @@ import * as THREE from 'three';
  * Fire and vfx2 mirror `fire_shade` / `vfx2_shade` / `filmic` in pipeline/importers/palworld/importer.py (keep them in step).
  * Like Unreal's translucency they blend HDR colour x alpha and tone-map afterwards, so a 200-bright colour at 30 % alpha still
  * glows: the fragment writes filmic(hdr * alpha) with premultiplied blending. All run on the shared effect clock (seconds of
- * unpaused playback, like the gas shells).
+ * unpaused playback, like the gas shells; the GIF export sets it per frame and rounds the speeds to loop, setEffectLoop).
  */
 interface TexRef { index: number }
 export interface FireParams {
@@ -43,6 +43,9 @@ interface FxState {
   uniforms: Record<string, { value: unknown }>;
   samplers: string[]; // uniform per texture index returned by installEffect
   ready: boolean;
+  /** Scroll-speed uniforms (setEffectLoop rounds them) with their game values. */
+  speeds: string[];
+  base?: Record<string, number | THREE.Vector2>;
 }
 
 const v3 = (c: number[] | undefined) => new THREE.Vector3(c?.[0] ?? 0, c?.[1] ?? 0, c?.[2] ?? 0);
@@ -125,8 +128,8 @@ function vfx2Layer(i: number, L: Vfx2Layer, warp: boolean) {
 	vec2 st = vec2( r.x * rc - r.y * rs, r.x * rs + r.y * rc ) + 0.5;` : `
 	vec2 st = vec2( ${cu}, ${cv} );`;
   return `float fxLayer${i}( vec2 uv, float d ) {
-	float uu = ( uv.x - 0.5 ) * ${f(L.tiling[0])} + 0.5 + uFxTime * ${f(L.scroll[0])}${warp ? ` + d * ${f(L.distort[0])}` : ''} + ${f(L.offset[0])};
-	float vv = ( uv.y - 0.5 ) * ${f(L.tiling[1])} + 0.5 + uFxTime * ${f(L.scroll[1])}${warp ? ` + d * ${f(L.distort[1])}` : ''} + ${f(L.offset[1])};${rot}
+	float uu = ( uv.x - 0.5 ) * ${f(L.tiling[0])} + 0.5 + uFxTime * uFxScroll${i}.x${warp ? ` + d * ${f(L.distort[0])}` : ''} + ${f(L.offset[0])};
+	float vv = ( uv.y - 0.5 ) * ${f(L.tiling[1])} + 0.5 + uFxTime * uFxScroll${i}.y${warp ? ` + d * ${f(L.distort[1])}` : ''} + ${f(L.offset[1])};${rot}
 	float t = texture2D( uFxTex${i}, st ).r;
 	return t * t;
 }`;
@@ -143,6 +146,7 @@ function patchVfx2(shader: Shader, u: FxState['uniforms'], p: Vfx2Params) {
   // the per-material constants are baked into the source (one program per material; few such materials exist)
   shader.fragmentShader = `uniform sampler2D uFxTex1, uFxTex2, uFxTexDist;
 uniform float uFxTime, uFxOn;
+uniform vec2 uFxScroll1, uFxScroll2, uFxDistScroll;
 uniform vec3 uFxC1, uFxC2;
 varying vec2 vFxUv;
 ${vfx2Layer(1, p.layer1, p.distort1 ?? true)}
@@ -150,7 +154,7 @@ ${vfx2Layer(2, p.layer2, true)}
 ` + shader.fragmentShader.replace('void main() {', FILMIC + '\nvoid main() {').replace(OF, `
 	if ( uFxOn > 0.5 ) {
 		vec2 uv = vFxUv;
-		vec2 du = ( uv - 0.5 ) * vec2( ${f(p.distTiling[0])}, ${f(p.distTiling[1])} ) + 0.5 + uFxTime * vec2( ${f(p.distScroll[0])}, ${f(p.distScroll[1])} )
+		vec2 du = ( uv - 0.5 ) * vec2( ${f(p.distTiling[0])}, ${f(p.distTiling[1])} ) + 0.5 + uFxTime * uFxDistScroll
 			+ vec2( ${f(p.distOffset[0])}, ${f(p.distOffset[1])} );
 		float d = 2.0 * ${f(p.distortion)} * ( texture2D( uFxTexDist, du ).r - 0.5 );
 		float a1 = fxLayer1( uv, d ), a2 = fxLayer2( uv, d );
@@ -206,7 +210,7 @@ export function installEffect(mat: THREE.MeshStandardMaterial): (number | undefi
   if ((!fire && !vfx2 && !dream && !rainbow) || mat.userData.__fx) return undefined;
   let st: FxState, tex: (number | undefined)[];
   if (fire) {
-    st = { kind: 'fire', ready: false, samplers: ['uFxMain', 'uFxNoise'], uniforms: {
+    st = { kind: 'fire', ready: false, samplers: ['uFxMain', 'uFxNoise'], speeds: ['uFxMainSpeed', 'uFxNoiseSpeed'], uniforms: {
       uFxMain: { value: null }, uFxNoise: { value: null }, uFxTime: { value: 0 }, uFxOn: { value: 0 },
       uFxMainTiling: { value: v2(fire.mainTiling, 1) }, uFxMainSpeed: { value: v2(fire.mainSpeed).multiplyScalar(fire.timeScale ?? 1) },
       uFxNoiseTiling: { value: v2(fire.noiseTiling, 1) }, uFxNoiseSpeed: { value: v2(fire.noiseSpeed).multiplyScalar(fire.timeScale ?? 1) },
@@ -220,16 +224,17 @@ export function installEffect(mat: THREE.MeshStandardMaterial): (number | undefi
     } };
     tex = [fire.mainTex?.index, fire.noiseTex?.index ?? fire.mainTex?.index];
   } else if (vfx2) {
-    st = { kind: 'vfx2', ready: false, samplers: ['uFxTex1', 'uFxTex2', 'uFxTexDist'], uniforms: {
+    st = { kind: 'vfx2', ready: false, samplers: ['uFxTex1', 'uFxTex2', 'uFxTexDist'], speeds: ['uFxScroll1', 'uFxScroll2', 'uFxDistScroll'], uniforms: {
       uFxTex1: { value: null }, uFxTex2: { value: null }, uFxTexDist: { value: null }, uFxTime: { value: 0 }, uFxOn: { value: 0 },
+      uFxScroll1: { value: v2(vfx2.layer1.scroll) }, uFxScroll2: { value: v2(vfx2.layer2.scroll) }, uFxDistScroll: { value: v2(vfx2.distScroll) },
       uFxC1: { value: v3(vfx2.color1) }, uFxC2: { value: v3(vfx2.color2) },
     } };
     tex = [vfx2.tex1?.index, vfx2.tex2?.index, vfx2.texDist?.index];
   } else if (rainbow) {
-    st = { kind: 'rainbow', ready: false, samplers: [], uniforms: { uFxTime: { value: 0 }, uFxOn: { value: 1 }, uFxRate: { value: rainbow.speed * RAINBOW_TURNS } } };
+    st = { kind: 'rainbow', ready: false, samplers: [], speeds: ['uFxRate'], uniforms: { uFxTime: { value: 0 }, uFxOn: { value: 1 }, uFxRate: { value: rainbow.speed * RAINBOW_TURNS } } };
     tex = [];
   } else {
-    st = { kind: 'dream', ready: false, samplers: ['uFxNoise'], uniforms: {
+    st = { kind: 'dream', ready: false, samplers: ['uFxNoise'], speeds: ['uFxNoiseSpeed'], uniforms: {
       uFxNoise: { value: null }, uFxTime: { value: 0 }, uFxOn: { value: 0 },
       uFxTiling: { value: dream!.noiseTiling ?? 1 }, uFxNoiseSpeed: { value: v2(dream!.noiseSpeed) },
     } };
@@ -278,6 +283,30 @@ export function setEffectTextures(mat: THREE.Material, textures: (THREE.Texture 
 export function updateEffect(mat: THREE.Material, t: number) {
   const st = mat.userData.__fx as FxState | undefined;
   if (st) st.uniforms.uFxTime.value = t;
+}
+
+/**
+ * GIF export: round every scroll speed s to round(s * period) / period so the effect completes whole cycles in `period`
+ * seconds and the GIF loops without a jump (a speed that would round to 0 cycles keeps its value). null restores the
+ * game values. Rotated vfx2 layers still do not loop exactly (the rotation mixes the two axes).
+ */
+export function setEffectLoop(mat: THREE.Material, period: number | null) {
+  const st = mat.userData.__fx as FxState | undefined;
+  if (!st) return;
+  if (period === null) {
+    if (st.base) for (const [k, v] of Object.entries(st.base)) st.uniforms[k].value = typeof v === 'number' ? v : v.clone();
+    st.base = undefined;
+    return;
+  }
+  const q = (s: number) => { const k = Math.round(s * period); return k === 0 ? s : k / period; };
+  st.base ??= Object.fromEntries(st.speeds.map((k) => {
+    const v = st.uniforms[k].value as number | THREE.Vector2;
+    return [k, typeof v === 'number' ? v : v.clone()];
+  }));
+  for (const k of st.speeds) {
+    const b = st.base[k];
+    st.uniforms[k].value = typeof b === 'number' ? q(b) : new THREE.Vector2(q(b.x), q(b.y));
+  }
 }
 
 export function hasEffect(mat: THREE.Material): boolean {

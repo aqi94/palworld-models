@@ -10,6 +10,8 @@ interface Props {
   onFullscreen: () => void;
   onPngOptions: (top: number) => void;
   onGlb: () => void;
+  /** Opens the Export panel (its STL column). */
+  onStl: (top: number) => void;
   disabled: boolean;
   refImage: boolean;
   refVisible: boolean;
@@ -23,7 +25,7 @@ const VIEWS: [CameraPreset, string, string][] = [
 ];
 
 /** Photoshop-style vertical toolbox: view presets, display toggles, export. */
-export function Toolbox({ options, onChange, onCamera, onRecenter, onFullscreen, onPngOptions, onGlb, disabled,
+export function Toolbox({ options, onChange, onCamera, onRecenter, onFullscreen, onPngOptions, onGlb, onStl, disabled,
   refImage, refVisible, refTransforming, onRefVisible, onRefTransform }: Props) {
   const tog = (key: 'skeleton' | 'wireframe' | 'shadows' | 'mirror', glyph: string, title: string) => (
     <button className={'tool-btn' + (options[key] ? ' on' : '')} title={title} aria-pressed={options[key]} onClick={() => onChange({ [key]: !options[key] })}>{glyph}</button>
@@ -47,6 +49,8 @@ export function Toolbox({ options, onChange, onCamera, onRecenter, onFullscreen,
       <button className="tool-btn txt" title="Export PNG (opens options)" disabled={disabled}
         onClick={(e) => onPngOptions(e.currentTarget.getBoundingClientRect().top)}>PNG</button>
       {!import.meta.env.VITE_GLB_BASE && <button className="tool-btn txt" title="Export GLB" onClick={onGlb} disabled={disabled}>GLB</button>}
+      <button className="tool-btn txt" title="Export STL for 3D printing (opens options)" disabled={disabled}
+        onClick={(e) => onStl(e.currentTarget.getBoundingClientRect().top)}>STL</button>
     </nav>
   );
 }

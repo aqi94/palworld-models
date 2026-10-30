@@ -113,6 +113,15 @@ cd viewer && npm run dev   (port 5180; 5173 is the Pokémon viewer)
 - Overlay layers sit ~1 mm above the surface (Astralym's star decals). The engine uses reverse-Z float depth; the viewer has
   24-bit depth, so `fitNearPlane` (ViewerScene, called from `scene.onBeforeRender`) pushes the near plane out to the model's
   padded bounding sphere on every render. Set the requested near through `setNear`, never by writing `camera.near`.
+- Camera panel (camera button beside ☀, `ui/CameraPanel.tsx`): yaw/pitch/roll/distance/FOV + target/position as typed floats, ±45° steps,
+  Snap 45°, Shift+arrows; `ViewerScene.cameraOrbit/setCameraOrbit/rotateCamera` (yaw 0 = model front +Z, +90 = +X, mirrored with the model).
+  Roll is re-applied after OrbitControls every frame (`applyRoll`, lens roll wins) and saved in looks (`camera.roll`); presets / Fit reset it.
+- Exports (`ui/ExportPanel.tsx`): PNG, GIF, STL. GIF (`ViewerScene.animatedGif`) pauses the clip and sets the effect / hologram / aura
+  clocks itself per frame (from 0). On loops it rounds effect scroll speeds to whole cycles of the GIF length (`setEffectLoop`, restored after).
+  With no clip but something animating it renders `stillSeconds`. Rider / mount are posed per frame (`poseCompanionsAt`: pairs follow the clip, free
+  clips are seeked to t mod their length; the live loop that moves them is stopped during export). STL (`scene/stl.ts`, `ViewerScene.stl`, `window.__stl`): the current pose of
+  everything visible under `root` (skinning + morphs via `getVertexPosition`), Z up mm, feet at z=0, `heightMm` (0 = real size); it skips outline/aura
+  hulls, hologram prepasses and (by default) fire/vfx2/gas shells. Shown on the hosted site too (GLB is local only).
 - Viewer "Game" shading is the Pokémon toon model; Palworld defaults to PBR + studio reflection env (metals were black).
 - Hosting: same pattern as the Pokémon repo (`tools/deploy_pages.py`: app → gh-pages, GLBs → Hugging Face). Ask first.
 

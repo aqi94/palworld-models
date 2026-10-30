@@ -1,5 +1,6 @@
 import { EXPORT_PRESETS, MAX_EXPORT_PX, type ExportOptions } from '../scene/exportOptions';
 import type { GifExportOptions } from '../scene/ViewerScene';
+import type { StlOptions } from '../scene/stl';
 
 interface Props {
   value: ExportOptions;
@@ -12,6 +13,11 @@ interface Props {
   onGif: () => void;
   /** null = idle, else a progress label. */
   gifProgress: string | null;
+  stl: StlOptions;
+  onStlChange: (patch: Partial<StlOptions>) => void;
+  onStl: () => void;
+  /** Result of the last STL export (triangle count or error). */
+  stlInfo: string | null;
 }
 
 const num = (v: string, min: number, max: number, fallback: number) => {
@@ -20,7 +26,7 @@ const num = (v: string, min: number, max: number, fallback: number) => {
 };
 
 /** Popover next to the toolbox PNG button: canvas size, scale, framing, padding, background, trim. */
-export function ExportPanel({ value: o, onChange, onExport, onClose, top, gif: g, onGifChange, onGif, gifProgress }: Props) {
+export function ExportPanel({ value: o, onChange, onExport, onClose, top, gif: g, onGifChange, onGif, gifProgress, stl: s, onStlChange, onStl, stlInfo }: Props) {
   const solid = o.background !== 'transparent';
   const framed = o.framing !== 'current';
   return (
@@ -86,9 +92,28 @@ export function ExportPanel({ value: o, onChange, onExport, onClose, top, gif: g
       <label title="Palette size including transparency (Showdown: 16)">Colours {g.colors}
         <input type="range" min={4} max={256} step={1} value={g.colors} onChange={(e) => onGifChange({ colors: Number(e.target.value) })} />
       </label>
+      <label title="Used when the model has no clip but something animates (flames, hologram)">Loop without a clip (s)
+        <input type="number" min={0.5} max={10} step={0.5} value={g.stillSeconds} onChange={(e) => onGifChange({ stillSeconds: num(e.target.value, 0.5, 10, g.stillSeconds) })} />
+      </label>
       <div className="export-foot">
         <span>{gifProgress !== null ? `Rendering ${gifProgress}` : `${(1000 / g.delayMs).toFixed(0)} fps playback`}</span>
         <button className="export-go" disabled={gifProgress !== null} onClick={onGif}>Export GIF</button>
+      </div>
+      </div>
+      <div className="export-col export-section">
+      <b>3D print (STL)</b>
+      <span className="export-note">Current pose and frame, untextured, Z up, feet on the bed. Game meshes are not watertight; slicers repair them on import.</span>
+      <label>Height (mm)
+        <input type="number" min={1} max={2000} value={s.heightMm || ''} disabled={!s.heightMm} placeholder="real size"
+          onChange={(e) => onStlChange({ heightMm: num(e.target.value, 1, 2000, s.heightMm) })} />
+      </label>
+      <label className="export-check"><input type="checkbox" checked={!s.heightMm} onChange={(e) => onStlChange({ heightMm: e.target.checked ? 0 : 100 })} />
+        Real size (1 m = 1000 mm)</label>
+      <label className="export-check"><input type="checkbox" checked={s.includeEffects} onChange={(e) => onStlChange({ includeEffects: e.target.checked })} />
+        Include flame / effect shells</label>
+      <div className="export-foot">
+        <span>{stlInfo ?? ''}</span>
+        <button className="export-go" onClick={onStl}>Export STL</button>
       </div>
       </div>
       </div>

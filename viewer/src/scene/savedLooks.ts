@@ -35,6 +35,8 @@ export interface Look {
   camera?: {
     /** effective vertical FOV (deg) */
     fov: number; position: Vec3; target: Vec3;
+    /** camera roll (deg) set in the Camera panel; absent = 0 */
+    roll?: number;
     /** solved lens lock; `image` locks are only re-attached with the same reference sample, else they fall back to `canvas` */
     lens?: { kind: 'image' | 'canvas'; fov: number; roll: number; samplePath: string | null; transform?: RefTransform };
   };
