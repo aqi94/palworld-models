@@ -1,0 +1,3294 @@
+{
+ "manifestVersion": 1,
+ "props": [
+  {
+   "bone": "weapon_r",
+   "side": "right",
+   "clips": [],
+   "always": true
+  }
+ ],
+ "game": "palworld",
+ "id": "Player_Female",
+ "kind": "human",
+ "displayName": "Player",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Hair001",
+   "label": "Hair001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Eye001",
+   "label": "Eye001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Head001",
+   "label": "Head001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Brow001",
+   "label": "Brow001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Body",
+   "label": "Body",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 65,
+  "meshes": 5,
+  "triangles": 34872,
+  "textures": 13,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 27173904
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_humans\\Player_Female"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/Human/SK_PalHuman_Skeleton",
+  "codeName": "Player_Female",
+  "group": "Player",
+  "mesh": "Pal/Content/Pal/Model/Character/Player/Body/Female/SK_Player_Female",
+  "player": {
+   "bodyTypes": [
+    {
+     "id": "TypeA",
+     "part": "Outfit_Player_Female_Outfit_OldCloth001"
+    },
+    {
+     "id": "TypeB",
+     "part": "Outfit_Player_Male_Outfit_OldCloth001"
+    }
+   ],
+   "tintRefs": {
+    "hair": [
+     0.0,
+     1.0,
+     1.0
+    ],
+    "brow": [
+     0.0,
+     1.0,
+     1.0
+    ],
+    "eye": [
+     0.48039,
+     1.0,
+     1.0
+    ]
+   },
+   "heads": [
+    {
+     "id": "Type1",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head001",
+      "TypeB": "Head_Player_Male_Head001"
+     }
+    },
+    {
+     "id": "Type2",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head002",
+      "TypeB": "Head_Player_Male_Head002"
+     }
+    },
+    {
+     "id": "Type3",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head003",
+      "TypeB": "Head_Player_Male_Head003"
+     }
+    },
+    {
+     "id": "Type4",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head004",
+      "TypeB": "Head_Player_Male_Head004"
+     }
+    },
+    {
+     "id": "Type5",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head005",
+      "TypeB": "Head_Player_Male_Head005"
+     }
+    },
+    {
+     "id": "Type6",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head006",
+      "TypeB": "Head_Player_Male_Head006"
+     }
+    },
+    {
+     "id": "Type7",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head007",
+      "TypeB": "Head_Player_Male_Head007"
+     }
+    },
+    {
+     "id": "Type8",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head008",
+      "TypeB": "Head_Player_Male_Head008"
+     }
+    },
+    {
+     "id": "Type9",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head009",
+      "TypeB": "Head_Player_Male_Head009"
+     }
+    },
+    {
+     "id": "Type10",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head010",
+      "TypeB": "Head_Player_Male_Head010"
+     }
+    },
+    {
+     "id": "Type11",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head011",
+      "TypeB": "Head_Player_Male_Head011"
+     }
+    },
+    {
+     "id": "Type12",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head012",
+      "TypeB": "Head_Player_Male_Head012"
+     }
+    },
+    {
+     "id": "Type13",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head013",
+      "TypeB": "Head_Player_Male_Head013"
+     }
+    },
+    {
+     "id": "Type14",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head014",
+      "TypeB": "Head_Player_Male_Head014"
+     }
+    },
+    {
+     "id": "Type15",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head015",
+      "TypeB": "Head_Player_Male_Head015"
+     }
+    },
+    {
+     "id": "Type16",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head016",
+      "TypeB": "Head_Player_Male_Head016"
+     }
+    },
+    {
+     "id": "Type17",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head017",
+      "TypeB": "Head_Player_Male_Head017"
+     }
+    },
+    {
+     "id": "Type18",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head018",
+      "TypeB": "Head_Player_Male_Head018"
+     }
+    },
+    {
+     "id": "Type19",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head019",
+      "TypeB": "Head_Player_Male_Head019"
+     }
+    },
+    {
+     "id": "Type20",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head020",
+      "TypeB": "Head_Player_Male_Head020"
+     }
+    },
+    {
+     "id": "Type21",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head021",
+      "TypeB": "Head_Player_Male_Head021"
+     }
+    },
+    {
+     "id": "Type22",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head022",
+      "TypeB": "Head_Player_Male_Head022"
+     }
+    },
+    {
+     "id": "Type23",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head023",
+      "TypeB": "Head_Player_Male_Head023"
+     }
+    },
+    {
+     "id": "Type24",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head024",
+      "TypeB": "Head_Player_Male_Head024"
+     }
+    },
+    {
+     "id": "Type25",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head025",
+      "TypeB": "Head_Player_Male_Head025"
+     }
+    },
+    {
+     "id": "Type26",
+     "parts": {
+      "TypeA": "Head_Player_Female_Head026",
+      "TypeB": "Head_Player_Male_Head026"
+     }
+    }
+   ],
+   "hairs": [
+    {
+     "id": "Type1",
+     "part": "Hair_Player_Hair001"
+    },
+    {
+     "id": "Type2",
+     "part": "Hair_Player_Hair002"
+    },
+    {
+     "id": "Type3",
+     "part": "Hair_Player_Hair003"
+    },
+    {
+     "id": "Type4",
+     "part": "Hair_Player_Hair004"
+    },
+    {
+     "id": "Type5",
+     "part": "Hair_Player_Hair005"
+    },
+    {
+     "id": "Type6",
+     "part": "Hair_Player_Hair006"
+    },
+    {
+     "id": "Type7",
+     "part": "Hair_Player_Hair007"
+    },
+    {
+     "id": "Type8",
+     "part": "Hair_Player_Hair008"
+    },
+    {
+     "id": "Type9",
+     "part": "Hair_Player_Hair009"
+    },
+    {
+     "id": "Type10",
+     "part": "Hair_Player_Hair010"
+    },
+    {
+     "id": "Type11",
+     "part": "Hair_Player_Hair011"
+    },
+    {
+     "id": "Type12",
+     "part": "Hair_Player_Hair012"
+    },
+    {
+     "id": "Type13",
+     "part": "Hair_Player_Hair013"
+    },
+    {
+     "id": "Type14",
+     "part": "Hair_Player_Hair014"
+    },
+    {
+     "id": "Type15",
+     "part": "Hair_Player_Hair015"
+    },
+    {
+     "id": "Type16",
+     "part": "Hair_Player_Hair016"
+    },
+    {
+     "id": "Type17",
+     "part": "Hair_Player_Hair017"
+    },
+    {
+     "id": "Type18",
+     "part": "Hair_Player_Hair018"
+    },
+    {
+     "id": "Type19",
+     "part": "Hair_Player_Hair019"
+    },
+    {
+     "id": "Type20",
+     "part": "Hair_Player_Hair020"
+    },
+    {
+     "id": "Type21",
+     "part": "Hair_Player_Hair021"
+    },
+    {
+     "id": "Type22",
+     "part": "Hair_Player_Hair022"
+    },
+    {
+     "id": "Type23",
+     "part": "Hair_Player_Hair023"
+    },
+    {
+     "id": "Type24",
+     "part": "Hair_Player_Hair024"
+    },
+    {
+     "id": "Type25",
+     "part": "Hair_Player_Hair025"
+    },
+    {
+     "id": "Type26",
+     "part": "Hair_Player_Hair026"
+    },
+    {
+     "id": "Type27",
+     "part": "Hair_Player_Hair027"
+    },
+    {
+     "id": "Type28",
+     "part": "Hair_Player_Hair028"
+    },
+    {
+     "id": "Type29",
+     "part": "Hair_Player_Hair029"
+    },
+    {
+     "id": "Type30",
+     "part": "Hair_Player_Hair030"
+    },
+    {
+     "id": "Type31",
+     "part": "Hair_Player_Hair031"
+    },
+    {
+     "id": "Type32",
+     "part": "Hair_Player_Hair032"
+    },
+    {
+     "id": "Type33",
+     "part": "Hair_Player_Hair033"
+    },
+    {
+     "id": "Type34",
+     "part": "Hair_Player_Hair034"
+    },
+    {
+     "id": "Type35",
+     "part": "Hair_Player_Hair035"
+    },
+    {
+     "id": "Type36",
+     "part": "Hair_Player_Hair036"
+    },
+    {
+     "id": "Type37",
+     "part": "Hair_Player_Hair037"
+    }
+   ],
+   "eyes": [
+    {
+     "id": "Type001",
+     "material": "Eye_Type001"
+    },
+    {
+     "id": "Type002",
+     "material": "Eye_Type002"
+    },
+    {
+     "id": "Type003",
+     "material": "Eye_Type003"
+    },
+    {
+     "id": "Type004",
+     "material": "Eye_Type004"
+    },
+    {
+     "id": "Type005",
+     "material": "Eye_Type005"
+    },
+    {
+     "id": "Type006",
+     "material": "Eye_Type006"
+    },
+    {
+     "id": "Type007",
+     "material": "Eye_Type007"
+    },
+    {
+     "id": "Type008",
+     "material": "Eye_Type008"
+    },
+    {
+     "id": "Type009",
+     "material": "Eye_Type009"
+    },
+    {
+     "id": "Type010",
+     "material": "Eye_Type010"
+    },
+    {
+     "id": "Type011",
+     "material": "Eye_Type011"
+    }
+   ],
+   "equipment": {
+    "body": [
+     {
+      "id": "AncientArmor",
+      "name": "Ancient Armor",
+      "items": [
+       "AncientArmor",
+       "AncientArmor_2",
+       "AncientArmor_3",
+       "AncientArmor_4",
+       "AncientArmor_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Ancient001",
+       "TypeB": "Outfit_Player_Male_Outfit_Ancient001"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "ClothArmor",
+      "name": "Cloth Outfit",
+      "items": [
+       "ClothArmor",
+       "ClothArmor_2",
+       "ClothArmor_3",
+       "ClothArmor_4",
+       "ClothArmor_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Cloth001",
+       "TypeB": "Outfit_Player_Male_Outfit_Cloth001"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "SFArmorCold",
+      "name": "Cold Resistant Hexolite Armor",
+      "items": [
+       "SFArmorCold",
+       "SFArmorCold_2",
+       "SFArmorCold_3",
+       "SFArmorCold_4",
+       "SFArmorCold_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Plastic002_v03",
+       "TypeB": "Outfit_Player_Male_Outfit_Plastic002_v03"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "CopperArmorCold",
+      "name": "Cold Resistant Metal Armor",
+      "items": [
+       "CopperArmorCold",
+       "CopperArmorCold_2",
+       "CopperArmorCold_3",
+       "CopperArmorCold_4",
+       "CopperArmorCold_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Bronze001_v03",
+       "TypeB": "Outfit_Player_Male_Outfit_Bronze001_v03"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "StealArmorCold",
+      "name": "Cold Resistant Pal Metal Armor",
+      "items": [
+       "StealArmorCold",
+       "StealArmorCold_2",
+       "StealArmorCold_3",
+       "StealArmorCold_4",
+       "StealArmorCold_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Platinum001_v03",
+       "TypeB": "Outfit_Player_Male_Outfit_Platinum001_v03"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "FurArmorCold",
+      "name": "Cold Resistant Pelt Armor",
+      "items": [
+       "FurArmorCold",
+       "FurArmorCold_2",
+       "FurArmorCold_3",
+       "FurArmorCold_4",
+       "FurArmorCold_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Hunter001_v03",
+       "TypeB": "Outfit_Player_Male_Outfit_Hunter001_v03"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "PlasticArmorCold",
+      "name": "Cold Resistant Plasteel Armor",
+      "items": [
+       "PlasticArmorCold",
+       "PlasticArmorCold_2",
+       "PlasticArmorCold_3",
+       "PlasticArmorCold_4",
+       "PlasticArmorCold_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Plastic001_v03",
+       "TypeB": "Outfit_Player_Male_Outfit_Plastic001_v03"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "IronArmorCold",
+      "name": "Cold Resistant Refined Metal Armor",
+      "items": [
+       "IronArmorCold",
+       "IronArmorCold_1",
+       "IronArmorCold_2",
+       "IronArmorCold_3",
+       "IronArmorCold_4",
+       "IronArmorCold_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Iron001_v03",
+       "TypeB": "Outfit_Player_Male_Outfit_Iron001_v03"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "AncientArmorCold",
+      "name": "Cold-Resistant Ancient Armor",
+      "items": [
+       "AncientArmorCold",
+       "AncientArmorCold_2",
+       "AncientArmorCold_3",
+       "AncientArmorCold_4",
+       "AncientArmorCold_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Ancient001_v03",
+       "TypeB": "Outfit_Player_Male_Outfit_Ancient001_v03"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "Player_Outfit_Kigurumi001",
+      "name": "Depresso Armor",
+      "items": [
+       "Player_Outfit_Kigurumi001"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Kigurumi001",
+       "TypeB": "Outfit_Player_Male_Outfit_Kigurumi001"
+      },
+      "fullBody": false,
+      "bodyShape": 1
+     },
+     {
+      "id": "YakushimaArmor001",
+      "name": "Hallowed Plate Mail",
+      "items": [
+       "YakushimaArmor001",
+       "YakushimaArmor001_2",
+       "YakushimaArmor001_3",
+       "YakushimaArmor001_4",
+       "YakushimaArmor001_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Yakushima001",
+       "TypeB": "Outfit_Player_Male_Outfit_Yakushima001"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "SFArmorHeat",
+      "name": "Heat Resistant Hexolite Armor",
+      "items": [
+       "SFArmorHeat",
+       "SFArmorHeat_2",
+       "SFArmorHeat_3",
+       "SFArmorHeat_4",
+       "SFArmorHeat_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Plastic002_v02",
+       "TypeB": "Outfit_Player_Male_Outfit_Plastic002_v02"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "CopperArmorHeat",
+      "name": "Heat Resistant Metal Armor",
+      "items": [
+       "CopperArmorHeat",
+       "CopperArmorHeat_2",
+       "CopperArmorHeat_3",
+       "CopperArmorHeat_4",
+       "CopperArmorHeat_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Bronze001_v02",
+       "TypeB": "Outfit_Player_Male_Outfit_Bronze001_v02"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "StealArmorHeat",
+      "name": "Heat Resistant Pal Metal Armor",
+      "items": [
+       "StealArmorHeat",
+       "StealArmorHeat_2",
+       "StealArmorHeat_3",
+       "StealArmorHeat_4",
+       "StealArmorHeat_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Platinum001_v02",
+       "TypeB": "Outfit_Player_Male_Outfit_Platinum001_v02"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "FurArmorHeat",
+      "name": "Heat Resistant Pelt Armor",
+      "items": [
+       "FurArmorHeat",
+       "FurArmorHeat_2",
+       "FurArmorHeat_3",
+       "FurArmorHeat_4",
+       "FurArmorHeat_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Hunter001_v02",
+       "TypeB": "Outfit_Player_Male_Outfit_Hunter001_v02"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "PlasticArmorHeat",
+      "name": "Heat Resistant Plasteel Armor",
+      "items": [
+       "PlasticArmorHeat",
+       "PlasticArmorHeat_2",
+       "PlasticArmorHeat_3",
+       "PlasticArmorHeat_4",
+       "PlasticArmorHeat_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Plastic001_v02",
+       "TypeB": "Outfit_Player_Male_Outfit_Plastic001_v02"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "IronArmorHeat",
+      "name": "Heat Resistant Refined Metal Armor",
+      "items": [
+       "IronArmorHeat",
+       "IronArmorHeat_2",
+       "IronArmorHeat_3",
+       "IronArmorHeat_4",
+       "IronArmorHeat_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Iron001_v02_2",
+       "TypeB": "Outfit_Player_Male_Outfit_Iron001_v02"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "AncientArmorHeat",
+      "name": "Heat-Resistant Ancient Armor",
+      "items": [
+       "AncientArmorHeat",
+       "AncientArmorHeat_2",
+       "AncientArmorHeat_3",
+       "AncientArmorHeat_4",
+       "AncientArmorHeat_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Ancient001_v02",
+       "TypeB": "Outfit_Player_Male_Outfit_Ancient001_v02"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "SFArmor",
+      "name": "Hexolite Armor",
+      "items": [
+       "SFArmor",
+       "SFArmor_2",
+       "SFArmor_3",
+       "SFArmor_4",
+       "SFArmor_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Plastic002_v01",
+       "TypeB": "Outfit_Player_Male_Outfit_Plastic002_v01"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "AncientArmorWeight",
+      "name": "Lightweight Ancient Armor",
+      "items": [
+       "AncientArmorWeight",
+       "AncientArmorWeight_2",
+       "AncientArmorWeight_3",
+       "AncientArmorWeight_4",
+       "AncientArmorWeight_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Ancient001_v04",
+       "TypeB": "Outfit_Player_Male_Outfit_Ancient001_v04"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "SFArmorWeight",
+      "name": "Lightweight Hexolite Armor",
+      "items": [
+       "SFArmorWeight",
+       "SFArmorWeight_2",
+       "SFArmorWeight_3",
+       "SFArmorWeight_4",
+       "SFArmorWeight_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Plastic002_v04",
+       "TypeB": "Outfit_Player_Male_Outfit_Plastic002_v04"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "PlasticArmorWeight",
+      "name": "Lightweight Plasteel Armor",
+      "items": [
+       "PlasticArmorWeight",
+       "PlasticArmorWeight_2",
+       "PlasticArmorWeight_3",
+       "PlasticArmorWeight_4",
+       "PlasticArmorWeight_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Plastic001_v04",
+       "TypeB": "Outfit_Player_Male_Outfit_Plastic001_v04"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "CopperArmor",
+      "name": "Metal Armor",
+      "items": [
+       "CopperArmor",
+       "CopperArmor_2",
+       "CopperArmor_3",
+       "CopperArmor_4",
+       "CopperArmor_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Bronze001",
+       "TypeB": "Outfit_Player_Male_Outfit_Bronze001"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "StealArmor",
+      "name": "Pal Metal Armor",
+      "items": [
+       "StealArmor",
+       "StealArmor_2",
+       "StealArmor_3",
+       "StealArmor_4",
+       "StealArmor_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Platinum001",
+       "TypeB": "Outfit_Player_Male_Outfit_Platinum001"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "FurArmor",
+      "name": "Pelt Armor",
+      "items": [
+       "FurArmor",
+       "FurArmor_2",
+       "FurArmor_3",
+       "FurArmor_4",
+       "FurArmor_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Hunter001",
+       "TypeB": "Outfit_Player_Male_Outfit_Hunter001"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "PlasticArmor",
+      "name": "Plasteel Armor",
+      "items": [
+       "PlasticArmor",
+       "PlasticArmor_2",
+       "PlasticArmor_3",
+       "PlasticArmor_4",
+       "PlasticArmor_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Plastic001_v01",
+       "TypeB": "Outfit_Player_Male_Outfit_Plastic001_v01"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "IronArmor",
+      "name": "Refined Metal Armor",
+      "items": [
+       "IronArmor",
+       "IronArmor_2",
+       "IronArmor_3",
+       "IronArmor_4",
+       "IronArmor_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Iron001",
+       "TypeB": "Outfit_Player_Male_Outfit_Iron001"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "ClothArmorHeat",
+      "name": "Tropical Outfit",
+      "items": [
+       "ClothArmorHeat",
+       "ClothArmorHeat_2",
+       "ClothArmorHeat_3",
+       "ClothArmorHeat_4",
+       "ClothArmorHeat_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Cloth001_v02",
+       "TypeB": "Outfit_Player_Male_Outfit_Cloth001_v02"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "ClothArmorCold",
+      "name": "Tundra Outfit",
+      "items": [
+       "ClothArmorCold",
+       "ClothArmorCold_2",
+       "ClothArmorCold_3",
+       "ClothArmorCold_4",
+       "ClothArmorCold_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Female_Outfit_Cloth001_v03",
+       "TypeB": "Outfit_Player_Male_Outfit_Cloth001_v03"
+      },
+      "fullBody": false
+     },
+     {
+      "id": "Octavia001_Armor",
+      "name": "V1 Armor",
+      "items": [
+       "Octavia001_Armor",
+       "Octavia001_Armor_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Male_Outfit_Octavia001_v01",
+       "TypeB": "Outfit_Player_Male_Outfit_Octavia001_v01"
+      },
+      "fullBody": true,
+      "overrideBodyType": "TypeB"
+     },
+     {
+      "id": "Octavia002_Armor",
+      "name": "V2 Armor",
+      "items": [
+       "Octavia002_Armor",
+       "Octavia002_Armor_5"
+      ],
+      "parts": {
+       "TypeA": "Outfit_Player_Male_Outfit_Octavia001_v02",
+       "TypeB": "Outfit_Player_Male_Outfit_Octavia001_v02"
+      },
+      "fullBody": true,
+      "overrideBodyType": "TypeB"
+     }
+    ],
+    "head": [
+     {
+      "id": "AncientHelmet",
+      "name": "Ancient Helm",
+      "items": [
+       "AncientHelmet",
+       "AncientHelmet_2",
+       "AncientHelmet_3",
+       "AncientHelmet_4",
+       "AncientHelmet_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip047_v01",
+       "TypeB": "HeadEquip_HeadEquip047_v01"
+      },
+      "attach": {
+       "TypeA": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_front02",
+        "position": [
+         0.08713,
+         0.0,
+         0.08649
+        ],
+        "rotation": [
+         0.059227,
+         -0.059227,
+         -0.704622,
+         0.704622
+        ]
+       },
+       "TypeB": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_front02",
+        "position": [
+         0.08713,
+         0.0,
+         0.08649
+        ],
+        "rotation": [
+         0.059227,
+         -0.059227,
+         -0.704622,
+         0.704622
+        ]
+       }
+      }
+     },
+     {
+      "id": "HeadEquip048",
+      "name": "Auri Hat",
+      "items": [
+       "HeadEquip048"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip048",
+       "TypeB": "HeadEquip_HeadEquip048"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "GYM_Head_Electric",
+      "name": "Axel Hat",
+      "items": [
+       "GYM_Head_Electric"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip036",
+       "TypeB": "HeadEquip_HeadEquip036"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "GYM_Head_Viking",
+      "name": "Bjorn Hat",
+      "items": [
+       "GYM_Head_Viking"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip043",
+       "TypeB": "HeadEquip_HeadEquip043"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "Head012",
+      "name": "Bowler Hat",
+      "items": [
+       "Head012",
+       "Head012_2",
+       "Head012_3",
+       "Head012_4",
+       "Head012_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip012",
+       "TypeB": "HeadEquip_HeadEquip012"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "HeadEquip033",
+      "name": "Cattiva Hat",
+      "items": [
+       "HeadEquip033"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip033",
+       "TypeB": "HeadEquip_HeadEquip033"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "HeadEquip027",
+      "name": "Cawgnito Hat",
+      "items": [
+       "HeadEquip027"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip027",
+       "TypeB": "HeadEquip_HeadEquip027"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "HeadEquip056",
+      "name": "Chikipi Cap",
+      "items": [
+       "HeadEquip056"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip056",
+       "TypeB": "HeadEquip_HeadEquip056"
+      },
+      "hidesHair": true
+     },
+     {
+      "id": "ClothHat",
+      "name": "Cloth Hat",
+      "items": [
+       "ClothHat"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip015",
+       "TypeB": "HeadEquip_HeadEquip015"
+      },
+      "attach": {
+       "TypeA": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_front02",
+        "position": [
+         0.08713,
+         0.0,
+         0.08649
+        ],
+        "rotation": [
+         0.059227,
+         -0.059227,
+         -0.704622,
+         0.704622
+        ]
+       },
+       "TypeB": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_front02",
+        "position": [
+         0.08713,
+         0.0,
+         0.08649
+        ],
+        "rotation": [
+         0.059227,
+         -0.059227,
+         -0.704622,
+         0.704622
+        ]
+       }
+      }
+     },
+     {
+      "id": "HeadEquip055",
+      "name": "Croajiro Cap",
+      "items": [
+       "HeadEquip055"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip055",
+       "TypeB": "HeadEquip_HeadEquip055"
+      },
+      "hidesHair": true
+     },
+     {
+      "id": "HeadEquip046",
+      "name": "Crown of Salvation",
+      "items": [
+       "HeadEquip046"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip046",
+       "TypeB": "HeadEquip_HeadEquip046"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "HeadEquip057",
+      "name": "Dandilord Hat",
+      "items": [
+       "HeadEquip057"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip057",
+       "TypeB": "HeadEquip_HeadEquip057"
+      },
+      "hidesHair": true
+     },
+     {
+      "id": "HeadEquip032",
+      "name": "Dazzi Hat",
+      "items": [
+       "HeadEquip032"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip032",
+       "TypeB": "HeadEquip_HeadEquip032"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "HeadEquip045",
+      "name": "Depresso Helmet",
+      "items": [
+       "HeadEquip045"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip045",
+       "TypeB": "HeadEquip_HeadEquip045"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "HeadEquip030",
+      "name": "Dumud Helm",
+      "items": [
+       "HeadEquip030"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip030",
+       "TypeB": "HeadEquip_HeadEquip030"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "Head009",
+      "name": "Explorer Cap",
+      "items": [
+       "Head009",
+       "Head009_2",
+       "Head009_3",
+       "Head009_4",
+       "Head009_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip009",
+       "TypeB": "HeadEquip_HeadEquip009"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "YakushimaHeadEquip006",
+      "name": "Eye of Cthulhu Mask",
+      "items": [
+       "YakushimaHeadEquip006"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_YakushimaHeadEquip006",
+       "TypeB": "HeadEquip_YakushimaHeadEquip006"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "Head011",
+      "name": "Farming Hat",
+      "items": [
+       "Head011",
+       "Head011_2",
+       "Head011_3",
+       "Head011_4",
+       "Head011_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip011",
+       "TypeB": "HeadEquip_HeadEquip011"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "FurHelmet",
+      "name": "Feathered Hair Band",
+      "items": [
+       "FurHelmet",
+       "FurHelmet_2",
+       "FurHelmet_3",
+       "FurHelmet_4",
+       "FurHelmet_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip013",
+       "TypeB": "HeadEquip_HeadEquip014"
+      },
+      "attach": {
+       "TypeA": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_Ear_L",
+        "position": [
+         0.06122,
+         -0.0911,
+         0.01659
+        ],
+        "rotation": [
+         -0.061635,
+         -0.061622,
+         -0.704416,
+         0.704417
+        ]
+       },
+       "TypeB": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_Ear02_L",
+        "position": [
+         0.00932,
+         -0.07382,
+         0.01191
+        ],
+        "rotation": [
+         0.298815,
+         0.353575,
+         -0.612383,
+         0.640844
+        ]
+       }
+      }
+     },
+     {
+      "id": "HeadEquip059",
+      "name": "Ghangler Accessory",
+      "items": [
+       "HeadEquip059"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip059",
+       "TypeB": "HeadEquip_HeadEquip059"
+      },
+      "attach": {
+       "TypeA": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_top06",
+        "position": [
+         0.15745,
+         0.0,
+         0.05545
+        ],
+        "rotation": [
+         -0.0,
+         -0.0,
+         -0.707107,
+         0.707107
+        ]
+       },
+       "TypeB": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_top06",
+        "position": [
+         0.15745,
+         0.0,
+         0.05545
+        ],
+        "rotation": [
+         -0.0,
+         -0.0,
+         -0.707107,
+         0.707107
+        ]
+       }
+      }
+     },
+     {
+      "id": "HeadEquip052",
+      "name": "Gloopie Hat",
+      "items": [
+       "HeadEquip052"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip052",
+       "TypeB": "HeadEquip_HeadEquip052"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "Head002",
+      "name": "Golden Crown",
+      "items": [
+       "Head002",
+       "Head002_1",
+       "Head002_2",
+       "Head002_3",
+       "Head002_4",
+       "Head002_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip002",
+       "TypeB": "HeadEquip_HeadEquip002"
+      },
+      "attach": {
+       "TypeA": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_top01",
+        "position": [
+         0.16534,
+         0.0,
+         0.0054
+        ],
+        "rotation": [
+         0.030835,
+         -0.030835,
+         -0.706434,
+         0.706434
+        ]
+       },
+       "TypeB": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_top01",
+        "position": [
+         0.16534,
+         0.0,
+         0.0054
+        ],
+        "rotation": [
+         0.030835,
+         -0.030835,
+         -0.706434,
+         0.706434
+        ]
+       }
+      }
+     },
+     {
+      "id": "Head010",
+      "name": "Graduation Cap",
+      "items": [
+       "Head010",
+       "Head010_2",
+       "Head010_3",
+       "Head010_4",
+       "Head010_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip010",
+       "TypeB": "HeadEquip_HeadEquip010"
+      },
+      "attach": {
+       "TypeA": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_top01",
+        "position": [
+         0.16534,
+         0.0,
+         0.0054
+        ],
+        "rotation": [
+         0.030835,
+         -0.030835,
+         -0.706434,
+         0.706434
+        ]
+       },
+       "TypeB": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_top01",
+        "position": [
+         0.16534,
+         0.0,
+         0.0054
+        ],
+        "rotation": [
+         0.030835,
+         -0.030835,
+         -0.706434,
+         0.706434
+        ]
+       }
+      }
+     },
+     {
+      "id": "Head014",
+      "name": "Grinning Tocotoco Cap",
+      "items": [
+       "Head014",
+       "Head014_2",
+       "Head014_3",
+       "Head014_4",
+       "Head014_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip019_v02",
+       "TypeB": "HeadEquip_HeadEquip019_v02"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "Head015",
+      "name": "Gumoss Cap",
+      "items": [
+       "Head015",
+       "Head015_2",
+       "Head015_3",
+       "Head015_4",
+       "Head015_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip020",
+       "TypeB": "HeadEquip_HeadEquip020"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "YakushimaHeadEquip002",
+      "name": "Hallowed Headgear",
+      "items": [
+       "YakushimaHeadEquip002",
+       "YakushimaHeadEquip002_2",
+       "YakushimaHeadEquip002_3",
+       "YakushimaHeadEquip002_4",
+       "YakushimaHeadEquip002_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_YakushimaHeadEquip002",
+       "TypeB": "HeadEquip_YakushimaHeadEquip002"
+      },
+      "attach": {
+       "TypeA": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_front04",
+        "position": [
+         0.09,
+         0.0,
+         0.1
+        ],
+        "rotation": [
+         -3e-06,
+         3e-06,
+         -0.707107,
+         0.707107
+        ]
+       },
+       "TypeB": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_front04",
+        "position": [
+         0.09,
+         0.0,
+         0.1
+        ],
+        "rotation": [
+         -3e-06,
+         3e-06,
+         -0.707107,
+         0.707107
+        ]
+       }
+      }
+     },
+     {
+      "id": "YakushimaHeadEquip003",
+      "name": "Hallowed Helmet",
+      "items": [
+       "YakushimaHeadEquip003",
+       "YakushimaHeadEquip003_2",
+       "YakushimaHeadEquip003_3",
+       "YakushimaHeadEquip003_4",
+       "YakushimaHeadEquip003_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_YakushimaHeadEquip003",
+       "TypeB": "HeadEquip_YakushimaHeadEquip003"
+      },
+      "hidesHair": true
+     },
+     {
+      "id": "YakushimaHeadEquip004",
+      "name": "Hallowed Hood",
+      "items": [
+       "YakushimaHeadEquip004",
+       "YakushimaHeadEquip004_2",
+       "YakushimaHeadEquip004_3",
+       "YakushimaHeadEquip004_4",
+       "YakushimaHeadEquip004_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_YakushimaHeadEquip004",
+       "TypeB": "HeadEquip_YakushimaHeadEquip004"
+      },
+      "hidesHair": true
+     },
+     {
+      "id": "YakushimaHeadEquip001",
+      "name": "Hallowed Mask",
+      "items": [
+       "YakushimaHeadEquip001",
+       "YakushimaHeadEquip001_2",
+       "YakushimaHeadEquip001_3",
+       "YakushimaHeadEquip001_4",
+       "YakushimaHeadEquip001_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_YakushimaHeadEquip001",
+       "TypeB": "HeadEquip_YakushimaHeadEquip001"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "Head006",
+      "name": "Helmet",
+      "items": [
+       "Head006",
+       "Head006_2",
+       "Head006_3",
+       "Head006_4",
+       "Head006_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip006",
+       "TypeB": "HeadEquip_HeadEquip006"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "HeadEquip050",
+      "name": "Herbil Headband",
+      "items": [
+       "HeadEquip050"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip050",
+       "TypeB": "HeadEquip_HeadEquip050"
+      },
+      "attach": {
+       "TypeA": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_top05",
+        "position": [
+         0.00899,
+         -0.0,
+         -0.0382
+        ],
+        "rotation": [
+         0.119002,
+         -0.119002,
+         -0.697021,
+         0.697021
+        ],
+        "scale": [
+         1.1405,
+         1.1405,
+         1.1405
+        ]
+       },
+       "TypeB": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_top05",
+        "position": [
+         0.00899,
+         -0.0,
+         -0.0382
+        ],
+        "rotation": [
+         0.119002,
+         -0.119002,
+         -0.697021,
+         0.697021
+        ],
+        "scale": [
+         1.1405,
+         1.1405,
+         1.1405
+        ]
+       }
+      }
+     },
+     {
+      "id": "SFHelmet",
+      "name": "Hexolite Helmet",
+      "items": [
+       "SFHelmet",
+       "SFHelmet_2",
+       "SFHelmet_3",
+       "SFHelmet_4",
+       "SFHelmet_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip042",
+       "TypeB": "HeadEquip_HeadEquip042"
+      },
+      "attach": {
+       "TypeA": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_front",
+        "position": [
+         0.07674,
+         0.0,
+         0.10064
+        ],
+        "rotation": [
+         -3e-06,
+         3e-06,
+         -0.707107,
+         0.707107
+        ]
+       },
+       "TypeB": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_front",
+        "position": [
+         0.07674,
+         0.0,
+         0.10064
+        ],
+        "rotation": [
+         -3e-06,
+         3e-06,
+         -0.707107,
+         0.707107
+        ]
+       }
+      }
+     },
+     {
+      "id": "HeadEquip041",
+      "name": "Horns of Supremacy",
+      "items": [
+       "HeadEquip041"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip041",
+       "TypeB": "HeadEquip_HeadEquip041"
+      },
+      "attach": {
+       "TypeA": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_root01",
+        "position": [
+         0.0,
+         0.0,
+         0.0
+        ],
+        "rotation": [
+         -0.0,
+         -0.0,
+         -0.707107,
+         0.707107
+        ]
+       },
+       "TypeB": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_root01",
+        "position": [
+         0.0,
+         0.0,
+         0.0
+        ],
+        "rotation": [
+         -0.0,
+         -0.0,
+         -0.707107,
+         0.707107
+        ]
+       }
+      }
+     },
+     {
+      "id": "HeadEquip060",
+      "name": "Icelyn Hat",
+      "items": [
+       "HeadEquip060"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip060",
+       "TypeB": "HeadEquip_HeadEquip060"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "HeadEquip053",
+      "name": "Jelliette Hat",
+      "items": [
+       "HeadEquip053"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip053",
+       "TypeB": "HeadEquip_HeadEquip053"
+      },
+      "hidesHair": true
+     },
+     {
+      "id": "Head017",
+      "name": "Katress Cap",
+      "items": [
+       "Head017",
+       "Head017_2",
+       "Head017_3",
+       "Head017_4",
+       "Head017_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip022",
+       "TypeB": "HeadEquip_HeadEquip022"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "HeadEquip026",
+      "name": "Killamari Cap",
+      "items": [
+       "HeadEquip026"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip026",
+       "TypeB": "HeadEquip_HeadEquip026"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "HeadEquip051",
+      "name": "Kingpaca Headband",
+      "items": [
+       "HeadEquip051"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip051",
+       "TypeB": "HeadEquip_HeadEquip051"
+      },
+      "attach": {
+       "TypeA": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_top05",
+        "position": [
+         0.00899,
+         -0.0,
+         -0.0382
+        ],
+        "rotation": [
+         0.119002,
+         -0.119002,
+         -0.697021,
+         0.697021
+        ],
+        "scale": [
+         1.1405,
+         1.1405,
+         1.1405
+        ]
+       },
+       "TypeB": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_top05",
+        "position": [
+         0.00899,
+         -0.0,
+         -0.0382
+        ],
+        "rotation": [
+         0.119002,
+         -0.119002,
+         -0.697021,
+         0.697021
+        ],
+        "scale": [
+         1.1405,
+         1.1405,
+         1.1405
+        ]
+       }
+      }
+     },
+     {
+      "id": "HeadEquip029",
+      "name": "Lamball Helm",
+      "items": [
+       "HeadEquip029"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip029",
+       "TypeB": "HeadEquip_HeadEquip029"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "HeadEquip025",
+      "name": "Leezpunk Hood",
+      "items": [
+       "HeadEquip025"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip025",
+       "TypeB": "HeadEquip_HeadEquip025"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "GYM_Head_Forest",
+      "name": "Lily Hat",
+      "items": [
+       "GYM_Head_Forest"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip037",
+       "TypeB": "HeadEquip_HeadEquip037"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "Head003",
+      "name": "Long-Eared Headband",
+      "items": [
+       "Head003",
+       "Head003_2",
+       "Head003_3",
+       "Head003_4",
+       "Head003_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip003",
+       "TypeB": "HeadEquip_HeadEquip003"
+      },
+      "attach": {
+       "TypeA": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_top02",
+        "position": [
+         0.1579,
+         0.0,
+         0.02122
+        ],
+        "rotation": [
+         0.030833,
+         -0.030833,
+         -0.706434,
+         0.706434
+        ]
+       },
+       "TypeB": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_top02",
+        "position": [
+         0.1579,
+         0.0,
+         0.02122
+        ],
+        "rotation": [
+         0.030833,
+         -0.030833,
+         -0.706434,
+         0.706434
+        ]
+       }
+      }
+     },
+     {
+      "id": "HeadEquip023",
+      "name": "Lyleen Accessory",
+      "items": [
+       "HeadEquip023"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip023",
+       "TypeB": "HeadEquip_HeadEquip023"
+      },
+      "attach": {
+       "TypeA": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_leftfront",
+        "position": [
+         0.1262,
+         -0.07719,
+         0.04714
+        ],
+        "rotation": [
+         0.633275,
+         -0.125535,
+         -0.703944,
+         0.296085
+        ]
+       },
+       "TypeB": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_leftfront",
+        "position": [
+         0.1262,
+         -0.07719,
+         0.04714
+        ],
+        "rotation": [
+         0.633275,
+         -0.125535,
+         -0.703944,
+         0.296085
+        ]
+       }
+      }
+     },
+     {
+      "id": "GYM_Head_Desert",
+      "name": "Marcus Hat",
+      "items": [
+       "GYM_Head_Desert"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip039",
+       "TypeB": "HeadEquip_HeadEquip039"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "CopperHelmet",
+      "name": "Metal Helm",
+      "items": [
+       "CopperHelmet",
+       "CopperHelmet_2",
+       "CopperHelmet_3",
+       "CopperHelmet_4",
+       "CopperHelmet_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip016",
+       "TypeB": "HeadEquip_HeadEquip016"
+      },
+      "attach": {
+       "TypeA": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_front",
+        "position": [
+         0.07674,
+         0.0,
+         0.10064
+        ],
+        "rotation": [
+         -3e-06,
+         3e-06,
+         -0.707107,
+         0.707107
+        ]
+       },
+       "TypeB": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_front",
+        "position": [
+         0.07674,
+         0.0,
+         0.10064
+        ],
+        "rotation": [
+         -3e-06,
+         3e-06,
+         -0.707107,
+         0.707107
+        ]
+       }
+      }
+     },
+     {
+      "id": "Head001",
+      "name": "Monarch's Crown",
+      "items": [
+       "Head001",
+       "Head001_2",
+       "Head001_3",
+       "Head001_4",
+       "Head001_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip001",
+       "TypeB": "HeadEquip_HeadEquip001"
+      },
+      "attach": {
+       "TypeA": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_top01",
+        "position": [
+         0.16534,
+         0.0,
+         0.0054
+        ],
+        "rotation": [
+         0.030835,
+         -0.030835,
+         -0.706434,
+         0.706434
+        ]
+       },
+       "TypeB": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_top01",
+        "position": [
+         0.16534,
+         0.0,
+         0.0054
+        ],
+        "rotation": [
+         0.030835,
+         -0.030835,
+         -0.706434,
+         0.706434
+        ]
+       }
+      }
+     },
+     {
+      "id": "YakushimaHeadEquip005",
+      "name": "Moon Lord Mask",
+      "items": [
+       "YakushimaHeadEquip005"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_YakushimaHeadEquip005",
+       "TypeB": "HeadEquip_YakushimaHeadEquip005"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "StealHelmet",
+      "name": "Pal Metal Helm",
+      "items": [
+       "StealHelmet",
+       "StealHelmet_2",
+       "StealHelmet_3",
+       "StealHelmet_4",
+       "StealHelmet_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip018",
+       "TypeB": "HeadEquip_HeadEquip018"
+      },
+      "attach": {
+       "TypeA": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_front",
+        "position": [
+         0.07674,
+         0.0,
+         0.10064
+        ],
+        "rotation": [
+         -3e-06,
+         3e-06,
+         -0.707107,
+         0.707107
+        ]
+       },
+       "TypeB": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_front",
+        "position": [
+         0.07674,
+         0.0,
+         0.10064
+        ],
+        "rotation": [
+         -3e-06,
+         3e-06,
+         -0.707107,
+         0.707107
+        ]
+       }
+      }
+     },
+     {
+      "id": "Head016",
+      "name": "Penking Cap",
+      "items": [
+       "Head016",
+       "Head016_2",
+       "Head016_3",
+       "Head016_4",
+       "Head016_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip021",
+       "TypeB": "HeadEquip_HeadEquip021"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "PlasticHelmet",
+      "name": "Plasteel Helmet",
+      "items": [
+       "PlasticHelmet",
+       "PlasticHelmet_2",
+       "PlasticHelmet_3",
+       "PlasticHelmet_4",
+       "PlasticHelmet_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip034",
+       "TypeB": "HeadEquip_HeadEquip034"
+      },
+      "attach": {
+       "TypeA": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_front03",
+        "position": [
+         0.07682,
+         -0.0,
+         0.09796
+        ],
+        "rotation": [
+         0.054721,
+         -0.054721,
+         -0.704986,
+         0.704986
+        ]
+       },
+       "TypeB": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_front03",
+        "position": [
+         0.07682,
+         -0.0,
+         0.09796
+        ],
+        "rotation": [
+         0.054721,
+         -0.054721,
+         -0.704986,
+         0.704986
+        ]
+       }
+      }
+     },
+     {
+      "id": "IronHelmet",
+      "name": "Refined Metal Helm",
+      "items": [
+       "IronHelmet",
+       "IronHelmet_2",
+       "IronHelmet_3",
+       "IronHelmet_4",
+       "IronHelmet_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip017",
+       "TypeB": "HeadEquip_HeadEquip017"
+      },
+      "attach": {
+       "TypeA": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_front",
+        "position": [
+         0.07674,
+         0.0,
+         0.10064
+        ],
+        "rotation": [
+         -3e-06,
+         3e-06,
+         -0.707107,
+         0.707107
+        ]
+       },
+       "TypeB": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_front",
+        "position": [
+         0.07674,
+         0.0,
+         0.10064
+        ],
+        "rotation": [
+         -3e-06,
+         3e-06,
+         -0.707107,
+         0.707107
+        ]
+       }
+      }
+     },
+     {
+      "id": "HeadEquip028",
+      "name": "Ribbuny Headband",
+      "items": [
+       "HeadEquip028"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip028",
+       "TypeB": "HeadEquip_HeadEquip028"
+      },
+      "attach": {
+       "TypeA": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_top04",
+        "position": [
+         0.1726,
+         -0.0,
+         0.02995
+        ],
+        "rotation": [
+         0.061624,
+         -0.061624,
+         -0.704416,
+         0.704416
+        ]
+       },
+       "TypeB": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_top04",
+        "position": [
+         0.1726,
+         -0.0,
+         0.02995
+        ],
+        "rotation": [
+         0.061624,
+         -0.061624,
+         -0.704416,
+         0.704416
+        ]
+       }
+      }
+     },
+     {
+      "id": "GYM_Head_Sakurajima",
+      "name": "Saya Hat",
+      "items": [
+       "GYM_Head_Sakurajima"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip040",
+       "TypeB": "HeadEquip_HeadEquip040"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "HeadEquip058",
+      "name": "Shroomer Hat",
+      "items": [
+       "HeadEquip058"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip058",
+       "TypeB": "HeadEquip_HeadEquip058"
+      },
+      "hidesHair": true
+     },
+     {
+      "id": "HeadEquip024",
+      "name": "Sibelyx Hat",
+      "items": [
+       "HeadEquip024"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip024",
+       "TypeB": "HeadEquip_HeadEquip024"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "Head007",
+      "name": "Silk Hat",
+      "items": [
+       "Head007",
+       "Head007_2",
+       "Head007_3",
+       "Head007_4",
+       "Head007_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip007",
+       "TypeB": "HeadEquip_HeadEquip007"
+      },
+      "attach": {
+       "TypeA": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_top03",
+        "position": [
+         0.16493,
+         -0.02861,
+         0.01381
+        ],
+        "rotation": [
+         -0.060686,
+         0.060688,
+         0.816503,
+         -0.570927
+        ]
+       },
+       "TypeB": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_top03",
+        "position": [
+         0.16493,
+         -0.02861,
+         0.01381
+        ],
+        "rotation": [
+         -0.060686,
+         0.060688,
+         0.816503,
+         -0.570927
+        ]
+       }
+      }
+     },
+     {
+      "id": "Head005",
+      "name": "Soft Hat",
+      "items": [
+       "Head005",
+       "Head005_2",
+       "Head005_3",
+       "Head005_4",
+       "Head005_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip005",
+       "TypeB": "HeadEquip_HeadEquip005"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "HeadEquip061",
+      "name": "Splatterina Hat",
+      "items": [
+       "HeadEquip061"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip061",
+       "TypeB": "HeadEquip_HeadEquip061"
+      },
+      "hidesHair": true
+     },
+     {
+      "id": "HeadEquip031",
+      "name": "Swee Cap",
+      "items": [
+       "HeadEquip031"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip031",
+       "TypeB": "HeadEquip_HeadEquip031"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "HeadEquip062",
+      "name": "Tarantriss Hat",
+      "items": [
+       "HeadEquip062"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip062",
+       "TypeB": "HeadEquip_HeadEquip062"
+      },
+      "hidesHair": true
+     },
+     {
+      "id": "Head013",
+      "name": "Tocotoco Cap",
+      "items": [
+       "Head013",
+       "Head013_2",
+       "Head013_3",
+       "Head013_4",
+       "Head013_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip019_v01",
+       "TypeB": "HeadEquip_HeadEquip019_v01"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "Head008",
+      "name": "Tricorne",
+      "items": [
+       "Head008",
+       "Head008_2",
+       "Head008_3",
+       "Head008_4",
+       "Head008_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip008",
+       "TypeB": "HeadEquip_HeadEquip008"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "HeadEquip054",
+      "name": "Turtacle Cap",
+      "items": [
+       "HeadEquip054"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip054",
+       "TypeB": "HeadEquip_HeadEquip054"
+      },
+      "hidesHair": true
+     },
+     {
+      "id": "GYM_Head_Snow",
+      "name": "Victor Hat",
+      "items": [
+       "GYM_Head_Snow"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip038",
+       "TypeB": "HeadEquip_HeadEquip038"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "Head004",
+      "name": "Witch Hat",
+      "items": [
+       "Head004",
+       "Head004_2",
+       "Head004_3",
+       "Head004_4",
+       "Head004_5"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip004",
+       "TypeB": "HeadEquip_HeadEquip004"
+      },
+      "hidesHair": true
+     },
+     {
+      "id": "HeadEquip001_purple",
+      "name": "Witch's Crown",
+      "items": [
+       "HeadEquip001_purple"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip001_purple",
+       "TypeB": "HeadEquip_HeadEquip001_purple"
+      },
+      "attach": {
+       "TypeA": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_top01",
+        "position": [
+         0.16534,
+         0.0,
+         0.0054
+        ],
+        "rotation": [
+         0.030835,
+         -0.030835,
+         -0.706434,
+         0.706434
+        ]
+       },
+       "TypeB": {
+        "bone": "head",
+        "socket": "Socket_HairAttach_HeadEquip_top01",
+        "position": [
+         0.16534,
+         0.0,
+         0.0054
+        ],
+        "rotation": [
+         0.030835,
+         -0.030835,
+         -0.706434,
+         0.706434
+        ]
+       }
+      }
+     },
+     {
+      "id": "HeadEquip044",
+      "name": "Xenolord's head",
+      "items": [
+       "HeadEquip044"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip044",
+       "TypeB": "HeadEquip_HeadEquip044"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "HeadEquip049",
+      "name": "Zenara Hat",
+      "items": [
+       "HeadEquip049"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip049",
+       "TypeB": "HeadEquip_HeadEquip049"
+      },
+      "hidesHair": false
+     },
+     {
+      "id": "GYM_Head_Grass",
+      "name": "Zoe Hat",
+      "items": [
+       "GYM_Head_Grass"
+      ],
+      "parts": {
+       "TypeA": "HeadEquip_HeadEquip035",
+       "TypeB": "HeadEquip_HeadEquip035"
+      },
+      "hidesHair": false
+     }
+    ]
+   },
+   "colors": {
+    "skin": [
+     "FFDCD3",
+     "FFD1C6",
+     "FFC5B6",
+     "E2A691",
+     "CF9F8F",
+     "A27368",
+     "4F372F",
+     "2C1A18",
+     "FFFAF8",
+     "C83A3A",
+     "FAF5B9",
+     "84BA8D",
+     "9191DC",
+     "D1B9D7",
+     "FFDBFB"
+    ],
+    "hairBrow": [
+     "735E52",
+     "FFF8ED",
+     "DBC49E",
+     "6C3937",
+     "AB752A",
+     "CDCFBB",
+     "678472",
+     "00AEA4",
+     "B5AAB9",
+     "ECD5E5",
+     "82465B",
+     "353535",
+     "C6C6C6",
+     "FFFFFF"
+    ],
+    "eye": [
+     "4BB987",
+     "3E7293",
+     "6852B4",
+     "C485C5",
+     "890057",
+     "AC5D41",
+     "C0AD00",
+     "8E6123",
+     "717171",
+     "FFFFFF"
+    ]
+   },
+   "presets": [
+    {
+     "id": "TypeC_000",
+     "icon": "T_icon_chara_preset_01",
+     "bodyType": "TypeB",
+     "head": "Type16",
+     "hair": "Type8",
+     "eye": "Type001",
+     "arm": 0.0,
+     "torso": 0.0,
+     "leg": -0.5,
+     "colors": {
+      "hair": "6C3937",
+      "brow": "6C3937",
+      "skin": "ECA592",
+      "eye": "3E7293"
+     }
+    },
+    {
+     "id": "TypeC_000_0",
+     "icon": "T_icon_chara_preset_02",
+     "bodyType": "TypeB",
+     "head": "Type20",
+     "hair": "Type23",
+     "eye": "Type001",
+     "arm": 0.0,
+     "torso": 0.0,
+     "leg": -0.5,
+     "colors": {
+      "hair": "37312E",
+      "brow": "37312E",
+      "skin": "633730",
+      "eye": "8E6223"
+     }
+    },
+    {
+     "id": "TypeC_000_1",
+     "icon": "T_icon_chara_preset_03",
+     "bodyType": "TypeB",
+     "head": "Type19",
+     "hair": "Type25",
+     "eye": "Type001",
+     "arm": 0.0,
+     "torso": 0.0,
+     "leg": -0.5,
+     "colors": {
+      "hair": "6C3937",
+      "brow": "6C3937",
+      "skin": "985A49",
+      "eye": "C0AD00"
+     }
+    },
+    {
+     "id": "TypeC_000_3",
+     "icon": "T_icon_chara_preset_04",
+     "bodyType": "TypeB",
+     "head": "Type18",
+     "hair": "Type3",
+     "eye": "Type001",
+     "arm": 0.0,
+     "torso": 0.0,
+     "leg": -0.5,
+     "colors": {
+      "hair": "6C3937",
+      "brow": "6C3937",
+      "skin": "CA8972",
+      "eye": "890057"
+     }
+    },
+    {
+     "id": "TypeC_000_2",
+     "icon": "T_icon_chara_preset_05",
+     "bodyType": "TypeB",
+     "head": "Type21",
+     "hair": "Type6",
+     "eye": "Type010",
+     "arm": 0.0,
+     "torso": 0.0,
+     "leg": -0.5,
+     "colors": {
+      "hair": "FFFFFF",
+      "brow": "FFFFFF",
+      "skin": "B18D82",
+      "eye": "FFFFFF"
+     }
+    },
+    {
+     "id": "TypeB_000",
+     "icon": "T_icon_chara_preset_06",
+     "bodyType": "TypeB",
+     "head": "Type2",
+     "hair": "Type2",
+     "eye": "Type001",
+     "arm": 0.0,
+     "torso": 0.0,
+     "leg": -0.5,
+     "colors": {
+      "hair": "CB8484",
+      "brow": "CB8484",
+      "skin": "F6B7AA",
+      "eye": "8AD9BA"
+     }
+    },
+    {
+     "id": "TypeA_000",
+     "icon": "T_icon_chara_preset_07",
+     "bodyType": "TypeA",
+     "head": "Type1",
+     "hair": "Type1",
+     "eye": "Type001",
+     "arm": 0.0,
+     "torso": 0.0,
+     "leg": 0.0,
+     "colors": {
+      "hair": "CB8484",
+      "brow": "CB8484",
+      "skin": "F6B7AA",
+      "eye": "8AD9BA"
+     }
+    },
+    {
+     "id": "TypeA_008",
+     "icon": "T_icon_chara_preset_08",
+     "bodyType": "TypeA",
+     "head": "Type5",
+     "hair": "Type5",
+     "eye": "Type001",
+     "arm": 0.0,
+     "torso": 0.0,
+     "leg": 0.0,
+     "colors": {
+      "hair": "353535",
+      "brow": "353535",
+      "skin": "875F56",
+      "eye": "C0AD00"
+     }
+    },
+    {
+     "id": "TypeA_009",
+     "icon": "T_icon_chara_preset_09",
+     "bodyType": "TypeA",
+     "head": "Type7",
+     "hair": "Type7",
+     "eye": "Type001",
+     "arm": 0.0,
+     "torso": 0.0,
+     "leg": 0.0,
+     "colors": {
+      "hair": "EBD5E4",
+      "brow": "CFBBC9",
+      "skin": "C58677",
+      "eye": "C485C5"
+     }
+    },
+    {
+     "id": "TypeA_010",
+     "icon": "T_icon_chara_preset_10",
+     "bodyType": "TypeA",
+     "head": "Type1",
+     "hair": "Type7",
+     "eye": "Type001",
+     "arm": 0.0,
+     "torso": 0.0,
+     "leg": 0.0,
+     "colors": {
+      "hair": "00AEA4",
+      "brow": "90BDBB",
+      "skin": "FBDBD2",
+      "eye": "98C7BA"
+     }
+    },
+    {
+     "id": "TypeA_011",
+     "icon": "T_icon_chara_preset_11",
+     "bodyType": "TypeA",
+     "head": "Type3",
+     "hair": "Type3",
+     "eye": "Type001",
+     "arm": 0.0,
+     "torso": 0.0,
+     "leg": 0.0,
+     "colors": {
+      "hair": "6C3937",
+      "brow": "6C3937",
+      "skin": "CF9F8F",
+      "eye": "7A531D"
+     }
+    },
+    {
+     "id": "TypeA_012",
+     "icon": "T_icon_chara_preset_12",
+     "bodyType": "TypeA",
+     "head": "Type5",
+     "hair": "Type2",
+     "eye": "Type001",
+     "arm": 0.0,
+     "torso": 0.0,
+     "leg": 0.0,
+     "colors": {
+      "hair": "DEDEDE",
+      "brow": "DDDDDD",
+      "skin": "A27368",
+      "eye": "AEB9B3"
+     }
+    }
+   ],
+   "default": "TypeA_000",
+   "path": "palworld/",
+   "partPrefix": "PlayerPart_",
+   "eyesModel": "PlayerEyes"
+  },
+  "animPacks": [
+   {
+    "id": "Actions_NPC_StandardHumanDataSet",
+    "path": "palworld/Pack_Actions_NPC_StandardHumanDataSet/",
+    "label": "Actions (Standard)",
+    "own": true
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Base",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Base/",
+    "label": "Base",
+    "own": true
+   },
+   {
+    "id": "Player_Female_ShooterAnime_None",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_None/",
+    "label": "Unarmed",
+    "own": true,
+    "weaponType": "None"
+   },
+   {
+    "id": "Player_Female_Extra",
+    "path": "palworld/Pack_Player_Female_Extra/",
+    "label": "Player extras",
+    "own": true
+   },
+   {
+    "id": "Player_Female_ShooterAnime_AssaultRifle",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_AssaultRifle/",
+    "label": "Assault Rifle",
+    "own": false,
+    "weaponType": "AssaultRifle",
+    "heldItems": [
+     {
+      "item": "Weapon_AssaultRifle_001",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Bowgun",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Bowgun/",
+    "label": "Bowgun",
+    "own": false,
+    "weaponType": "BowGun",
+    "heldItems": [
+     {
+      "item": "Weapon_Bowgun_001",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Flamethrower",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Flamethrower/",
+    "label": "Flamethrower",
+    "own": false,
+    "weaponType": "FlameThrower",
+    "heldItems": [
+     {
+      "item": "Weapon_Flamethrower_002",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "NPC_Fat_ShooterAnime_HeavyWeapon",
+    "path": "palworld/Pack_NPC_Fat_ShooterAnime_HeavyWeapon/",
+    "label": "Heavy Weapon (Fat)",
+    "own": false,
+    "weaponType": "GatlingGun",
+    "heldItems": [
+     {
+      "item": "Weapon_AssaultRifle_002",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ],
+      "scale": [
+       0.467,
+       0.467,
+       0.467
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Melee",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Melee/",
+    "label": "Melee",
+    "own": false,
+    "weaponType": "GiantClub",
+    "heldItems": [
+     {
+      "item": "Weapon_NPC_Male_Believer01Cane",
+      "bone": "weapon_r",
+      "position": [
+       -0.0,
+       1.25825,
+       0.0
+      ],
+      "rotation": [
+       -0.707107,
+       -0.0,
+       0.0,
+       0.707107
+      ],
+      "scale": [
+       5.1473,
+       5.1473,
+       2.0432
+      ]
+     }
+    ]
+   },
+   {
+    "id": "NPC_Fat_ShooterAnime_Melee",
+    "path": "palworld/Pack_NPC_Fat_ShooterAnime_Melee/",
+    "label": "Melee (Fat)",
+    "own": false,
+    "weaponType": "GiantClub",
+    "heldItems": [
+     {
+      "item": "Weapon_NPC_Male_Believer01Cane",
+      "bone": "weapon_r",
+      "position": [
+       -0.0,
+       1.25825,
+       0.0
+      ],
+      "rotation": [
+       -0.707107,
+       -0.0,
+       0.0,
+       0.707107
+      ],
+      "scale": [
+       5.1473,
+       5.1473,
+       2.0432
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_GrenadeLauncher",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_GrenadeLauncher/",
+    "label": "Grenade Launcher",
+    "own": false,
+    "weaponType": "GrenadeLauncher",
+    "heldItems": [
+     {
+      "item": "Weapon_GrenadeLauncher_001",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Handgun",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Handgun/",
+    "label": "Handgun",
+    "own": false,
+    "weaponType": "Handgun",
+    "heldItems": [
+     {
+      "item": "Weapon_Handgun_001",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Male_ShooterAnime_HandgunShield",
+    "path": "palworld/Pack_Player_Male_ShooterAnime_HandgunShield/",
+    "label": "Handgun Shield (Player Male)",
+    "own": false,
+    "weaponType": "HandgunShield"
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Katana",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Katana/",
+    "label": "Katana",
+    "own": false,
+    "weaponType": "Katana",
+    "heldItems": [
+     {
+      "item": "Weapon_NPC_Male_Ninja01Weapon",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "NPC_GrassBoss_ShooterAnime_None",
+    "path": "palworld/Pack_NPC_GrassBoss_ShooterAnime_None/",
+    "label": "Unarmed (Grass Boss)",
+    "own": false,
+    "weaponType": "LaserMiningTool"
+   },
+   {
+    "id": "Player_Female_ShooterAnime_LaserRifle",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_LaserRifle/",
+    "label": "Laser Rifle",
+    "own": false,
+    "weaponType": "LaserRifle",
+    "heldItems": [
+     {
+      "item": "Weapon_AssaultRifle_006",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_PalCarry",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_PalCarry/",
+    "label": "Pal Carry",
+    "own": false,
+    "weaponType": "Liftup"
+   },
+   {
+    "id": "Player_Female_ShooterAnime_RocketLauncher",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_RocketLauncher/",
+    "label": "Rocket Launcher",
+    "own": false,
+    "weaponType": "MissileLauncher",
+    "heldItems": [
+     {
+      "item": "Weapon_RocketLauncher_003",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     },
+     {
+      "item": "Weapon_RocketLauncher_004_Missile",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_GuidedMissileLauncher",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_GuidedMissileLauncher/",
+    "label": "Guided Missile Launcher",
+    "own": false
+   },
+   {
+    "id": "Player_Female_ShooterAnime_MultiGuidedMissileLauncher",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_MultiGuidedMissileLauncher/",
+    "label": "Multi Guided Missile Launcher",
+    "own": false,
+    "weaponType": "MissileLauncher",
+    "heldItems": [
+     {
+      "item": "Weapon_RocketLauncher_003",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     },
+     {
+      "item": "Weapon_RocketLauncher_004_Missile",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_PumpActionShotgun",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_PumpActionShotgun/",
+    "label": "Pump Action Shotgun",
+    "own": false,
+    "weaponType": "Shotgun",
+    "heldItems": [
+     {
+      "item": "Weapon_Shotgun_003",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "ShooterAnime_ThrowBase",
+    "path": "palworld/Pack_ShooterAnime_ThrowBase/",
+    "label": "Throw Base",
+    "own": false
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Throw",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Throw/",
+    "label": "Throw",
+    "own": false,
+    "weaponType": "ThrowObject",
+    "heldItems": [
+     {
+      "item": "Weapon_Modern_Weapons_Grenade_01",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ],
+      "scale": [
+       2.0,
+       2.0,
+       2.0
+      ]
+     }
+    ]
+   }
+  ],
+  "defaultPack": "Player_Female_ShooterAnime_None",
+  "species": "Player",
+  "form": "Female"
+ }
+}

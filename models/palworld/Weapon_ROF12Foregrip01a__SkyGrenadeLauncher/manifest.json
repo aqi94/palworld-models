@@ -1,0 +1,45 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_ROF12Foregrip01a__SkyGrenadeLauncher",
+ "kind": "object",
+ "displayName": "Tactical Grenade Launcher – ROF12 Foregrip 01 A",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "RofForegripMilitary",
+   "label": "RofForegripMilitary",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 922,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 7984572
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\ROF12Foregrip01a"
+ ],
+ "extras": {
+  "materialOverrides": [
+   [
+    "Pal/Content/Others/Cyberpunk_Weapons/Materials/MaterialInstances/MI_RofForegripMilitary",
+    "Pal/Content/Others/Cyberpunk_Weapons/Materials/MasterMaterials/MM_CyberpunkBase"
+   ]
+  ],
+  "partOf": "Weapon_GrenadeLauncher_002",
+  "species": "Weapon",
+  "form": "ROF12Foregrip01a"
+ }
+}

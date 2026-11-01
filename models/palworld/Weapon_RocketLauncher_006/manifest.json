@@ -1,0 +1,50 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_RocketLauncher_006",
+ "kind": "object",
+ "displayName": "Plasma Cannon",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_RocketLauncher_006_Body2",
+   "label": "Body2",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Weapon_RocketLauncher_006_Body1",
+   "label": "Body1",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 7,
+  "meshes": 2,
+  "triangles": 11437,
+  "textures": 6,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 12760176
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\RocketLauncher_006"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Plasma Cannon",
+    "class": "EnergyRocketLauncher"
+   }
+  ],
+  "species": "Weapon",
+  "form": "RocketLauncher_006"
+ }
+}

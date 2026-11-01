@@ -1,0 +1,38 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Rope2",
+ "kind": "object",
+ "displayName": "Rope 2",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Rope",
+   "label": "Rope",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 2691,
+  "textures": 2,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 10827572
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Rope2"
+ ],
+ "extras": {
+  "species": "Weapon",
+  "form": "Rope2"
+ }
+}

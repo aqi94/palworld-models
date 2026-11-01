@@ -1,0 +1,410 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "FlowerPrince",
+ "kind": "pal",
+ "displayName": "Dandilord",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "Architecture",
+   "index": 0,
+   "duration": 2.7333,
+   "frameRate": 30.0,
+   "frameCount": 83,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Carrying",
+   "index": 1,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "CommonWork",
+   "index": 2,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Damage",
+   "index": 3,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Eat",
+   "index": 4,
+   "duration": 2.8,
+   "frameRate": 30.0,
+   "frameCount": 85,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Encount",
+   "index": 5,
+   "duration": 1.6667,
+   "frameRate": 30.0,
+   "frameCount": 51,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Action",
+   "index": 6,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_ActionLoop",
+   "index": 7,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_End",
+   "index": 8,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Start",
+   "index": 9,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_StartLoop",
+   "index": 10,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GetUp_FrontDown",
+   "index": 11,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Gunner",
+   "index": 12,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Hit",
+   "index": 13,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Idle",
+   "index": 14,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "Idle_Swim",
+   "index": 15,
+   "duration": 1.2,
+   "frameRate": 30.0,
+   "frameCount": 37,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "JumpEnd",
+   "index": 16,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "JumpLoop",
+   "index": 17,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Petting",
+   "index": 18,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Planting",
+   "index": 19,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "PoisonGasDance",
+   "index": 20,
+   "duration": 5.3333,
+   "frameRate": 30.0,
+   "frameCount": 161,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "PoisonGasTackle_End",
+   "index": 21,
+   "duration": 1.1667,
+   "frameRate": 30.0,
+   "frameCount": 36,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "PoisonGasTackle_Loop",
+   "index": 22,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "PoisonGasTackle_Start",
+   "index": 23,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Rest01",
+   "index": 24,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Rest02",
+   "index": 25,
+   "duration": 4.3333,
+   "frameRate": 30.0,
+   "frameCount": 131,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Run",
+   "index": 26,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepEnd",
+   "index": 27,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepLoop",
+   "index": 28,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepStart",
+   "index": 29,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Spa",
+   "index": 30,
+   "duration": 1.6,
+   "frameRate": 30.0,
+   "frameCount": 49,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Transport",
+   "index": 31,
+   "duration": 1.4,
+   "frameRate": 30.0,
+   "frameCount": 43,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Walk",
+   "index": 32,
+   "duration": 1.4,
+   "frameRate": 30.0,
+   "frameCount": 43,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "Idle",
+ "parts": [
+  {
+   "node": "Body",
+   "label": "Body",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 158,
+  "meshes": 1,
+  "triangles": 15620,
+  "textures": 3,
+  "clips": 33,
+  "droppedTracks": 0,
+  "glbBytes": 19777520
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld\\FlowerPrince"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/FlowerPrince/SK_FlowerPrince_Skeleton",
+  "dex": 194,
+  "elements": [
+   "Grass",
+   "Dark"
+  ],
+  "rarity": 8,
+  "codeName": "FlowerPrince",
+  "species": "FlowerPrince",
+  "form": ""
+ }
+}

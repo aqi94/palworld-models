@@ -1,0 +1,52 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Melee_005",
+ "kind": "object",
+ "displayName": "Stone Spear",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Spear",
+   "label": "Spear",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 98,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 8709624
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Melee_005"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Stone Spear",
+    "class": "Spear"
+   },
+   {
+    "name": "Metal Spear",
+    "class": "Spear_2"
+   },
+   {
+    "name": "Refined Metal Spear",
+    "class": "Spear_3"
+   }
+  ],
+  "species": "Weapon",
+  "form": "Melee_005"
+ }
+}

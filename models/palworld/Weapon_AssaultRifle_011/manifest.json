@@ -1,0 +1,62 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_AssaultRifle_011",
+ "kind": "object",
+ "displayName": "Charge Rifle",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_AssaultRifle_011_Body1",
+   "label": "Body1",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Weapon_AssaultRifle_011_Body3",
+   "label": "Body3",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Weapon_AssaultRifle_011_Body4",
+   "label": "Body4",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Weapon_AssaultRifle_011_Body2",
+   "label": "Body2",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 8,
+  "meshes": 4,
+  "triangles": 50028,
+  "textures": 13,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 21944080
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\AssaultRifle_011"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Charge Rifle",
+    "class": "ChargeLaserRifle"
+   }
+  ],
+  "species": "Weapon",
+  "form": "AssaultRifle_011"
+ }
+}

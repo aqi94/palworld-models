@@ -1,0 +1,38 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_MultiMissile",
+ "kind": "object",
+ "displayName": "Multi Missile",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Mat_Inst_MissileProjectile",
+   "label": "Mat Inst MissileProjectile",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 192,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 463068
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\MultiMissile"
+ ],
+ "extras": {
+  "species": "Weapon",
+  "form": "MultiMissile"
+ }
+}

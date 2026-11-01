@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_AssaultRifle_009",
+ "kind": "object",
+ "displayName": "Semi-Auto Rifle",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_AssaultRifle_009",
+   "label": "Weapon AssaultRifle 009",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 5,
+  "meshes": 1,
+  "triangles": 10590,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 10276344
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\AssaultRifle_009"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Semi-Auto Rifle",
+    "class": "SemiAutoRifle"
+   }
+  ],
+  "species": "Weapon",
+  "form": "AssaultRifle_009"
+ }
+}

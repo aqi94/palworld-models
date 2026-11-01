@@ -1,0 +1,45 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_GatelingGun_BulletShell__LaserGatlingGun",
+ "kind": "object",
+ "displayName": "Laser Gatling Gun – Gateling Gun Bullet Shell",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "BulletMaterial_Laser",
+   "label": "BulletMaterial Laser",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 28,
+  "textures": 0,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 3192
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\GatelingGun_BulletShell"
+ ],
+ "extras": {
+  "materialOverrides": [
+   [
+    "Pal/Content/Pal/Model/Weapon/AssaultRifle/NormalGun/MI_BulletMaterial_Laser",
+    "Pal/Content/Pal/Model/Weapon/AssaultRifle/NormalGun/M_BulletMaterial"
+   ]
+  ],
+  "partOf": "Weapon_AssaultRifle_007",
+  "species": "Weapon",
+  "form": "GatelingGun_BulletShell"
+ }
+}

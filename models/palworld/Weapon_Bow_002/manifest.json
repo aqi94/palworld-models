@@ -1,0 +1,38 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Bow_002",
+ "kind": "object",
+ "displayName": "Bow 002",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_Bow_002",
+   "label": "Weapon Bow 002",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 2,
+  "meshes": 1,
+  "triangles": 7878,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 6120324
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Bow_002"
+ ],
+ "extras": {
+  "species": "Weapon",
+  "form": "Bow_002"
+ }
+}

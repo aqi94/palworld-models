@@ -1,0 +1,38 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Pickaxe_PalMetal",
+ "kind": "object",
+ "displayName": "Pickaxe Pal Metal",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "PalProp_Axe_Palmetal",
+   "label": "PalProp Axe Palmetal",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 312,
+  "textures": 4,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 8610908
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Pickaxe_PalMetal"
+ ],
+ "extras": {
+  "species": "Weapon",
+  "form": "Pickaxe_PalMetal"
+ }
+}

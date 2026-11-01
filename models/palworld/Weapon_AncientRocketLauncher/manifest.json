@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_AncientRocketLauncher",
+ "kind": "object",
+ "displayName": "Beam Launcher",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "PalProp_AncientRocketLauncher",
+   "label": "PalProp AncientRocketLauncher",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 6,
+  "meshes": 1,
+  "triangles": 7654,
+  "textures": 4,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 6296144
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\AncientRocketLauncher"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Beam Launcher",
+    "class": "BeamLauncher"
+   }
+  ],
+  "species": "Weapon",
+  "form": "AncientRocketLauncher"
+ }
+}

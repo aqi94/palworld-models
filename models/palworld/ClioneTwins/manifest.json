@@ -1,0 +1,415 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "ClioneTwins",
+ "kind": "pal",
+ "displayName": "Amione",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [
+  {
+   "name": "eye",
+   "label": "Eye",
+   "options": [
+    {
+     "variant": 0,
+     "name": "eye_1",
+     "label": "1",
+     "default": true
+    },
+    {
+     "variant": 1,
+     "name": "eye_2",
+     "label": "2",
+     "default": false
+    },
+    {
+     "variant": 2,
+     "name": "eye_3",
+     "label": "3",
+     "default": false
+    },
+    {
+     "variant": 3,
+     "name": "eye_4",
+     "label": "4",
+     "default": false
+    },
+    {
+     "variant": 4,
+     "name": "eye_5",
+     "label": "5",
+     "default": false
+    },
+    {
+     "variant": 5,
+     "name": "eye_6",
+     "label": "6",
+     "default": false
+    },
+    {
+     "variant": 6,
+     "name": "eye_7",
+     "label": "7",
+     "default": false
+    },
+    {
+     "variant": 7,
+     "name": "eye_8",
+     "label": "8",
+     "default": false
+    }
+   ]
+  }
+ ],
+ "clips": [
+  {
+   "name": "Architecture",
+   "index": 0,
+   "duration": 1.6667,
+   "frameRate": 30.0,
+   "frameCount": 51,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Carrying",
+   "index": 1,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "CommonWork",
+   "index": 2,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Damage",
+   "index": 3,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Eat",
+   "index": 4,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Encount",
+   "index": 5,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Action",
+   "index": 6,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_ActionLoop",
+   "index": 7,
+   "duration": 0.5333,
+   "frameRate": 30.0,
+   "frameCount": 17,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_End",
+   "index": 8,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Start",
+   "index": 9,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_StartLoop",
+   "index": 10,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GetUp_FrontDown",
+   "index": 11,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Gunner",
+   "index": 12,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Hit",
+   "index": 13,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Idle",
+   "index": 14,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "Petting",
+   "index": 15,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Rest01",
+   "index": 16,
+   "duration": 5.6667,
+   "frameRate": 30.0,
+   "frameCount": 171,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Rest02",
+   "index": 17,
+   "duration": 5.0,
+   "frameRate": 30.0,
+   "frameCount": 151,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Rest03",
+   "index": 18,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Run",
+   "index": 19,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepEnd",
+   "index": 20,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepLoop",
+   "index": 21,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepLoopTogether",
+   "index": 22,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepStart",
+   "index": 23,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Spa",
+   "index": 24,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Transport",
+   "index": 25,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Walk",
+   "index": 26,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Watering",
+   "index": 27,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "Idle",
+ "parts": [
+  {
+   "node": "Body",
+   "label": "Body",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Eye",
+   "label": "Eye",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 131,
+  "meshes": 2,
+  "triangles": 15000,
+  "textures": 4,
+  "clips": 28,
+  "droppedTracks": 0,
+  "glbBytes": 14361472
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld\\ClioneTwins"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/ClioneTwins/SK_ClioneTwins_Skeleton",
+  "dex": 47,
+  "elements": [
+   "Water"
+  ],
+  "rarity": 2,
+  "codeName": "ClioneTwins",
+  "species": "ClioneTwins",
+  "form": ""
+ }
+}

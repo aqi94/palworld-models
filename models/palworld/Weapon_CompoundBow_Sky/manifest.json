@@ -1,0 +1,38 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_CompoundBow_Sky",
+ "kind": "object",
+ "displayName": "Compound Bow Sky",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "PalProp_CompoundBow_Blue",
+   "label": "PalProp CompoundBow Blue",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 43025,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 17731080
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\CompoundBow_Sky"
+ ],
+ "extras": {
+  "species": "Weapon",
+  "form": "CompoundBow_Sky"
+ }
+}

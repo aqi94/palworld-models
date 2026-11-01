@@ -1,0 +1,50 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_RocketLauncher_003",
+ "kind": "object",
+ "displayName": "Multi Guided Missile Launcher",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_RocketLauncher_003",
+   "label": "Weapon RocketLauncher 003",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 7,
+  "meshes": 1,
+  "triangles": 10558,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 11832740
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\RocketLauncher_003"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Multi Guided Missile Launcher",
+    "class": "MultiGuidedMissileLauncher"
+   }
+  ],
+  "users": {
+   "npc": [
+    "MultiGuidedMissileLauncher_NPC",
+    "MultiGuidedMissileLauncher_NPC_Otomo"
+   ]
+  },
+  "species": "Weapon",
+  "form": "RocketLauncher_003"
+ }
+}

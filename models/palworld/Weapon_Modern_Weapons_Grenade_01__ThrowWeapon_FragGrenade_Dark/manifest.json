@@ -1,0 +1,70 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Modern_Weapons_Grenade_01__ThrowWeapon_FragGrenade_Dark",
+ "kind": "object",
+ "displayName": "Ice Grenade",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "01",
+   "label": "01",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 1648,
+  "textures": 1,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 730676
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Modern_Weapons_Grenade_01"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Ice Grenade",
+    "class": "FragGrenade_Ice"
+   },
+   {
+    "name": "Water Grenade",
+    "class": "FragGrenade_Water"
+   },
+   {
+    "name": "Grass Grenade",
+    "class": "FragGrenade_Leaf"
+   },
+   {
+    "name": "Ground Grenade",
+    "class": "FragGrenade_Ground"
+   },
+   {
+    "name": "Dark Grenade",
+    "class": "FragGrenade_Dark"
+   },
+   {
+    "name": "Dragon Grenade",
+    "class": "FragGrenade_Dragon"
+   }
+  ],
+  "materialOverrides": [
+   [
+    "Pal/Content/Others/MarketplaceBlockout/Modern/Weapons/Assets/Grenades/01/Materials/MI_Modern_Weapons_Grenade_01",
+    "Pal/Content/Others/MarketplaceBlockout/Modern/Weapons/Materials/MasterMaterials/MM_Modern_Weapons_Textured"
+   ]
+  ],
+  "species": "Weapon",
+  "form": "Modern_Weapons_Grenade_01"
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Shield_001",
+ "kind": "object",
+ "displayName": "Ballistic Shield – Shield 001",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Police_Shield",
+   "label": "Police Shield",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Police_Shield_Glass",
+   "label": "Police Shield Glass",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 2,
+  "triangles": 3318,
+  "textures": 1,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 3011464
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Shield_001"
+ ],
+ "extras": {
+  "partOf": "Weapon_Handgun_007",
+  "species": "Weapon",
+  "form": "Shield_001"
+ }
+}

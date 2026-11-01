@@ -1,0 +1,486 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "TentacleTurtle_Ground",
+ "kind": "pal",
+ "displayName": "Turtacle Terra",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [
+  {
+   "name": "mouth",
+   "label": "Mouth",
+   "options": [
+    {
+     "variant": 0,
+     "name": "mouth_1",
+     "label": "1",
+     "default": true
+    },
+    {
+     "variant": 1,
+     "name": "mouth_2",
+     "label": "2",
+     "default": false
+    },
+    {
+     "variant": 2,
+     "name": "mouth_3",
+     "label": "3",
+     "default": false
+    },
+    {
+     "variant": 3,
+     "name": "mouth_4",
+     "label": "4",
+     "default": false
+    }
+   ]
+  },
+  {
+   "name": "eye",
+   "label": "Eye",
+   "options": [
+    {
+     "variant": 4,
+     "name": "eye_1",
+     "label": "1",
+     "default": true
+    },
+    {
+     "variant": 5,
+     "name": "eye_2",
+     "label": "2",
+     "default": false
+    },
+    {
+     "variant": 6,
+     "name": "eye_3",
+     "label": "3",
+     "default": false
+    },
+    {
+     "variant": 7,
+     "name": "eye_4",
+     "label": "4",
+     "default": false
+    },
+    {
+     "variant": 8,
+     "name": "eye_5",
+     "label": "5",
+     "default": false
+    },
+    {
+     "variant": 9,
+     "name": "eye_6",
+     "label": "6",
+     "default": false
+    },
+    {
+     "variant": 10,
+     "name": "eye_7",
+     "label": "7",
+     "default": false
+    },
+    {
+     "variant": 11,
+     "name": "eye_8",
+     "label": "8",
+     "default": false
+    }
+   ]
+  }
+ ],
+ "clips": [
+  {
+   "name": "Carrying",
+   "index": 0,
+   "duration": 1.9,
+   "frameRate": 30.0,
+   "frameCount": 58,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Carrying_Start",
+   "index": 1,
+   "duration": 2.2,
+   "frameRate": 30.0,
+   "frameCount": 67,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Damage",
+   "index": 2,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Eat",
+   "index": 3,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Encount",
+   "index": 4,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Action",
+   "index": 5,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_ActionLoop",
+   "index": 6,
+   "duration": 0.4,
+   "frameRate": 30.0,
+   "frameCount": 13,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_End",
+   "index": 7,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Start",
+   "index": 8,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_StartLoop",
+   "index": 9,
+   "duration": 1.1333,
+   "frameRate": 30.0,
+   "frameCount": 35,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FishingCaught",
+   "index": 10,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GetUp_BackDown",
+   "index": 11,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GetUp_FrontDown",
+   "index": 12,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Hit",
+   "index": 13,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "HydroSpin_End",
+   "index": 14,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "HydroSpin_Loop",
+   "index": 15,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "HydroSpin_Start",
+   "index": 16,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Idle",
+   "index": 17,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "Mining",
+   "index": 18,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Petting",
+   "index": 19,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Rest01",
+   "index": 20,
+   "duration": 5.3333,
+   "frameRate": 30.0,
+   "frameCount": 161,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Rest02",
+   "index": 21,
+   "duration": 2.3333,
+   "frameRate": 30.0,
+   "frameCount": 71,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Rest03",
+   "index": 22,
+   "duration": 2.3333,
+   "frameRate": 30.0,
+   "frameCount": 71,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Run",
+   "index": 23,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepEnd",
+   "index": 24,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepLoop",
+   "index": 25,
+   "duration": 3.3333,
+   "frameRate": 30.0,
+   "frameCount": 101,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepStart",
+   "index": 26,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Spa",
+   "index": 27,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Transport",
+   "index": 28,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Walk",
+   "index": 29,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Watering",
+   "index": 30,
+   "duration": 4.0,
+   "frameRate": 30.0,
+   "frameCount": 121,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "Idle",
+ "parts": [
+  {
+   "node": "Mouth",
+   "label": "Mouth",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Eye",
+   "label": "Eye",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Body",
+   "label": "Body",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 40,
+  "meshes": 3,
+  "triangles": 8252,
+  "textures": 5,
+  "clips": 31,
+  "droppedTracks": 0,
+  "glbBytes": 10135216
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld\\TentacleTurtle_Ground"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/TentacleTurtle/SK_TentacleTurtle_Skeleton",
+  "dex": 37,
+  "dexSuffix": "B",
+  "elements": [
+   "Water",
+   "Ground"
+  ],
+  "rarity": 4,
+  "codeName": "TentacleTurtle_Ground",
+  "species": "TentacleTurtle_Ground",
+  "form": ""
+ }
+}

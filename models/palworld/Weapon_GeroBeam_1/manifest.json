@@ -1,0 +1,50 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_GeroBeam_1",
+ "kind": "object",
+ "displayName": "Gero Beam 1",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "MasterMaterial_Normal",
+   "label": "MasterMaterial Normal",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "MasterMaterial_Parallax",
+   "label": "MasterMaterial Parallax",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Decal",
+   "label": "Decal",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 3,
+  "triangles": 8872,
+  "textures": 1,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 1270748
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\GeroBeam_1"
+ ],
+ "extras": {
+  "species": "Weapon",
+  "form": "GeroBeam_1"
+ }
+}

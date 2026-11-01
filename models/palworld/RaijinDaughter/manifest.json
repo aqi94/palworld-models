@@ -1,0 +1,369 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "RaijinDaughter",
+ "kind": "pal",
+ "displayName": "Dazzi",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [
+  {
+   "name": "ml_raijindaughter_mouth",
+   "label": "Ml_RaijinDaughter_Mouth",
+   "options": [
+    {
+     "variant": 0,
+     "name": "ml_raijindaughter_mouth_1",
+     "label": "1",
+     "default": true
+    },
+    {
+     "variant": 1,
+     "name": "ml_raijindaughter_mouth_2",
+     "label": "2",
+     "default": false
+    },
+    {
+     "variant": 2,
+     "name": "ml_raijindaughter_mouth_3",
+     "label": "3",
+     "default": false
+    },
+    {
+     "variant": 3,
+     "name": "ml_raijindaughter_mouth_4",
+     "label": "4",
+     "default": false
+    }
+   ]
+  }
+ ],
+ "clips": [
+  {
+   "name": "Architecture",
+   "index": 0,
+   "duration": 0.9333,
+   "frameRate": 30.0,
+   "frameCount": 29,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Carrying",
+   "index": 1,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Carrying_Start",
+   "index": 2,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "CommonWork",
+   "index": 3,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Damage",
+   "index": 4,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Eat",
+   "index": 5,
+   "duration": 3.3333,
+   "frameRate": 30.0,
+   "frameCount": 101,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Encount",
+   "index": 6,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Action",
+   "index": 7,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_ActionLoop",
+   "index": 8,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_End",
+   "index": 9,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Start",
+   "index": 10,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_StartLoop",
+   "index": 11,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GetUp_FrontDown",
+   "index": 12,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Gunner",
+   "index": 13,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Hit",
+   "index": 14,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Idle",
+   "index": 15,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "Petting",
+   "index": 16,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Rest01",
+   "index": 17,
+   "duration": 2.1,
+   "frameRate": 30.0,
+   "frameCount": 64,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Rest02",
+   "index": 18,
+   "duration": 2.0667,
+   "frameRate": 30.0,
+   "frameCount": 63,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Run",
+   "index": 19,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepEnd",
+   "index": 20,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepLoop",
+   "index": 21,
+   "duration": 4.1667,
+   "frameRate": 30.0,
+   "frameCount": 126,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepStar",
+   "index": 22,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Spa",
+   "index": 23,
+   "duration": 4.1667,
+   "frameRate": 30.0,
+   "frameCount": 126,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Transport",
+   "index": 24,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Walk",
+   "index": 25,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "Idle",
+ "parts": [
+  {
+   "node": "Body",
+   "label": "Body",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Ml_RaijinDaughter_Mouth",
+   "label": "Ml RaijinDaughter Mouth",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 32,
+  "meshes": 2,
+  "triangles": 14051,
+  "textures": 4,
+  "clips": 26,
+  "droppedTracks": 0,
+  "glbBytes": 6986440
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld\\RaijinDaughter"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/RaijinDaughter/SK_RaijinDaughter_Skeleton",
+  "dex": 92,
+  "elements": [
+   "Electric"
+  ],
+  "rarity": 2,
+  "codeName": "RaijinDaughter",
+  "species": "RaijinDaughter",
+  "form": ""
+ }
+}

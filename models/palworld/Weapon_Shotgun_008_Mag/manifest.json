@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Shotgun_008_Mag",
+ "kind": "object",
+ "displayName": "Prototype Shotgun – Magazine",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_Shotgun_008_Body2",
+   "label": "Weapon Shotgun 008 Body2",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Weapon_Shotgun_008_Body2_1",
+   "label": "Weapon Shotgun 008 Body2 1",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 2,
+  "triangles": 6912,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 9859928
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Shotgun_008_Mag"
+ ],
+ "extras": {
+  "species": "Weapon",
+  "form": "Shotgun_008_Mag"
+ }
+}

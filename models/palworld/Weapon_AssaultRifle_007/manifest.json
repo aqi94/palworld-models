@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_AssaultRifle_007",
+ "kind": "object",
+ "displayName": "Laser Gatling Gun",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_AssaultRifle_007",
+   "label": "Weapon AssaultRifle 007",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 5,
+  "meshes": 1,
+  "triangles": 8322,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 12962252
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\AssaultRifle_007"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Laser Gatling Gun",
+    "class": "LaserGatlingGun"
+   }
+  ],
+  "species": "Weapon",
+  "form": "AssaultRifle_007"
+ }
+}

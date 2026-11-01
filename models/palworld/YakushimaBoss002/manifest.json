@@ -1,0 +1,119 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "YakushimaBoss002",
+ "kind": "pal",
+ "displayName": "Moon Lord",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "Death_B",
+   "index": 0,
+   "duration": 10.0,
+   "frameRate": 30.0,
+   "frameCount": 301,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Hit_B",
+   "index": 1,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Idle_B",
+   "index": 2,
+   "duration": 8.5333,
+   "frameRate": 30.0,
+   "frameCount": 257,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "PhantasmalBolt_B",
+   "index": 3,
+   "duration": 3.2,
+   "frameRate": 30.0,
+   "frameCount": 97,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "PhantasmalDeathray_End",
+   "index": 4,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "PhantasmalDeathray_Start",
+   "index": 5,
+   "duration": 1.6,
+   "frameRate": 30.0,
+   "frameCount": 49,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "Idle_B",
+ "parts": [
+  {
+   "node": "Eye_C",
+   "label": "Eye C",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Body_M02",
+   "label": "Body M02",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Body_M01",
+   "label": "Body M01",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 88,
+  "meshes": 3,
+  "triangles": 26150,
+  "textures": 12,
+  "clips": 6,
+  "droppedTracks": 0,
+  "glbBytes": 34372548
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld\\YakushimaBoss002"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/YakushimaBoss002/SK_YakushimaBoss002_Skeleton",
+  "codeName": "YakushimaBoss002",
+  "species": "YakushimaBoss002",
+  "form": ""
+ }
+}

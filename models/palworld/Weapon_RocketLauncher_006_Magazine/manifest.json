@@ -1,0 +1,38 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_RocketLauncher_006_Magazine",
+ "kind": "object",
+ "displayName": "Plasma Cannon – Magazine",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_RocketLauncher_006_Body2",
+   "label": "Weapon RocketLauncher 006 Body2",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 590,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 4531548
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\RocketLauncher_006_Magazine"
+ ],
+ "extras": {
+  "species": "Weapon",
+  "form": "RocketLauncher_006_Magazine"
+ }
+}

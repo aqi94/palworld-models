@@ -1,0 +1,38 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_sword_01",
+ "kind": "object",
+ "displayName": "Sword 01",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "swords",
+   "label": "swords",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 1584,
+  "textures": 4,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 11345824
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\sword_01"
+ ],
+ "extras": {
+  "species": "Weapon",
+  "form": "sword_01"
+ }
+}

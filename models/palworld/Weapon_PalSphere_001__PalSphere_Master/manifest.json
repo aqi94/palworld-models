@@ -1,0 +1,58 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_PalSphere_001__PalSphere_Master",
+ "kind": "object",
+ "displayName": "Ultra Sphere",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Gold",
+   "label": "Gold",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "MasterPalSphere_Crystal",
+   "label": "MasterPalSphere Crystal",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 3,
+  "meshes": 2,
+  "triangles": 8568,
+  "textures": 4,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 5043272
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\PalSphere_001"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Ultra Sphere",
+    "class": "PalSphere_Master"
+   }
+  ],
+  "materialOverrides": [
+   null,
+   [
+    "Pal/Content/Pal/Model/Weapon/PalSphere/PalSphere_001/Material/MI_MasterPalSphere_Crystal",
+    "Pal/Content/Others/CartoonCrystalShader/Materials/Crystal/Crystal_C/MI_Crystal_C_01_LOD0",
+    "Pal/Content/Others/CartoonCrystalShader/Materials/Crystal/M_PBR_Crystal_Base_Opaque"
+   ]
+  ],
+  "species": "Weapon",
+  "form": "PalSphere_001"
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_FishingFloat005",
+ "kind": "object",
+ "displayName": "Intermediate Fishing Rod (Cattiva) – Fishing Float 005",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Body",
+   "label": "Body",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 2986,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 4412224
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\FishingFloat005"
+ ],
+ "extras": {
+  "partOf": "Weapon_FishingRod001_v02",
+  "species": "Weapon",
+  "form": "FishingFloat005"
+ }
+}

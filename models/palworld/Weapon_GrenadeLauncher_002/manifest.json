@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_GrenadeLauncher_002",
+ "kind": "object",
+ "displayName": "Tactical Grenade Launcher",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_GrenadeLauncher_002",
+   "label": "Weapon GrenadeLauncher 002",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 7,
+  "meshes": 1,
+  "triangles": 11596,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 11787268
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\GrenadeLauncher_002"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Tactical Grenade Launcher",
+    "class": "SkyGrenadeLauncher"
+   }
+  ],
+  "species": "Weapon",
+  "form": "GrenadeLauncher_002"
+ }
+}

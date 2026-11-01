@@ -1,0 +1,53 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Handgun_006_Mag__PalDopingShot_2",
+ "kind": "object",
+ "displayName": "Megaboost Gun – Magazine",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_Handgun_006_Liquid_2",
+   "label": "Weapon Handgun 006 Liquid 2",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Weapon_Handgun_006_Body",
+   "label": "Weapon Handgun 006 Body",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 2,
+  "triangles": 8628,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 4912656
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Handgun_006_Mag"
+ ],
+ "extras": {
+  "materialOverrides": [
+   null,
+   [
+    "Pal/Content/Pal/Model/Weapon/Handgun/SK_Weapon_Handgun_006/Material/MI_Weapon_Handgun_006_Liquid_2",
+    "Pal/Content/Pal/Model/Weapon/Handgun/SK_Weapon_Handgun_006/Material/MI_Weapon_Handgun_006_Liquid",
+    "Pal/Content/Pal/Model/Weapon/Handgun/SK_Weapon_Handgun_006/Material/M_Weapon_Handgun_006_Liquid"
+   ]
+  ],
+  "partOf": "Weapon_Handgun_006",
+  "species": "Weapon",
+  "form": "Handgun_006_Mag"
+ }
+}

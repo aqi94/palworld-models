@@ -1,0 +1,50 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Bowgun_001",
+ "kind": "object",
+ "displayName": "Crossbow",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_Bowgun_001",
+   "label": "Weapon Bowgun 001",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 6,
+  "meshes": 1,
+  "triangles": 14948,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 9238896
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Bowgun_001"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Crossbow",
+    "class": "BowGun"
+   }
+  ],
+  "users": {
+   "npc": [
+    "Bowgun_NPC",
+    "Bowgun_NPC_Otomo"
+   ]
+  },
+  "species": "Weapon",
+  "form": "Bowgun_001"
+ }
+}

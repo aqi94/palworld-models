@@ -1,0 +1,74 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_SubmachineGun_003",
+ "kind": "object",
+ "displayName": "Combat SMG",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_SubmachineGun_003_Magazine_Opaque",
+   "label": "Magazine Opaque",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Weapon_SubmachineGun_003_Body2",
+   "label": "Body2",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Weapon_SubmachineGun_003_Body1",
+   "label": "Body1",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Weapon_SubmachineGun_003_Sight",
+   "label": "Sight",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Glass_Dirty_05",
+   "label": "Glass Dirty 05",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Weapon_SubmachineGun_003_Magazine",
+   "label": "Magazine",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 57,
+  "meshes": 6,
+  "triangles": 47648,
+  "textures": 12,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 35083292
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\SubmachineGun_003"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Combat SMG",
+    "class": "SkySubmachineGun"
+   }
+  ],
+  "species": "Weapon",
+  "form": "SubmachineGun_003"
+ }
+}

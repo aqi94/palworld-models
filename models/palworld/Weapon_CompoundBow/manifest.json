@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_CompoundBow",
+ "kind": "object",
+ "displayName": "Compound Bow",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "PalProp_CompoundBow",
+   "label": "PalProp CompoundBow",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 39,
+  "meshes": 1,
+  "triangles": 43025,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 19274400
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\CompoundBow"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Compound Bow",
+    "class": "CompoundBow"
+   }
+  ],
+  "species": "Weapon",
+  "form": "CompoundBow"
+ }
+}

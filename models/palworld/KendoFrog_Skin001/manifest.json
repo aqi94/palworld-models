@@ -1,0 +1,527 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "KendoFrog_Skin001",
+ "kind": "pal",
+ "displayName": "Croajiro (Skin 1)",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [
+  {
+   "name": "eye",
+   "label": "Eye",
+   "options": [
+    {
+     "variant": 0,
+     "name": "eye_1",
+     "label": "1",
+     "default": true
+    },
+    {
+     "variant": 1,
+     "name": "eye_2",
+     "label": "2",
+     "default": false
+    },
+    {
+     "variant": 2,
+     "name": "eye_3",
+     "label": "3",
+     "default": false
+    },
+    {
+     "variant": 3,
+     "name": "eye_4",
+     "label": "4",
+     "default": false
+    },
+    {
+     "variant": 4,
+     "name": "eye_5",
+     "label": "5",
+     "default": false
+    },
+    {
+     "variant": 5,
+     "name": "eye_6",
+     "label": "6",
+     "default": false
+    },
+    {
+     "variant": 6,
+     "name": "eye_7",
+     "label": "7",
+     "default": false
+    },
+    {
+     "variant": 7,
+     "name": "eye_8",
+     "label": "8",
+     "default": false
+    }
+   ]
+  }
+ ],
+ "clips": [
+  {
+   "name": "Architecture",
+   "index": 0,
+   "duration": 0.7333,
+   "frameRate": 30.0,
+   "frameCount": 23,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Carrying",
+   "index": 1,
+   "duration": 0.9,
+   "frameRate": 30.0,
+   "frameCount": 28,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Carrying_Start",
+   "index": 2,
+   "duration": 0.3,
+   "frameRate": 30.0,
+   "frameCount": 10,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "CommonWork",
+   "index": 3,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Damage",
+   "index": 4,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Eat",
+   "index": 5,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Encount",
+   "index": 6,
+   "duration": 1.4667,
+   "frameRate": 30.0,
+   "frameCount": 45,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Action",
+   "index": 7,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_ActionLoop",
+   "index": 8,
+   "duration": 0.7333,
+   "frameRate": 30.0,
+   "frameCount": 23,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_End",
+   "index": 9,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Start",
+   "index": 10,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_StartLoop",
+   "index": 11,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FishingCaught",
+   "index": 12,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GetUp_FrontDown",
+   "index": 13,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Gunner",
+   "index": 14,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "HighJump_End",
+   "index": 15,
+   "duration": 1.4667,
+   "frameRate": 30.0,
+   "frameCount": 45,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "HighJump_Loop",
+   "index": 16,
+   "duration": 1.6,
+   "frameRate": 30.0,
+   "frameCount": 49,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Hit",
+   "index": 17,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Idle",
+   "index": 18,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "Idle_Swim",
+   "index": 19,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "JumpEnd",
+   "index": 20,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "JumpLoop",
+   "index": 21,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Petting",
+   "index": 22,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Rest01",
+   "index": 23,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Rest02",
+   "index": 24,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Rest03",
+   "index": 25,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Rest04",
+   "index": 26,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Run",
+   "index": 27,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Run_Swim",
+   "index": 28,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepEnd",
+   "index": 29,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepLoop",
+   "index": 30,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepStart",
+   "index": 31,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Spa",
+   "index": 32,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Transport",
+   "index": 33,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Walk",
+   "index": 34,
+   "duration": 1.6,
+   "frameRate": 30.0,
+   "frameCount": 49,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Walk_Swim",
+   "index": 35,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Watering",
+   "index": 36,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "Idle",
+ "parts": [
+  {
+   "node": "Body",
+   "label": "Body",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Eye",
+   "label": "Eye",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Parts",
+   "label": "Parts",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Weapon",
+   "label": "Weapon",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 53,
+  "meshes": 4,
+  "triangles": 9028,
+  "textures": 12,
+  "clips": 37,
+  "droppedTracks": 0,
+  "glbBytes": 23331684
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld\\KendoFrog_Skin001"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/KendoFrog/SK_KendoFrog_Skeleton",
+  "dex": 9,
+  "elements": [
+   "Water"
+  ],
+  "rarity": 4,
+  "codeName": "KendoFrog_Skin001",
+  "skin": "Skin001",
+  "species": "KendoFrog",
+  "form": "Skin001"
+ }
+}

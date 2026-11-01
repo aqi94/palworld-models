@@ -1,0 +1,38 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Shotgun_002",
+ "kind": "object",
+ "displayName": "Shotgun 002",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_Shotgun_002",
+   "label": "Weapon Shotgun 002",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 3,
+  "meshes": 1,
+  "triangles": 2408,
+  "textures": 1,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 1856020
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Shotgun_002"
+ ],
+ "extras": {
+  "species": "Weapon",
+  "form": "Shotgun_002"
+ }
+}

@@ -1,0 +1,629 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "LeafMomonga",
+ "kind": "pal",
+ "displayName": "Herbil",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [
+  {
+   "name": "mouth",
+   "label": "Mouth",
+   "options": [
+    {
+     "variant": 0,
+     "name": "mouth_1",
+     "label": "1",
+     "default": true
+    },
+    {
+     "variant": 1,
+     "name": "mouth_2",
+     "label": "2",
+     "default": false
+    },
+    {
+     "variant": 2,
+     "name": "mouth_3",
+     "label": "3",
+     "default": false
+    },
+    {
+     "variant": 3,
+     "name": "mouth_4",
+     "label": "4",
+     "default": false
+    }
+   ]
+  },
+  {
+   "name": "eye",
+   "label": "Eye",
+   "options": [
+    {
+     "variant": 4,
+     "name": "eye_1",
+     "label": "1",
+     "default": true
+    },
+    {
+     "variant": 5,
+     "name": "eye_2",
+     "label": "2",
+     "default": false
+    },
+    {
+     "variant": 6,
+     "name": "eye_3",
+     "label": "3",
+     "default": false
+    },
+    {
+     "variant": 7,
+     "name": "eye_4",
+     "label": "4",
+     "default": false
+    },
+    {
+     "variant": 8,
+     "name": "eye_5",
+     "label": "5",
+     "default": false
+    },
+    {
+     "variant": 9,
+     "name": "eye_6",
+     "label": "6",
+     "default": false
+    },
+    {
+     "variant": 10,
+     "name": "eye_7",
+     "label": "7",
+     "default": false
+    },
+    {
+     "variant": 11,
+     "name": "eye_8",
+     "label": "8",
+     "default": false
+    }
+   ]
+  }
+ ],
+ "clips": [
+  {
+   "name": "Carrying",
+   "index": 0,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Carrying_Start",
+   "index": 1,
+   "duration": 0.2667,
+   "frameRate": 30.0,
+   "frameCount": 9,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Damage",
+   "index": 2,
+   "duration": 1.6,
+   "frameRate": 30.0,
+   "frameCount": 49,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Eat",
+   "index": 3,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Encount",
+   "index": 4,
+   "duration": 1.6,
+   "frameRate": 30.0,
+   "frameCount": 49,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Action",
+   "index": 5,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_End",
+   "index": 6,
+   "duration": 0.8667,
+   "frameRate": 30.0,
+   "frameCount": 27,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Start",
+   "index": 7,
+   "duration": 0.8667,
+   "frameRate": 30.0,
+   "frameCount": 27,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_StartLoop",
+   "index": 8,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GetUp_FrontDown",
+   "index": 9,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Hit",
+   "index": 10,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Idle",
+   "index": 11,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "Idle_Swim",
+   "index": 12,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "JumpEnd",
+   "index": 13,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "JumpLoop",
+   "index": 14,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "PartnerSkill_RevivePlayer",
+   "index": 15,
+   "duration": 1.6,
+   "frameRate": 30.0,
+   "frameCount": 49,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Petting",
+   "index": 16,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Planting",
+   "index": 17,
+   "duration": 7.4667,
+   "frameRate": 30.0,
+   "frameCount": 225,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Rest01",
+   "index": 18,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Rest02",
+   "index": 19,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Rest03",
+   "index": 20,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Rest04",
+   "index": 21,
+   "duration": 4.2667,
+   "frameRate": 30.0,
+   "frameCount": 129,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Run",
+   "index": 22,
+   "duration": 0.5333,
+   "frameRate": 30.0,
+   "frameCount": 17,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepEnd",
+   "index": 23,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepLoop",
+   "index": 24,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepStart",
+   "index": 25,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SomerSault",
+   "index": 26,
+   "duration": 2.3333,
+   "frameRate": 30.0,
+   "frameCount": 71,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Spa",
+   "index": 27,
+   "duration": 17.0667,
+   "frameRate": 30.0,
+   "frameCount": 513,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Sprint",
+   "index": 28,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Transport",
+   "index": 29,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Walk",
+   "index": 30,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "Idle",
+ "parts": [
+  {
+   "node": "Mouth",
+   "label": "Mouth",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Body",
+   "label": "Body",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Eye",
+   "label": "Eye",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Brow_1",
+   "label": "Brow 1",
+   "lod": 0,
+   "visible": true,
+   "group": "brow",
+   "option": "brow_1"
+  },
+  {
+   "node": "Brow_2",
+   "label": "Brow 2",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_2"
+  },
+  {
+   "node": "Brow_3",
+   "label": "Brow 3",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_3"
+  },
+  {
+   "node": "Brow_4",
+   "label": "Brow 4",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_4"
+  },
+  {
+   "node": "Brow_5",
+   "label": "Brow 5",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_5"
+  },
+  {
+   "node": "Brow_6",
+   "label": "Brow 6",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_6"
+  },
+  {
+   "node": "Brow_7",
+   "label": "Brow 7",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_7"
+  },
+  {
+   "node": "Brow_8",
+   "label": "Brow 8",
+   "lod": 0,
+   "visible": false,
+   "group": "brow",
+   "option": "brow_8"
+  }
+ ],
+ "partGroups": [
+  {
+   "name": "brow",
+   "label": "Brow",
+   "options": [
+    {
+     "id": "brow_1",
+     "label": "1",
+     "default": true,
+     "variant": "eye_1",
+     "nodes": [
+      "Brow_1"
+     ]
+    },
+    {
+     "id": "brow_2",
+     "label": "2",
+     "default": false,
+     "variant": "eye_2",
+     "nodes": [
+      "Brow_2"
+     ]
+    },
+    {
+     "id": "brow_3",
+     "label": "3",
+     "default": false,
+     "variant": "eye_3",
+     "nodes": [
+      "Brow_3"
+     ]
+    },
+    {
+     "id": "brow_4",
+     "label": "4",
+     "default": false,
+     "variant": "eye_4",
+     "nodes": [
+      "Brow_4"
+     ]
+    },
+    {
+     "id": "brow_5",
+     "label": "5",
+     "default": false,
+     "variant": "eye_5",
+     "nodes": [
+      "Brow_5"
+     ]
+    },
+    {
+     "id": "brow_6",
+     "label": "6",
+     "default": false,
+     "variant": "eye_6",
+     "nodes": [
+      "Brow_6"
+     ]
+    },
+    {
+     "id": "brow_7",
+     "label": "7",
+     "default": false,
+     "variant": "eye_7",
+     "nodes": [
+      "Brow_7"
+     ]
+    },
+    {
+     "id": "brow_8",
+     "label": "8",
+     "default": false,
+     "variant": "eye_8",
+     "nodes": [
+      "Brow_8"
+     ]
+    }
+   ]
+  }
+ ],
+ "stats": {
+  "joints": 62,
+  "meshes": 11,
+  "triangles": 11424,
+  "textures": 8,
+  "clips": 31,
+  "droppedTracks": 0,
+  "glbBytes": 15962764
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld\\LeafMomonga"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/LeafMomonga/SK_LeafMomonga_Skeleton",
+  "dex": 10,
+  "elements": [
+   "Grass",
+   "Neutral"
+  ],
+  "rarity": 3,
+  "codeName": "LeafMomonga",
+  "species": "LeafMomonga",
+  "form": ""
+ }
+}

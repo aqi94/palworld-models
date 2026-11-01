@@ -1,0 +1,38 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Glider_001",
+ "kind": "object",
+ "displayName": "Glider 001",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_Glider_001",
+   "label": "Weapon Glider 001",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 10796,
+  "textures": 1,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 1503104
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Glider_001"
+ ],
+ "extras": {
+  "species": "Weapon",
+  "form": "Glider_001"
+ }
+}

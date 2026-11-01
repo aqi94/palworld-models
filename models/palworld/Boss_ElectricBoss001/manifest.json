@@ -1,0 +1,648 @@
+{
+ "manifestVersion": 1,
+ "props": [
+  {
+   "bone": "weapon_r",
+   "side": "right",
+   "clips": [],
+   "always": true
+  }
+ ],
+ "game": "palworld",
+ "id": "Boss_ElectricBoss001",
+ "kind": "human",
+ "displayName": "Electric Boss 001 (Boss)",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "ElectricBoss_Ride_Commonwaza_Boss",
+   "index": 5,
+   "duration": 2.3667,
+   "frameRate": 30.0,
+   "frameCount": 72,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "ElectricBoss_Ride_Idle_Boss",
+   "index": 6,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "ElectricBoss_Ride_UniqueWaza_Boss_End",
+   "index": 7,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "ElectricBoss_Ride_UniqueWaza_Boss_In",
+   "index": 8,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "ElectricBoss_Ride_UniqueWaza_Boss_Loop",
+   "index": 9,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "ride",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "NPC_Outfit_ElectricBoss001_M01",
+   "label": "NPC Outfit ElectricBoss001 M01",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_Outfit_ElectricBoss001_M02",
+   "label": "NPC Outfit ElectricBoss001 M02",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_Outfit_ElectricBoss001_M00",
+   "label": "NPC Outfit ElectricBoss001 M00",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_ElectricBossHead001",
+   "label": "NPC ElectricBossHead001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_ElectricBoss_Body",
+   "label": "NPC ElectricBoss Body",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_ElectricBossBrow001",
+   "label": "NPC ElectricBossBrow001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_ElectricBossHair001",
+   "label": "NPC ElectricBossHair001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_ElectricBossEye001",
+   "label": "NPC ElectricBossEye001",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 78,
+  "meshes": 8,
+  "triangles": 26406,
+  "textures": 22,
+  "clips": 5,
+  "droppedTracks": 0,
+  "glbBytes": 48843608
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_humans\\Boss_ElectricBoss001"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/Human/SK_PalHuman_Skeleton",
+  "codeName": "Boss_ElectricBoss001",
+  "group": "Boss",
+  "mesh": "Pal/Content/Pal/Model/Character/NPC/Boss/ElectricBoss/SK_NPC_ElectricBoss001",
+  "mount": {
+   "pal": "ThunderDragonMan",
+   "bone": "BossRideMarker",
+   "position": [
+    -0.03618,
+    -0.06466,
+    0.05743
+   ],
+   "rotation": [
+    0.121108,
+    0.02377,
+    0.017253,
+    0.992205
+   ],
+   "palScale": 1.7,
+   "rotationSpace": "model",
+   "pairs": [
+    {
+     "boss": "ElectricBoss_Ride_Idle_Boss",
+     "pal": [
+      {
+       "clip": "Idle"
+      }
+     ]
+    },
+    {
+     "boss": "ElectricBoss_Ride_Commonwaza_Boss",
+     "pal": [
+      {
+       "clip": "FarSkill_Start",
+       "to": 0.8333
+      },
+      {
+       "clip": "FarSkill_StartLoop",
+       "loop": true,
+       "to": 0.6667
+      },
+      {
+       "clip": "FarSkill_Action",
+       "to": 0.3333
+      },
+      {
+       "clip": "FarSkill_ActionLoop",
+       "loop": true,
+       "to": 0.6667
+      },
+      {
+       "clip": "FarSkill_End",
+       "to": 0.8333
+      }
+     ]
+    }
+   ]
+  },
+  "animPacks": [
+   {
+    "id": "Actions_NPC_StandardHumanDataSet",
+    "path": "palworld/Pack_Actions_NPC_StandardHumanDataSet/",
+    "label": "Actions (Standard)",
+    "own": true
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Base",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Base/",
+    "label": "Base",
+    "own": true
+   },
+   {
+    "id": "Player_Female_ShooterAnime_None",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_None/",
+    "label": "Unarmed",
+    "own": true,
+    "weaponType": "None"
+   },
+   {
+    "id": "NPC_Extra",
+    "path": "palworld/Pack_NPC_Extra/",
+    "label": "NPC extras",
+    "own": true
+   },
+   {
+    "id": "Player_Female_ShooterAnime_AssaultRifle",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_AssaultRifle/",
+    "label": "Assault Rifle",
+    "own": false,
+    "weaponType": "AssaultRifle",
+    "heldItems": [
+     {
+      "item": "Weapon_AssaultRifle_001",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Bowgun",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Bowgun/",
+    "label": "Bowgun",
+    "own": false,
+    "weaponType": "BowGun",
+    "heldItems": [
+     {
+      "item": "Weapon_Bowgun_001",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Flamethrower",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Flamethrower/",
+    "label": "Flamethrower",
+    "own": false,
+    "weaponType": "FlameThrower",
+    "heldItems": [
+     {
+      "item": "Weapon_Flamethrower_002",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "NPC_Fat_ShooterAnime_HeavyWeapon",
+    "path": "palworld/Pack_NPC_Fat_ShooterAnime_HeavyWeapon/",
+    "label": "Heavy Weapon (Fat)",
+    "own": false,
+    "weaponType": "GatlingGun",
+    "heldItems": [
+     {
+      "item": "Weapon_AssaultRifle_002",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ],
+      "scale": [
+       0.467,
+       0.467,
+       0.467
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Melee",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Melee/",
+    "label": "Melee",
+    "own": false,
+    "weaponType": "GiantClub",
+    "heldItems": [
+     {
+      "item": "Weapon_NPC_Male_Believer01Cane",
+      "bone": "weapon_r",
+      "position": [
+       -0.0,
+       1.25825,
+       0.0
+      ],
+      "rotation": [
+       -0.707107,
+       -0.0,
+       0.0,
+       0.707107
+      ],
+      "scale": [
+       5.1473,
+       5.1473,
+       2.0432
+      ]
+     }
+    ]
+   },
+   {
+    "id": "NPC_Fat_ShooterAnime_Melee",
+    "path": "palworld/Pack_NPC_Fat_ShooterAnime_Melee/",
+    "label": "Melee (Fat)",
+    "own": false,
+    "weaponType": "GiantClub",
+    "heldItems": [
+     {
+      "item": "Weapon_NPC_Male_Believer01Cane",
+      "bone": "weapon_r",
+      "position": [
+       -0.0,
+       1.25825,
+       0.0
+      ],
+      "rotation": [
+       -0.707107,
+       -0.0,
+       0.0,
+       0.707107
+      ],
+      "scale": [
+       5.1473,
+       5.1473,
+       2.0432
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_GrenadeLauncher",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_GrenadeLauncher/",
+    "label": "Grenade Launcher",
+    "own": false,
+    "weaponType": "GrenadeLauncher",
+    "heldItems": [
+     {
+      "item": "Weapon_GrenadeLauncher_001",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Handgun",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Handgun/",
+    "label": "Handgun",
+    "own": false,
+    "weaponType": "Handgun",
+    "heldItems": [
+     {
+      "item": "Weapon_Handgun_001",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Male_ShooterAnime_HandgunShield",
+    "path": "palworld/Pack_Player_Male_ShooterAnime_HandgunShield/",
+    "label": "Handgun Shield (Player Male)",
+    "own": false,
+    "weaponType": "HandgunShield"
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Katana",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Katana/",
+    "label": "Katana",
+    "own": false,
+    "weaponType": "Katana",
+    "heldItems": [
+     {
+      "item": "Weapon_NPC_Male_Ninja01Weapon",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "NPC_GrassBoss_ShooterAnime_None",
+    "path": "palworld/Pack_NPC_GrassBoss_ShooterAnime_None/",
+    "label": "Unarmed (Grass Boss)",
+    "own": false,
+    "weaponType": "LaserMiningTool"
+   },
+   {
+    "id": "Player_Female_ShooterAnime_LaserRifle",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_LaserRifle/",
+    "label": "Laser Rifle",
+    "own": false,
+    "weaponType": "LaserRifle",
+    "heldItems": [
+     {
+      "item": "Weapon_AssaultRifle_006",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_PalCarry",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_PalCarry/",
+    "label": "Pal Carry",
+    "own": false,
+    "weaponType": "Liftup"
+   },
+   {
+    "id": "Player_Female_ShooterAnime_RocketLauncher",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_RocketLauncher/",
+    "label": "Rocket Launcher",
+    "own": false,
+    "weaponType": "MissileLauncher",
+    "heldItems": [
+     {
+      "item": "Weapon_RocketLauncher_003",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     },
+     {
+      "item": "Weapon_RocketLauncher_004_Missile",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_GuidedMissileLauncher",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_GuidedMissileLauncher/",
+    "label": "Guided Missile Launcher",
+    "own": false
+   },
+   {
+    "id": "Player_Female_ShooterAnime_MultiGuidedMissileLauncher",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_MultiGuidedMissileLauncher/",
+    "label": "Multi Guided Missile Launcher",
+    "own": false,
+    "weaponType": "MissileLauncher",
+    "heldItems": [
+     {
+      "item": "Weapon_RocketLauncher_003",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     },
+     {
+      "item": "Weapon_RocketLauncher_004_Missile",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_PumpActionShotgun",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_PumpActionShotgun/",
+    "label": "Pump Action Shotgun",
+    "own": false,
+    "weaponType": "Shotgun",
+    "heldItems": [
+     {
+      "item": "Weapon_Shotgun_003",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "ShooterAnime_ThrowBase",
+    "path": "palworld/Pack_ShooterAnime_ThrowBase/",
+    "label": "Throw Base",
+    "own": false
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Throw",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Throw/",
+    "label": "Throw",
+    "own": false,
+    "weaponType": "ThrowObject",
+    "heldItems": [
+     {
+      "item": "Weapon_Modern_Weapons_Grenade_01",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ],
+      "scale": [
+       2.0,
+       2.0,
+       2.0
+      ]
+     }
+    ]
+   }
+  ],
+  "defaultPack": "Player_Female_ShooterAnime_None",
+  "species": "Boss",
+  "form": "ElectricBoss001"
+ }
+}

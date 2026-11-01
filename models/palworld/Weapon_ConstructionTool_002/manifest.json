@@ -1,0 +1,38 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_ConstructionTool_002",
+ "kind": "object",
+ "displayName": "Construction Tool 002",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Pans",
+   "label": "Pans",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 4,
+  "meshes": 1,
+  "triangles": 754,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 12615516
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\ConstructionTool_002"
+ ],
+ "extras": {
+  "species": "Weapon",
+  "form": "ConstructionTool_002"
+ }
+}

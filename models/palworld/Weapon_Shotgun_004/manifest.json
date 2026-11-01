@@ -1,0 +1,49 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Shotgun_004",
+ "kind": "object",
+ "displayName": "Double-Barreled Shotgun",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_Shotgun_004",
+   "label": "Weapon Shotgun 004",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 10,
+  "meshes": 1,
+  "triangles": 9904,
+  "textures": 4,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 13360020
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Shotgun_004"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Double-Barreled Shotgun",
+    "class": "DoubleBarrelShotgun"
+   }
+  ],
+  "users": {
+   "pals": [
+    "BadCatgirl"
+   ]
+  },
+  "species": "Weapon",
+  "form": "Shotgun_004"
+ }
+}

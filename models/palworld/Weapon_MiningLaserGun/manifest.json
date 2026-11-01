@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_MiningLaserGun",
+ "kind": "object",
+ "displayName": "Plasma Multicutter",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "PalProp_MiningLaserGun",
+   "label": "PalProp MiningLaserGun",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 4,
+  "meshes": 1,
+  "triangles": 18611,
+  "textures": 4,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 8743924
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\MiningLaserGun"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Plasma Multicutter",
+    "class": "LaserMiningTool"
+   }
+  ],
+  "species": "Weapon",
+  "form": "MiningLaserGun"
+ }
+}

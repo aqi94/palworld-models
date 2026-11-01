@@ -1,0 +1,39 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Shotgun_006_Ammo",
+ "kind": "object",
+ "displayName": "Makeshift Shotgun – Ammo",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_Shotgun_006",
+   "label": "Weapon Shotgun 006",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 244,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 15807044
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Shotgun_006_Ammo"
+ ],
+ "extras": {
+  "partOf": "Weapon_Shotgun_006",
+  "species": "Weapon",
+  "form": "Shotgun_006_Ammo"
+ }
+}

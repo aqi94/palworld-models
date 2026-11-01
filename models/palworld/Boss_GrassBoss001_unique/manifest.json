@@ -1,0 +1,166 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Boss_GrassBoss001_unique",
+ "kind": "human",
+ "displayName": "Zoe (cutscene)",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "GrassBossStartDemo_01",
+   "index": 0,
+   "duration": 11.0,
+   "frameRate": 60.0,
+   "frameCount": 661,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "rootFree": true
+  },
+  {
+   "name": "GrassBossStartDemo_02",
+   "index": 1,
+   "duration": 3.0,
+   "frameRate": 60.0,
+   "frameCount": 181,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "rootFree": true
+  },
+  {
+   "name": "GrassBossStartDemo_03",
+   "index": 2,
+   "duration": 8.9333,
+   "frameRate": 60.0,
+   "frameCount": 537,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBossStartDemo_04",
+   "index": 3,
+   "duration": 8.7167,
+   "frameRate": 60.0,
+   "frameCount": 524,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "rootFree": true
+  }
+ ],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "NPC_GrassBossBody001",
+   "label": "NPC GrassBossBody001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_GrassBossHead001",
+   "label": "NPC GrassBossHead001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_GrassBossEye001",
+   "label": "NPC GrassBossEye001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_GrassBossBrow001",
+   "label": "NPC GrassBossBrow001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_GrassBossHair001",
+   "label": "NPC GrassBossHair001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_Outfit_GrassBoss001_M00",
+   "label": "NPC Outfit GrassBoss001 M00",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_Outfit_GrassBoss001_M01",
+   "label": "NPC Outfit GrassBoss001 M01",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_Outfit_GrassBoss001_M02_Extra_unique",
+   "label": "NPC Outfit GrassBoss001 M02 Extra unique",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_Outfit_GrassBoss001_M01_Jewel",
+   "label": "NPC Outfit GrassBoss001 M01 Jewel",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_Outfit_GrassBoss001_M02",
+   "label": "NPC Outfit GrassBoss001 M02",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 122,
+  "meshes": 10,
+  "triangles": 45068,
+  "textures": 26,
+  "clips": 4,
+  "droppedTracks": 0,
+  "glbBytes": 54851196
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_humans\\Boss_GrassBoss001_unique"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/NPC/Boss/GrassBoss/SK_NPC_Outfit_GrassBoss001/SK_NPC_Outfit_GrassBoss001_ALL_unique_Skeleton",
+  "codeName": "Boss_GrassBoss001_unique",
+  "group": "Boss",
+  "mesh": "Pal/Content/Pal/Model/Character/NPC/Boss/GrassBoss/SK_NPC_Outfit_GrassBoss001/SK_NPC_Outfit_GrassBoss001_ALL_unique",
+  "cutscenes": [
+   {
+    "clip": "GrassBossStartDemo_04",
+    "sequence": "LS_GrassBossStartDemo_04",
+    "section": {
+     "start": 0.0,
+     "offset": 0.0,
+     "rate": 1.0
+    },
+    "partners": [
+     {
+      "model": "ElecPanda",
+      "clip": "GrassBossStartDemo_04_ElecPanda",
+      "section": {
+       "start": 0.0,
+       "offset": 0.0,
+       "rate": 1.0
+      }
+     }
+    ]
+   }
+  ],
+  "species": "Boss",
+  "form": "GrassBoss001_unique"
+ }
+}

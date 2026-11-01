@@ -1,0 +1,39 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_OctaviaRevolver001_Coin",
+ "kind": "object",
+ "displayName": "Marksman Revolver – Coin",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Coin",
+   "label": "Coin",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 64,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 2492796
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\OctaviaRevolver001_Coin"
+ ],
+ "extras": {
+  "partOf": "Weapon_OctaviaRevolver001",
+  "species": "Weapon",
+  "form": "OctaviaRevolver001_Coin"
+ }
+}

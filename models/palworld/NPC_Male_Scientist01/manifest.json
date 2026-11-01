@@ -1,0 +1,567 @@
+{
+ "manifestVersion": 1,
+ "props": [
+  {
+   "bone": "weapon_r",
+   "side": "right",
+   "clips": [],
+   "always": true
+  }
+ ],
+ "heldItem": {
+  "item": "Weapon_AssaultRifle_006",
+  "bone": "weapon_r",
+  "position": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "rotation": [
+   -0.0,
+   -0.0,
+   -0.0,
+   1.0
+  ]
+ },
+ "heldItems": [
+  {
+   "item": "Weapon_AssaultRifle_006",
+   "bone": "weapon_r",
+   "position": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation": [
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0
+   ]
+  }
+ ],
+ "game": "palworld",
+ "id": "NPC_Male_Scientist01",
+ "kind": "human",
+ "displayName": "PAL Genetic Research Unit Executioner",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "M00",
+   "label": "M00",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "M01",
+   "label": "M01",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 65,
+  "meshes": 2,
+  "triangles": 27859,
+  "textures": 7,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 26099044
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_humans\\NPC_Male_Scientist01"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/Human/SK_PalHuman_Skeleton",
+  "codeName": "NPC_Male_Scientist01",
+  "group": "NPC",
+  "mesh": "Pal/Content/Pal/Model/Character/NPC/SK_NPC_Male_Scientist01/SK_NPC_Male_Scientist01",
+  "animPacks": [
+   {
+    "id": "Actions_NPC_StandardHumanDataSet",
+    "path": "palworld/Pack_Actions_NPC_StandardHumanDataSet/",
+    "label": "Actions (Standard)",
+    "own": true
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Base",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Base/",
+    "label": "Base",
+    "own": true
+   },
+   {
+    "id": "Player_Female_ShooterAnime_None",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_None/",
+    "label": "Unarmed",
+    "own": true,
+    "weaponType": "None"
+   },
+   {
+    "id": "Player_Female_ShooterAnime_AssaultRifle",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_AssaultRifle/",
+    "label": "Assault Rifle",
+    "own": true,
+    "weaponType": "AssaultRifle",
+    "heldItems": [
+     {
+      "item": "Weapon_AssaultRifle_001",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_LaserRifle",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_LaserRifle/",
+    "label": "Laser Rifle",
+    "own": true,
+    "weaponType": "LaserRifle",
+    "heldItems": [
+     {
+      "item": "Weapon_AssaultRifle_006",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "NPC_Extra",
+    "path": "palworld/Pack_NPC_Extra/",
+    "label": "NPC extras",
+    "own": true
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Bowgun",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Bowgun/",
+    "label": "Bowgun",
+    "own": false,
+    "weaponType": "BowGun",
+    "heldItems": [
+     {
+      "item": "Weapon_Bowgun_001",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Flamethrower",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Flamethrower/",
+    "label": "Flamethrower",
+    "own": false,
+    "weaponType": "FlameThrower",
+    "heldItems": [
+     {
+      "item": "Weapon_Flamethrower_002",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "NPC_Fat_ShooterAnime_HeavyWeapon",
+    "path": "palworld/Pack_NPC_Fat_ShooterAnime_HeavyWeapon/",
+    "label": "Heavy Weapon (Fat)",
+    "own": false,
+    "weaponType": "GatlingGun",
+    "heldItems": [
+     {
+      "item": "Weapon_AssaultRifle_002",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ],
+      "scale": [
+       0.467,
+       0.467,
+       0.467
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Melee",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Melee/",
+    "label": "Melee",
+    "own": false,
+    "weaponType": "GiantClub",
+    "heldItems": [
+     {
+      "item": "Weapon_NPC_Male_Believer01Cane",
+      "bone": "weapon_r",
+      "position": [
+       -0.0,
+       1.25825,
+       0.0
+      ],
+      "rotation": [
+       -0.707107,
+       -0.0,
+       0.0,
+       0.707107
+      ],
+      "scale": [
+       5.1473,
+       5.1473,
+       2.0432
+      ]
+     }
+    ]
+   },
+   {
+    "id": "NPC_Fat_ShooterAnime_Melee",
+    "path": "palworld/Pack_NPC_Fat_ShooterAnime_Melee/",
+    "label": "Melee (Fat)",
+    "own": false,
+    "weaponType": "GiantClub",
+    "heldItems": [
+     {
+      "item": "Weapon_NPC_Male_Believer01Cane",
+      "bone": "weapon_r",
+      "position": [
+       -0.0,
+       1.25825,
+       0.0
+      ],
+      "rotation": [
+       -0.707107,
+       -0.0,
+       0.0,
+       0.707107
+      ],
+      "scale": [
+       5.1473,
+       5.1473,
+       2.0432
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_GrenadeLauncher",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_GrenadeLauncher/",
+    "label": "Grenade Launcher",
+    "own": false,
+    "weaponType": "GrenadeLauncher",
+    "heldItems": [
+     {
+      "item": "Weapon_GrenadeLauncher_001",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Handgun",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Handgun/",
+    "label": "Handgun",
+    "own": false,
+    "weaponType": "Handgun",
+    "heldItems": [
+     {
+      "item": "Weapon_Handgun_001",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Male_ShooterAnime_HandgunShield",
+    "path": "palworld/Pack_Player_Male_ShooterAnime_HandgunShield/",
+    "label": "Handgun Shield (Player Male)",
+    "own": false,
+    "weaponType": "HandgunShield"
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Katana",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Katana/",
+    "label": "Katana",
+    "own": false,
+    "weaponType": "Katana",
+    "heldItems": [
+     {
+      "item": "Weapon_NPC_Male_Ninja01Weapon",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "NPC_GrassBoss_ShooterAnime_None",
+    "path": "palworld/Pack_NPC_GrassBoss_ShooterAnime_None/",
+    "label": "Unarmed (Grass Boss)",
+    "own": false,
+    "weaponType": "LaserMiningTool"
+   },
+   {
+    "id": "Player_Female_ShooterAnime_PalCarry",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_PalCarry/",
+    "label": "Pal Carry",
+    "own": false,
+    "weaponType": "Liftup"
+   },
+   {
+    "id": "Player_Female_ShooterAnime_RocketLauncher",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_RocketLauncher/",
+    "label": "Rocket Launcher",
+    "own": false,
+    "weaponType": "MissileLauncher",
+    "heldItems": [
+     {
+      "item": "Weapon_RocketLauncher_003",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     },
+     {
+      "item": "Weapon_RocketLauncher_004_Missile",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_GuidedMissileLauncher",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_GuidedMissileLauncher/",
+    "label": "Guided Missile Launcher",
+    "own": false
+   },
+   {
+    "id": "Player_Female_ShooterAnime_MultiGuidedMissileLauncher",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_MultiGuidedMissileLauncher/",
+    "label": "Multi Guided Missile Launcher",
+    "own": false,
+    "weaponType": "MissileLauncher",
+    "heldItems": [
+     {
+      "item": "Weapon_RocketLauncher_003",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     },
+     {
+      "item": "Weapon_RocketLauncher_004_Missile",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_PumpActionShotgun",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_PumpActionShotgun/",
+    "label": "Pump Action Shotgun",
+    "own": false,
+    "weaponType": "Shotgun",
+    "heldItems": [
+     {
+      "item": "Weapon_Shotgun_003",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "ShooterAnime_ThrowBase",
+    "path": "palworld/Pack_ShooterAnime_ThrowBase/",
+    "label": "Throw Base",
+    "own": false
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Throw",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Throw/",
+    "label": "Throw",
+    "own": false,
+    "weaponType": "ThrowObject",
+    "heldItems": [
+     {
+      "item": "Weapon_Modern_Weapons_Grenade_01",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ],
+      "scale": [
+       2.0,
+       2.0,
+       2.0
+      ]
+     }
+    ]
+   }
+  ],
+  "defaultPack": "Player_Female_ShooterAnime_LaserRifle",
+  "heldItem": {
+   "item": "Weapon_AssaultRifle_006",
+   "bone": "weapon_r",
+   "position": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation": [
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0
+   ]
+  },
+  "heldItems": [
+   {
+    "item": "Weapon_AssaultRifle_006",
+    "bone": "weapon_r",
+    "position": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rotation": [
+     -0.0,
+     -0.0,
+     -0.0,
+     1.0
+    ]
+   }
+  ],
+  "weaponType": "LaserRifle",
+  "species": "NPC",
+  "form": "Male_Scientist01"
+ }
+}

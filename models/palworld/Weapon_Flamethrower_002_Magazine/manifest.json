@@ -1,0 +1,38 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Flamethrower_002_Magazine",
+ "kind": "object",
+ "displayName": "Flamethrower – Magazine",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_Flamethrower_002",
+   "label": "Weapon Flamethrower 002",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 1212,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 4679288
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Flamethrower_002_Magazine"
+ ],
+ "extras": {
+  "species": "Weapon",
+  "form": "Flamethrower_002_Magazine"
+ }
+}

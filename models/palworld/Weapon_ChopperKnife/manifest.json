@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_ChopperKnife",
+ "kind": "object",
+ "displayName": "Meat Cleaver",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "PalProp_ChopperKnife",
+   "label": "PalProp ChopperKnife",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 839,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 2415916
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\ChopperKnife"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Meat Cleaver",
+    "class": "MeatCutterKnife"
+   }
+  ],
+  "species": "Weapon",
+  "form": "ChopperKnife"
+ }
+}

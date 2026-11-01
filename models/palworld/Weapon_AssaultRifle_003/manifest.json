@@ -1,0 +1,50 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_AssaultRifle_003",
+ "kind": "object",
+ "displayName": "Single-Shot Rifle",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_AssaultRifle_003",
+   "label": "Weapon AssaultRifle 003",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Weapon_AssaultRifle_003_Ammo",
+   "label": "Ammo",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 6,
+  "meshes": 2,
+  "triangles": 12143,
+  "textures": 5,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 14686440
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\AssaultRifle_003"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Single-Shot Rifle",
+    "class": "SingleShotRifle"
+   }
+  ],
+  "species": "Weapon",
+  "form": "AssaultRifle_003"
+ }
+}

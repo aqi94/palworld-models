@@ -1,0 +1,74 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Handgun_007",
+ "kind": "object",
+ "displayName": "Ballistic Shield",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Pistol_01_Magazine_St1",
+   "label": "Pistol 01 Magazine St1",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Pistol_02",
+   "label": "Pistol 02",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Aim_Rail_to_Pistol_02",
+   "label": "Aim Rail to Pistol 02",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Pistol_01_Aim_St_005",
+   "label": "Pistol 01 Aim St 005",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Collimator_O2",
+   "label": "Collimator O2",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Collimator_01_Glass1",
+   "label": "Collimator 01 Glass1",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Collimator_01_Aim_mark1",
+   "label": "Collimator 01 Aim mark1",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 8,
+  "meshes": 7,
+  "triangles": 16510,
+  "textures": 1,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 2124080
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Handgun_007"
+ ],
+ "extras": {
+  "species": "Weapon",
+  "form": "Handgun_007"
+ }
+}

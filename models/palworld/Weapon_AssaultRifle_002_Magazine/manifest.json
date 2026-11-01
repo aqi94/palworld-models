@@ -1,0 +1,38 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_AssaultRifle_002_Magazine",
+ "kind": "object",
+ "displayName": "Gatling Gun – Magazine",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_AssaultRifle_002",
+   "label": "Weapon AssaultRifle 002",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 9423,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 16773556
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\AssaultRifle_002_Magazine"
+ ],
+ "extras": {
+  "species": "Weapon",
+  "form": "AssaultRifle_002_Magazine"
+ }
+}

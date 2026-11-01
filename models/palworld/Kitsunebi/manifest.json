@@ -1,0 +1,470 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Kitsunebi",
+ "kind": "pal",
+ "displayName": "Foxparks",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [
+  {
+   "name": "eye",
+   "label": "Eye",
+   "options": [
+    {
+     "variant": 0,
+     "name": "eye_1",
+     "label": "1",
+     "default": true
+    },
+    {
+     "variant": 1,
+     "name": "eye_2",
+     "label": "2",
+     "default": false
+    },
+    {
+     "variant": 2,
+     "name": "eye_3",
+     "label": "3",
+     "default": false
+    },
+    {
+     "variant": 3,
+     "name": "eye_4",
+     "label": "4",
+     "default": false
+    },
+    {
+     "variant": 4,
+     "name": "eye_5",
+     "label": "5",
+     "default": false
+    },
+    {
+     "variant": 5,
+     "name": "eye_6",
+     "label": "6",
+     "default": false
+    },
+    {
+     "variant": 6,
+     "name": "eye_7",
+     "label": "7",
+     "default": false
+    },
+    {
+     "variant": 7,
+     "name": "eye_8",
+     "label": "8",
+     "default": false
+    }
+   ]
+  }
+ ],
+ "clips": [
+  {
+   "name": "Carrying",
+   "index": 0,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Carrying_Start",
+   "index": 1,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "CookingLoop",
+   "index": 2,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "CookingStart",
+   "index": 3,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Damage",
+   "index": 4,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Eat",
+   "index": 5,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Encount",
+   "index": 6,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "FarSkill_Action",
+   "index": 7,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_ActionLoop",
+   "index": 8,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_End",
+   "index": 9,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Start",
+   "index": 10,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_StartLoop",
+   "index": 11,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Flamethrower",
+   "index": 12,
+   "duration": 9.5333,
+   "frameRate": 30.0,
+   "frameCount": 287,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Flamethrower_Fire",
+   "index": 13,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Flamethrower_Fire_Start",
+   "index": 14,
+   "duration": 0.7667,
+   "frameRate": 30.0,
+   "frameCount": 24,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GetUp_LeftDown",
+   "index": 15,
+   "duration": 1.5333,
+   "frameRate": 30.0,
+   "frameCount": 47,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "GetUp_RightDown",
+   "index": 16,
+   "duration": 1.5333,
+   "frameRate": 30.0,
+   "frameCount": 47,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Hit",
+   "index": 17,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Idle",
+   "index": 18,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "Idle_Swim",
+   "index": 19,
+   "duration": 0.6667,
+   "frameRate": 45.0,
+   "frameCount": 31,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "JumpEnd",
+   "index": 20,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "JumpLoop",
+   "index": 21,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Petting",
+   "index": 22,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Rest01",
+   "index": 23,
+   "duration": 2.3333,
+   "frameRate": 30.0,
+   "frameCount": 71,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Rest02",
+   "index": 24,
+   "duration": 4.0667,
+   "frameRate": 30.0,
+   "frameCount": 123,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Rest03",
+   "index": 25,
+   "duration": 4.0,
+   "frameRate": 30.0,
+   "frameCount": 121,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Run",
+   "index": 26,
+   "duration": 0.5333,
+   "frameRate": 30.0,
+   "frameCount": 17,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepEnd",
+   "index": 27,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "SleepLoop",
+   "index": 28,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "SleepStart",
+   "index": 29,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Walk",
+   "index": 30,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "Idle",
+ "parts": [
+  {
+   "node": "Pal_Fire_Kitsunebi",
+   "label": "Pal Fire Kitsunebi",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Body",
+   "label": "Body",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Eye",
+   "label": "Eye",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 44,
+  "meshes": 3,
+  "triangles": 5128,
+  "textures": 6,
+  "clips": 31,
+  "droppedTracks": 0,
+  "glbBytes": 10318084
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld\\Kitsunebi"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/Kitsunebi/SK_Kitsunebi_Skeleton",
+  "dex": 29,
+  "elements": [
+   "Fire"
+  ],
+  "rarity": 1,
+  "codeName": "Kitsunebi",
+  "species": "Kitsunebi",
+  "form": ""
+ }
+}

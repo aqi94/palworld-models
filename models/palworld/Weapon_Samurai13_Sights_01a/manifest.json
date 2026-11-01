@@ -1,0 +1,39 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Samurai13_Sights_01a",
+ "kind": "object",
+ "displayName": "Prototype Shotgun – Samurai 13 Sights 01 A",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Samurai13SightsMilitary",
+   "label": "Samurai13SightsMilitary",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 1616,
+  "textures": 4,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 6259012
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Samurai13_Sights_01a"
+ ],
+ "extras": {
+  "partOf": "Weapon_Shotgun_008",
+  "species": "Weapon",
+  "form": "Samurai13_Sights_01a"
+ }
+}

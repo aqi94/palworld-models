@@ -1,0 +1,442 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "VolcanicMonster_Ice",
+ "kind": "pal",
+ "displayName": "Reptyro Cryst",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [
+  {
+   "name": "eye",
+   "label": "Eye",
+   "options": [
+    {
+     "variant": 0,
+     "name": "eye_1",
+     "label": "1",
+     "default": true
+    },
+    {
+     "variant": 1,
+     "name": "eye_2",
+     "label": "2",
+     "default": false
+    },
+    {
+     "variant": 2,
+     "name": "eye_3",
+     "label": "3",
+     "default": false
+    },
+    {
+     "variant": 3,
+     "name": "eye_4",
+     "label": "4",
+     "default": false
+    },
+    {
+     "variant": 4,
+     "name": "eye_5",
+     "label": "5",
+     "default": false
+    },
+    {
+     "variant": 5,
+     "name": "eye_6",
+     "label": "6",
+     "default": false
+    },
+    {
+     "variant": 6,
+     "name": "eye_7",
+     "label": "7",
+     "default": false
+    },
+    {
+     "variant": 7,
+     "name": "eye_8",
+     "label": "8",
+     "default": false
+    }
+   ]
+  }
+ ],
+ "clips": [
+  {
+   "name": "Carrying",
+   "index": 0,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Carrying_Start",
+   "index": 1,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Cooking",
+   "index": 2,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Damage",
+   "index": 3,
+   "duration": 1.6667,
+   "frameRate": 30.0,
+   "frameCount": 51,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Eat",
+   "index": 4,
+   "duration": 5.3333,
+   "frameRate": 30.0,
+   "frameCount": 161,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Encount",
+   "index": 5,
+   "duration": 1.6667,
+   "frameRate": 30.0,
+   "frameCount": 51,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Farskill_Action",
+   "index": 6,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Farskill_ActionLoop",
+   "index": 7,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Farskill_End",
+   "index": 8,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Farskill_Start",
+   "index": 9,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Farskill_StartLoop",
+   "index": 10,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GetUp_FrontDown",
+   "index": 11,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Hit",
+   "index": 12,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Idle",
+   "index": 13,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "Idle_Swim",
+   "index": 14,
+   "duration": 1.7333,
+   "frameRate": 30.0,
+   "frameCount": 53,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "JumpEnd",
+   "index": 15,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "JumpLoop",
+   "index": 16,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "MagmaAttack",
+   "index": 17,
+   "duration": 3.6667,
+   "frameRate": 30.0,
+   "frameCount": 111,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Petting",
+   "index": 18,
+   "duration": 2.3333,
+   "frameRate": 30.0,
+   "frameCount": 71,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Rest01",
+   "index": 19,
+   "duration": 5.3333,
+   "frameRate": 30.0,
+   "frameCount": 161,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Rest02",
+   "index": 20,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Run",
+   "index": 21,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepEnd",
+   "index": 22,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "SleepLoop",
+   "index": 23,
+   "duration": 4.0,
+   "frameRate": 30.0,
+   "frameCount": 121,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "SleepStart",
+   "index": 24,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Spa",
+   "index": 25,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Sprint",
+   "index": 26,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Walk",
+   "index": 27,
+   "duration": 1.7333,
+   "frameRate": 30.0,
+   "frameCount": 53,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "Idle",
+ "parts": [
+  {
+   "node": "Icr_Body",
+   "label": "Icr Body",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Extra",
+   "label": "Extra",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Extra_02",
+   "label": "Extra 02",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Eye",
+   "label": "Eye",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 28,
+  "meshes": 4,
+  "triangles": 13072,
+  "textures": 6,
+  "clips": 28,
+  "droppedTracks": 0,
+  "glbBytes": 13445300
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld\\VolcanicMonster_Ice"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/VolcanicMonster/SK_VolcanicMonster_Skeleton",
+  "dex": 129,
+  "dexSuffix": "B",
+  "elements": [
+   "Ice",
+   "Ground"
+  ],
+  "rarity": 7,
+  "codeName": "VolcanicMonster_Ice",
+  "species": "VolcanicMonster_Ice",
+  "form": ""
+ }
+}

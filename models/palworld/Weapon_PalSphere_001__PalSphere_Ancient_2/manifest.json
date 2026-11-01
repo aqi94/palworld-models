@@ -1,0 +1,63 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_PalSphere_001__PalSphere_Ancient_2",
+ "kind": "object",
+ "displayName": "Ancient Sphere",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Gold_Ancient",
+   "label": "Gold Ancient",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Crystal_Ancient_2",
+   "label": "Crystal Ancient 2",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 3,
+  "meshes": 2,
+  "triangles": 8568,
+  "textures": 4,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 7985916
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\PalSphere_001"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Ancient Sphere",
+    "class": "PalSphere_Ancient_2"
+   }
+  ],
+  "materialOverrides": [
+   [
+    "Pal/Content/Pal/Model/Weapon/PalSphere/PalSphere_001/Material/MI_PalSphere_Gold_Ancient",
+    "Pal/Content/Pal/Material/Character/Common/MI_PalLit_CharacterBodyBase",
+    "Pal/Content/Pal/Material/Character/Common/MI_PalLit",
+    "Pal/Content/Pal/Material/Character/Common/M_PalLit"
+   ],
+   [
+    "Pal/Content/Pal/Model/Weapon/PalSphere/PalSphere_001/Material/MI_PalSphere_Crystal_Ancient_2",
+    "Pal/Content/Others/CartoonCrystalShader/Materials/Crystal/Crystal_C/MI_Crystal_C_01_LOD0",
+    "Pal/Content/Others/CartoonCrystalShader/Materials/Crystal/M_PBR_Crystal_Base_Opaque"
+   ]
+  ],
+  "species": "Weapon",
+  "form": "PalSphere_001"
+ }
+}

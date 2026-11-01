@@ -1,0 +1,468 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Pack_Player_Female_ShooterAnime_PalCarry",
+ "kind": "animpack",
+ "displayName": "Pal Carry",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "Player_Female_AirJump_None",
+   "index": 0,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Aim_AssaultRifle",
+   "index": 1,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_WalkBwd_Aim_AssaultRifle",
+   "index": 2,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_WalkFwd_Aim_AssaultRifle",
+   "index": 3,
+   "duration": 0.8667,
+   "frameRate": 30.0,
+   "frameCount": 27,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_WalkLeft_Aim_AssaultRifle",
+   "index": 4,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_WalkRight_Aim_AssaultRifle",
+   "index": 5,
+   "duration": 0.7333,
+   "frameRate": 30.0,
+   "frameCount": 23,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Idle_PalCarry",
+   "index": 6,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "Player_Female_Jog_PalCarry",
+   "index": 7,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JogBwd_PalCarry",
+   "index": 8,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JogBwdLeft_PalCarry",
+   "index": 9,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JogBwdRight_PalCarry",
+   "index": 10,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JogFwdLeft_PalCarry",
+   "index": 11,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JogFwdRight_PalCarry",
+   "index": 12,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JogLeft_PalCarry",
+   "index": 13,
+   "duration": 1.8,
+   "frameRate": 30.0,
+   "frameCount": 55,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JogRight_PalCarry",
+   "index": 14,
+   "duration": 1.8,
+   "frameRate": 30.0,
+   "frameCount": 55,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpDownLoop_PalCarry",
+   "index": 15,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpEnd_PalCarry",
+   "index": 16,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpUpLoop_PalCarry",
+   "index": 17,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Sprint_PalCarry",
+   "index": 18,
+   "duration": 0.5667,
+   "frameRate": 30.0,
+   "frameCount": 18,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Throw_PalCarry",
+   "index": 19,
+   "duration": 0.8667,
+   "frameRate": 30.0,
+   "frameCount": 27,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "Player_Female_Idle_PalCarry",
+ "parts": [],
+ "stats": {
+  "joints": 4079,
+  "meshes": 0,
+  "triangles": 0,
+  "textures": 0,
+  "clips": 20,
+  "droppedTracks": 0,
+  "glbBytes": 2572684
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_animpacks\\Player_Female_ShooterAnime_PalCarry"
+ ],
+ "extras": {
+  "retarget": {
+   "root": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "Player_Female_AirJump_None": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_WalkBwd_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_WalkFwd_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_WalkLeft_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_WalkRight_Aim_AssaultRifle": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Idle_PalCarry": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Jog_PalCarry": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JogBwd_PalCarry": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JogBwdLeft_PalCarry": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JogBwdRight_PalCarry": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JogFwdLeft_PalCarry": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JogFwdRight_PalCarry": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JogLeft_PalCarry": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JogRight_PalCarry": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpDownLoop_PalCarry": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpEnd_PalCarry": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpUpLoop_PalCarry": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Sprint_PalCarry": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Throw_PalCarry": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "pelvis": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "Player_Female_AirJump_None": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_WalkBwd_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_WalkFwd_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_WalkLeft_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_WalkRight_Aim_AssaultRifle": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Idle_PalCarry": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Jog_PalCarry": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JogBwd_PalCarry": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JogBwdLeft_PalCarry": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JogBwdRight_PalCarry": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JogFwdLeft_PalCarry": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JogFwdRight_PalCarry": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JogLeft_PalCarry": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JogRight_PalCarry": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpDownLoop_PalCarry": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpEnd_PalCarry": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpUpLoop_PalCarry": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Sprint_PalCarry": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Throw_PalCarry": [
+      0.0,
+      0.95031,
+      -0.00272
+     ]
+    }
+   }
+  },
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/Human/SK_PalHuman_Skeleton",
+  "set": "Player_Female_ShooterAnime_PalCarry",
+  "packKind": "weapon",
+  "weaponType": "Liftup",
+  "species": "AnimPack",
+  "form": "Player_Female_ShooterAnime_PalCarry"
+ }
+}

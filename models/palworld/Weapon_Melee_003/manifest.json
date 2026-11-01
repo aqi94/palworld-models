@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Melee_003",
+ "kind": "object",
+ "displayName": "Sword",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_Melee_003",
+   "label": "Weapon Melee 003",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 1584,
+  "textures": 4,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 11339132
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Melee_003"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Sword",
+    "class": "Sword"
+   }
+  ],
+  "species": "Weapon",
+  "form": "Melee_003"
+ }
+}

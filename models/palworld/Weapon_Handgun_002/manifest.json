@@ -1,0 +1,43 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Handgun_002",
+ "kind": "object",
+ "displayName": "Lifmunk's Handgun",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_Handgun_002",
+   "label": "Weapon Handgun 002",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 1241,
+  "textures": 2,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 3339968
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Handgun_002"
+ ],
+ "extras": {
+  "users": {
+   "pals": [
+    "Carbunclo"
+   ]
+  },
+  "species": "Weapon",
+  "form": "Handgun_002"
+ }
+}

@@ -1,0 +1,495 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "LavaGirl",
+ "kind": "pal",
+ "displayName": "Flambelle",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [
+  {
+   "name": "mouth",
+   "label": "Mouth",
+   "options": [
+    {
+     "variant": 0,
+     "name": "mouth_1",
+     "label": "1",
+     "default": true
+    },
+    {
+     "variant": 1,
+     "name": "mouth_2",
+     "label": "2",
+     "default": false
+    },
+    {
+     "variant": 2,
+     "name": "mouth_3",
+     "label": "3",
+     "default": false
+    },
+    {
+     "variant": 3,
+     "name": "mouth_4",
+     "label": "4",
+     "default": false
+    }
+   ]
+  },
+  {
+   "name": "eye",
+   "label": "Eye",
+   "options": [
+    {
+     "variant": 4,
+     "name": "eye_1",
+     "label": "1",
+     "default": true
+    },
+    {
+     "variant": 5,
+     "name": "eye_2",
+     "label": "2",
+     "default": false
+    },
+    {
+     "variant": 6,
+     "name": "eye_3",
+     "label": "3",
+     "default": false
+    },
+    {
+     "variant": 7,
+     "name": "eye_4",
+     "label": "4",
+     "default": false
+    },
+    {
+     "variant": 8,
+     "name": "eye_5",
+     "label": "5",
+     "default": false
+    },
+    {
+     "variant": 9,
+     "name": "eye_6",
+     "label": "6",
+     "default": false
+    },
+    {
+     "variant": 10,
+     "name": "eye_7",
+     "label": "7",
+     "default": false
+    },
+    {
+     "variant": 11,
+     "name": "eye_8",
+     "label": "8",
+     "default": false
+    }
+   ]
+  }
+ ],
+ "clips": [
+  {
+   "name": "Architecture",
+   "index": 0,
+   "duration": 0.9333,
+   "frameRate": 30.0,
+   "frameCount": 29,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Carrying",
+   "index": 1,
+   "duration": 1.6667,
+   "frameRate": 30.0,
+   "frameCount": 51,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Carrying_Start",
+   "index": 2,
+   "duration": 1.6667,
+   "frameRate": 30.0,
+   "frameCount": 51,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "CommonWork",
+   "index": 3,
+   "duration": 1.6667,
+   "frameRate": 30.0,
+   "frameCount": 51,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Cooking",
+   "index": 4,
+   "duration": 1.4667,
+   "frameRate": 30.0,
+   "frameCount": 45,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Damage",
+   "index": 5,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Eat",
+   "index": 6,
+   "duration": 4.0,
+   "frameRate": 30.0,
+   "frameCount": 121,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Encount",
+   "index": 7,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "FarSkill_Action",
+   "index": 8,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_ActionLoop",
+   "index": 9,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_End",
+   "index": 10,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Start",
+   "index": 11,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_StartLoop",
+   "index": 12,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GetUp_FrontDown",
+   "index": 13,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Gunner",
+   "index": 14,
+   "duration": 1.6667,
+   "frameRate": 30.0,
+   "frameCount": 51,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Hit",
+   "index": 15,
+   "duration": 0.5,
+   "frameRate": 30.0,
+   "frameCount": 16,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Idle",
+   "index": 16,
+   "duration": 1.6667,
+   "frameRate": 30.0,
+   "frameCount": 51,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "Idle_Swim",
+   "index": 17,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "JumpEnd",
+   "index": 18,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "JumpLoop",
+   "index": 19,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Petting",
+   "index": 20,
+   "duration": 1.6667,
+   "frameRate": 30.0,
+   "frameCount": 51,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Rest01",
+   "index": 21,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Rest02",
+   "index": 22,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Rest03",
+   "index": 23,
+   "duration": 2.9333,
+   "frameRate": 30.0,
+   "frameCount": 89,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Run",
+   "index": 24,
+   "duration": 0.9,
+   "frameRate": 30.0,
+   "frameCount": 28,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepEnd",
+   "index": 25,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "SleepLoop",
+   "index": 26,
+   "duration": 3.3333,
+   "frameRate": 30.0,
+   "frameCount": 101,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "SleepStart",
+   "index": 27,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Transport",
+   "index": 28,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Walk",
+   "index": 29,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "Idle",
+ "parts": [
+  {
+   "node": "Body",
+   "label": "Body",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Extra",
+   "label": "Extra",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Mouth",
+   "label": "Mouth",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Eye",
+   "label": "Eye",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 51,
+  "meshes": 4,
+  "triangles": 9934,
+  "textures": 8,
+  "clips": 30,
+  "droppedTracks": 0,
+  "glbBytes": 9463708
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld\\LavaGirl"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/LavaGirl/SK_LavaGirl_Skeleton",
+  "dex": 25,
+  "elements": [
+   "Fire"
+  ],
+  "rarity": 1,
+  "codeName": "LavaGirl",
+  "species": "LavaGirl",
+  "form": ""
+ }
+}

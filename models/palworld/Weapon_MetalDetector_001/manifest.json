@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_MetalDetector_001",
+ "kind": "object",
+ "displayName": "Metal Detector",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_MetalDetector",
+   "label": "Weapon MetalDetector",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 3882,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 6567964
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\MetalDetector_001"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Metal Detector",
+    "class": "MetalDetector"
+   }
+  ],
+  "species": "Weapon",
+  "form": "MetalDetector_001"
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_FunnelLauncher",
+ "kind": "object",
+ "displayName": "Drone Launcher",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "PalProp_FunnelLauncher",
+   "label": "PalProp FunnelLauncher",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 12,
+  "meshes": 1,
+  "triangles": 6568,
+  "textures": 4,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 6329688
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\FunnelLauncher"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Drone Launcher",
+    "class": "DroneLauncher"
+   }
+  ],
+  "species": "Weapon",
+  "form": "FunnelLauncher"
+ }
+}

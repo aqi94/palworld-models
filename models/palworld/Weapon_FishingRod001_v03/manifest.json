@@ -1,0 +1,48 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_FishingRod001_v03",
+ "kind": "object",
+ "displayName": "Advanced Fishing Rod (Pengullet)",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "v03",
+   "label": "v03",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 25,
+  "meshes": 1,
+  "triangles": 8224,
+  "textures": 4,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 7180724
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\FishingRod001_v03"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Advanced Fishing Rod (Pengullet)",
+    "class": "FishingRod_5"
+   },
+   {
+    "name": "Advanced Fishing Rod (Depresso)",
+    "class": "FishingRod_6"
+   }
+  ],
+  "species": "Weapon",
+  "form": "FishingRod001_v03"
+ }
+}

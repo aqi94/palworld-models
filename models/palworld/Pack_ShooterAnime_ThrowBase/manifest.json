@@ -1,0 +1,341 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Pack_ShooterAnime_ThrowBase",
+ "kind": "animpack",
+ "displayName": "Throw Base",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "Player_Female_Aim_Throw",
+   "index": 16,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Aim_Throw",
+   "index": 17,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Idle_Throw",
+   "index": 18,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Walk_Throw",
+   "index": 19,
+   "duration": 0.9,
+   "frameRate": 30.0,
+   "frameCount": 28,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_Aim_Throw",
+   "index": 20,
+   "duration": 1.9667,
+   "frameRate": 30.0,
+   "frameCount": 60,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Idle_Throw",
+   "index": 21,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "Player_Female_Jog_Throw",
+   "index": 22,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpDownLoop_Throw",
+   "index": 23,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpEnd_Throw",
+   "index": 24,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpUpLoop_Throw",
+   "index": 25,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SlidingEnd_Throw",
+   "index": 26,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SlidingLoop_Throw",
+   "index": 27,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Sprint_Throw",
+   "index": 28,
+   "duration": 0.5667,
+   "frameRate": 30.0,
+   "frameCount": 18,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Throw",
+   "index": 29,
+   "duration": 1.2333,
+   "frameRate": 30.0,
+   "frameCount": 38,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "Player_Female_Idle_Throw",
+ "parts": [],
+ "stats": {
+  "joints": 4079,
+  "meshes": 0,
+  "triangles": 0,
+  "textures": 0,
+  "clips": 14,
+  "droppedTracks": 0,
+  "glbBytes": 2119564
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_animpacks\\ShooterAnime_ThrowBase"
+ ],
+ "extras": {
+  "retarget": {
+   "root": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "Player_Female_Aim_Throw": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Aim_Throw": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Idle_Throw": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Walk_Throw": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_Aim_Throw": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Idle_Throw": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Jog_Throw": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpDownLoop_Throw": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpEnd_Throw": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpUpLoop_Throw": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SlidingEnd_Throw": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SlidingLoop_Throw": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Sprint_Throw": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Throw": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "pelvis": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "Player_Female_Aim_Throw": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Aim_Throw": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Idle_Throw": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Walk_Throw": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_Aim_Throw": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Idle_Throw": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Jog_Throw": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpDownLoop_Throw": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpEnd_Throw": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpUpLoop_Throw": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SlidingEnd_Throw": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SlidingLoop_Throw": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Sprint_Throw": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Throw": [
+      0.0,
+      0.95031,
+      -0.00272
+     ]
+    }
+   }
+  },
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/Human/SK_PalHuman_Skeleton",
+  "set": "ShooterAnime_ThrowBase",
+  "packKind": "base",
+  "species": "AnimPack",
+  "form": "ShooterAnime_ThrowBase"
+ }
+}

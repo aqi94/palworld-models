@@ -1,0 +1,43 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Minigun",
+ "kind": "object",
+ "displayName": "Grizzbolt's Minigun",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_AssaultRifle_002",
+   "label": "Weapon AssaultRifle 002",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 10,
+  "meshes": 1,
+  "triangles": 91202,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 20665220
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Minigun"
+ ],
+ "extras": {
+  "users": {
+   "pals": [
+    "ElecPanda"
+   ]
+  },
+  "species": "Weapon",
+  "form": "Minigun"
+ }
+}

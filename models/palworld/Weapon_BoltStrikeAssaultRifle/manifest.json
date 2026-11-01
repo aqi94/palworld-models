@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_BoltStrikeAssaultRifle",
+ "kind": "object",
+ "displayName": "Plasma Rifle",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "PalProp_BoltStrikeAssaultRifle",
+   "label": "PalProp BoltStrikeAssaultRifle",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 6,
+  "meshes": 1,
+  "triangles": 7972,
+  "textures": 4,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 6386668
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\BoltStrikeAssaultRifle"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Plasma Rifle",
+    "class": "ElectricArcAssaultRifle"
+   }
+  ],
+  "species": "Weapon",
+  "form": "BoltStrikeAssaultRifle"
+ }
+}

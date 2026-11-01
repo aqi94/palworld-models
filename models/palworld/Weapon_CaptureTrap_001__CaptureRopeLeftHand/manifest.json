@@ -1,0 +1,43 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_CaptureTrap_001__CaptureRopeLeftHand",
+ "kind": "object",
+ "displayName": "Capture Rope Left Hand",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Rope",
+   "label": "Rope",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 6845,
+  "textures": 2,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 10991568
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\CaptureTrap_001"
+ ],
+ "extras": {
+  "materialOverrides": [
+   [
+    "Pal/Content/Pal/Model/Weapon/Throwable/CaptureTrap/SM_CaptureTrap_001/Material/M_Rope"
+   ]
+  ],
+  "species": "Weapon",
+  "form": "CaptureTrap_001"
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Melee_004",
+ "kind": "object",
+ "displayName": "Hand-Held Torch",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_Melee_003",
+   "label": "Weapon Melee 003",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 140,
+  "textures": 2,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 7014188
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Melee_004"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Hand-Held Torch",
+    "class": "Torch"
+   }
+  ],
+  "species": "Weapon",
+  "form": "Melee_004"
+ }
+}

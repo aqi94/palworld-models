@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Axe_PalMetal",
+ "kind": "object",
+ "displayName": "Pal Metal Axe",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "PalProp_Axe_Palmetal",
+   "label": "PalProp Axe Palmetal",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 840,
+  "textures": 4,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 8697964
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Axe_PalMetal"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Pal Metal Axe",
+    "class": "Axe_Tier_03"
+   }
+  ],
+  "species": "Weapon",
+  "form": "Axe_PalMetal"
+ }
+}

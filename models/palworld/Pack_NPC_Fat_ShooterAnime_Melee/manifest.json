@@ -1,0 +1,69 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Pack_NPC_Fat_ShooterAnime_Melee",
+ "kind": "animpack",
+ "displayName": "Melee (Fat)",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "NPC_Fat_Idle_Melee",
+   "index": 0,
+   "duration": 2.3,
+   "frameRate": 30.0,
+   "frameCount": 70,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": true
+  }
+ ],
+ "defaultClip": "NPC_Fat_Idle_Melee",
+ "parts": [],
+ "stats": {
+  "joints": 4079,
+  "meshes": 0,
+  "triangles": 0,
+  "textures": 0,
+  "clips": 1,
+  "droppedTracks": 0,
+  "glbBytes": 1341460
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_animpacks\\NPC_Fat_ShooterAnime_Melee"
+ ],
+ "extras": {
+  "retarget": {
+   "root": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "NPC_Fat_Idle_Melee": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "pelvis": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "NPC_Fat_Idle_Melee": [
+      0.0,
+      1.37725,
+      -0.01663
+     ]
+    }
+   }
+  },
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/Human/SK_PalHuman_Skeleton",
+  "set": "NPC_Fat_ShooterAnime_Melee",
+  "packKind": "weapon",
+  "weaponType": "GiantClub",
+  "species": "AnimPack",
+  "form": "NPC_Fat_ShooterAnime_Melee"
+ }
+}

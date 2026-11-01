@@ -1,0 +1,52 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_CompoundBow__SkyBow",
+ "kind": "object",
+ "displayName": "Mechanical Bow",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "PalProp_CompoundBow_Blue",
+   "label": "PalProp CompoundBow Blue",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 39,
+  "meshes": 1,
+  "triangles": 43025,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 19395144
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\CompoundBow"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Mechanical Bow",
+    "class": "SkyBow"
+   }
+  ],
+  "materialOverrides": [
+   [
+    "Pal/Content/Pal/Model/Weapon/Bow/SK_Weapon_CompoundBow/material/MI_PalProp_CompoundBow_Blue",
+    "Pal/Content/Pal/Model/Weapon/Bow/SK_Weapon_CompoundBow/material/MI_PalProp_CompoundBow",
+    "Pal/Content/Pal/Material/Prop/MI_PalPropBase",
+    "Pal/Content/Pal/Material/Character/Common/M_PalLit"
+   ]
+  ],
+  "species": "Weapon",
+  "form": "CompoundBow"
+ }
+}

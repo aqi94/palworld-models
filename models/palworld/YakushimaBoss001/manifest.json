@@ -1,0 +1,487 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "YakushimaBoss001",
+ "kind": "pal",
+ "displayName": "Eye of Cthulhu",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [
+  {
+   "name": "yakushimaboss_eye",
+   "label": "YakushimaBoss_Eye",
+   "options": [
+    {
+     "variant": 0,
+     "name": "yakushimaboss_eye_1",
+     "label": "1",
+     "default": true
+    },
+    {
+     "variant": 1,
+     "name": "yakushimaboss_eye_2",
+     "label": "2",
+     "default": false
+    },
+    {
+     "variant": 2,
+     "name": "yakushimaboss_eye_3",
+     "label": "3",
+     "default": false
+    },
+    {
+     "variant": 3,
+     "name": "yakushimaboss_eye_4",
+     "label": "4",
+     "default": false
+    },
+    {
+     "variant": 4,
+     "name": "yakushimaboss_eye_5",
+     "label": "5",
+     "default": false
+    },
+    {
+     "variant": 5,
+     "name": "yakushimaboss_eye_6",
+     "label": "6",
+     "default": false
+    },
+    {
+     "variant": 6,
+     "name": "yakushimaboss_eye_7",
+     "label": "7",
+     "default": false
+    },
+    {
+     "variant": 7,
+     "name": "yakushimaboss_eye_8",
+     "label": "8",
+     "default": false
+    }
+   ]
+  }
+ ],
+ "clips": [
+  {
+   "name": "Damage",
+   "index": 0,
+   "duration": 1.6,
+   "frameRate": 30.0,
+   "frameCount": 49,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Eat",
+   "index": 1,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Encount",
+   "index": 2,
+   "duration": 1.6,
+   "frameRate": 30.0,
+   "frameCount": 49,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "EyeTossin_End",
+   "index": 3,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "EyeTossin_Loop",
+   "index": 4,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "EyeTossin_Start",
+   "index": 5,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Action",
+   "index": 6,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_ActionLoop",
+   "index": 7,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_End",
+   "index": 8,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Start",
+   "index": 9,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_StartLoop",
+   "index": 10,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GetUp_FrontDown",
+   "index": 11,
+   "duration": 1.6,
+   "frameRate": 30.0,
+   "frameCount": 49,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Green_PhantasmalBolt",
+   "index": 12,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Green_PhantasmalDeathray_End",
+   "index": 13,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Green_PhantasmalDeathray_Loop",
+   "index": 14,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Green_PhantasmalDeathray_Start",
+   "index": 15,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Green_PhantasmalEye",
+   "index": 16,
+   "duration": 4.2667,
+   "frameRate": 30.0,
+   "frameCount": 129,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Green_PhantasmalSphere",
+   "index": 17,
+   "duration": 4.2667,
+   "frameRate": 30.0,
+   "frameCount": 129,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Hit",
+   "index": 18,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Idle",
+   "index": 19,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "ModeChange",
+   "index": 20,
+   "duration": 4.2667,
+   "frameRate": 30.0,
+   "frameCount": 129,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "MouthTossin_End",
+   "index": 21,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "MouthTossin_Loop",
+   "index": 22,
+   "duration": 1.0667,
+   "frameRate": 30.0,
+   "frameCount": 33,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "MouthTossin_Start",
+   "index": 23,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Petting",
+   "index": 24,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Run",
+   "index": 25,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepEnd",
+   "index": 26,
+   "duration": 3.2,
+   "frameRate": 30.0,
+   "frameCount": 97,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepLoop",
+   "index": 27,
+   "duration": 4.2667,
+   "frameRate": 30.0,
+   "frameCount": 129,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepStart",
+   "index": 28,
+   "duration": 3.2,
+   "frameRate": 30.0,
+   "frameCount": 97,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Spa",
+   "index": 29,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SummonServant_Loop",
+   "index": 30,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Transport",
+   "index": 31,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Walk",
+   "index": 32,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "Idle",
+ "parts": [
+  {
+   "node": "Extra",
+   "label": "Extra",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Body",
+   "label": "Body",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Grass",
+   "label": "Grass",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "YakushimaBoss_Eye",
+   "label": "YakushimaBoss Eye",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Hilight",
+   "label": "Hilight",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 80,
+  "meshes": 5,
+  "triangles": 12476,
+  "textures": 9,
+  "clips": 33,
+  "droppedTracks": 0,
+  "glbBytes": 23113928
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld\\YakushimaBoss001"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/YakushimaBoss001/SK_YakushimaBoss001_Skeleton",
+  "elements": [
+   "Dark"
+  ],
+  "rarity": 6,
+  "codeName": "YakushimaBoss001",
+  "species": "YakushimaBoss001",
+  "form": ""
+ }
+}

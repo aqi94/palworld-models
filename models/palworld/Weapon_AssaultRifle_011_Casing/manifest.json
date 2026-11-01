@@ -1,0 +1,38 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_AssaultRifle_011_Casing",
+ "kind": "object",
+ "displayName": "Charge Rifle – Casing",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Magazine",
+   "label": "Magazine",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 2516,
+  "textures": 2,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 2081952
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\AssaultRifle_011_Casing"
+ ],
+ "extras": {
+  "species": "Weapon",
+  "form": "AssaultRifle_011_Casing"
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Melee_002",
+ "kind": "object",
+ "displayName": "Bat",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_Melee_002",
+   "label": "Weapon Melee 002",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 1,
+  "meshes": 1,
+  "triangles": 2368,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 9584912
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Melee_002"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Bat",
+    "class": "Bat2"
+   }
+  ],
+  "species": "Weapon",
+  "form": "Melee_002"
+ }
+}

@@ -1,0 +1,797 @@
+{
+ "manifestVersion": 1,
+ "props": [
+  {
+   "bone": "weapon_r",
+   "side": "right",
+   "clips": [],
+   "always": true
+  }
+ ],
+ "game": "palworld",
+ "id": "Boss_GrassBoss001_Skin001",
+ "kind": "human",
+ "displayName": "Zoe (Grass Boss 001 Skin 001, Boss)",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "GrassBoss_CommonWork",
+   "index": 15,
+   "duration": 6.6667,
+   "frameRate": 30.0,
+   "frameCount": 201,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Ride_Carrying",
+   "index": 16,
+   "duration": 3.0667,
+   "frameRate": 30.0,
+   "frameCount": 93,
+   "loop": true,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Ride_CommonWaza",
+   "index": 17,
+   "duration": 2.3333,
+   "frameRate": 30.0,
+   "frameCount": 71,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Ride_Encount",
+   "index": 18,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Ride_Idle",
+   "index": 19,
+   "duration": 3.3333,
+   "frameRate": 30.0,
+   "frameCount": 101,
+   "loop": true,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Ride_Petting",
+   "index": 20,
+   "duration": 4.2667,
+   "frameRate": 30.0,
+   "frameCount": 129,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Ride_SleepEnd",
+   "index": 21,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Ride_SleepLoop",
+   "index": 22,
+   "duration": 3.3333,
+   "frameRate": 30.0,
+   "frameCount": 101,
+   "loop": true,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Ride_SleepStart",
+   "index": 23,
+   "duration": 5.0,
+   "frameRate": 30.0,
+   "frameCount": 151,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Ride_Spa",
+   "index": 24,
+   "duration": 2.3,
+   "frameRate": 30.0,
+   "frameCount": 70,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Ride_Waza",
+   "index": 25,
+   "duration": 3.3333,
+   "frameRate": 30.0,
+   "frameCount": 101,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Ride_WazaIn",
+   "index": 26,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Ride_WazaOut",
+   "index": 27,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_Idle_Skin001",
+   "index": 28,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_Rest01",
+   "index": 29,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_Rest01_Skin001",
+   "index": 30,
+   "duration": 2.1333,
+   "frameRate": 30.0,
+   "frameCount": 65,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_Rest02",
+   "index": 31,
+   "duration": 3.3333,
+   "frameRate": 30.0,
+   "frameCount": 101,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_Rest03",
+   "index": 32,
+   "duration": 4.3333,
+   "frameRate": 30.0,
+   "frameCount": 131,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_Rest04",
+   "index": 33,
+   "duration": 4.3333,
+   "frameRate": 30.0,
+   "frameCount": 131,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_SleepLoopTogether",
+   "index": 34,
+   "duration": 3.1667,
+   "frameRate": 30.0,
+   "frameCount": 96,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_Spa2",
+   "index": 35,
+   "duration": 12.0,
+   "frameRate": 30.0,
+   "frameCount": 361,
+   "loop": false,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_Walk_Skin001",
+   "index": 36,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "NPC_GrassBoss001_Skin001_M00",
+   "label": "NPC GrassBoss001 Skin001 M00",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_GrassBoss001_Skin001_M01",
+   "label": "NPC GrassBoss001 Skin001 M01",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_GrassBoss001_Skin001_M02",
+   "label": "NPC GrassBoss001 Skin001 M02",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_GrassBoss001_Skin001_Body001",
+   "label": "NPC GrassBoss001 Skin001 Body001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_GrassBossHead001",
+   "label": "NPC GrassBossHead001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_GrassBossBrow001",
+   "label": "NPC GrassBossBrow001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_GrassBossEye001",
+   "label": "NPC GrassBossEye001",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "NPC_GrassBoss001_Skin001_Hair001",
+   "label": "NPC GrassBoss001 Skin001 Hair001",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 181,
+  "meshes": 8,
+  "triangles": 54476,
+  "textures": 22,
+  "clips": 22,
+  "droppedTracks": 0,
+  "glbBytes": 69512176
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_humans\\Boss_GrassBoss001_Skin001"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/Human/SK_PalHuman_Skeleton",
+  "codeName": "Boss_GrassBoss001_Skin001",
+  "group": "Boss",
+  "mesh": "Pal/Content/Pal/Model/Character/NPC/Boss/GrassBoss/SK_NPC_GrassBoss001_Skin001/SK_NPC_GrassBoss001_Skin001",
+  "mount": {
+   "pal": "ElecPanda",
+   "bone": "BossRideMarker",
+   "position": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation": [
+    -0.0,
+    -0.0,
+    -0.0,
+    1.0
+   ],
+   "palScale": 1.0
+  },
+  "animPacks": [
+   {
+    "id": "Actions_NPC_GrassBoss",
+    "path": "palworld/Pack_Actions_NPC_GrassBoss/",
+    "label": "Actions (Grass Boss)",
+    "own": true
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Base",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Base/",
+    "label": "Base",
+    "own": true
+   },
+   {
+    "id": "Player_Female_ShooterAnime_None",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_None/",
+    "label": "Unarmed",
+    "own": true,
+    "weaponType": "None"
+   },
+   {
+    "id": "NPC_GrassBoss_ShooterAnime_None",
+    "path": "palworld/Pack_NPC_GrassBoss_ShooterAnime_None/",
+    "label": "Unarmed (Grass Boss)",
+    "own": true,
+    "weaponType": "LaserMiningTool"
+   },
+   {
+    "id": "NPC_Extra",
+    "path": "palworld/Pack_NPC_Extra/",
+    "label": "NPC extras",
+    "own": true
+   },
+   {
+    "id": "Player_Female_ShooterAnime_AssaultRifle",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_AssaultRifle/",
+    "label": "Assault Rifle",
+    "own": false,
+    "weaponType": "AssaultRifle",
+    "heldItems": [
+     {
+      "item": "Weapon_AssaultRifle_001__AssaultRifle_NPC_GrassBoss",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Bowgun",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Bowgun/",
+    "label": "Bowgun",
+    "own": false,
+    "weaponType": "BowGun",
+    "heldItems": [
+     {
+      "item": "Weapon_Bowgun_001",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Flamethrower",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Flamethrower/",
+    "label": "Flamethrower",
+    "own": false,
+    "weaponType": "FlameThrower",
+    "heldItems": [
+     {
+      "item": "Weapon_Flamethrower_002",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "NPC_Fat_ShooterAnime_HeavyWeapon",
+    "path": "palworld/Pack_NPC_Fat_ShooterAnime_HeavyWeapon/",
+    "label": "Heavy Weapon (Fat)",
+    "own": false,
+    "weaponType": "GatlingGun",
+    "heldItems": [
+     {
+      "item": "Weapon_AssaultRifle_002",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ],
+      "scale": [
+       0.467,
+       0.467,
+       0.467
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Melee",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Melee/",
+    "label": "Melee",
+    "own": false,
+    "weaponType": "GiantClub",
+    "heldItems": [
+     {
+      "item": "Weapon_NPC_Male_Believer01Cane",
+      "bone": "weapon_r",
+      "position": [
+       -0.0,
+       1.25825,
+       0.0
+      ],
+      "rotation": [
+       -0.707107,
+       -0.0,
+       0.0,
+       0.707107
+      ],
+      "scale": [
+       5.1473,
+       5.1473,
+       2.0432
+      ]
+     }
+    ]
+   },
+   {
+    "id": "NPC_Fat_ShooterAnime_Melee",
+    "path": "palworld/Pack_NPC_Fat_ShooterAnime_Melee/",
+    "label": "Melee (Fat)",
+    "own": false,
+    "weaponType": "GiantClub",
+    "heldItems": [
+     {
+      "item": "Weapon_NPC_Male_Believer01Cane",
+      "bone": "weapon_r",
+      "position": [
+       -0.0,
+       1.25825,
+       0.0
+      ],
+      "rotation": [
+       -0.707107,
+       -0.0,
+       0.0,
+       0.707107
+      ],
+      "scale": [
+       5.1473,
+       5.1473,
+       2.0432
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_GrenadeLauncher",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_GrenadeLauncher/",
+    "label": "Grenade Launcher",
+    "own": false,
+    "weaponType": "GrenadeLauncher",
+    "heldItems": [
+     {
+      "item": "Weapon_GrenadeLauncher_001",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Handgun",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Handgun/",
+    "label": "Handgun",
+    "own": false,
+    "weaponType": "Handgun",
+    "heldItems": [
+     {
+      "item": "Weapon_Handgun_001",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Male_ShooterAnime_HandgunShield",
+    "path": "palworld/Pack_Player_Male_ShooterAnime_HandgunShield/",
+    "label": "Handgun Shield (Player Male)",
+    "own": false,
+    "weaponType": "HandgunShield"
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Katana",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Katana/",
+    "label": "Katana",
+    "own": false,
+    "weaponType": "Katana",
+    "heldItems": [
+     {
+      "item": "Weapon_NPC_Male_Ninja01Weapon",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_LaserRifle",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_LaserRifle/",
+    "label": "Laser Rifle",
+    "own": false,
+    "weaponType": "LaserRifle",
+    "heldItems": [
+     {
+      "item": "Weapon_AssaultRifle_006",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_PalCarry",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_PalCarry/",
+    "label": "Pal Carry",
+    "own": false,
+    "weaponType": "Liftup"
+   },
+   {
+    "id": "Player_Female_ShooterAnime_RocketLauncher",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_RocketLauncher/",
+    "label": "Rocket Launcher",
+    "own": false,
+    "weaponType": "MissileLauncher",
+    "heldItems": [
+     {
+      "item": "Weapon_RocketLauncher_003",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     },
+     {
+      "item": "Weapon_RocketLauncher_004_Missile",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_GuidedMissileLauncher",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_GuidedMissileLauncher/",
+    "label": "Guided Missile Launcher",
+    "own": false
+   },
+   {
+    "id": "Player_Female_ShooterAnime_MultiGuidedMissileLauncher",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_MultiGuidedMissileLauncher/",
+    "label": "Multi Guided Missile Launcher",
+    "own": false,
+    "weaponType": "MissileLauncher",
+    "heldItems": [
+     {
+      "item": "Weapon_RocketLauncher_003",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     },
+     {
+      "item": "Weapon_RocketLauncher_004_Missile",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "Player_Female_ShooterAnime_PumpActionShotgun",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_PumpActionShotgun/",
+    "label": "Pump Action Shotgun",
+    "own": false,
+    "weaponType": "Shotgun",
+    "heldItems": [
+     {
+      "item": "Weapon_Shotgun_003",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ]
+     }
+    ]
+   },
+   {
+    "id": "ShooterAnime_ThrowBase",
+    "path": "palworld/Pack_ShooterAnime_ThrowBase/",
+    "label": "Throw Base",
+    "own": false
+   },
+   {
+    "id": "Player_Female_ShooterAnime_Throw",
+    "path": "palworld/Pack_Player_Female_ShooterAnime_Throw/",
+    "label": "Throw",
+    "own": false,
+    "weaponType": "ThrowObject",
+    "heldItems": [
+     {
+      "item": "Weapon_Modern_Weapons_Grenade_01",
+      "bone": "weapon_r",
+      "position": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation": [
+       -0.0,
+       -0.0,
+       -0.0,
+       1.0
+      ],
+      "scale": [
+       2.0,
+       2.0,
+       2.0
+      ]
+     }
+    ]
+   }
+  ],
+  "defaultPack": "NPC_GrassBoss_ShooterAnime_None",
+  "species": "Boss",
+  "form": "GrassBoss001_Skin001"
+ }
+}

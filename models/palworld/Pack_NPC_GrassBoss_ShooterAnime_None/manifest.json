@@ -1,0 +1,615 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Pack_NPC_GrassBoss_ShooterAnime_None",
+ "kind": "animpack",
+ "displayName": "Unarmed (Grass Boss)",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [
+  {
+   "name": "GrassBoss_Stand_Idle_None",
+   "index": 0,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "GrassBoss_Stand_Run",
+   "index": 1,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_Sprint",
+   "index": 2,
+   "duration": 0.5667,
+   "frameRate": 30.0,
+   "frameCount": 18,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GrassBoss_Stand_Walk",
+   "index": 3,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "other",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Aim_None",
+   "index": 4,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_AirJump_None",
+   "index": 5,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Attack_None",
+   "index": 6,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_BiggerHorseRide_None",
+   "index": 8,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Aim",
+   "index": 9,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Idle_None",
+   "index": 10,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Walk",
+   "index": 11,
+   "duration": 0.9,
+   "frameRate": 30.0,
+   "frameCount": 28,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_HorseRide_None",
+   "index": 12,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": false,
+   "category": "ride",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpDownLoop_None",
+   "index": 14,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpEnd_None",
+   "index": 15,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpStart_None",
+   "index": 16,
+   "duration": 0.2667,
+   "frameRate": 30.0,
+   "frameCount": 9,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JumpUpLoop_None",
+   "index": 17,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SlidingEnd",
+   "index": 19,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_SlidingLoop",
+   "index": 20,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Idle_Melee",
+   "index": 21,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_Walkbwd_Aim_Melee",
+   "index": 22,
+   "duration": 0.9,
+   "frameRate": 30.0,
+   "frameCount": 28,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_WalkFwd_Aim_Melee",
+   "index": 23,
+   "duration": 0.9,
+   "frameRate": 30.0,
+   "frameCount": 28,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_WalkLeft_Aim_Melee",
+   "index": 24,
+   "duration": 0.9,
+   "frameRate": 30.0,
+   "frameCount": 28,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Crouch_WalkRight_Aim_Melee",
+   "index": 25,
+   "duration": 0.9,
+   "frameRate": 30.0,
+   "frameCount": 28,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_Idle_Melee",
+   "index": 26,
+   "duration": 2.3,
+   "frameRate": 30.0,
+   "frameCount": 70,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JogBwd_Aim_Melee",
+   "index": 27,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JogFwd_Aim_Melee",
+   "index": 28,
+   "duration": 1.4667,
+   "frameRate": 30.0,
+   "frameCount": 45,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Player_Female_JogRight_Aim_Melee",
+   "index": 29,
+   "duration": 1.8,
+   "frameRate": 30.0,
+   "frameCount": 55,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  }
+ ],
+ "defaultClip": "GrassBoss_Stand_Idle_None",
+ "parts": [],
+ "stats": {
+  "joints": 4079,
+  "meshes": 0,
+  "triangles": 0,
+  "textures": 0,
+  "clips": 27,
+  "droppedTracks": 0,
+  "glbBytes": 3189648
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_animpacks\\NPC_GrassBoss_ShooterAnime_None"
+ ],
+ "extras": {
+  "retarget": {
+   "root": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "GrassBoss_Stand_Idle_None": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "GrassBoss_Stand_Run": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "GrassBoss_Stand_Sprint": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "GrassBoss_Stand_Walk": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Aim_None": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_AirJump_None": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Attack_None": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_BiggerHorseRide_None": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Aim": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Idle_None": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Walk": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_HorseRide_None": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpDownLoop_None": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpEnd_None": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpStart_None": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JumpUpLoop_None": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SlidingEnd": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_SlidingLoop": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Idle_Melee": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_Walkbwd_Aim_Melee": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_WalkFwd_Aim_Melee": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_WalkLeft_Aim_Melee": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Crouch_WalkRight_Aim_Melee": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_Idle_Melee": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JogBwd_Aim_Melee": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JogFwd_Aim_Melee": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "Player_Female_JogRight_Aim_Melee": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "pelvis": {
+    "mode": "AnimationScaled",
+    "sources": {
+     "GrassBoss_Stand_Idle_None": [
+      0.0,
+      0.99322,
+      -0.00272
+     ],
+     "GrassBoss_Stand_Run": [
+      0.0,
+      0.99322,
+      -0.00272
+     ],
+     "GrassBoss_Stand_Sprint": [
+      0.0,
+      0.99322,
+      -0.00272
+     ],
+     "GrassBoss_Stand_Walk": [
+      0.0,
+      0.99322,
+      -0.00272
+     ],
+     "Player_Female_Aim_None": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_AirJump_None": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Attack_None": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_BiggerHorseRide_None": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Aim": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Idle_None": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Walk": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_HorseRide_None": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpDownLoop_None": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpEnd_None": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpStart_None": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JumpUpLoop_None": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SlidingEnd": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_SlidingLoop": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Idle_Melee": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_Walkbwd_Aim_Melee": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_WalkFwd_Aim_Melee": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_WalkLeft_Aim_Melee": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Crouch_WalkRight_Aim_Melee": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_Idle_Melee": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JogBwd_Aim_Melee": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JogFwd_Aim_Melee": [
+      0.0,
+      0.95031,
+      -0.00272
+     ],
+     "Player_Female_JogRight_Aim_Melee": [
+      0.0,
+      0.95031,
+      -0.00272
+     ]
+    }
+   }
+  },
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/Human/SK_PalHuman_Skeleton",
+  "set": "NPC_GrassBoss_ShooterAnime_None",
+  "packKind": "weapon",
+  "weaponType": "LaserMiningTool",
+  "species": "AnimPack",
+  "form": "NPC_GrassBoss_ShooterAnime_None"
+ }
+}

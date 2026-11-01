@@ -1,0 +1,38 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_Flamethrower_001",
+ "kind": "object",
+ "displayName": "Flamethrower 001",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "PalProp_Flamethrower",
+   "label": "PalProp Flamethrower",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 9,
+  "meshes": 1,
+  "triangles": 13280,
+  "textures": 3,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 11433244
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\Flamethrower_001"
+ ],
+ "extras": {
+  "species": "Weapon",
+  "form": "Flamethrower_001"
+ }
+}

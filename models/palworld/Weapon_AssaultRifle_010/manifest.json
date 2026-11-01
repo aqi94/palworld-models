@@ -1,0 +1,44 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_AssaultRifle_010",
+ "kind": "object",
+ "displayName": "Overheat Rifle",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "Weapon_AssaultRifle_010",
+   "label": "Weapon AssaultRifle 010",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 8,
+  "meshes": 1,
+  "triangles": 35971,
+  "textures": 4,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 16974136
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\AssaultRifle_010"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Overheat Rifle",
+    "class": "OverheatRifle"
+   }
+  ],
+  "species": "Weapon",
+  "form": "AssaultRifle_010"
+ }
+}

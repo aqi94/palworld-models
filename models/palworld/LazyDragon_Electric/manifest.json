@@ -1,0 +1,514 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "LazyDragon_Electric",
+ "kind": "pal",
+ "displayName": "Relaxaurus Lux",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [
+  {
+   "name": "eye",
+   "label": "Eye",
+   "options": [
+    {
+     "variant": 0,
+     "name": "eye_1",
+     "label": "1",
+     "default": true
+    },
+    {
+     "variant": 1,
+     "name": "eye_2",
+     "label": "2",
+     "default": false
+    },
+    {
+     "variant": 2,
+     "name": "eye_3",
+     "label": "3",
+     "default": false
+    },
+    {
+     "variant": 3,
+     "name": "eye_4",
+     "label": "4",
+     "default": false
+    },
+    {
+     "variant": 4,
+     "name": "eye_5",
+     "label": "5",
+     "default": false
+    },
+    {
+     "variant": 5,
+     "name": "eye_6",
+     "label": "6",
+     "default": false
+    },
+    {
+     "variant": 6,
+     "name": "eye_7",
+     "label": "7",
+     "default": false
+    },
+    {
+     "variant": 7,
+     "name": "eye_8",
+     "label": "8",
+     "default": false
+    }
+   ]
+  }
+ ],
+ "clips": [
+  {
+   "name": "Aim",
+   "index": 0,
+   "duration": 2.7778,
+   "frameRate": 36.0,
+   "frameCount": 101,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Aim_WalkBwd",
+   "index": 1,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Aim_WalkFwd",
+   "index": 2,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Aim_WalkLeft",
+   "index": 3,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Aim_WalkRight",
+   "index": 4,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Carrying",
+   "index": 5,
+   "duration": 4.0,
+   "frameRate": 30.0,
+   "frameCount": 121,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Carrying_Start",
+   "index": 6,
+   "duration": 4.0,
+   "frameRate": 30.0,
+   "frameCount": 121,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Damage",
+   "index": 7,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Eat",
+   "index": 8,
+   "duration": 8.0,
+   "frameRate": 30.0,
+   "frameCount": 241,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Encount",
+   "index": 9,
+   "duration": 1.5,
+   "frameRate": 30.0,
+   "frameCount": 46,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "FarSkill_Action",
+   "index": 10,
+   "duration": 0.3333,
+   "frameRate": 30.0,
+   "frameCount": 11,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_ActionLoop",
+   "index": 11,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_End",
+   "index": 12,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_Start",
+   "index": 13,
+   "duration": 0.8333,
+   "frameRate": 30.0,
+   "frameCount": 26,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "FarSkill_StartLoop",
+   "index": 14,
+   "duration": 2.0,
+   "frameRate": 30.0,
+   "frameCount": 61,
+   "loop": true,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "GetUp_FrontDown",
+   "index": 15,
+   "duration": 1.8333,
+   "frameRate": 30.0,
+   "frameCount": 56,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Hit",
+   "index": 16,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": false,
+   "category": "battle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "idle",
+   "index": 17,
+   "duration": 4.0,
+   "frameRate": 30.0,
+   "frameCount": 121,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": true
+  },
+  {
+   "name": "Idle_Swim",
+   "index": 18,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "JumpEnd",
+   "index": 19,
+   "duration": 1.0,
+   "frameRate": 30.0,
+   "frameCount": 31,
+   "loop": false,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "JumpLoop",
+   "index": 20,
+   "duration": 0.6667,
+   "frameRate": 30.0,
+   "frameCount": 21,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Petting",
+   "index": 21,
+   "duration": 2.6667,
+   "frameRate": 30.0,
+   "frameCount": 81,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Rest01",
+   "index": 22,
+   "duration": 8.0,
+   "frameRate": 30.0,
+   "frameCount": 241,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Rest02",
+   "index": 23,
+   "duration": 4.0,
+   "frameRate": 30.0,
+   "frameCount": 121,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Run",
+   "index": 24,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Run_Swim",
+   "index": 25,
+   "duration": 1.3333,
+   "frameRate": 30.0,
+   "frameCount": 41,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "RunRiding",
+   "index": 26,
+   "duration": 0.8,
+   "frameRate": 30.0,
+   "frameCount": 25,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "SleepEnd",
+   "index": 27,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "SleepLoop",
+   "index": 28,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "SleepStart",
+   "index": 29,
+   "duration": 3.0,
+   "frameRate": 30.0,
+   "frameCount": 91,
+   "loop": false,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Spa",
+   "index": 30,
+   "duration": 4.0,
+   "frameRate": 30.0,
+   "frameCount": 121,
+   "loop": true,
+   "category": "idle",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Transport",
+   "index": 31,
+   "duration": 2.5,
+   "frameRate": 30.0,
+   "frameCount": 76,
+   "loop": true,
+   "category": "work",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  },
+  {
+   "name": "Walk",
+   "index": 32,
+   "duration": 2.5,
+   "frameRate": 30.0,
+   "frameCount": 76,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "WalkRiding",
+   "index": 33,
+   "duration": 2.5,
+   "frameRate": 30.0,
+   "frameCount": 76,
+   "loop": true,
+   "category": "move",
+   "group": "",
+   "default": false
+  },
+  {
+   "name": "Watering",
+   "index": 34,
+   "duration": 5.3333,
+   "frameRate": 30.0,
+   "frameCount": 161,
+   "loop": false,
+   "category": "work",
+   "group": "",
+   "default": false,
+   "mountOk": false
+  }
+ ],
+ "defaultClip": "idle",
+ "parts": [
+  {
+   "node": "Body_2",
+   "label": "Body 2",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Eye",
+   "label": "Eye",
+   "lod": 0,
+   "visible": true
+  },
+  {
+   "node": "Extra",
+   "label": "Extra",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 32,
+  "meshes": 3,
+  "triangles": 4972,
+  "textures": 5,
+  "clips": 35,
+  "droppedTracks": 0,
+  "glbBytes": 13195256
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld\\LazyDragon_Electric"
+ ],
+ "extras": {
+  "skeleton": "Pal/Content/Pal/Model/Character/Skeleton/LazyDragon/SK_LazyDragon_Skeleton",
+  "dex": 94,
+  "dexSuffix": "B",
+  "elements": [
+   "Dragon",
+   "Electric"
+  ],
+  "rarity": 9,
+  "codeName": "LazyDragon_Electric",
+  "species": "LazyDragon_Electric",
+  "form": ""
+ }
+}

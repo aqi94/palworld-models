@@ -1,0 +1,48 @@
+{
+ "manifestVersion": 1,
+ "props": [],
+ "game": "palworld",
+ "id": "Weapon_FishingRod001_v02",
+ "kind": "object",
+ "displayName": "Intermediate Fishing Rod (Cattiva)",
+ "files": {
+  "model": "model.glb"
+ },
+ "variantGroups": [],
+ "clips": [],
+ "defaultClip": null,
+ "parts": [
+  {
+   "node": "v02",
+   "label": "v02",
+   "lod": 0,
+   "visible": true
+  }
+ ],
+ "stats": {
+  "joints": 25,
+  "meshes": 1,
+  "triangles": 8224,
+  "textures": 4,
+  "clips": 0,
+  "droppedTracks": 0,
+  "glbBytes": 7185344
+ },
+ "source": [
+  "C:\\Users\\andyq\\Documents\\palworld_models\\raw\\palworld_weapons\\FishingRod001_v02"
+ ],
+ "extras": {
+  "items": [
+   {
+    "name": "Intermediate Fishing Rod (Cattiva)",
+    "class": "FishingRod_3"
+   },
+   {
+    "name": "Intermediate Fishing Rod (Croajiro)",
+    "class": "FishingRod_4"
+   }
+  ],
+  "species": "Weapon",
+  "form": "FishingRod001_v02"
+ }
+}
